@@ -2,15 +2,15 @@
 namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
-use App\Models\ClienteModel;
+use App\Models\CitaModel;
 
-class Cliente extends ResourceController{
-    protected $modelName = 'App\Models\ClienteModel';
+class Cita extends ResourceController{
+    protected $modelName = 'App\Models\CitaModel';
     protected $format = 'json';
 
     public function index(){
         $data=[
-            "clientes" => $this->model->findAll()
+            "cita" => $this->model->findAll()
         ];
         return $this->respond($data);
     }

@@ -2,15 +2,15 @@
 namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
-use App\Models\ClienteModel;
+use App\Models\BarberoModel;
 
-class Cliente extends ResourceController{
-    protected $modelName = 'App\Models\ClienteModel';
+class Barbero extends ResourceController{
+    protected $modelName = 'App\Models\BarberoModel';
     protected $format = 'json';
 
     public function index(){
         $data=[
-            "clientes" => $this->model->findAll()
+            "barberos" => $this->model->findAll()
         ];
         return $this->respond($data);
     }

@@ -2,15 +2,15 @@
 namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
-use App\Models\ClienteModel;
+use App\Models\CorteModel;
 
-class Cliente extends ResourceController{
-    protected $modelName = 'App\Models\ClienteModel';
+class Corte extends ResourceController{
+    protected $modelName = 'App\Models\CorteModel';
     protected $format = 'json';
 
     public function index(){
         $data=[
-            "clientes" => $this->model->findAll()
+            "cortes" => $this->model->findAll()
         ];
         return $this->respond($data);
     }
