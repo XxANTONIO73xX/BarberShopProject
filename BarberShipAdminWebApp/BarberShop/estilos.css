@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-color: rgb(0, 0, 0);
+}
+
+    .navigation_bar {
+        background-color: rgb(24, 24, 24);
+        position: fixed;
+        width: 100%;
+        height: 75px;
+        z-index: 10000;
+        text-align: center;
+    }
+
+        .navigation_bar .nv_list {
+            position: relative;
+            top: 22px;
+            list-style: none;
+        }
+
+            .navigation_bar .nv_list li {
+                display: inline;
+                margin: 0 80px 0 0;
+            }
+
+                .navigation_bar .nv_list li a {
+                    font-size: 20px;
+                    text-decoration: none;
+                    color: white;
+                    background-image: linear-gradient(currentColor, currentColor);
+                    background-position: 0% 100%;
+                    background-repeat: no-repeat;
+                    background-size: 0% 2px;
+                    transition: background-size .3s;
+                }
+
+                .navigation_bar .nv_list li a:hover, .navigation_bar .nv_list li a:focus {
+                    border-bottom: white solid 1px;
+                    background-size: 100% 2px;
+                }
+
+        @media (max-width: 750px) {
+            .navigation_bar .nv_list li {
+                display: none;
+
+            }
+            
+        }
+
+    .front_face {
+        background-color: rgb(12, 12, 12);
+        position: relative;
+        width: 70%;
+        height: 1000px;
+        margin: 0 auto;
+        z-index: 5000;
+    }
+
+    .front_face #imagen_frente {
+        position: relative;
+        top: 130px;
+        display: block;
+        margin: auto;
+        z-index: 40000;
+    }
+
+        .front_face h1 {
+            position: relative;
+            top: 100px;
+            color: white;
+            text-align: center;
+            height: 200px;
+            line-height: 200px;
+            font-size: 90px;
+            text-decoration: underline;
+        }
+
+        .front_face .separation {
+            position: sticky;
+            width: 80%;
+            height: 20px;
+            margin: 0 auto;
+        }
+
+    @media (max-width: 1000px) {
+        .front_face {
+            width: 80%;
+        }
+        .front_face h1 {
+            line-height: 100px;
+        }
+    }
+
+    /*
+    * Configuración titulo flotante.
+    */
+
+    #titulo_animado {
+        z-index: 13000;
+    }
+
+    /* Explanation in JS tab */
+
+/* Cool font from Google Fonts! */
+@import url('https://fonts.googleapis.com/css?family=Raleway:900&display=swap');
+
+#container_texto {
+	/* Center the text in the viewport. */
+	position: absolute;
+	margin: auto;
+	width: 100vw;
+	height: 80pt;
+	top: 0;
+	bottom: 0;
+	
+	/* This filter is a lot of the magic, try commenting it out to see how the morphing works! */
+	filter: url(#threshold) blur(0.6px);
+}
+
+/* Your average text styling */
+#primer_text, #segundo_texto {
+	position: absolute;
+	width: 100%;
+	display: inline-block;
+	font-family: 'Raleway', sans-serif;
+	font-size: 80pt;
+	text-align: center;
+	user-select: none;
+}
