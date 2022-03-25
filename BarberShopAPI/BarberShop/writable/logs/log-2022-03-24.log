@@ -1,0 +1,14 @@
+ERROR - 2022-03-24 16:00:33 --> Table 'barberiadb.cliente' doesn't exist
+CRITICAL - 2022-03-24 16:00:33 --> Table 'barberiadb.cliente' doesn't exist
+#0 C:\laragon\www\BarberShop\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\laragon\www\BarberShop\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\laragon\www\BarberShop\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\laragon\www\BarberShop\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\BarberShop\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\BarberShop\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\BarberShop\app\Controllers\Cliente.php(13): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\BarberShop\system\CodeIgniter.php(832): App\Controllers\Cliente->index()
+#8 C:\laragon\www\BarberShop\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#9 C:\laragon\www\BarberShop\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\BarberShop\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
