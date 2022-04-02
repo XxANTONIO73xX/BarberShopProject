@@ -9,29 +9,29 @@
                 <div class="form-group">
                 <label>Barberia</label><br>
                 <select name="barberia" id="barberia" data-placeholder="Selecciona una barberia" class="form-control">
-                    <option value=""></option>
+                    <option value="<?= $cita->idBarberia ?>"></option>
                 </select>  
                 </div>
                 
                 <div class="form-group">
                 <label>Barbero</label><br>
                 <select name="barbero" id="barbero" data-placeholder="Selecciona un barbero" class="form-control">
-                    <option value=""></option>
+                    <option value="$cita->idBarbero"></option>
                 </select>  
                 </div>  
 
                 <div class="form-group">
                 <label>Corte</label><br>
                 <select name="Corte" id="Corte" data-placeholder="Selecciona un corte" class="form-control">
-                    <option value=""></option>
+                    <option value="$cita->idCorte"></option>
                 </select>  
                 </div>  
 
                 <div class="form-group">
                 <label>Fecha y Hora</label><br>
-                <input type="date" name="fecha" id="fecha">
+                <input type="date" name="fecha" id="fecha" value="<?= $cita->fecha ?>">
                 <br>
-                <input type="time" name="hora" id="hora">
+                <input type="time" name="hora" id="hora" value="<?= $cita->hora ?>">
                 </div>  
             
             </div>
