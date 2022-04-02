@@ -4,11 +4,13 @@ namespace App\Controllers;
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\AdministradorModel;
 
-class Administrador extends ResourceController{
+class Administrador extends Auth{
     protected $modelName = 'App\Models\AdministradorModel';
     protected $format = 'json';
 
     public function index(){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        if($this->tipoUsuario != "administrador"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $data=[
             "administradores" => $this->model->findAll()
         ];
@@ -16,6 +18,8 @@ class Administrador extends ResourceController{
     }
 
     public function show($id = NULL){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        if($this->tipoUsuario != "administrador"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $data=[
             "administrador" => $this->model->find($id)
         ];
@@ -24,6 +28,8 @@ class Administrador extends ResourceController{
 
     public function create()
     {
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        if($this->tipoUsuario != "administrador"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $data=[
                 "nombre"  => $this->request->getPost("nombre"),
                 "apellidos"  => $this->request->getPost("apellidos"),
@@ -41,8 +47,10 @@ class Administrador extends ResourceController{
         }
 
     }
-
+    
     public function update($id = null){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        if($this->tipoUsuario != "administrador"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $data = [];
         if(!empty($this->request->getPost("nombre")))
             $data["nombre"] = $this->request->getPost("nombre");
@@ -66,6 +74,8 @@ class Administrador extends ResourceController{
 
     public function delete($id = null)
     {
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        if($this->tipoUsuario != "administrador"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $result = $this->model->delete($id);
         if($result){
             return $this->respond(["result"=> "El registro se elimino correctamente"]);

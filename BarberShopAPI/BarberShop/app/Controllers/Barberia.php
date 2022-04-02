@@ -4,7 +4,7 @@ namespace App\Controllers;
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\BarberiaModel;
 
-class Barberia extends ResourceController{
+class Barberia extends Auth{
     protected $modelName = 'App\Models\BarberiaModel';
     protected $format = 'json';
 
@@ -22,8 +22,9 @@ class Barberia extends ResourceController{
         return $this->respond($data);
     }
 
-    public function create()
-    {
+    public function create(){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        if($this->tipoUsuario != "administrador"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $data=[
                 "nombre"  => $this->request->getPost("nombre"),
                 "direccion"  => $this->request->getPost("direccion"),
@@ -44,6 +45,8 @@ class Barberia extends ResourceController{
     }
 
     public function update($id = null){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        if($this->tipoUsuario != "administrador"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $data = [];
         if(!empty($this->request->getPost("nombre")))
             $data["nombre"] = $this->request->getPost("nombre");
@@ -67,8 +70,9 @@ class Barberia extends ResourceController{
         }
     }
 
-    public function delete($id = null)
-    {
+    public function delete($id = null){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        if($this->tipoUsuario != "administrador"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $result = $this->model->delete($id);
         if($result){
             return $this->respond(["result"=> "El registro se elimino correctamente"]);

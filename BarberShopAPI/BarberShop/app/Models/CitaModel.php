@@ -3,7 +3,7 @@ namespace App\Models;
 use CodeIgniter\Model;
 
 class CitaModel extends Model{
-    protected $table = "cita";
+    protected $table = "citas";
     protected $primaryKey = "id";
 
     protected $allowedFields = [
@@ -16,5 +16,15 @@ class CitaModel extends Model{
         "hora",
         "estado"
     ];
+
+    public function obtenerPorCliente($id){
+        $result = $this->asArray()->where(["idCliente" => $id])->findAll();
+        return $result;
+    }
+
+    public function obtenerPorBarbero($id){
+        $result = $this->asArray()->where(["idBarbero" => $id])->findAll();
+        return $result;
+    }
 }
 ?>

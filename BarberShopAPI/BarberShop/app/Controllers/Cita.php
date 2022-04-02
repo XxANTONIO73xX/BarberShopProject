@@ -4,26 +4,44 @@ namespace App\Controllers;
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\CitaModel;
 
-class Cita extends ResourceController{
+class Cita extends Auth{
     protected $modelName = 'App\Models\CitaModel';
     protected $format = 'json';
 
     public function index(){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        if($this->tipoUsuario != "administrador"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $data=[
             "citas" => $this->model->findAll()
         ];
         return $this->respond($data);
     }
-    
+
+    public function cliente_cita($id){
+        $data=[
+            "citas" => $this->model->obtenerPorCliente($id)
+        ];
+        return $this->respond($data);
+    }
+
+    public function barbero_cita($id){
+        $data=[
+            "citas" => $this->model->obtenerPorBarbero($id)
+        ];
+        return $this->respond($data);
+    }
+
     public function show($id = NULL){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
         $data=[
             "cita" => $this->model->find($id)
         ];
         return $this->respond($data);
     }
 
-    public function create()
-    {
+    public function create(){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        if($this->tipoUsuario != "administrador" || $this->tipoUsuario != "cliente"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $data=[
                 "idCliente"  => $this->request->getPost("idCliente"),
                 "idBarbero"  => $this->request->getPost("idBarbero"),
@@ -45,6 +63,8 @@ class Cita extends ResourceController{
     }
 
     public function update($id = null){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        if($this->tipoUsuario != "administrador"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $data = [];
         if(!empty($this->request->getPost("idCliente")))
             $data["idCliente"] = $this->request->getPost("idCliente");
@@ -59,7 +79,7 @@ class Cita extends ResourceController{
         if(!empty($this->request->getPost("hora")))
             $data["hora"] = $this->request->getPost("hora");
         if(!empty($this->request->getPost("estado")))
-            $data["estado"] = $this->request->getPost("estados");
+            $data["estado"] = $this->request->getPost("estado");
         
         $result = $this->model->update($id, $data);
 
@@ -70,8 +90,9 @@ class Cita extends ResourceController{
         }
     }
 
-    public function delete($id = null)
-    {
+    public function delete($id = null){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        if($this->tipoUsuario != "administrador"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $result = $this->model->delete($id);
         if($result){
             return $this->respond(["result"=> "El registro se elimino correctamente"]);

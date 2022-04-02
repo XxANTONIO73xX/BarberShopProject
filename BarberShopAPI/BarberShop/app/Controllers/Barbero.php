@@ -4,11 +4,13 @@ namespace App\Controllers;
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\BarberoModel;
 
-class Barbero extends ResourceController{
+class Barbero extends Auth{
     protected $modelName = 'App\Models\BarberoModel';
     protected $format = 'json';
 
     public function index(){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        if($this->tipoUsuario != "administrador"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $data=[
             "barberos" => $this->model->findAll()
         ];
@@ -16,14 +18,17 @@ class Barbero extends ResourceController{
     }
 
     public function show($id = NULL){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        if($this->tipoUsuario == "cliente" || $this->barbero["id"] != $id){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $data=[
             "barbero" => $this->model->find($id)
         ];
         return $this->respond($data);
     }
 
-    public function create()
-    {
+    public function create(){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        if($this->tipoUsuario != "administrador"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $data=[
                 "nombre"  => $this->request->getPost("nombre"),
                 "apodo"  => $this->request->getPost("apodo"),
@@ -45,6 +50,8 @@ class Barbero extends ResourceController{
     }
 
     public function update($id = null){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        if($this->tipoUsuario == "cliente" || $this->barbero["id"] != $id){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $data = [];
         if(!empty($this->request->getPost("nombre")))
             $data["nombre"] = $this->request->getPost("nombre");
@@ -70,8 +77,9 @@ class Barbero extends ResourceController{
         }
     }
 
-    public function delete($id = null)
-    {
+    public function delete($id = null){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        if($this->tipoUsuario != "administrador"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $result = $this->model->delete($id);
         if($result){
             return $this->respond(["result"=> "El registro se elimino correctamente"]);

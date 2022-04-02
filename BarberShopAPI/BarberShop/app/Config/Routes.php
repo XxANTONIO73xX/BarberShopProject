@@ -38,7 +38,6 @@ $routes->resource('barbero');
 $routes->resource('barberia');
 $routes->resource('corte');
 $routes->resource('cita');
-
 /*
  * --------------------------------------------------------------------
  * Additional Routing

@@ -4,25 +4,38 @@ namespace App\Controllers;
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\CorteModel;
 
-class Corte extends ResourceController{
+class Corte extends Auth{
     protected $modelName = 'App\Models\CorteModel';
     protected $format = 'json';
 
     public function index(){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        if($this->tipoUsuario != "administrador"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $data=[
             "cortes" => $this->model->findAll()
         ];
         return $this->respond($data);
     }
+
+    public function barbero_corte($id){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        $data=[
+            "cortes" => $this->model->obtenerPorBarbero($id)
+        ];
+        return $this->respond($data);
+    }
+
     public function show($id = NULL){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
         $data=[
             "corte" => $this->model->find($id)
         ];
         return $this->respond($data);
     }
 
-    public function create()
-    {
+    public function create(){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        if($this->tipoUsuario != "administrador" || $this->tipoUsuario != "barbero" ){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $data=[
                 "nombre"  => $this->request->getPost("nombre"),
                 "visualizacion"  => $this->request->getPost("visualizacion"),
@@ -40,6 +53,8 @@ class Corte extends ResourceController{
     }
 
     public function update($id = null){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        if($this->tipoUsuario != "administrador" || $this->tipoUsuario != "barbero" ){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $data = [];
         if(!empty($this->request->getPost("nombre")))
             $data["nombre"] = $this->request->getPost("nombre");
@@ -57,8 +72,9 @@ class Corte extends ResourceController{
         }
     }
 
-    public function delete($id = null)
-    {
+    public function delete($id = null){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        if($this->tipoUsuario != "administrador" || $this->tipoUsuario != "barbero" ){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $result = $this->model->delete($id);
         if($result){
             return $this->respond(["result"=> "El registro se elimino correctamente"]);

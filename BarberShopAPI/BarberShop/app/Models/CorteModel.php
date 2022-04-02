@@ -3,7 +3,7 @@ namespace App\Models;
 use CodeIgniter\Model;
 
 class CorteModel extends Model{
-    protected $table = "corte";
+    protected $table = "cortes";
     protected $primaryKey = "id";
 
     protected $allowedFields = [
@@ -12,5 +12,10 @@ class CorteModel extends Model{
         "visualizacion",
         "idBarbero"
     ];
+    
+    public function obtenerPorBarbero($id){
+        $result = $this->asArray()->where(["idBarbero" => $id])->findAll();
+        return $result;
+    }
 }
 ?>

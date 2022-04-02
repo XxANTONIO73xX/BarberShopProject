@@ -29,4 +29,8 @@ class Services extends BaseService
      *     return new \CodeIgniter\Example();
      * }
      */
+
+    public static function getSecretKey(){
+        return "kick_barber048";
+    }
 }

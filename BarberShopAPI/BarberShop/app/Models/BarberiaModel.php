@@ -3,7 +3,7 @@ namespace App\Models;
 use CodeIgniter\Model;
 
 class BarberiaModel extends Model{
-    protected $table = "barberia";
+    protected $table = "barberias";
     protected $primaryKey = "id";
 
     protected $allowedFields = [

@@ -4,11 +4,13 @@ namespace App\Controllers;
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\ClienteModel;
 
-class Cliente extends ResourceController{
+class Cliente extends Auth{
     protected $modelName = 'App\Models\ClienteModel';
     protected $format = 'json';
 
     public function index(){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        if($this->tipoUsuario != "administrador"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $data=[
             "clientes" => $this->model->findAll()
         ];
@@ -16,6 +18,8 @@ class Cliente extends ResourceController{
     }
 
     public function show($id = NULL){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        if($this->tipoUsuario == "barbero" || $this->cliente["id"] != $id){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $data=[
             "cliente" => $this->model->find($id)
         ];
@@ -43,6 +47,8 @@ class Cliente extends ResourceController{
     }
 
     public function update($id = null){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        if($this->tipoUsuario == "barbero" || $this->cliente["id"] != $id){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $data = [];
         if(!empty($this->request->getPost("nombre")))
             $data["nombre"] = $this->request->getPost("nombre");
@@ -64,8 +70,9 @@ class Cliente extends ResourceController{
         }
     }
 
-    public function delete($id = null)
-    {
+    public function delete($id = null){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        if($this->tipoUsuario == "barbero" || $this->cliente["id"] != $id){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $result = $this->model->delete($id);
         if($result){
             return $this->respond(["result"=> "El registro se elimino correctamente"]);

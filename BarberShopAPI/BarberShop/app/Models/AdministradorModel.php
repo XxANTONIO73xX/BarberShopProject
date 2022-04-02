@@ -3,7 +3,7 @@ namespace App\Models;
 use CodeIgniter\Model;
 
 class AdministradorModel extends Model{
-    protected $table = "Administrador";
+    protected $table = "administradores";
     protected $primaryKey = "id";
 
     protected $allowedFields = [
@@ -14,5 +14,17 @@ class AdministradorModel extends Model{
         "telefono",
         "password"
     ];
+    
+    public function login($usuario, $password){
+        $result = $this->asArray()->where([
+            "telefono" => $usuario,
+            "password" => $password
+        ])->orWhere([
+            "correo" => $usuario,
+            "password" => $password
+        ])->first();
+
+        return $result;
+    }
 }
 ?>

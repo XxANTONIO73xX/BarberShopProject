@@ -14,5 +14,17 @@ class ClienteModel extends Model{
         "telefono",
         "password"
     ];
+
+    public function login($usuario, $password){
+        $result = $this->asArray()->where([
+            "telefono" => $usuario,
+            "password" => $password
+        ])->orWhere([
+            "correo" => $usuario,
+            "password" => $password
+        ])->first();
+
+        return $result;
+    }
 }
 ?>
