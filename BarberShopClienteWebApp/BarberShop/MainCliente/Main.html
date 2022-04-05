@@ -5,11 +5,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=, initial-scale=1.0">
         <link href="styles/estilos.css" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Roboto:wght@900&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Roboto:wght@900&display=swap" rel="stylesheet">
         <title>Kiko's Barber Shop</title>
     </head>
     <body>
+        <img src="img/fondoKikos.png" class="pattern_background" width="1500px" height= "1020px">
         <nav class="navigation_bar">
+            <img src="img/logoKikoNav.svg" class="logo_menu" width="150px" height= "60px">
             <ul class="nv_list">
                 <li><a href="/BarberShop/app/Views/Cita/">Cita</a></li>
                 <li><a href="/BarberShop/app/Views/Corte/">Cortes</a></li>
@@ -19,7 +21,14 @@
         <div class="front_face">
             <img src="img/kikospic.png" id="imagen_frente" height="450px" width="450px">
             <h1>Hola, ¡bienvenidos!</h1>
-
         </div>
+
+        <script type="text/javascript">
+            window.addEventListener('scroll', function(){
+                var header = document.querySelector('.navigation_bar');
+                header.classList.toggle('active', window.scrollY >0);
+            })
+        </script>
+
     </body>
 </html>
