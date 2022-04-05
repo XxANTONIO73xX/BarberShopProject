@@ -130,10 +130,6 @@ body {
 
     /* Switch Modo Blanco */
 
-    h1.light-mode {
-        color: red;
-    }
-
     .light-mode-switch {
         position: absolute;
         right: 20px;
@@ -192,3 +188,10 @@ body {
       .slider.round:before {
         border-radius: 50%;
       }
+
+      
+    /* Modo Blanco Config */
+
+    h1.light-mode {
+        color: red;
+    }

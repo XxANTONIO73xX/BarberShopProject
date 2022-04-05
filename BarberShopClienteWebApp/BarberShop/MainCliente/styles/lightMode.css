@@ -1,0 +1,8 @@
+.navigation_bar.active {
+    background-color: rgb(201, 4, 4);
+    position: fixed;
+    width: 100%;
+    height: 75px;
+    z-index: 10000;
+    text-align: center;
+}

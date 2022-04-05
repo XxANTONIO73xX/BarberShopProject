@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=, initial-scale=1.0">
-        <link href="styles/estilos.css" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Roboto:wght@900&display=swap" rel="stylesheet">
+        <link href="styles/estilos.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/cs♥s2?family=Roboto+Condensed:wght@300&family=Roboto:wght@900&display=swap" rel="stylesheet">
         <title>Kiko's Barber Shop</title>
     </head>
     <body>
@@ -18,7 +18,7 @@
                 <li><a href="/BarberShop/app/Views/InformacionBarberia/">Más Información</a></li>
             </ul>
             <label for="light-mode" class="light-mode-switch">
-                <input id="light-mode" type="checkbox" onclick="document.documentElement.classList.toggle">
+                <input id="light-mode" type="checkbox" onclick="document.documentElement.classList.toggle('light-mode')">
                 <div class="slider round"></div>
             </label>
         </nav>
@@ -33,6 +33,5 @@
                 header.classList.toggle('active', window.scrollY >0);
             })
         </script>
-
     </body>
 </html>
