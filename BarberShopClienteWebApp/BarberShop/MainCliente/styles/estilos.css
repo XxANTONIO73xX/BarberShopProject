@@ -4,13 +4,13 @@
 }
 
 body {
-    background-color: black;
+    background-color: rgb(20, 20, 20);
 }
 
     .pattern_background {
-        z-index: 2000;
+        z-index: 50;
         position: absolute;
-        top: 0px;
+        top: 10px;
         left: 10px;
         background: url("img/fondoKikos.png");
         background-position: center;
@@ -27,7 +27,7 @@ body {
     }
 
     .navigation_bar.active {
-        background-color: rgb(78, 78, 78);
+        background-color: rgb(0, 0, 0);
         position: fixed;
         width: 100%;
         height: 75px;
@@ -83,19 +83,17 @@ body {
             
         }
 
-    /*
     .front_face {
-        background-color: rgb(12, 12, 12, 0.8);
         position: relative;
         width: 70%;
         height: 1100px;
         margin: 0 auto;
-        z-index: 5000;
-    }*/
+        z-index: 100;
+    }
 
     .front_face #imagen_frente {
         position: relative;
-        top: 130px;
+        top: 60px;
         display: block;
         margin: auto;
         z-index: 2000;
@@ -103,11 +101,11 @@ body {
 
         .front_face h1 {
             position: relative;
-            top: 100px;
+            top: 0px;
             color: white;
             text-align: center;
             height: 200px;
-            line-height: 200px;
+            line-height: 100px;
             font-size: 90px;
             text-decoration: underline;
         }
@@ -126,5 +124,71 @@ body {
         }
         .front_face h1 {
             line-height: 100px;
+            font-size: 45px;
         }
     }
+
+    /* Switch Modo Blanco */
+
+    h1.light-mode {
+        color: red;
+    }
+
+    .light-mode-switch {
+        position: absolute;
+        right: 20px;
+        width: 60px;
+        height: 34px;
+      }
+       
+      /* Ocultamos el checkbox html */
+      .light-mode-switch input {
+        display:none;
+      }
+       
+      /* Formateamos la caja del interruptor sobre la cual se deslizará la perilla de control o slider */
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+       
+      /* Pintamos la perilla de control o slider usando el selector before */
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+       
+      /* Cambiamos el color de fondo cuando el checkbox esta activado */
+      input:checked + .slider {
+        background-color: #00bb4e9c;
+      }
+       
+      /* Deslizamos el slider a la derecha cuando el checkbox esta activado */ 
+      input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+      }
+       
+      /* Aplicamos efecto de bordes redondeados en slider y en el fondo del slider */
+      .slider.round {
+        border-radius: 34px;
+      }
+       
+      .slider.round:before {
+        border-radius: 50%;
+      }
