@@ -3,12 +3,7 @@ window.addEventListener('scroll', function(){
     header.classList.toggle('active', window.scrollY >0);
 })
 
-const colorSwitch = document.querySelector('#switch input[type="checkbox"]');
-            function cambiaTema(ev){
-                if(ev.target.checked){
-                    document.documentElement.setAttribute('tema', 'light');
-                } else {
-                    document.documentElement.setAttribute('tema', 'dark');
-                }
-            }
-            colorSwitch.addEventListener('change', cambiaTema);
+function darkMode() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+}

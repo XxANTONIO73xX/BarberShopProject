@@ -62,7 +62,7 @@ body {
                     font-size: 17px;
                     padding: 30px 30px 32.5px 30px;
                     text-decoration: none;
-                    color: rgb(190, 190, 190);
+                    color: rgb(255, 255, 255);
                     background-image: linear-gradient(currentColor, currentColor);
                     background-position: 0% 100%;
                     background-repeat: no-repeat;
@@ -128,6 +128,12 @@ body {
         }
     }
 
+    .sol-light {
+        position: absolute;
+        right: 90px;
+        
+    }
+
     /* Switch Modo Blanco */
 
     .light-mode-switch {
@@ -190,10 +196,5 @@ body {
       }
 
       .dark-mode {
-        background-color: rgb(211, 211, 211);
-        color: white;
-      }
-
-      img.dark-mode {
-          background-color: black;
+        background-color: #757575;
       }
