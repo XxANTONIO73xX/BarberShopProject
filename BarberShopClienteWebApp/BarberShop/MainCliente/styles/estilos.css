@@ -22,7 +22,7 @@ body {
         width: 100%;
         height: 75px;
         z-index: 10000;
-        transition: 0.7s;
+        transition: 0.3s;
         text-align: center;
     }
 
@@ -189,9 +189,11 @@ body {
         border-radius: 50%;
       }
 
-      
-    /* Modo Blanco Config */
+      .dark-mode {
+        background-color: rgb(211, 211, 211);
+        color: white;
+      }
 
-    h1.light-mode {
-        color: red;
-    }
+      img.dark-mode {
+          background-color: black;
+      }
