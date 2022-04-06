@@ -1,0 +1,14 @@
+CRITICAL - 2022-04-05 10:06:53 --> Call to a member function getValue() on null
+#0 C:\laragon\www\BarberShop\app\Controllers\Cita.php(35): App\Controllers\Auth->verifyToken()
+#1 C:\laragon\www\BarberShop\system\CodeIgniter.php(832): App\Controllers\Cita->show('barbero_cita', '1')
+#2 C:\laragon\www\BarberShop\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cita))
+#3 C:\laragon\www\BarberShop\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\BarberShop\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-05 10:11:19 --> Call to a member function getValue() on null
+#0 C:\laragon\www\BarberShop\app\Controllers\Cita.php(35): App\Controllers\Auth->verifyToken()
+#1 C:\laragon\www\BarberShop\system\CodeIgniter.php(832): App\Controllers\Cita->show('barbero_cita', '1')
+#2 C:\laragon\www\BarberShop\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cita))
+#3 C:\laragon\www\BarberShop\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\BarberShop\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

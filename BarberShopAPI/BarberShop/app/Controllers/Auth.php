@@ -86,7 +86,7 @@ class Auth extends ResourceController{
                     'aud' => "http://kikosBarberShop.com",
                     'iat' => $time,
                     'nbf' => $time,
-                    'exp' => $time+(60*60*24*7),
+                    'exp' => $time+(7*24*60*60),
                     'data' => [
                         "user_id" => $userId,
                         "tipo" => $tipo
@@ -104,13 +104,12 @@ class Auth extends ResourceController{
         $key = Services::getSecretKey();
         $token_str = $this->request->getHeader("token")->getValue();
         try{
-            $token = JWT::decode($token_str, new Key($key, 'HS256'));
+            $token = JWT::decode($token_str, new key($key, 'HS256'));
         }catch(\Throwable $th){
             $token = false;
         }
-
         if(!$token){
-            return false;
+            return $token;
         }else{
             if($token->data->tipo == "cliente"){
                 $clienteModel = new ClienteModel();
@@ -125,7 +124,7 @@ class Auth extends ResourceController{
                 $this->administrador = $administradorModel->find($token->data->user_id);
                 $this->tipoUsuario = "administrador";
             }
-            
+            return true;
         }
     }
 }

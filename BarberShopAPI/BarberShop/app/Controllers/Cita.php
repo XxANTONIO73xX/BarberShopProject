@@ -1,6 +1,7 @@
 <?php 
 namespace App\Controllers;
 
+use App\Models\BarberoModel;
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\CitaModel;
 
@@ -18,6 +19,8 @@ class Cita extends Auth{
     }
 
     public function cliente_cita($id){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        if($this->tipoUsuario != "cliente"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $data=[
             "citas" => $this->model->obtenerPorCliente($id)
         ];
@@ -25,14 +28,18 @@ class Cita extends Auth{
     }
 
     public function barbero_cita($id){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        if($this->tipoUsuario != "barbero"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
+        $barberoModel = new BarberoModel();
         $data=[
-            "citas" => $this->model->obtenerPorBarbero($id)
+            "citas" => $this->model->obtenerPorBarbero($id),
+            "barbero" => $barberoModel->find($id)
         ];
         return $this->respond($data);
     }
 
     public function show($id = NULL){
-        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token raro"]);}
         $data=[
             "cita" => $this->model->find($id)
         ];

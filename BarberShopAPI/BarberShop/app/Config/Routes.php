@@ -38,6 +38,9 @@ $routes->resource('barbero');
 $routes->resource('barberia');
 $routes->resource('corte');
 $routes->resource('cita');
+$routes->resource("auth");
+$routes->get("barbero_cita/(:segment)", 'Cita::barbero_cita/$1');
+$routes->get("cliente_cita/(:segment)", "Cita::cliente_cita/$1");
 /*
  * --------------------------------------------------------------------
  * Additional Routing
