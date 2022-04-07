@@ -4,32 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/estilos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/cs♥s2?family=Roboto+Condensed:wght@300&family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <script src="js/cortes.js"></script>
     <title>Cortes</title>
 </head>
 <body>
+    <img src="img/fondoKikos.png" class="pattern_background" width="1500px" height= "1020px">
     <nav class="navigation_bar">
+        <img src="img/logoKikoNav.svg" class="logo_menu" width="150px" height= "60px">
         <ul class="nv_list">
-            <li><a href="/MainCliente/Main.html">Inicio</a></li>
-            <li><a href="/Cita/index.html">Cita</a></li>
-            <li><a href="/BarberShop/app/Views/InformacionBarberia/">Mas Informacion</a></li>
+            <li><a href="/BarberShop/app/Views/Cita/">Cita</a></li>
+            <li><a href="/BarberShop/app/Views/Corte/">Cortes</a></li>
+            <li><a href="/BarberShop/app/Views/InformacionBarberia/">Más Información</a></li>
         </ul>
+        <img src="img/sol.png" class="sol-light" width="35px" height= "35px">
+        <label id=switch class="light-mode-switch">
+            <input type="checkbox" onclick="darkMode()">
+            <span class="slider round"></span>
+        </label>
     </nav>
-
-<h2>Nuestros Cortes</h2>
-
-<section class="corteSection">
-    <main class="mainDestacados">
-    <section class="containerCorte">
-        <div class="corte">
-            <img src="" alt="" class="corteImg">
-            <div class="corteDescription">
-                <h3 class="corteTitle">Tipo de corte</h3>
-                <p class="descripcionCorte"></p>
-            </div>
-        </div>
-    </section>
-    </main>
-</section>
-
+    <div class="front_face">
+    </div>
 </body>
 </html>
