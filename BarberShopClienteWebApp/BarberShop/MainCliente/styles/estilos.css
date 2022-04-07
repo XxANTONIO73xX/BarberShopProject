@@ -15,6 +15,7 @@ body {
         background: url("img/fondoKikos.png");
         background-position: center;
         background-size: cover;
+        background-repeat: repeat-x;
     }
 
     .navigation_bar {
