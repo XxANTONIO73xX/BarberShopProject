@@ -8,17 +8,17 @@ body {
 }
 
     .pattern_background {
-        z-index: 50;
         position: absolute;
         top: 10px;
         left: 10px;
         background: url("img/fondoKikos.png");
-        background-position: center;
-        background-size: cover;
-        background-repeat: repeat-x;
+        width: 1500px;
+        height: 1080px;
+        z-index: -3;
     }
 
     .navigation_bar {
+        background-color: rgba(0, 0, 0, 0.079);
         position: fixed;
         width: 100%;
         height: 75px;
@@ -81,20 +81,26 @@ body {
             .navigation_bar .nv_list li {
                 display: none;
             }
-            
+
+        }
+
+        @media (min-width: 1601px) {
+            .pattern_background {
+                width: 1900px;
+                height: 1200px;
+            }
+
         }
 
     .front_face {
-        position: relative;
-        width: 70%;
-        height: 1100px;
-        margin: 0 auto;
-        z-index: 100;
+        float: left;
+        width: 50%;
+        height: 600px;
     }
 
     .front_face #imagen_frente {
         position: relative;
-        top: 60px;
+        top: 100px;
         display: block;
         margin: auto;
         z-index: 2000;
@@ -102,13 +108,21 @@ body {
 
         .front_face h1 {
             position: relative;
-            top: 0px;
+            top: 80px;
             color: white;
             text-align: center;
             height: 200px;
             line-height: 100px;
-            font-size: 90px;
+            font-size: 50px;
             text-decoration: underline;
+        }
+        
+        .front_face p { 
+            position: relative;
+            bottom: 20px;
+            color: white;
+            margin: 20px;
+            font-size: 25px;
         }
 
         .front_face .separation {
@@ -199,3 +213,122 @@ body {
       .dark-mode {
         background-color: #757575;
       }
+
+      /* Slider */
+
+      .position-slider {
+          width: 50%;
+          height: 600px;
+          float: left;
+      }
+
+      .slider1 {
+          position: relative;
+          top: 100px;
+          width: 95%;
+          height: 470px;
+          border-radius: 5px;
+          overflow: hidden;
+          z-index: 8000;
+          margin: 0 auto;
+      }
+      
+      .slides1 {
+          width: 500%;
+          height: 500px;
+          display: flex;
+          z-index: 8001;
+      }
+
+      .slides1 input {
+          display: none;
+      }
+
+      .slide {
+          width: 20%;
+          transition: 2s;
+      }
+
+      .slide img {
+          width: 800px;
+          height: 500px;
+      }
+
+      /* manual */
+
+      .navigation-manual {
+          position: absolute;
+          width: 95%;
+          margin-top: -80px;
+          display: flex;
+          justify-content: center;
+          z-index: 9000;
+      }
+
+      .manual-btn {
+          border: 2px solid white;
+          padding: 5px;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: 1s;
+          z-index: 9001;
+      }
+
+        .manual-btn:not(:last-child) {
+            margin-right: 40px;
+        }
+
+        .manual-btn:hover {
+            background: rgba(255, 255, 255, 0.644);
+        }
+    
+    #radio1:checked ~ .first {
+        margin-left: 0;
+    }
+
+    #radio2:checked ~ .first {
+        margin-left: -20%;
+    }
+
+    #radio3:checked ~ .first {
+        margin-left: -40%;
+    }
+
+    #radio4:checked ~ .first {
+        margin-left: -60%;
+    }
+
+    .navigation-auto {
+        position: absolute;
+        display: flex;
+        width: 95%;
+        justify-content: center;
+        margin-top: 420px;
+    }
+
+    .navigation-auto div {
+        border: 2px solid white;
+        padding: 5px;
+        border-radius: 5px;
+        transition: 1s;
+    }
+
+    .navigation-auto div:not(:last-child) {
+        margin-right: 40px;
+    }
+
+    #radio1:checked ~ .navigation-auto .auto-btn1 {
+        background: white;
+    }
+
+    #radio2:checked ~ .navigation-auto .auto-btn2 {
+        background: white;
+    }
+
+    #radio3:checked ~ .navigation-auto .auto-btn3 {
+        background: white;
+    }
+
+    #radio4:checked ~ .navigation-auto .auto-btn4 {
+        background: white;
+    }
