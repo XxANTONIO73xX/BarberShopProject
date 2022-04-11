@@ -13,19 +13,56 @@
         <h1>Log In</h1>
         <input placeholder="Username" type="text"/>
         <input placeholder="Password" type="password"/>
-        <button class="btn">Log in</button>
+        <button type="button" class="btn bg-gradient-primary w-100 my-4 mb-2" onclick="login()" >Iniciar Sesion</button>
         <h6>Oh, no te has registrado?</h6>
-        <div class="social">
-        <button class="tw btn">Twitter</button>
-        <button class="fb btn">Facebook</button>
-        <button class="google fb btn">Google+</button>
-        </div>
         <footer>
-            <h5>Da click para registrarte: 
-                <a target="_blank" href="http://lifes.gd">Life's Good</a>
-            </h5>
+            <h5>Da click para registrarte:</h5>
+            <h6><a target="_blank" href="http://lifes.gd">Registrate aquí</a></h6>
         </footer>
     </form>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+
+    <script>
+        function login(){ //inicio login al dar clic al boton
+        var url ="http://localhost/BarberShopAPI/public";   
+
+    $.ajax({   //iniciar ajax para crar token   
+        url: url+'/auth',
+        data: { "user" : $("#user").val(), 
+                "password" : $("#password").val(), 
+                "tipo" : "cliente"
+            },
+        type: "POST",
+        dataType: "json",
+    })
+     .done(function( data, textStatus, jqXHR ) { // lo que regresamos desde la API esta en data
+    
+        console.log("hola le di clic al boton")
+        console.log(data)
+    
+        if(typeof data.error !== "string"){
+          localStorage.setItem("token", data.token);
+          localStorage.setItem("tipo", data.tipo);
+          localStorage.setItem("user", JSON.stringify(data.user));
+          console.log("Encontro wl usuario")
+          location.href = "/BarberShopClienteWebApp"
+        }else{
+          alert(data.error);
+        }
+
+       
+    })
+    .fail(function( jqXHR, textStatus, errorThrown ) { // si hay algun error, esta en textStatus
+        
+            console.log( "La solicitud a fallado: " +  textStatus);
+        
+    }) 
+} // termina function login
+    </script>
 
     
 </body>
