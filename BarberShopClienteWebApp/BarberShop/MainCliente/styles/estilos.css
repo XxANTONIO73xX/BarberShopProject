@@ -89,7 +89,6 @@ body {
                 width: 1900px;
                 height: 1200px;
             }
-
         }
 
     .front_face {
@@ -118,6 +117,7 @@ body {
         }
         
         .front_face p { 
+            font-family: 'Akshar', sans-serif;
             position: relative;
             bottom: 20px;
             color: white;
@@ -133,13 +133,26 @@ body {
         }
 
     @media (max-width: 1000px) {
-
         .front_face {
             width: 80%;
         }
         .front_face h1 {
             line-height: 100px;
             font-size: 45px;
+        }
+        .position-slider {
+            position: relative;
+            width: 100%;
+            background-color: red;
+
+        }
+
+        .slider1 {
+            width: 100%;
+        }
+
+        .slides1 {
+            width: 100%;
         }
     }
 
@@ -156,15 +169,13 @@ body {
         right: 20px;
         width: 60px;
         height: 34px;
-      }
-       
-      /* Ocultamos el checkbox html */
-      .light-mode-switch input {
-        display:none;
-      }
-       
-      /* Formateamos la caja del interruptor sobre la cual se deslizará la perilla de control o slider */
-      .slider {
+    }
+
+        .light-mode-switch input {
+            display:none;
+        }
+    
+    .slider {
         position: absolute;
         cursor: pointer;
         top: 0;
@@ -174,109 +185,106 @@ body {
         background-color: #ccc;
         -webkit-transition: .4s;
         transition: .4s;
-      }
+    }
        
-      /* Pintamos la perilla de control o slider usando el selector before */
-      .slider:before {
-        position: absolute;
-        content: "";
-        height: 26px;
-        width: 26px;
-        left: 4px;
-        bottom: 4px;
-        background-color: white;
-        -webkit-transition: .4s;
-        transition: .4s;
-      }
-       
-      /* Cambiamos el color de fondo cuando el checkbox esta activado */
-      input:checked + .slider {
-        background-color: #00ac48;
-      }
-       
-      /* Deslizamos el slider a la derecha cuando el checkbox esta activado */ 
-      input:checked + .slider:before {
-        -webkit-transform: translateX(26px);
-        -ms-transform: translateX(26px);
-        transform: translateX(26px);
-      }
-       
-      /* Aplicamos efecto de bordes redondeados en slider y en el fondo del slider */
-      .slider.round {
-        border-radius: 34px;
-      }
-       
-      .slider.round:before {
-        border-radius: 50%;
-      }
-
-      .dark-mode {
-        background-color: #757575;
-      }
-
-      /* Slider */
-
-      .position-slider {
-          width: 50%;
-          height: 600px;
-          float: left;
-      }
-
-      .slider1 {
-          position: relative;
-          top: 100px;
-          width: 95%;
-          height: 470px;
-          border-radius: 5px;
-          overflow: hidden;
-          z-index: 8000;
-          margin: 0 auto;
-      }
-      
-      .slides1 {
-          width: 500%;
-          height: 500px;
-          display: flex;
-          z-index: 8001;
-      }
-
-      .slides1 input {
-          display: none;
-      }
-
-      .slide {
-          width: 20%;
-          transition: 2s;
-      }
-
-      .slide img {
-          width: 800px;
-          height: 500px;
-      }
-
-      /* manual */
-
-      .navigation-manual {
-          position: absolute;
-          width: 95%;
-          margin-top: -80px;
-          display: flex;
-          justify-content: center;
-          z-index: 9000;
-      }
-
-      .manual-btn {
-          border: 2px solid white;
-          padding: 5px;
-          border-radius: 10px;
-          cursor: pointer;
-          transition: 1s;
-          z-index: 9001;
-      }
-
-        .manual-btn:not(:last-child) {
-            margin-right: 40px;
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
         }
+       
+      
+    input:checked + .slider {
+        background-color: #00ac48;
+    }
+       
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+    .slider.round {
+        border-radius: 34px;
+    }
+       
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+    .dark-mode {
+        background-color: #757575;
+    }
+
+    /* Slider */
+
+    .position-slider {
+        width: 50%;
+        height: 600px;
+        float: left;
+    }
+
+    .slider1 {
+        position: relative;
+        top: 100px;
+        width: 95%;
+        height: 470px;
+        border-radius: 5px;
+        overflow: hidden;
+        z-index: 8000;
+        margin: 0 auto;
+    }
+      
+    .slides1 {
+        width: 500%;
+        height: 500px;
+        display: flex;
+        z-index: 8001;
+    }
+
+    .slides1 input {
+        display: none;
+    }
+
+    .slide {
+        width: 20%;
+        transition: 2s;
+    }
+
+    .slide img {
+        width: 800px;
+        height: 500px;
+    }
+
+    /* manual */
+
+    .navigation-manual {
+        position: absolute;
+        width: 95%;
+        margin-top: -80px;
+        display: flex;
+        justify-content: center;
+        z-index: 9000;
+    }
+
+    .manual-btn {
+        border: 2px solid white;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 1s;
+        z-index: 9001;
+    }
+
+    .manual-btn:not(:last-child) {
+        margin-right: 40px;
+    }
 
         .manual-btn:hover {
             background: rgba(255, 255, 255, 0.644);
@@ -291,11 +299,11 @@ body {
     }
 
     #radio3:checked ~ .first {
-        margin-left: -40%;
+        margin-left: -40.2%;
     }
 
     #radio4:checked ~ .first {
-        margin-left: -60%;
+        margin-left: -60.4%;
     }
 
     .navigation-auto {
