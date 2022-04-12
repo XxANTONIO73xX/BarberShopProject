@@ -1,0 +1,121 @@
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                    aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Nueva Cita</h4>
+        </div>
+        <form method="post" action="/cita/create">
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Barberia</label><br>
+                    <select name="barberia" id="idBarberia" data-placeholder="Selecciona una barberia"
+                        class="form-control" onclick="getBarberia()">
+                        <option value="#barberia">Selecciona un barbero</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Barbero</label><br>
+                    <select name="barbero" id="idBarbero" data-placeholder="Selecciona un barbero" class="form-control"
+                        onclick="getBarbero()">
+                        <option value="barbero">Selecciona un barbero</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Corte</label><br>
+                    <select name="Corte" id="idCorte" data-placeholder="Selecciona un corte" class="form-control"
+                        onclick="getCorte()">
+                        <option value="corte">Selecciona un corte</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Fecha</label><br>
+                    <input type="datetime-local" name="fecha" id="fecha">
+                </div>
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    function getBarberia() {
+        var url = "http://localhost/BarberShop/public";
+        var rows=" ";
+
+        $.ajax({
+            type: "GET",
+            url: url + '/barberia',
+            data: {},
+            dataType: "json",
+            success: function (data) {
+                data.barberias.forEach(r => {
+                    $('#idBarberia').append("<option value='" + r.id + "'>" + r.nombre + "</option>")
+                });
+
+            },
+            error: function (data) {
+                alert('error al obtener los cortes');
+            }
+        });
+    }
+</script>
+
+<script>
+    function getBarbero() {
+        var url = "http://localhost/BarberShop/public";
+        var rows=" ";
+
+        $.ajax({
+            type: "GET",
+            url: url + '/barbero',
+            data: {},
+            dataType: "json",
+            success: function (data) {
+                data.barberos.forEach(b => {
+                    $('#idBarbero').append("<option value='" + b.id + "'>" + b.nombre + "</option>")
+                });
+
+            },
+            error: function (data) {
+                alert('error al obtener los barberos');
+            }
+        });
+    }
+</script>
+
+<script>
+    function getCorte() {
+        var url = "http://localhost/BarberShop/public";
+        var rows=" ";
+
+        $.ajax({
+            type: "GET",
+            url: url + '/corte',
+            data: {},
+            dataType: "json",
+            success: function (data) {
+                data.cortes.forEach(r => {
+                    $('#idCorte').append("<option value='" + r.id + "'>" + r.nombre + "</option>")
+                });
+
+            },
+            error: function (data) {
+                alert('error al obtener los cortes');
+            }
+        });
+    }
+</script>
