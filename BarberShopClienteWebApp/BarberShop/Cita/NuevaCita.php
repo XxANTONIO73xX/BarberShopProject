@@ -28,11 +28,14 @@
                 </div>  
 
                 <div class="form-group">
-                <label>Fecha y Hora</label><br>
+                <label>Fecha</label><br>
                 <input type="date" name="fecha" id="fecha">
-                <br>
-                <input type="time" name="hora" id="hora">
-                </div>  
+                </div>
+                
+                <div class="form-group">
+                <label>Hora</label><br>
+                <input type="" name="fecha" id="fecha">
+                </div>
             
             </div>
             <div class="modal-footer">
