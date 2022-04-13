@@ -494,7 +494,6 @@ body {
         }
 
         .menu__active {
-            d
             z-index: 8000;
             position: fixed;
             top: 75px;
