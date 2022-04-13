@@ -51,14 +51,15 @@
     integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    C:\Users\jose__\OneDrive\Documentos\GitHub\BaseballApp\BarberShopProject\BarberShop\app\Controllers
 <script>
     function getBarberia() {
-        var url = "http://localhost/BarberShop/public";
+        var url = "http://localhost/BarberShop/app/Controllers";
 
         $.ajax({
-            type: "GET",
+            type: "POST",
             url: url + '/barberia',
-            data: {},
+            data: { },
             dataType: "json",
             success: function (data) {
                 data.barberias.forEach(r => {
