@@ -1,11 +1,17 @@
 * {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
 
 body {
     background-color: rgb(20, 20, 20);
 }
+
+    .container__menu {
+        display: none;
+    }
 
     .pattern_background {
         position: absolute;
@@ -155,72 +161,6 @@ body {
         .slides1 {
             width: 100%;
         }
-    }
-
-    .sol-light {
-        position: absolute;
-        right: 90px;
-        
-    }
-
-    /* Switch Modo Blanco */
-
-    .light-mode-switch {
-        position: absolute;
-        right: 20px;
-        width: 60px;
-        height: 34px;
-    }
-
-        .light-mode-switch input {
-            display:none;
-        }
-    
-    .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ccc;
-        -webkit-transition: .4s;
-        transition: .4s;
-    }
-       
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            -webkit-transition: .4s;
-            transition: .4s;
-        }
-       
-      
-    input:checked + .slider {
-        background-color: #00ac48;
-    }
-       
-        input:checked + .slider:before {
-            -webkit-transform: translateX(26px);
-            -ms-transform: translateX(26px);
-            transform: translateX(26px);
-        }
-
-    .slider.round {
-        border-radius: 34px;
-    }
-       
-        .slider.round:before {
-            border-radius: 50%;
-        }
-
-    .dark-mode {
-        background-color: #757575;
     }
 
     /* Slider */
@@ -498,4 +438,96 @@ body {
             top: -200px;
         }
     }
-    
+
+    /*----------------------------------------------------------------------------*/
+
+
+    @media (max-width: 750px) {
+        .bars__menu{
+            position: relative;
+            display: block;
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            right: 20px;
+            bottom: 10px;
+            transform: translate(-50%, -50%) scale(1.5);
+            z-index: 99999;
+            align-items: center;
+            cursor: pointer;
+            transition: .2s;
+        }
+        
+        .bars__menu span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: #ffffff;
+            margin-top: 6px;
+            transform-origin: 0px 100%;
+            transition: all 300ms;
+        }
+        
+        .activeline1__bars-menu{
+            transform: rotate(45deg) translate(-2px, 1px); 
+        }
+        
+        .activeline2__bars-menu{
+            opacity: 0;
+            margin-right: 30px; 
+        }
+        
+        .activeline3__bars-menu{
+            transform: rotate(-45deg) translate(-2px, 2px);
+        }
+
+        .container__menu {
+            display: block;
+            z-index: 8000;
+            position: fixed;
+            top: 75px;
+            left: -300px;
+            background-color: rgba(0, 0, 0, 0.796);
+            width: 300px;
+            height: 100vh;
+            transition: 0.5s;
+        }
+
+        .menu__active {
+            z-index: 8000;
+            position: fixed;
+            top: 75px;
+            left: 0px;
+            background-color: rgba(0, 0, 0, 0.796);
+            width: 300px;
+            height: 100vh;
+            transition: 0.5s;
+        }
+
+        .nv_list_mobile {
+            width: 100%;
+            position: relative;
+            height: 450px;
+            list-style: none;
+            
+        }
+
+            .nv_list_mobile li {
+                border-bottom: 2px solid rgba(128, 128, 128, 0.388);
+                line-height: 50px;
+            }
+
+                .nv_list_mobile li:hover{
+                    background-color: rgba(128, 128, 128, 0.388);
+                }
+
+            .nv_list_mobile li a{
+                text-decoration: none;
+                color: white;
+                font-size: 25px;
+                position: relative;
+                left: 15px;
+            }
+    }
+
+
