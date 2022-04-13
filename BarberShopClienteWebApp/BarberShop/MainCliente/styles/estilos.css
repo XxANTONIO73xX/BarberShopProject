@@ -487,6 +487,7 @@ body {
             position: fixed;
             top: 75px;
             left: -300px;
+            opacity: 0;
             background-color: rgba(0, 0, 0, 0.796);
             width: 300px;
             height: 100vh;
@@ -498,6 +499,7 @@ body {
             position: fixed;
             top: 75px;
             left: 0px;
+            opacity: 100;
             background-color: rgba(0, 0, 0, 0.796);
             width: 300px;
             height: 100vh;
