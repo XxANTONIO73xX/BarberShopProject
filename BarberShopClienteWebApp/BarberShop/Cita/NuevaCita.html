@@ -11,7 +11,7 @@
                     <label>Barberia</label><br>
                     <select name="barberia" id="idBarberia" data-placeholder="Selecciona una barberia"
                         class="form-control" onclick="getBarberia()">
-                        <option value="#barberia">Selecciona un barbero</option>
+                        <option value="">Selecciona un barbero</option>
                     </select>
                 </div>
 
@@ -19,7 +19,7 @@
                     <label>Barbero</label><br>
                     <select name="barbero" id="idBarbero" data-placeholder="Selecciona un barbero" class="form-control"
                         onclick="getBarbero()">
-                        <option value="barbero">Selecciona un barbero</option>
+                        <option value="">Selecciona un barbero</option>
                     </select>
                 </div>
 
@@ -27,7 +27,7 @@
                     <label>Corte</label><br>
                     <select name="Corte" id="idCorte" data-placeholder="Selecciona un corte" class="form-control"
                         onclick="getCorte()">
-                        <option value="corte">Selecciona un corte</option>
+                        <option value="">Selecciona un corte</option>
                     </select>
                 </div>
 
@@ -54,7 +54,6 @@
 <script>
     function getBarberia() {
         var url = "http://localhost/BarberShop/public";
-        var rows=" ";
 
         $.ajax({
             type: "GET",
@@ -68,7 +67,7 @@
 
             },
             error: function (data) {
-                alert('error al obtener los cortes');
+                alert('error');
             }
         });
     }
@@ -77,7 +76,6 @@
 <script>
     function getBarbero() {
         var url = "http://localhost/BarberShop/public";
-        var rows=" ";
 
         $.ajax({
             type: "GET",
@@ -85,8 +83,8 @@
             data: {},
             dataType: "json",
             success: function (data) {
-                data.barberos.forEach(b => {
-                    $('#idBarbero').append("<option value='" + b.id + "'>" + b.nombre + "</option>")
+                data.barberos.forEach(r => {
+                    $('#idBarbero').append("<option value='" + r.id + "'>" + r.nombre + "</option>")
                 });
 
             },
@@ -100,7 +98,6 @@
 <script>
     function getCorte() {
         var url = "http://localhost/BarberShop/public";
-        var rows=" ";
 
         $.ajax({
             type: "GET",

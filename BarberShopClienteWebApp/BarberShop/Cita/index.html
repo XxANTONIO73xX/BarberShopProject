@@ -24,13 +24,18 @@
         <th> Barbero </th>
         <th> Corte </th>
         <th> Fecha</th>
-        <th> Estado
+        <th> Estado </th>
       </thead>
     </tr>
     <br>
     <tr>
-      <tbody>
+      <tbody id="contenido_citas">
         <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+
       </tbody>
     </tr>
 
@@ -48,29 +53,37 @@
     var rows = " ";
 
     $.ajax({   //iniciar ajax para crar token   
-      url: url + '/cita',
-      data: {},
+      url: url +'/cita',
       type: "GET",
+      data: {},
       dataType: "json",
 
-      success: function (data) {
-          var rows = data.cita.length;
+    }).done(function (data, textStatus, jqXHR) { // lo que regresamos desde la API esta en data
 
-          for (i = 0; i < filas; i++) { //cuenta la cantidad de registros
-            var nuevafila = "<tr><td>" +
-              data.cita[i][0].idCliente + "</td><td>" +
-              data.cita[i][0].idBarbero + "</td><td>" +
-              data.cita[i][0].idCorte + "</td><td>" +
-              data.cita[i][0].idBarberia + "</td><td>" +
-              data.cita[i][0].fecha + "</td></tr>";
+      var rows = " ";
+      console.log("info tabla")
+      console.log(data)
 
-            $("#tabla_citas").append(nuevafila)
-          }
-        
+      if (!data) {
+        rows = "<h2 style='color:red; text-align:center;'>No hay registros</h2>";
+      } else {
+        data.citas.forEach(r => {
+          rows += ` 
+                <tr>
+                    <td>${r.id}</td>
+                    <td>${r.idBarberia}</td>
+                    <td>${r.idBarberio}</td>
+                    <td>${r.idCorte}</td>
+                    <td>${r.fecha}</td>
+                    <td>${r.estado}</td>
+                </tr>
+          `
+        });
       }
 
-    });
-    
+      $("#contenido_citas tbody").html(rows);
+    })
+
 
 
 
