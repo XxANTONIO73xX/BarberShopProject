@@ -11,29 +11,27 @@
                     <label>Barberia</label><br>
                     <select name="barberia" id="idBarberia" data-placeholder="Selecciona una barberia"
                         class="form-control" onclick="getBarberia()">
-                        <option value="">Selecciona un barbero</option>
+                        <option value="#idBarberia">Selecciona un barbero</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label>Barbero</label><br>
-                    <select name="barbero" id="idBarbero" data-placeholder="Selecciona un barbero" class="form-control"
-                        onclick="getBarbero()">
-                        <option value="">Selecciona un barbero</option>
+                    <select name="barbero" id="idBarbero" data-placeholder="Selecciona un barbero" class="form-control">
+                        <option value="#idBarbero">Selecciona un barbero</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label>Corte</label><br>
-                    <select name="Corte" id="idCorte" data-placeholder="Selecciona un corte" class="form-control"
-                        onclick="getCorte()">
-                        <option value="">Selecciona un corte</option>
+                    <select name="Corte" id="idCorte" data-placeholder="Selecciona un corte" class="form-control">
+                        <option value="#idCorte">Selecciona un corte</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label>Fecha</label><br>
-                    <input type="datetime-local" name="fecha" id="fecha">
+                    <input type="datetime-local" name="fecha" id="idFecha">
                 </div>
 
 
@@ -47,22 +45,23 @@
     </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
     integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    C:\Users\jose__\OneDrive\Documentos\GitHub\BaseballApp\BarberShopProject\BarberShop\app\Controllers
+    
 <script>
     function getBarberia() {
-        var url = "http://localhost/BarberShop/app/Controllers";
+        var url = "http://localhost/BarberShop/public";
 
         $.ajax({
-            type: "POST",
+            type: "GET",
             url: url + '/barberia',
-            data: { },
+            data: {},
             dataType: "json",
             success: function (data) {
-                data.barberias.forEach(r => {
+                data.barberia.forEach(r => {
                     $('#idBarberia').append("<option value='" + r.id + "'>" + r.nombre + "</option>")
                 });
 
@@ -76,7 +75,7 @@
 
 <script>
     function getBarbero() {
-        var url = "http://localhost/BarberShop/public";
+        var url = "http://localhost/BarberShop/app/Controllers";
 
         $.ajax({
             type: "GET",
@@ -98,7 +97,7 @@
 
 <script>
     function getCorte() {
-        var url = "http://localhost/BarberShop/public";
+        var url = "http://localhost/BarberShop/app/Controllers";
 
         $.ajax({
             type: "GET",
