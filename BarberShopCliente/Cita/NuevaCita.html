@@ -1,3 +1,62 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    $.ajax({
+            type: "GET",
+            url:'https://kikosbarbershop.online/public/barberia',
+            data: {},
+            dataType: "json",
+            success: function (data) {
+                data.barberias.forEach(r => {
+                    $('#idBarberia').append("<option value='" + r.id + "'>" + r.nombre + "</option>")
+                });
+
+            },
+            error: function (data) {
+                alert('error');
+            }
+        });
+</script>
+
+
+<script>
+    $.ajax({
+            type: "GET",
+            url:'https://kikosbarbershop.online/public/barbero',
+            data: {},
+            dataType: "json",
+            success: function (data) {
+                data.barberos.forEach(r => {
+                    $('#idBarbero').append("<option value='" + r.id + "'>" + r.nombre + "</option>")
+                });
+
+            },
+            error: function (data) {
+                alert('error');
+            }
+        });
+</script>
+
+<script>
+    $.ajax({
+            type: "GET",
+            url:'https://kikosbarbershop.online/public/corte',
+            data: {},
+            dataType: "json",
+            success: function (data) {
+                data.cortes.forEach(r => {
+                    $('#idCorte').append("<option value='" + r.id + "'>" + r.nombre + "</option>")
+                });
+
+            },
+            error: function (data) {
+                alert('error');
+            }
+        });
+</script>
+
 <div class="modal-dialog" role="document">
     <div class="modal-content">
         <div class="modal-header">
@@ -10,22 +69,22 @@
                 <div class="form-group">
                     <label>Barberia</label><br>
                     <select name="barberia" id="idBarberia" data-placeholder="Selecciona una barberia"
-                        class="form-control" onclick="getBarberia()">
-                        <option value="#idBarberia">Selecciona un barbero</option>
+                        class="form-control" onchange="getBarberia()">
+                        <option value="idBarberia">Selecciona un barbero</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label>Barbero</label><br>
-                    <select name="barbero" id="idBarbero" data-placeholder="Selecciona un barbero" class="form-control">
-                        <option value="#idBarbero">Selecciona un barbero</option>
+                    <select name="barbero" id="idBarbero" data-placeholder="Selecciona un barbero" class="form-control" onchange="getBarbero()">
+                        <option value="idBarbero">Selecciona un barbero</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label>Corte</label><br>
-                    <select name="Corte" id="idCorte" data-placeholder="Selecciona un corte" class="form-control">
-                        <option value="#idCorte">Selecciona un corte</option>
+                    <select name="Corte" id="idCorte" data-placeholder="Selecciona un corte" class="form-control" onchange="getCita()">
+                        <option value="idCorte">Selecciona un corte</option>
                     </select>
                 </div>
 
@@ -45,74 +104,29 @@
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
 
     
 <script>
     function getBarberia() {
-        var url = "http://localhost/BarberShop/public";
+        var url = "https://kikosbarbershop.online/public/barberia";
 
-        $.ajax({
-            type: "GET",
-            url: url + '/barberia',
-            data: {},
-            dataType: "json",
-            success: function (data) {
-                data.barberia.forEach(r => {
-                    $('#idBarberia').append("<option value='" + r.id + "'>" + r.nombre + "</option>")
-                });
-
-            },
-            error: function (data) {
-                alert('error');
-            }
-        });
+        
     }
 </script>
 
 <script>
     function getBarbero() {
-        var url = "http://localhost/BarberShop/app/Controllers";
+        var url = "https://kikosbarbershop.online/public/barbero";
 
-        $.ajax({
-            type: "GET",
-            url: url + '/barbero',
-            data: {},
-            dataType: "json",
-            success: function (data) {
-                data.barberos.forEach(r => {
-                    $('#idBarbero').append("<option value='" + r.id + "'>" + r.nombre + "</option>")
-                });
-
-            },
-            error: function (data) {
-                alert('error al obtener los barberos');
-            }
-        });
+    
     }
 </script>
 
 <script>
     function getCorte() {
-        var url = "http://localhost/BarberShop/app/Controllers";
+        var url = "https://kikosbarbershop.online/public/corte";
 
-        $.ajax({
-            type: "GET",
-            url: url + '/corte',
-            data: {},
-            dataType: "json",
-            success: function (data) {
-                data.cortes.forEach(r => {
-                    $('#idCorte').append("<option value='" + r.id + "'>" + r.nombre + "</option>")
-                });
-
-            },
-            error: function (data) {
-                alert('error al obtener los cortes');
-            }
-        });
     }
 </script>
