@@ -1,3 +1,31 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+  integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+
+  var url = "http://localhost/BarberShop/app/Controllers";
+
+  $(document).ready(function () {
+    $('#tablacitas').DataTable({
+      "ajax": {
+        "url": url + '/citas',
+        "datatype": "json",
+        "dataSrc": ""
+      },
+      "columns": [
+        { "data": "idCliente" },
+        { "data": "idBarbero" },
+        { "data": "idCorte" },
+        { "data": "idBarberia" },
+        { "data": "fecha" },
+        { "data": "estado" },
+      ]
+    })
+  })
+
+</script>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,64 +45,44 @@
       <li><a href="../InformacionBarberia/index.html">Mas Informacion</a></li>
     </ul>
   </nav>
+
   <h1> Tus citas </h1>
   <table cellpadding="0" cellspacing="0" border="0">
-    <div class="tbl-header">
+    <thead class="tbl-header">
       <tr>
-        <thead>
-          <th> Barbería </th>
-          <th> Barbero </th>
-          <th> Corte </th>
-          <th> Fecha</th>
-          <th> Estado </th>
-        </thead>
+        <th> Barbería </th>
+        <th> Barbero </th>
+        <th> Corte </th>
+        <th> Fecha</th>
+        <th> Estado </th>
       </tr>
-    </div>
+    </thead>
 
-    <div class="tbl-content">
-      <tbody>
-        <td> </td>
-      </tbody>
 
-    </div>
+    <tbody class="tbl-content">
+      <tr>
+        <td> Kikos centro </td>
+        <td> Juanito </td>
+        <td> Desvanecido con la linea del bicho siu</td>
+        <td> Tu ya sabes que rollo carnal</td>
+        <td> Caliente</td>
+      </tr>
+      <tr>
+        <td> Kikos Guaymas Norte </td>
+        <td> El Xocas </td>
+        <td> Corte de hongo, estilo coreeano</td>
+        <td> Las mismas de ayer</td>
+        <td> Con tu hermana</td>
+      </tr>
+    </tbody>
+
 
     <!--https://codepen.io/nikhil8krishnan/pen/WvYPvv-->
 
 
   </table>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <script>
-
-  </script>
-  <script>
-
-
-
-    var url = "http://localhost/BarberShop/app/Controllers";
-
-    $(document).ready(function () {
-      $('#tablacitas').DataTable({
-        "ajax": {
-          "url": url + '/citas',
-          "datatype": "json",
-          "dataSrc": ""
-        },
-        "columns": [
-          { "data": "idCliente" },
-          { "data": "idBarbero" },
-          { "data": "idCorte" },
-          { "data": "idBarberia" },
-          { "data": "fecha" },
-          { "data": "estado" },
-        ]
-      })
-    })
-
-  </script>
 </body>
 
 </html>
