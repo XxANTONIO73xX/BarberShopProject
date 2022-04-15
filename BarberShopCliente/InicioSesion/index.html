@@ -6,21 +6,36 @@
     <link href="styles/estilos.css" rel="stylesheet">
     <a href=""></a>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@700&family=Roboto+Condensed:wght@300&family=Roboto:wght@900&display=swap" rel="stylesheet"> 
     <title>Iniciar Sesion</title>
 </head>
 <body>
-    <form>
-        <h1>Log In</h1>
-        <input placeholder="Username" type="text"/>
-        <input placeholder="Password" type="password"/>
-        <button type="button" class="btn bg-gradient-primary w-100 my-4 mb-2" onclick="login()" >Iniciar Sesion</button>
-        <h6>Oh, no te has registrado?</h6>
-        <footer>
-            <h5>Da click para registrarte:</h5>
-            <h6><a target="_blank" href="../RegistroUsuario/indexRegistro.html">Registrate aquí</a></h6>
-        </footer>
-    </form>
 
+    <div class="login-pos">
+        <div class="login-box">
+
+            <form class="login-form">
+                <h1>
+                    <img src="img/logoKikoNav.svg" width="320px" height="320px">
+                </h1>
+                <input id="user" placeholder= "Usuario" type="text">
+                <input id="password" placeholder= "Contraseña" type="password"/>
+                <button type="button" onclick="login()" >Iniciar sesión</button>
+            </form>
+
+            <footer class="login-footer">
+                <h5>¿No estás registrado?</h5>
+                <h6><a href="../RegistroUsuario/indexRegistro.html">Registrate aquí.</a></h6>
+            </footer>
+            
+        </div>
+    </div>
+
+    <div class="waves">
+        <div class="wave circulo a"></div>
+        <div class="wave circulo b"></div>
+        <div class="wave circulo c"></div>
+      </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -64,6 +79,7 @@
 } // termina function login
     </script>
 
+    <div class="taponxd"></div>
     
 </body>
 </html>

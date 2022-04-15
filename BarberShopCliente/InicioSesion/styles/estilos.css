@@ -1,163 +1,204 @@
-article, 
-aside, 
-details, 
-figcaption, 
-figure, 
-footer, 
-header, 
-hgroup, 
-nav, 
-section {
-    display: block;
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
-html {
-    font-size: 100%;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-}
-
-input:focus, 
-textarea:focus {
-    outline: none;
-}
-
-label, 
-select, 
-button, 
-input[type="submit"], 
-input[type="radio"], 
-input[type="checkbox"] 
-input[type="button"] {
-    cursor: pointer;
-}
-
-a, 
-a:visited, 
-a:active {
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: none
-  ;
-}
-
-::selection {
-    background: #ed327b;
-    color: #fff;
-}
-
-::-moz-selection {
-    background: #ed327b;
-    color: #fff;
-}
-
-* {
-    font-size:100%;
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
 body {
-  background:#5c5c5c;
+  margin: 0;
+  background-color: rgb(0, 0, 0);
 }
 
-* {
-  font-family:"Helvetica Neue", Helvetica, Arial;
+.login-pos {
+  position: absolute;
+  z-index: 9000;
+  width: 500px;
+  height: 500px;
+  display: block;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 7px;
 }
 
-h5 {
-  text-align:center;
-  margin-top:5px;
-  color:rgba(0,0,0,.3);
+.login-box {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  top: 20px;
+  margin: auto;
 }
 
-h5 > a,a:visited {
-  color:#fff;
-  text-decoration:underline;
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-h5 > a:hover {
-  text-decoration:none;
+  .login-form h1 {
+    position: relative;
+    text-align: center;
+    color: white;
+    height: 180px;
+    bottom: 100px;
+  }
+
+  .login-form #user {
+    background: linear-gradient(to top, rgb(63, 63, 63), rgba(255, 255, 255, 0.100));
+    width: 90%;
+    height: 60px;
+    justify-content:  center;
+    border-radius: 40px;
+    border: none;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+  }
+
+  .login-form #password {
+    background: linear-gradient(to top, rgb(63, 63, 63), rgba(255, 255, 255, 0.100));
+    margin-top: 10px;
+    width: 90%;
+    height: 60px;
+    text-align: center;
+    justify-content:  center;
+    border-radius: 100px;
+    border: none;
+    font-size: 18px;
+    color: white;
+  }
+
+  .login-form #password:focus,
+  .login-form #user:focus {
+    width: 95%;
+    transition: 0.25s;
+  }
+
+    .login-form input::placeholder {
+      position: relative;
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.684);
+    }
+
+    .login-form input {
+      position: relative;
+      font-size: 20px;
+      outline: none;
+    }
+
+  .login-form button {
+    background-color: rgba(88, 88, 88, 0.378);
+    margin-top: 10px;
+    width: 90%;
+    height: 60px;
+    justify-content:  center;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+    color: rgb(255, 255, 255);
+  }
+
+    .login-form button:hover {
+      background: rgb(63, 63, 63);
+      transition: .5s;
+      box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.562);
+      color: rgb(208, 208, 208);
+    }
+
+.login-footer {
+  position: relative;
+  display: flex;
+  width: 500px;
+  top: 15px;
+  color: white;
+  left: 25px;
 }
 
-form {
-  background:#fff;
-  border-radius:6px;
-  padding:20px;
-  padding-top:30px;
-  width:300px;
-  margin:50px auto;
-  box-shadow:15px 15px 0px rgba(0,0,0,.1);
+  .login-footer h5 {
+    position: relative;
+    font-size: 15px;
+    color: white;
+  }
+
+  .login-footer h6 a {
+    position: relative;
+    left: 5px;
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+  } 
+  
+    .login-footer h6 a:hover {
+      color: #0f9bf6;
+    }
+
+.taponxd {
+  background-color: #444444;
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  bottom: -150px;
 }
 
-h1 {
-  text-align:center;
-  font-size:1.4em;
-  font-weight:700;
-  color:#ccc;
-  margin-bottom:24px;
+/*------------------------------------ OLAS ------------------------------------*/
+
+.container {
+  height: 500px;
+  background: #0f9bf6;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-span {
-  font-weight:200;
+.content {
+  font-family: Arial;
+  text-align: center;
+  font-size: 2em;
+  color: rgba(255,255,255, .8);
 }
 
-input {
-  width:100%;
-  background:#f5f5f5;
-  border:0;
-  padding:20px;
-  border-radius:6px;
-  margin-bottom:10px;
-  border:1px solid #eee;
+.waves {
+  position: absolute;
+  bottom: -135px;
+  height: 527px;
+  width: 100%;
+  overflow: hidden;
+}
+.wave {
+  position: absolute;
+  left: -180px;
+  bottom: 0;
+  width: 2402px;
+  height: 427px;
+  background: url(https://static.platzi.com/media/files/waves_c8551f5d-ecf6-4a81-ae1d-f3a0ad55ba10.png) center bottom no-repeat;
+  animation: 5s wave ease-in-out infinite alternate;
+}
+.wave.a {
+  background-position: 0 -854px;
+}
+.wave.b {
+  background-position: 0 -427px;
+  animation-delay: .6s;
+}
+.wave.c {
+  background-position: 0 0;
+  animation-delay: 1.2s;
 }
 
-.btn {
-  position:relative;
-  width:100%;
-  padding:20px;
-  border-radius:6px;
-  border:0;
-  background:#eb3f39;
-  font-size:1.2em;
-  color:#fff;
-  text-shadow:1px 1px 0px rgba(0,0,0,.1);
-  box-shadow:0px 3px 0px #96221e;
+@keyframes wave {
+  0% {
+    transform: translate(0 , 0);
+  }
+  50% {
+    transform: translate(-80px, 30px);
+  }
+  100% {
+    transform: translate(160px, -60px);
+  }
 }
 
-.btn:active {
-  top:3px;
-  box-shadow:none;
-}
-
-h6 {
-  text-align:center;
-  padding:20px;
-  padding-top:35px;
-  color:#777;
-  cursor:pointer;
-}
-
-.social {
-  display:none;
-}
-
-.fb {
-  margin-top:15px;
-  background:#3b5998;
-  box-shadow:0px 3px 0px #2c416e;
-}
-
-.tw {
-  background:#00acee;
-  box-shadow:0px 3px 0px #008dc3;
-}
-
-.google {
-  background:#db4a39;
-  box-shadow:0px 3px 0px #b93f31;
-}
