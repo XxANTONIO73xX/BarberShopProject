@@ -15,39 +15,45 @@
 
 <body>
 
-    <div class="signupFrm">
-        <form action="" class="form">
-            <h1 class="title">Registro Usuario</h1>
-
-            <div class="inputContainer">
-                <input type="text" class="input" placeholder="Username">
-                <label for="" class="label">Username</label>
-            </div>
-
-            <div class="inputContainer">
-                <input type="email" class="input" placeholder="Email">
-                <label for="" class="label">Email</label>
-            </div>
-
-            <div class="inputContainer">
-                <input type="tel" class="input" placeholder="Phone">
-                <label for="" class="label">Phone</label>
-            </div>
-
-
-            <div class="inputContainer">
-                <input type="password" class="input" placeholder="Password">
-                <label for="" class="label">Password</label>
-            </div>
-
-            <div class="inputContainer">
-                <input type="password" class="input" placeholder="a">
-                <label for="" class="label">Confirma el Password</label>
-            </div>
-
-            <input type="submit" class="submitBtn" value="Sign up">
-        </form>
+    <div class="stripe">
+        <div class="stripe_inner">
+        </div>
     </div>
+
+    <div class="login-pos">
+        <div class="login-box">
+
+            <h1>
+                <img src="img/logoKikoNav.svg" width="500px" height="150px">
+            </h1>
+
+            <form class="login-form">
+                <div class="login-form-names">
+                <input id="nombre" placeholder= "Nombre" type="text">
+                <input id="apellidos" placeholder= "Apellidos" type="text"/>
+                </div>
+                <input id="user" placeholder= "Usuario" type="text"/>
+                <div class="login-form-contact">
+                <input id="correo" placeholder= "Correo" type="text"/>
+                <input id="telefono" placeholder= "Teléfono" type="text"/>
+                </div>
+                <input id="password" placeholder= "Contraseña" type="password"/>
+                <button type="button" onclick="login()" >Registrarse</button>
+            </form>
+
+            <footer class="login-footer">
+                <h5>¿No estás registrado?</h5>
+                <h6><a href="../RegistroUsuario/indexRegistro.html">Registrate aquí.</a></h6>
+            </footer>
+            
+        </div>
+    </div>
+
+    <div class="waves">
+        <div class="wave circulo a"></div>
+        <div class="wave circulo b"></div>
+        <div class="wave circulo c"></div>
+      </div>
 
 </body>
 
