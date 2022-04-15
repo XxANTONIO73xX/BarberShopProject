@@ -222,6 +222,7 @@ body {
         display: flex;
         justify-content: center;
         z-index: 9000;
+        transition: 1s;
     }
 
     .manual-btn {
@@ -263,6 +264,7 @@ body {
         width: 95%;
         justify-content: center;
         margin-top: 420px;
+        transition: 1s;
     }
 
     .navigation-auto div {
@@ -299,14 +301,17 @@ body {
             height: 23rem;
             transition: 1s;
         }
+        .front_face {
+            position: relative;
+        }
         .front_face #imagen_frente {
-            top: 40px;
+            top: 80px;
         }
         .front_face h1 {
-            top: 30px;
+            top: 60px;
         }
         .front_face p {
-            top: -70px;
+            top: -50px;
             font-size: 20px;
             width: 90%;
             margin: 0 auto;
@@ -338,6 +343,9 @@ body {
     }
 
     @media (max-width: 1150px) {
+        .front_face {
+            top: 20px;
+        }
         .front_face #imagen_frente {
             width: 450px;
             height: 225px;
@@ -371,12 +379,15 @@ body {
             transition: 1s;
         }
         .navigation-auto {
-            top: 300px;
+            top: -200px;
             transition: 1s;
         }
     }
 
     @media (max-width: 420px) { 
+        .position-slider {
+            top: -120px;
+        }
         .slide1 img {
             width: 100%;
             height: auto;
@@ -394,25 +405,26 @@ body {
             transition: 1s;
         }
         .navigation-auto {
-            top: 280px;
+            top: -220px;
             transition: 1s;
         }
         .front_face #imagen_frente {
             width: 300px;
             height: 300px;
-            top: -60px;
+            top: 10px;
             transition: 1s;
         }
         .front_face h1{
-            top: -130px;
+            top: -80px;
         }
         .front_face p{
-            top: -240px;
+            top: -190px;
         }
     }
     @media (max-width: 370px) {
         .position-slider {
             height: 20rem;
+            top: -90px        
         }
         .slider1 {
             width: 90%;
@@ -422,20 +434,20 @@ body {
             top: 260px;
         }
         .navigation-auto {
-            top: 260px;
+            top: -240px;
         }
         .front_face #imagen_frente {
-            top: -40px;
+            top: 10px;
             width: 300px;
             height: 300px;
             transition: 1s;
         }
         .front_face h1{
-            top: -90px;
+            top: -40px;
             line-height: 35px;
         }
         .front_face p{
-            top: -200px;
+            top: -190px;
         }
     }
 
