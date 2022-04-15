@@ -1,30 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles/estilos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/cs♥s2?family=Roboto+Condensed:wght@300&family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@700&family=Roboto+Condensed:wght@300&family=Roboto:wght@900&display=swap" rel="stylesheet"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/cortes.js"></script>
     <title>Cortes</title>
-</head>
-<body>
-    <img src="img/fondoKikos.png" class="pattern_background" width="1500px" height= "1020px">
+  </head>
+
+    <img src="img/fondoKikos.png" class="pattern_background">
     <nav class="navigation_bar">
         <img src="img/logoKikoNav.svg" class="logo_menu" width="150px" height= "60px">
         <ul class="nv_list">
             <li><a href="../MainCliente/Main.html">Inicio</a></li>
             <li><a href="../Cita/index.html">Citas</a></li>
-            <li><a href="../InformacionBarberia/index.html">Más Información</a></li>
+            <li><a href="../InformacionBarberia/index.html"">Más Información</a></li>
         </ul>
-        <img src="img/sol.png" class="sol-light" width="35px" height= "35px">
-        <label id=switch class="light-mode-switch">
-            <input type="checkbox" onclick="darkMode()">
-            <span class="slider round"></span>
-        </label>
+
+        <div class="bars__menu">
+            <span class="line1__bars-menu"></span>
+            <span class="line2__bars-menu"></span>
+            <span class="line3__bars-menu"></span>
+        </div>
     </nav>
-    <div class="front_face">
+
+    <div class="container__menu">
+        <ul class="nv_list_mobile">
+            <li><a href="../MainCliente/Main.html">Inicio</a></li>
+            <li><a href="../Cita/index.html">Citas</a></li>
+            <li><a href="../InformacionBarberia/index.html"">Más Información</a></li>
+        </ul>
+      </div>
+
+  <body>
+
+    <div class="cortes-position">
+        <div class="corte-box">
+            <div class="container">
+                <div class="productImage corteImg"></div>
+                    <div class="price">
+                        <h4>PRECIO</h4>
+                        <span>$150</span>
+                    </div>
+                <div class="productName">
+                CORTE DEL CR7
+                </div>
+            </div>
+            <div class="corte-descripcion">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae quisquam nobis nisi. Provident necessitatibus neque rerum explicabo maiores cumque est suscipit? Natus modi provident nulla, tempora incidunt doloribus tenetur autem.</p>
+            </div>
+        </div>
+        <div class="corte-box">
+            <div class="container">
+                <div class="productImage corteImg2"></div>
+                    <div class="price">
+                        <h4>PRECIO</h4>
+                        <span>$200</span>
+                    </div>
+                <div class="productName">
+                CORTE DEL NAZARIO SIU
+                </div>
+            </div>
+            <div class="corte-descripcion">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae quisquam nobis nisi. Provident necessitatibus neque rerum explicabo maiores cumque est suscipit? Natus modi provident nulla, tempora incidunt doloribus tenetur autem.</p>
+            </div>
+        </div>
+        <div class="corte-box">
+            <div class="container">
+                <div class="productImage corteImg3"></div>
+                    <div class="price">
+                        <h4>PRECIO</h4>
+                        <span>$900</span>
+                    </div>
+                <div class="productName">
+                CORTE DEL BRRRR
+                </div>
+            </div>
+            <div class="corte-descripcion">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae quisquam nobis nisi. Provident necessitatibus neque rerum explicabo maiores cumque est suscipit? Natus modi provident nulla, tempora incidunt doloribus tenetur autem.</p>
+            </div>
+        </div>
+        <div class="corte-box">
+            <div class="container">
+                <div class="productImage corteImg4"></div>
+                    <div class="price">
+                        <h4>PRECIO</h4>
+                        <span>$1,500</span>
+                    </div>
+                <div class="productName">
+                CORTE DE FARAGOD
+                </div>
+            </div>
+            <div class="corte-descripcion">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae quisquam nobis nisi. Provident necessitatibus neque rerum explicabo maiores cumque est suscipit? Natus modi provident nulla, tempora incidunt doloribus tenetur autem.</p>
+            </div>
+        </div>
+        <div class="corte-box">
+            <div class="container">
+                <div class="productImage corteImg5"></div>
+                    <div class="price">
+                        <h4>PRECIO</h4>
+                        <span>$50</span>
+                    </div>
+                <div class="productName">
+                BIGOTE DE BUENA PERSONA
+                </div>
+            </div>
+            <div class="corte-descripcion">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae quisquam nobis nisi. Provident necessitatibus neque rerum explicabo maiores cumque est suscipit? Natus modi provident nulla, tempora incidunt doloribus tenetur autem.</p>
+            </div>
+        </div>
+        <div class="corte-box">
+            <div class="container">
+                <div class="productImage corteImg6"></div>
+                    <div class="price">
+                        <h4>PRECIO</h4>
+                        <span>$5</span>
+                    </div>
+                <div class="productName">
+                CORTE DE ARGENTINO
+                </div>
+            </div>
+            <div class="corte-descripcion">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae quisquam nobis nisi. Provident necessitatibus neque rerum explicabo maiores cumque est suscipit? Natus modi provident nulla, tempora incidunt doloribus tenetur autem.</p>
+            </div>
+        </div>
     </div>
-</body>
+
+
+
+    <script src="js/cortes.js"></script>  
+  </body>
+
 </html>

@@ -28,61 +28,75 @@
 
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="styles/estilos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@700&family=Roboto+Condensed:wght@300&family=Roboto:wght@900&display=swap" rel="stylesheet"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/cita.js"></script>
+    <title>Citas</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link href="styles/estilos.css" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Citas</title>
-</head>
+    <img src="img/fondoKikos.png" class="pattern_background">
+    <nav class="navigation_bar">
+        <img src="img/logoKikoNav.svg" class="logo_menu" width="150px" height= "60px">
+        <ul class="nv_list">
+            <li><a href="../MainCliente/Main.html">Inicio</a></li>
+            <li><a href="../Corte/index.html">Cortes</a></li>
+            <li><a href="../InformacionBarberia/index.html"">Más Información</a></li>
+        </ul>
 
-<body>
-  <nav class="navigation_bar">
-    <ul class="nv_list">
-      <li><a href="../MainCliente/Main.html">Inicio</a></li>
-      <li><a href="../Corte/index.html">Cortes</a></li>
-      <li><a href="../InformacionBarberia/index.html">Mas Informacion</a></li>
-    </ul>
-  </nav>
+        <div class="bars__menu">
+            <span class="line1__bars-menu"></span>
+            <span class="line2__bars-menu"></span>
+            <span class="line3__bars-menu"></span>
+        </div>
+    </nav>
 
-  <h1> Tus citas </h1>
-  <table cellpadding="0" cellspacing="0" border="0">
-    <thead class="tbl-header">
-      <tr>
-        <th> Barbería </th>
-        <th> Barbero </th>
-        <th> Corte </th>
-        <th> Fecha</th>
-        <th> Estado </th>
-      </tr>
-    </thead>
+  <body>
 
+    <h1> Tus citas </h1>
+    <div class="table-position">
+      <table cellspacing="0" border="0">
+        <thead class="tbl-header">
+          <tr>
+            <th> Barbería </th>
+            <th> Barbero </th>
+            <th> Corte </th>
+            <th> Fecha</th>
+            <th> Estado </th>
+          </tr>
+        </thead>
+        <tbody class="tbl-content">
+          <tr>
+            <td> Kikos centro </td>
+            <td> Juanito </td>
+            <td> Desvanecido con la linea del bicho siu</td>
+            <td> Tu ya sabes que rollo carnal</td>
+            <td> Caliente</td>
+          </tr>
+          <tr>
+            <td> Kikos Guaymas Norte </td>
+            <td> El Xocas </td>
+            <td> Corte de hongo, estilo coreeano</td>
+            <td> Las mismas de ayer</td>
+            <td> Con tu hermana</td>
+          </tr>
+        </tbody>
+        <!--https://codepen.io/nikhil8krishnan/pen/WvYPvv-->
+      </table>
+    </div>
 
-    <tbody class="tbl-content">
-      <tr>
-        <td> Kikos centro </td>
-        <td> Juanito </td>
-        <td> Desvanecido con la linea del bicho siu</td>
-        <td> Tu ya sabes que rollo carnal</td>
-        <td> Caliente</td>
-      </tr>
-      <tr>
-        <td> Kikos Guaymas Norte </td>
-        <td> El Xocas </td>
-        <td> Corte de hongo, estilo coreeano</td>
-        <td> Las mismas de ayer</td>
-        <td> Con tu hermana</td>
-      </tr>
-    </tbody>
+    <div class="container__menu">
+      <ul class="nv_list_mobile">
+          <li><a href="../MainCliente/Main.html">Inicio</a></li>
+          <li><a href="../Corte/index.html">Cortes</a></li>
+          <li><a href="../InformacionBarberia/index.html"">Más Información</a></li>
+      </ul>
+    </div>
 
-
-    <!--https://codepen.io/nikhil8krishnan/pen/WvYPvv-->
-
-
-  </table>
-
-
-</body>
+    <script src="js/cita.js"></script>
+  </body>
 
 </html>
