@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="styles/estilos.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Citas</title>
 </head>
@@ -16,21 +17,28 @@
       <li><a href="../InformacionBarberia/index.html">Mas Informacion</a></li>
     </ul>
   </nav>
-  <h3> Tus citas </h3>
-  <table class="tablacitas">
-    <tr>
-      <thead>
-        <th> Barbería </th>
-        <th> Barbero </th>
-        <th> Corte </th>
-        <th> Fecha</th>
-        <th> Estado </th>
-      </thead>
-    </tr>
-    <tr>
+  <h1> Tus citas </h1>
+  <table cellpadding="0" cellspacing="0" border="0">
+    <div class="tbl-header">
+      <tr>
+        <thead>
+          <th> Barbería </th>
+          <th> Barbero </th>
+          <th> Corte </th>
+          <th> Fecha</th>
+          <th> Estado </th>
+        </thead>
+      </tr>
+    </div>
+
+    <div class="tbl-content">
       <tbody>
+        <td> </td>
       </tbody>
-    </tr>
+
+    </div>
+
+    <!--https://codepen.io/nikhil8krishnan/pen/WvYPvv-->
 
 
   </table>
@@ -41,26 +49,31 @@
 
   <script>
 
+  </script>
+  <script>
+
+
+
     var url = "http://localhost/BarberShop/app/Controllers";
 
-    $(document).ready(function(){
+    $(document).ready(function () {
       $('#tablacitas').DataTable({
-        "ajax":{
-          "url": url+ '/citas',
+        "ajax": {
+          "url": url + '/citas',
           "datatype": "json",
-          "dataSrc":""
+          "dataSrc": ""
         },
         "columns": [
-          {"data": "idCliente"},
-          {"data": "idBarbero"},
-          {"data": "idCorte"},
-          {"data": "idBarberia"},
-          {"data": "fecha"},
-          {"data": "estado"},
+          { "data": "idCliente" },
+          { "data": "idBarbero" },
+          { "data": "idCorte" },
+          { "data": "idBarberia" },
+          { "data": "fecha" },
+          { "data": "estado" },
         ]
       })
     })
-    
+
   </script>
 </body>
 
