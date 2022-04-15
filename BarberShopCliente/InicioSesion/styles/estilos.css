@@ -103,7 +103,7 @@ body {
   }
 
     .login-form button:hover {
-      background: rgb(63, 63, 63);
+      background: rgb(160, 144, 236);
       transition: .5s;
       box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.562);
       color: rgb(208, 208, 208);
@@ -325,4 +325,108 @@ body {
       border-radius: 50%;
   }
 
+}
+  /*------------------------------------ FONDO LINEAS DIAGONALES ------------------------------------*/
+
+:root {
+  --stripe-size: 100px;
+  --color1: rgb(0, 0, 0);
+  --color2: #1d1d1d81;
+  --duration: 2s;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+}
+
+.stripe {
+  opacity: 100;
+  position: fixed;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.stripe_inner {
+  position: fixed;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 8rem;
+  text-align: center;
+  font-family: 'Anton', sans-serif;
+  color: rgba(255, 255, 255, 0);
+  background: repeating-linear-gradient(45deg, var(--color1) 25%, var(--color1) 50%, var(--color2) 50%, var(--color2) 75%);
+  background-size: var(--stripe-size) var(--stripe-size);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-animation: stripeBackgroundPosition var(--duration) linear infinite;
+          animation: stripeBackgroundPosition var(--duration) linear infinite;
+}
+.stripe::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% + var(--stripe-size));
+  height: 100%;
+  background: repeating-linear-gradient(45deg, var(--color2) 25%, var(--color2) 50%, var(--color1) 50%, var(--color1) 75%);
+  background-size: var(--stripe-size) var(--stripe-size);
+  -webkit-animation: stripeTransform var(--duration) linear infinite;
+          animation: stripeTransform var(--duration) linear infinite;
+}
+.stripe::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(27, 39, 53, 0) 0%, #090a0f 100%);
+}
+
+@-webkit-keyframes stripeTransform {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(calc(var(--stripe-size) * -1));
+            transform: translateX(calc(var(--stripe-size) * -1));
+  }
+}
+
+@keyframes stripeTransform {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(calc(var(--stripe-size) * -1));
+            transform: translateX(calc(var(--stripe-size) * -1));
+  }
+}
+@-webkit-keyframes stripeBackgroundPosition {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: calc(var(--stripe-size) * -1) 0;
+  }
+}
+@keyframes stripeBackgroundPosition {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: calc(var(--stripe-size) * -1) 0;
+  }
 }

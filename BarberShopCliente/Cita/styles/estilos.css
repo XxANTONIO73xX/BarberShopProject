@@ -192,7 +192,7 @@ table {
   position: relative;
   margin: 0 auto;
   width: 90%;
-  border-spacing: 3px;
+  border-spacing: 5px;
 }
 
 .tbl-header {
@@ -202,7 +202,7 @@ table {
 }
 
   .tbl-header tr th {
-    background: linear-gradient(to top, rgb(42, 42, 42),  rgb(82, 82, 82));
+    background: linear-gradient(to top, rgb(24, 24, 24),  rgb(82, 82, 82));
     text-align: center;
     margin-left: 2px;
     border-radius: 3px;
@@ -215,16 +215,18 @@ table {
 }
 
   .tbl-content tr {
-    border-radius: 5px;
+    margin-top: 20px;
+    line-height: 10px;
+    height: 100px;
   }
 
     .tbl-content tr:hover {
       position: relative;
       background-color: rgb(119, 119, 119);
-      transition: 1s;
+      transition: 0.25s;
       right: 2px;
-      bottom: 2px;
       border-radius: 5px;
+      box-shadow: 5px 5px 10px black;
     }
 
     .tbl-content tr td {
@@ -233,6 +235,7 @@ table {
       height: 80px;
       padding-top: 10px;
       background-color: rgba(153, 153, 153, 0.31);
-      border-radius: 5px;
     }
+
+
 
