@@ -101,7 +101,50 @@
       </ul>
     </div>
 
-    <script src="js/cita.js"></script>
-  </body>
+    var url = "https://kikosbarbershop.online/public/cliente_cita/"+localStorage.getItem("id");
+
+    $.ajax({
+            type: "GET",
+            url: "https://cors-anywhere.herokuapp.com/"+url,
+            data: {},
+            headers:{
+                token: localStorage.getItem("token")
+            },
+            dataType: "json",
+            success: function (data) {
+              console.log(data);
+              /*data.barberias.forEach(r => {
+                    $('#idBarberia').append("<option value='" + r.id + "'>" + r.nombre + "</option>")
+                });*/
+
+            },
+            error: function (data) {
+                alert('error');
+            }
+        });
+
+    /*$(document).ready(function(){
+      $('#tablacitas').DataTable({
+        "ajax":{
+          "url": url,
+          "datatype": "json",
+          "dataSrc":"",
+          "headers":{
+                token: localStorage.getItem("token")
+            }
+        },
+        "columns": [
+          {"data": "idCliente"},
+          {"data": "idBarbero"},
+          {"data": "idCorte"},
+          {"data": "idBarberia"},
+          {"data": "fecha"},
+          {"data": "estado"},
+        ]
+      })
+    })*/
+    
+  </script>
+</body>
 
 </html>
