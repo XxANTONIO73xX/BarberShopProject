@@ -56,13 +56,13 @@
 
 <script>
 
-    var url = 'https://kikosbarbershop.online/public/barberia/' + localStorage.getItem("id");
+    var url = 'http://api.kikosbarbershop.online/public/barberia'
     $.ajax({
         type: "GET",
-        url: 'https://cors-anywhere.herokuapp.com/' + url,
+        url: url,
         data: {},
         headers: {
-            token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJodHRwOi8va2lrb3NCYXJiZXJTaG9wLmNvbSIsImlhdCI6MTY0OTkwODgxNywibmJmIjoxNjQ5OTA4ODE3LCJleHAiOjE2NTA1MTM2MTcsImRhdGEiOnsidXNlcl9pZCI6IjMiLCJ0aXBvIjoiYWRtaW5pc3RyYWRvciJ9fQ.vACdIXGCi5lhdcZfvNyniji9YgtttVNFUsHtMA6JfQA"
+            token: localStorage.getItem("token")
         },
         dataType: "json",
         success: function (data) {
@@ -80,13 +80,13 @@
 
 
 <script>
-    var url = "https://kikosbarbershop.online/public/barbero/" + localStorage.getItem("id");
+    var url = "http://api.kikosbarbershop.online/public/barbero"
     $.ajax({
         type: "GET",
-        url: "https://cors-anywhere.herokuapp.com/" + url,
+        url: url,
         data: {},
         headers: {
-            token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJodHRwOi8va2lrb3NCYXJiZXJTaG9wLmNvbSIsImlhdCI6MTY0OTkwODgxNywibmJmIjoxNjQ5OTA4ODE3LCJleHAiOjE2NTA1MTM2MTcsImRhdGEiOnsidXNlcl9pZCI6IjMiLCJ0aXBvIjoiYWRtaW5pc3RyYWRvciJ9fQ.vACdIXGCi5lhdcZfvNyniji9YgtttVNFUsHtMA6JfQA"
+            token: localStorage.getItem("token")
         },
         dataType: "json",
         success: function (data) {
@@ -104,13 +104,13 @@
 
 <script>
 
-    var url = "https://kikosbarbershop.online/public/corte/" + localStorage.getItem("id");
+    var url = "http://api.kikosbarbershop.online/public/corte"
     $.ajax({
         type: "GET",
-        url: "https://cors-anywhere.herokuapp.com/" + url,
+        url: url,
         data: {},
         headers: {
-            token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJodHRwOi8va2lrb3NCYXJiZXJTaG9wLmNvbSIsImlhdCI6MTY0OTkwODgxNywibmJmIjoxNjQ5OTA4ODE3LCJleHAiOjE2NTA1MTM2MTcsImRhdGEiOnsidXNlcl9pZCI6IjMiLCJ0aXBvIjoiYWRtaW5pc3RyYWRvciJ9fQ.vACdIXGCi5lhdcZfvNyniji9YgtttVNFUsHtMA6JfQA"
+            token: localStorage.getItem("token")
         },
         dataType: "json",
         success: function (data) {
