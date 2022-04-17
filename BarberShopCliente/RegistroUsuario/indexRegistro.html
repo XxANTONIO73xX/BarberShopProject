@@ -29,23 +29,20 @@
 
             <form class="login-form">
                 <div class="login-form-names">
-                <input id="nombre" placeholder= "Nombre" type="text">
-                <input id="apellidos" placeholder= "Apellidos" type="text"/>
+                    <input id="nombre" placeholder="Nombre" type="text">
+                    <input id="apellidos" placeholder="Apellidos" type="text" />
                 </div>
-                <input id="user" placeholder= "Usuario" type="text"/>
                 <div class="login-form-contact">
-                <input id="correo" placeholder= "Correo" type="text"/>
-                <input id="telefono" placeholder= "Teléfono" type="text"/>
+                    <input id="correo" placeholder="Correo" type="text" />
+                    <input id="telefono" placeholder="Teléfono" type="text" />
                 </div>
-                <input id="password" placeholder= "Contraseña" type="password"/>
-                <button type="button" onclick="login()" >Registrarse</button>
+                <input id="password" placeholder="Contraseña" type="password" />
+                <input id="check_password" placeholder="Confirmar contraseña" type="password" />
+
+
+                <button type="button" id="registrar_usuario">Registrarse</button>
             </form>
 
-            <footer class="login-footer">
-                <h5>¿No estás registrado?</h5>
-                <h6><a href="../RegistroUsuario/indexRegistro.html">Registrate aquí.</a></h6>
-            </footer>
-            
         </div>
     </div>
 
@@ -53,7 +50,34 @@
         <div class="wave circulo a"></div>
         <div class="wave circulo b"></div>
         <div class="wave circulo c"></div>
-      </div>
+    </div>
+
+
+    <!-- Este script sirve para evniar los datos del formulario 
+        de registro de cliente y guardarlos en la 
+        base de datos del servidor-->
+    <script>
+
+        var url = ''
+        $('#registrar_usuario').click(function () {
+
+            $.ajax({
+                url: '' + url,
+                type: 'POST',
+                data: $('login-form').serialize(),
+                dataType: "json",
+            })
+                .done(function (res) {
+                    $('#respuesta').html(res);
+                    console.log("El usuarios se ha registrado con exito");
+                    console.log(data);
+                })
+                .fail(function () {
+                    console.log("Error", "Ocurrio un problema al registrar el usuario")
+                })
+        })
+
+    </script>
 
 </body>
 

@@ -2,63 +2,7 @@
     integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<script>
-    $.ajax({
-            type: "GET",
-            url:'https://kikosbarbershop.online/public/barberia',
-            data: {},
-            headers:{
-                token: localStorage.getItem("token")
-            },
-            dataType: "json",
-            success: function (data) {
-                data.barberias.forEach(r => {
-                    $('#idBarberia').append("<option value='" + r.id + "'>" + r.nombre + "</option>")
-                });
 
-            },
-            error: function (data) {
-                alert('error');
-            }
-        });
-</script>
-
-
-<script>
-    $.ajax({
-            type: "GET",
-            url:'https://kikosbarbershop.online/public/barbero',
-            data: {},
-            dataType: "json",
-            success: function (data) {
-                data.barberos.forEach(r => {
-                    $('#idBarbero').append("<option value='" + r.id + "'>" + r.nombre + "</option>")
-                });
-
-            },
-            error: function (data) {
-                alert('error');
-            }
-        });
-</script>
-
-<script>
-    $.ajax({
-            type: "GET",
-            url:'https://kikosbarbershop.online/public/corte',
-            data: {},
-            dataType: "json",
-            success: function (data) {
-                data.cortes.forEach(r => {
-                    $('#idCorte').append("<option value='" + r.id + "'>" + r.nombre + "</option>")
-                });
-
-            },
-            error: function (data) {
-                alert('error');
-            }
-        });
-</script>
 
 <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -67,26 +11,28 @@
                     aria-hidden="true">&times;</span></button>
             <h4 class="modal-title" id="myModalLabel">Nueva Cita</h4>
         </div>
-        <form method="post" action="/cita/create">
+        <form method="post" id="form_cita">
             <div class="modal-body">
                 <div class="form-group">
                     <label>Barberia</label><br>
                     <select name="barberia" id="idBarberia" data-placeholder="Selecciona una barberia"
-                        class="form-control" onchange="getBarberia()">
+                        class="form-control" onclick="getBarberia()">
                         <option value="idBarberia">Selecciona un barbero</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label>Barbero</label><br>
-                    <select name="barbero" id="idBarbero" data-placeholder="Selecciona un barbero" class="form-control" onchange="getBarbero()">
+                    <select name="barbero" id="idBarbero" data-placeholder="Selecciona un barbero" class="form-control"
+                        onclick="getBarbero()">
                         <option value="idBarbero">Selecciona un barbero</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label>Corte</label><br>
-                    <select name="Corte" id="idCorte" data-placeholder="Selecciona un corte" class="form-control" onchange="getCita()">
+                    <select name="Corte" id="idCorte" data-placeholder="Selecciona un corte" class="form-control"
+                        onclick="getCorte()">
                         <option value="idCorte">Selecciona un corte</option>
                     </select>
                 </div>
@@ -101,21 +47,117 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                <button type="submit" class="btn btn-primary">Save changes</button>
+                <button type="submit" id="guardar" class="btn btn-primary">Save changes</button>
             </div>
+            <div id="respuesta"></div>
         </form>
     </div>
 </div>
 
+<script>
+
+    var url = 'https://kikosbarbershop.online/public/barberia/' + localStorage.getItem("id");
+    $.ajax({
+        type: "GET",
+        url: 'https://cors-anywhere.herokuapp.com/' + url,
+        data: {},
+        headers: {
+            token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJodHRwOi8va2lrb3NCYXJiZXJTaG9wLmNvbSIsImlhdCI6MTY0OTkwODgxNywibmJmIjoxNjQ5OTA4ODE3LCJleHAiOjE2NTA1MTM2MTcsImRhdGEiOnsidXNlcl9pZCI6IjMiLCJ0aXBvIjoiYWRtaW5pc3RyYWRvciJ9fQ.vACdIXGCi5lhdcZfvNyniji9YgtttVNFUsHtMA6JfQA"
+        },
+        dataType: "json",
+        success: function (data) {
+            console.log(data);
+            data.forEach(r => {
+                $('#idBarberia').append("<option value='" + r.id + "'>" + r.nombre + "</option>")
+            });
+
+        },
+        error: function (data) {
+            alert('error');
+        }
+    });
+</script>
 
 
+<script>
+    var url = "https://kikosbarbershop.online/public/barbero/" + localStorage.getItem("id");
+    $.ajax({
+        type: "GET",
+        url: "https://cors-anywhere.herokuapp.com/" + url,
+        data: {},
+        headers: {
+            token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJodHRwOi8va2lrb3NCYXJiZXJTaG9wLmNvbSIsImlhdCI6MTY0OTkwODgxNywibmJmIjoxNjQ5OTA4ODE3LCJleHAiOjE2NTA1MTM2MTcsImRhdGEiOnsidXNlcl9pZCI6IjMiLCJ0aXBvIjoiYWRtaW5pc3RyYWRvciJ9fQ.vACdIXGCi5lhdcZfvNyniji9YgtttVNFUsHtMA6JfQA"
+        },
+        dataType: "json",
+        success: function (data) {
+            console.log(data);
+            data.forEach(r => {
+                $('#idBarbero').append("<option value='" + r.id + "'>" + r.nombre + "</option>")
+            });
 
-    
+        },
+        error: function (data) {
+            alert('error');
+        }
+    });
+</script>
+
+<script>
+
+    var url = "https://kikosbarbershop.online/public/corte/" + localStorage.getItem("id");
+    $.ajax({
+        type: "GET",
+        url: "https://cors-anywhere.herokuapp.com/" + url,
+        data: {},
+        headers: {
+            token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJodHRwOi8va2lrb3NCYXJiZXJTaG9wLmNvbSIsImlhdCI6MTY0OTkwODgxNywibmJmIjoxNjQ5OTA4ODE3LCJleHAiOjE2NTA1MTM2MTcsImRhdGEiOnsidXNlcl9pZCI6IjMiLCJ0aXBvIjoiYWRtaW5pc3RyYWRvciJ9fQ.vACdIXGCi5lhdcZfvNyniji9YgtttVNFUsHtMA6JfQA"
+        },
+        dataType: "json",
+        success: function (data) {
+            console.log(data);
+            data.forEach(r => {
+                $('#idCorte').append("<option value='" + r.id + "'>" + r.nombre + "</option>")
+            });
+
+        },
+        error: function (data) {
+            alert('error');
+        }
+    });
+</script>
+
+<!-- Este script sirve para evniar los datos del formulario y guardarlos
+    en la base de datos del servidor-->
+<script>
+
+var url = ''
+    $('#guardar').click(function(){
+        
+        $.ajax({
+            url: '' + url,
+            type: 'POST',
+            data: $('form_cita').serialize(),
+            dataType: "json",
+        })
+        .done(function(res){
+            $('#respuesta').html(res);
+            console.log("La cita ha sido guardada con exito");
+            console.log(data);
+        })
+        .fail(function(){
+            console.log("Error", "Ocurrio un problema al guardar la cita")
+        })
+    })
+
+</script>
+
+
+<!--
 <script>
     function getBarberia() {
         var url = "https://kikosbarbershop.online/public/barberia";
 
-        
+
     }
 </script>
 
@@ -123,7 +165,7 @@
     function getBarbero() {
         var url = "https://kikosbarbershop.online/public/barbero";
 
-    
+
     }
 </script>
 
@@ -133,3 +175,5 @@
 
     }
 </script>
+
+-->

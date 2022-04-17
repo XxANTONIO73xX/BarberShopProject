@@ -113,7 +113,7 @@
         float: left;
       }
 
-    .login-form #user {
+    .login-form #check_password {
       background: linear-gradient(to top, rgb(63, 63, 63), rgba(255, 255, 255, 0.100));
       width: 90%;
       height: 60px;
@@ -141,7 +141,7 @@
     }
 
     .login-form #password:focus,
-    .login-form #user:focus,
+    .login-form #check_password:focus,
     .login-form #telefono:focus,
     .login-form #apellidos:focus,
     .login-form #nombre:focus,
@@ -184,27 +184,6 @@
         color: rgb(208, 208, 208);
       }
   
-  .login-footer {
-    display: none;
-  }
-  
-    .login-footer h5 {
-      position: relative;
-      font-size: 15px;
-      color: white;
-    }
-  
-    .login-footer h6 a {
-      position: relative;
-      left: 5px;
-      font-size: 15px;
-      color: white;
-      text-decoration: none;
-    } 
-    
-      .login-footer h6 a:hover {
-        color: #0f9bf6;
-      }
   
   .taponxd {
     background-color: #444444;
