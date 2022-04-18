@@ -3,148 +3,125 @@
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script>
-var url = "http://api.kikosbarbershop.online/public/cliente_cita/"+localStorage.getItem("id");
 
-$.ajax({
-        type: "GET",
-        url: url,
-        data: {},
-        headers:{
-            token: localStorage.getItem("token")
-        },
-        dataType: "json",
-        success: function (data) {
-          console.log(data);
-          /*data.barberias.forEach(r => {
-                $('#idBarberia').append("<option value='" + r.id + "'>" + r.nombre + "</option>")
-            });*/
 
-        },
-        error: function (data) {
-            alert('error');
-        }
+  var url = "http://api.kikosbarbershop.online/public/cliente_cita/" + localStorage.getItem("id");
+
+  $.ajax({
+    type: "GET",
+    url: url,
+    data: {},
+    dataType: "json",
+    headers: {
+      token: localStorage.getItem("token")
+    }
+  })
+    .done(function (data, textStatus, jqXHR) { // lo que regresamos desde la API esta en data
+
+      var rows = " ";
+      console.log("info tabla")
+      console.log(data)
+
+      if (!data) {
+        rows = "<h2 style='color:red; text-align:center;'>No hay registros</h2>";
+      } else {
+        data.citas.forEach(r => {
+          rows += `
+               <tr>
+                    <td>${r.idBarberia}</td>
+                    <td>${r.idBarbero} </td>
+                    <td>${r.idCorte}</td>
+                    <td>${r.fecha}</td>
+                    <td>${r.estado}</td>
+                </tr>
+        `;
+        });
+      }
+
+      $("#tabla-citas tbody").html(rows);
+
     });
-
-  /*var url = "http://localhost/BarberShop/app/Controllers";
-
-  $(document).ready(function () {
-    $('#tablacitas').DataTable({
-      "ajax": {
-        "url": url + '/citas',
-        "datatype": "json",
-        "dataSrc": ""
-      },
-      "columns": [
-        { "data": "idCliente" },
-        { "data": "idBarbero" },
-        { "data": "idCorte" },
-        { "data": "idBarberia" },
-        { "data": "fecha" },
-        { "data": "estado" },
-      ]
-    })
-  })*/
 
 </script>
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="styles/estilos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@700&family=Roboto+Condensed:wght@300&family=Roboto:wght@900&display=swap" rel="stylesheet"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/cita.js"></script>
-    <title>Citas</title>
-  </head>
 
-    <!--<img src="img/fondoKikos.png" class="pattern_background">-->
-    <nav class="navigation_bar">
-        <img src="img/logoKikoNav.svg" class="logo_menu" width="150px" height= "60px">
-        <ul class="nv_list">
-            <li><a href="../MainCliente/Main.html">Inicio</a></li>
-            <li><a href="../Corte/index.html">Cortes</a></li>
-            <li><a href="../InformacionBarberia/index.html"">Más Información</a></li>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="styles/estilos.css" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Akshar:wght@700&family=Roboto+Condensed:wght@300&family=Roboto:wght@900&display=swap"
+    rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/cita.js"></script>
+  <title>Citas</title>
+</head>
+
+<!--<img src="img/fondoKikos.png" class="pattern_background">-->
+<nav class="navigation_bar">
+  <img src="img/logoKikoNav.svg" class="logo_menu" width="150px" height="60px">
+  <ul class="nv_list">
+    <li><a href="../MainCliente/Main.html">Inicio</a></li>
+    <li><a href="../Corte/index.html">Cortes</a></li>
+    <li><a href="../InformacionBarberia/index.html"">Más Información</a></li>
         </ul>
 
-        <div class="bars__menu">
-            <span class="line1__bars-menu"></span>
-            <span class="line2__bars-menu"></span>
-            <span class="line3__bars-menu"></span>
+        <div class=" bars__menu">
+        <span class="line1__bars-menu"></span>
+        <span class="line2__bars-menu"></span>
+        <span class="line3__bars-menu"></span>
         </div>
-    </nav>
+</nav>
 
-    <div class="stripe">
-      <div class="stripe_inner">
-      </div>
-    </div>
+<div class="stripe">
+  <div class="stripe_inner">
+  </div>
+</div>
 
-  <body>
+<body>
 
-    <h1> Tus citas </h1>
-    <div class="table-position">
-      <table cellspacing="0" border="0">
-        <thead class="tbl-header">
-          <tr>
-            <th> Barbería </th>
-            <th> Barbero </th>
-            <th> Corte </th>
-            <th> Fecha</th>
-            <th> Estado </th>
-          </tr>
-        </thead>
-        <tbody class="tbl-content">
-          <tr>
-            <td> Kikos centro </td>
-            <td> Juanito </td>
-            <td> Desvanecido con la linea del bicho siu</td>
-            <td> Tu ya sabes que rollo carnal</td>
-            <td> Caliente</td>
-          </tr>
-          <tr>
-            <td> Kikos Guaymas Norte </td>
-            <td> El Xocas </td>
-            <td> Corte de hongo, estilo coreeano</td>
-            <td> Las mismas de ayer</td>
-            <td> Con tu hermana</td>
-          </tr>
-        </tbody>
-        <!--https://codepen.io/nikhil8krishnan/pen/WvYPvv-->
-      </table>
-    </div>
+  <h1> Tus citas </h1>
+  <div class="table-position">
+    <table cellspacing="0" border="0" id="tabla-citas">
+      <thead class="tbl-header">
+        <tr>
+          <th> Barbería </th>
+          <th> Barbero </th>
+          <th> Corte </th>
+          <th> Fecha</th>
+          <th> Estado </th>
+        </tr>
+      </thead>
+      <tbody class="tbl-content">
+        <tr>
+          <td> Kikos centro </td>
+          <td> Juanito </td>
+          <td> Desvanecido con la linea del bicho siu</td>
+          <td> Tu ya sabes que rollo carnal</td>
+          <td> Caliente</td>
+        </tr>
+        <tr>
+          <td> Kikos Guaymas Norte </td>
+          <td> El Xocas </td>
+          <td> Corte de hongo, estilo coreeano</td>
+          <td> Las mismas de ayer</td>
+          <td> Con tu hermana</td>
+        </tr>
+      </tbody>
+      <!--https://codepen.io/nikhil8krishnan/pen/WvYPvv-->
+    </table>
+  </div>
 
-    <div class="container__menu">
-      <ul class="nv_list_mobile">
-          <li><a href="../MainCliente/Main.html">Inicio</a></li>
-          <li><a href="../Corte/index.html">Cortes</a></li>
-          <li><a href="../InformacionBarberia/index.html"">Más Información</a></li>
+  <div class="container__menu">
+    <ul class="nv_list_mobile">
+      <li><a href="../MainCliente/Main.html">Inicio</a></li>
+      <li><a href="../Corte/index.html">Cortes</a></li>
+      <li><a href="../InformacionBarberia/index.html"">Más Información</a></li>
       </ul>
     </div>
 
-    <script>
-    /*$(document).ready(function(){
-      $('#tablacitas').DataTable({
-        "ajax":{
-          "url": url,
-          "datatype": "json",
-          "dataSrc":"",
-          "headers":{
-                token: localStorage.getItem("token")
-            }
-        },
-        "columns": [
-          {"data": "idCliente"},
-          {"data": "idBarbero"},
-          {"data": "idCorte"},
-          {"data": "idBarberia"},
-          {"data": "fecha"},
-          {"data": "estado"},
-        ]
-      })
-    })*/
-    
-  </script>
 </body>
 
 </html>

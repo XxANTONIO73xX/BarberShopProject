@@ -43,8 +43,13 @@
                 </div>
 
                 <div class="form-group-fecha">
-                    <label>Fechas disponibles: </label>
-                    <input type="datetime-local" name="fecha" id="idFecha">
+                    <label>Fechas disponibles:</label><br>
+                    <input type="date" name="fecha" id="idFecha">
+                </div>
+
+                <div class="form-group-hora">
+                    <label>Hora</label><br>
+                    <input type="time" name="fecha" id="idFecha">
                 </div>
             </div>
 
@@ -65,92 +70,99 @@
         type: "GET",
         url: url,
         data: {},
+        dataType: "json",
         headers: {
             token: localStorage.getItem("token")
-        },
-        dataType: "json",
-        success: function (data) {
-            console.log(data);
-            data.forEach(r => {
+        }
+    })
+        .done(function (data, textStatus, jqXHR) { // lo que regresamos desde la API esta en data
+
+            var rows = " ";
+            console.log("info select barberia")
+            console.log(data)
+
+            data.barberias.forEach(r => {
                 $('#idBarberia').append("<option value='" + r.id + "'>" + r.nombre + "</option>")
             });
 
-        },
-        error: function (data) {
-            alert('error');
-        }
-    });
+        });
+
 </script>
 
 
 <script>
-    var url = "http://api.kikosbarbershop.online/public/barbero"
+    var url = 'http://api.kikosbarbershop.online/public/barbero'
     $.ajax({
         type: "GET",
         url: url,
         data: {},
+        dataType: "json",
         headers: {
             token: localStorage.getItem("token")
-        },
-        dataType: "json",
-        success: function (data) {
-            console.log(data);
-            data.forEach(r => {
+        }
+    })
+        .done(function (data, textStatus, jqXHR) { // lo que regresamos desde la API esta en data
+
+            var rows = " ";
+            console.log("info select barbero")
+            console.log(data)
+
+            data.barberos.forEach(r => {
                 $('#idBarbero').append("<option value='" + r.id + "'>" + r.nombre + "</option>")
             });
 
-        },
-        error: function (data) {
-            alert('error');
-        }
-    });
+        });
 </script>
 
 <script>
 
-    var url = "http://api.kikosbarbershop.online/public/corte"
+    var url = 'http://api.kikosbarbershop.online/public/corte'
     $.ajax({
         type: "GET",
         url: url,
         data: {},
+        dataType: "json",
         headers: {
             token: localStorage.getItem("token")
-        },
-        dataType: "json",
-        success: function (data) {
-            console.log(data);
-            data.forEach(r => {
+        }
+    })
+        .done(function (data, textStatus, jqXHR) { // lo que regresamos desde la API esta en data
+
+            var rows = " ";
+            console.log("info select corte")
+            console.log(data)
+
+            data.cortes.forEach(r => {
                 $('#idCorte').append("<option value='" + r.id + "'>" + r.nombre + "</option>")
             });
 
-        },
-        error: function (data) {
-            alert('error');
-        }
-    });
+        });
 </script>
 
 <!-- Este script sirve para evniar los datos del formulario y guardarlos
     en la base de datos del servidor-->
 <script>
 
-var url = ''
-    $('#guardar').click(function(){
-        
+    var url = 'http://api.kikosbarbershop.online/public/cliente_cita/'
+    $('#guardar').click(function () {
+
         $.ajax({
-            url: '' + url,
+            url: url,
             type: 'POST',
             data: $('form_cita').serialize(),
             dataType: "json",
+            headers: {
+                token: localStorage.getItem("token")
+            }
         })
-        .done(function(res){
-            $('#respuesta').html(res);
-            console.log("La cita ha sido guardada con exito");
-            console.log(data);
-        })
-        .fail(function(){
-            console.log("Error", "Ocurrio un problema al guardar la cita")
-        })
+            .done(function (res) {
+                $('#respuesta').html(res);
+                console.log("La cita ha sido guardada con exito");
+                console.log(data);
+            })
+            .fail(function () {
+                console.log("Error", "Ocurrio un problema al guardar la cita")
+            })
     })
 
 </script>
