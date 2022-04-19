@@ -1,3 +1,7 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,15 +33,16 @@
 
             <form class="login-form">
                 <div class="login-form-names">
-                    <input id="nombre" placeholder="Nombre" type="text">
-                    <input id="apellidos" placeholder="Apellidos" type="text" />
+                    <input id="nombre" placeholder="Nombre" type="text" required>
+                    <input id="apellidos" placeholder="Apellidos" type="text" required>
                 </div>
                 <div class="login-form-contact">
-                    <input id="correo" placeholder="Correo" type="text" />
-                    <input id="telefono" placeholder="Teléfono" type="text" />
+                    <input id="correo" placeholder="Correo" type="text" required>
+                    <input id="telefono" placeholder="Teléfono" type="text" required>
                 </div>
-                <input id="password" placeholder="Contraseña" type="password" />
-                <input id="check_password" placeholder="Confirmar contraseña" type="password" />
+                <input id="password" placeholder="Contraseña" type="password" required>
+                <input id="check_password" placeholder="Confirmar contraseña" type="password" required>
+                <span id="error_pssd"></span>
 
 
                 <button type="button" id="registrar_usuario">Registrarse</button>
@@ -52,17 +57,33 @@
         <div class="wave circulo c"></div>
     </div>
 
+    <script>
+        $(document).keyup(function(){
+            var password = $('#password').val();
+            var check_password = $('#check_password').val();
+
+            if (password == check_password) {
+                $('#error_pssd').text("Contraseñas coinciden!").css("color", "green");
+            } else {
+                $('#error_pssd').text("Contraseñas no coinciden!").css("color", "red");
+            }
+
+            if (check_password == "") {
+                $('#error_pssd').text("No se puede dejar en blanco!").css("color", "red");
+            }
+        })
+    </script>
 
     <!-- Este script sirve para evniar los datos del formulario 
         de registro de cliente y guardarlos en la 
         base de datos del servidor-->
     <script>
 
-        var url = ''
+        var url = 'http://api.kikosbarbershop.online/public/cliente'
         $('#registrar_usuario').click(function () {
 
             $.ajax({
-                url: '' + url,
+                url: url,
                 type: 'POST',
                 data: $('login-form').serialize(),
                 dataType: "json",
