@@ -57,8 +57,12 @@
         <div class="wave circulo c"></div>
     </div>
 
+    <!--
+        Este script sirve para verificar si las contraseñas ingresadas en el
+        registro concuerdan, dando diferentes mensajes.
+    -->
     <script>
-        $(document).keyup(function(){
+        $(document).keyup(function () {
             var password = $('#password').val();
             var check_password = $('#check_password').val();
 
@@ -79,24 +83,38 @@
         base de datos del servidor-->
     <script>
 
-        var url = 'http://api.kikosbarbershop.online/public/cliente'
+        var url = 'http://api.kikosbarbershop.online/public/cliente' + localStorage.getItem("id");
         $('#registrar_usuario').click(function () {
 
             $.ajax({
                 url: url,
                 type: 'POST',
-                data: $('login-form').serialize(),
+                data: {
+                    "nombre": $("#nombre").val(),
+                    "apellidos": $("#apellidos").val(),
+                    "correo": $("#correo").val(),
+                    "telefono": $("#telefono").val(),
+                    "password": $("#password").val()
+                },
                 dataType: "json",
+                headers: {
+                    token: localStorage.getItem("token")
+                }
             })
-                .done(function (res) {
-                    $('#respuesta').html(res);
+                .done(function (data) {
+                    $('#respuesta').html(data);
                     console.log("El usuarios se ha registrado con exito");
                     console.log(data);
+                    /**
+                     * !Esto para regresar al index de iniciar sesion, en el dato caso
+                     * !de que marque error el metodo se quita la linea de abajo
+                    **/
+                    location.href = "/index.html/";
                 })
                 .fail(function () {
                     console.log("Error", "Ocurrio un problema al registrar el usuario")
                 })
-        })
+        });
 
     </script>
 

@@ -143,27 +143,38 @@
     en la base de datos del servidor-->
 <script>
 
-    var url = 'http://api.kikosbarbershop.online/public/cliente_cita/'
+var url = 'http://api.kikosbarbershop.online/public/cita/' + localStorage.getItem("id");
     $('#guardar').click(function () {
 
         $.ajax({
             url: url,
             type: 'POST',
-            data: $('form_cita').serialize(),
+            data: {
+                "idBarberia": $("#idBarberia").val(),
+                "idBarbero": $("#idBarbero").val(),
+                "idCorte": $("#idCorte").val(),
+                "fecha": $("#fecha").val(),
+                "hora": $("#hora").val()
+            },
             dataType: "json",
             headers: {
                 token: localStorage.getItem("token")
             }
         })
-            .done(function (res) {
+            .done(function (data, res) {
                 $('#respuesta').html(res);
                 console.log("La cita ha sido guardada con exito");
                 console.log(data);
+                /**
+                     * !Esto para regresar al index de citas y se recargue, en el dato caso
+                     * !de que marque error el metodo se quita la linea de abajo
+                    **/
+                location.href = "/Cita/";
             })
             .fail(function () {
                 console.log("Error", "Ocurrio un problema al guardar la cita")
             })
-    })
+    });
 
 </script>
 
