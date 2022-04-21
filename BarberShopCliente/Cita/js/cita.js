@@ -20,6 +20,7 @@ function animateBars(){
 const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
 const accordionDatos = document.querySelectorAll(".accordion-cita-datos");
 
+
 accordionItemHeaders.forEach(accordionItemHeaders => {
     accordionItemHeaders.addEventListener("click", event => {
         accordionItemHeaders.classList.toggle("active");
@@ -31,3 +32,16 @@ accordionDatos.forEach(accordionDatos => {
         accordionDatos.classList.toggle("active");
     });    
 });
+
+function statusCita() {
+    var statusCita = document.getElementById("status-label");
+    var buttonStatusCita = document.getElementById("button-cancelar");
+
+    if (statusCita.innerHTML === "ACTIVA") {
+        statusCita.innerHTML = "PENDIENTE";
+        buttonStatusCita.innerHTML = "Activar cita";
+    } else {
+        statusCita.innerHTML = "ACTIVA";
+        buttonStatusCita.innerHTML = "Cancelar cita";
+    }
+}

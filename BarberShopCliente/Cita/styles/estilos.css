@@ -386,12 +386,16 @@ table {
               width: 700px;
               height: 30px;
             }
+
+            .accordion-estado-box {
+              margin-top: 10px;
+            }
           
           .button-cancelar {
             position: relative;
             border-radius: 100px;
             border: none;
-            top: 50px;
+            top: 10px;
             left: 620px;
             width: 100px;
             height: 30px;
@@ -402,7 +406,7 @@ table {
           }
 
             .button-cancelar:hover {
-              background-color: rgb(226, 0, 0);
+              background-color: rgba(0, 98, 226, 0.449);
               transition: 0.45s;
               cursor: pointer;
             }

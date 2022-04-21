@@ -149,48 +149,14 @@
               <label>Costo total:</label>
               <div class="accordion-cita-datos-body-coste">$150.00</div>
             </div>
-          </div>
-          <button class="button-cancelar">Cancelar cita</button>
-        </div>
-      </div>
-    </div>
 
-  <!-- ITEM 2 -->
+            <div class="accordion-estado-box">
+              <label>Estado de la cita:</label>
+              <label id="status-label" class="accordion-cita-datos-body-estado"> ACTIVA </label>
+            </div>
 
-    <div class="accordion-item">
-      <div class="accordion-item-header">
-        <div class="accordion-cita-datos">
-          <div class="accordion-cita-datos-header-barbero" id="accordion-datos">Barbero: José María</div>
-          <div class="accordion-cita-datos-header-corte" id="accordion-datos">Corte: Corte el faragod</div>
-          <div class="accordion-cita-datos-header-fecha" id="accordion-datos">Fecha: 27/04/2024 a las 6:00 PM</div>
-          <div class="accordion-cita-datos-header-coste" id="accordion-datos">Coste: $1500</div>
-        </div>
-      </div>
-      <div class="accordion-item-body">
-        <div class="accordion-item-body-content">
-          <div class="accordion-barbero-box">
-          <label>Tu barbero:</label>
-          <div class="accordion-cita-datos-body-barbero">* FOTO BARBERO *</div>
           </div>
-          <div class="accordion-corte-box">
-            <label>Corte:</label>
-            <div class="accordion-cita-datos-body-corte">* FOTO CORTE *</div>
-          </div>
-          <div class="accordion-cita-datos-body-datos__minimos">
-            <div class="accordion-fecha-box">
-              <label>Fecha de la cita:</label>
-              <div class="accordion-cita-datos-body-fecha">27 de Abril de 2022</div>
-            </div>
-            <div class="accordion-hora-box">
-              <label>Hora:</label>
-              <div class="accordion-cita-datos-body-hora">6:00 PM</div>
-            </div>
-            <div class="accordion-costo-box">
-              <label>Costo total:</label>
-              <div class="accordion-cita-datos-body-coste">$1500.00</div>
-            </div>
-          </div>
-          <button class="button-cancelar">Cancelar cita</button>
+          <button id="button-cancelar" class="button-cancelar" onclick="statusCita()">Cancelar cita</button>
         </div>
       </div>
     </div>
