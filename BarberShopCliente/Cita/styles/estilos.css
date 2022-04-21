@@ -63,26 +63,26 @@ body {
   }
 
       .navigation_bar .nv_list li {
-          display: inline;
-          margin: 0 -2px 0 -2px;
+        display: inline;
+        margin: 0 -2px 0 -2px;
       }
 
           .navigation_bar .nv_list li a {
-              font-size: 17px;
-              padding: 30px 30px 32.5px 30px;
-              text-decoration: none;
-              color: rgb(255, 255, 255);
-              background-image: linear-gradient(currentColor, currentColor);
-              background-position: 0% 100%;
-              background-repeat: no-repeat;
-              background-size: 0% 1px;
-              transition: background-size .3s;
+            font-size: 17px;
+            padding: 30px 30px 32.5px 30px;
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            background-image: linear-gradient(currentColor, currentColor);
+            background-position: 0% 100%;
+            background-repeat: no-repeat;
+            background-size: 0% 1px;
+            transition: background-size .3s;
           }
 
           .navigation_bar .nv_list li a:hover, .navigation_bar .nv_list li a:focus {
-              border-bottom: #ffffff solid 1px;
-              background-size: 100% 3px;
-              color: rgb(255, 255, 255);
+            border-bottom: #ffffff solid 1px;
+            background-size: 100% 3px;
+            color: rgb(255, 255, 255);
           }
 
    /*------------------------------NAVIGATION BAR AL MINIMIZAR--------------------------------*/
@@ -91,6 +91,7 @@ body {
     .navigation_bar .nv_list li {
       display: none;
     }
+
     .bars__menu{
         position: relative;
         display: block;
@@ -180,7 +181,7 @@ body {
         }
 }
 
-/*--------------------------------TABLAS-------------------------------*/
+/*--------------------------------TABLAS-------------------------------
 
 .table-position {
   position: relative;
@@ -238,6 +239,155 @@ table {
       padding-top: 10px;
       background-color: rgba(153, 153, 153, 0.31);
     }
+    
+  /*-------------------------------- ACORDEÓN DE CITAS -------------------------------*/
+
+  .accordion {
+    top: 100px;
+    position: relative;
+    width: 90%;
+    margin-right: 100px;
+    z-index: 1000;
+  }
+
+    .accordion-item {
+      background-color: rgb(42, 42, 43);
+      color: white;
+      margin: 10px 0; 
+      border-radius: 1.5rem;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,0.5) ;
+    }
+
+      .accordion-item-header {
+        padding: 0.5rem 3rem 0.5rem 1rem;
+        line-height: 1;
+        font-weight: bold;
+        display: flex;
+        height: 40px;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+      }
+      
+      .accordion-item-header::after {
+        content: "\25BE";
+        font-size: 1.5rem;
+        position: absolute;
+        right: 1rem;
+        color: #090a0f;
+        transition: transform 0.2s;
+      }
+
+        .accordion-item-header.active::after {
+          transform: rotate(-180deg);
+        }
+
+        .accordion-cita-datos {
+          width: 100%;
+          height: 30px;
+          display: flex;
+          transition: .3s;
+          line-height: 2;
+          justify-content: center;
+        }
+
+          .accordion-cita-datos.active {
+            opacity: 0;
+            transition: .2s;
+          }
+
+        #accordion-datos {
+          margin-right: 70px;
+          border-right: 2px solid rgba(13, 12, 12, 0.552);
+          padding-right: 70px;
+        }
+        
+        .accordion-item-body {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.2s ease-out;
+        }
+
+        .accordion-item-body-content {
+          padding: 1rem;
+          line-height: 1.5rem;
+          border-top: 3px solid rgb(0, 124, 169);
+          border-image: linear-gradient(to right, transparent, black, transparent) 1;
+          transition: 1s;
+        }
+
+          .accordion-item-header.active + .accordion-item-body {
+            max-height: 700px;
+            transition: 1s;
+          }
+        
+          .accordion-barbero-box {
+            float: left;
+            margin-bottom: 20px;
+          }
+
+            .accordion-cita-datos-body-barbero {
+              margin-top: 10px;
+              background-color: rgb(22, 17, 17);
+              border-radius: 10px;
+              width: 200px;
+              height: 280px;
+            }
+
+          .accordion-corte-box {
+            float: left;
+            margin-left: 20px;
+            margin-bottom: 20px;
+          }
+
+            .accordion-cita-datos-body-corte {
+              margin-top: 10px;
+              background-color: rgb(22, 17, 17);
+              border-radius: 10px;
+              width: 280px;
+              height: 280px;
+            }
+
+          .accordion-cita-datos-body-datos__minimos {
+            position: relative;
+            float: left;
+            margin-bottom: 20px;
+            margin-left: 20px;
+          }
+
+            .accordion-cita-datos-body-fecha {
+              margin-top: 10px;
+              background-color: rgb(22, 17, 17);
+              border-radius: 10px;
+              width: 700px;
+              height: 30px;
+            }
+
+            .accordion-hora-box {
+              margin-top: 10px;
+            }
+
+            .accordion-cita-datos-body-hora {
+              margin-top: 10px;
+              background-color: rgb(22, 17, 17);
+              border-radius: 10px;
+              width: 700px;
+              height: 30px;
+            }
+
+            .accordion-costo-box {
+              margin-top: 10px;
+            }
+
+            .accordion-cita-datos-body-coste {
+              margin-top: 10px;
+              background-color: rgb(22, 17, 17);
+              border-radius: 10px;
+              width: 700px;
+              height: 30px;
+            }
+
+
 
 
   /*------------------------------------ FONDO LINEAS DIAGONALES ------------------------------------*/
@@ -344,4 +494,5 @@ table {
       background-position: calc(var(--stripe-size) * -1) 0;
     }
   }
+
 
