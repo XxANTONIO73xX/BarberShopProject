@@ -309,7 +309,7 @@ table {
         }
 
         .accordion-item-body-content {
-          padding: 1rem;
+          padding: 20px;
           line-height: 1.5rem;
           border-top: 3px solid rgb(0, 124, 169);
           border-image: linear-gradient(to right, transparent, black, transparent) 1;
@@ -385,6 +385,26 @@ table {
               border-radius: 10px;
               width: 700px;
               height: 30px;
+            }
+          
+          .button-cancelar {
+            position: relative;
+            border-radius: 100px;
+            border: none;
+            top: 50px;
+            left: 620px;
+            width: 100px;
+            height: 30px;
+            background: linear-gradient(to top, rgb(19, 19, 19), rgba(255, 255, 255, 0.100));
+            transition: 0.25s;
+            font-size: 15px;
+            color: white;
+          }
+
+            .button-cancelar:hover {
+              background-color: rgb(226, 0, 0);
+              transition: 0.45s;
+              cursor: pointer;
             }
 
 
