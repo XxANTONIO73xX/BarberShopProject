@@ -269,14 +269,14 @@ table {
         cursor: pointer;
       }
       
-      .accordion-item-header::after {
-        content: "\25BE";
-        font-size: 1.5rem;
-        position: absolute;
-        right: 1rem;
-        color: #090a0f;
-        transition: transform 0.2s;
-      }
+        .accordion-item-header::after {
+          content: "\25BE";
+          font-size: 1.5rem;
+          position: absolute;
+          right: 1rem;
+          color: #090a0f;
+          transition: transform 0.2s;
+        }
 
         .accordion-item-header.active::after {
           transform: rotate(-180deg);
@@ -325,6 +325,12 @@ table {
             float: left;
             margin-bottom: 20px;
           }
+
+            .accordion-cita-datos-header {
+              margin-left: 20px;
+              border-right: 2px solid rgb(27, 25, 25);
+              padding-right: 130px;
+            }
 
             .accordion-cita-datos-body-barbero {
               margin-top: 10px;
@@ -411,8 +417,7 @@ table {
               cursor: pointer;
             }
 
-
-
+        
 
   /*------------------------------------ FONDO LINEAS DIAGONALES ------------------------------------*/
 

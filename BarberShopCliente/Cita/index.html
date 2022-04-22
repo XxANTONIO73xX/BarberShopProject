@@ -66,7 +66,6 @@ $.ajax({
     } else {
       data.citas.forEach(r => {
 
-
         $('#idBarbero_box').append("<div id='" + r.idBarbero + "'>" + r.barbero.nombre + "</div>")
         $('#idCorte_box').append("<div id='" + r.idCorte + "'>" + r.corte.visualización + "</div>")
         $('#fecha_box').append("<div id='" + r.fecha + "'>" + r.fecha + "</div>")
@@ -158,15 +157,15 @@ $.ajax({
     <div class="accordion-item">
       <div class="accordion-item-header">
         <div class="accordion-cita-datos">
-          <div class="accordion-cita-datos-header-barberia" id="idBarberia">Barberia:
+          <div class="accordion-cita-datos-header" id="idBarberia">Barberia:
           </div>
-          <div class="accordion-cita-datos-header-barbero" id="idBarbero">Barbero:
+          <div class="accordion-cita-datos-header" id="idBarbero">Barbero:
           </div>
-          <div class="accordion-cita-datos-header-corte" id="idCorte">Corte:
+          <div class="accordion-cita-datos-header" id="idCorte">Corte:
           </div>
-          <div class="accordion-cita-datos-header-fecha" id="fecha">Fecha:
+          <div class="accordion-cita-datos-header" id="fecha">Fecha:
           </div>
-          <div class="accordion-cita-datos-header-estado" id="estado">Estado:
+          <div class="accordion-cita-datos-header" id="estado">Estado:
           </div>
         </div>
       </div>
