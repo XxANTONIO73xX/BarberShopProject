@@ -28,9 +28,9 @@
         data.citas.forEach(r => {
 
 
-          $('#idBarberia').append("<div id='" + r.idBarberia + "'>" + r.nombre + "</div>")
-          $('#idBarbero').append("<div id='" + r.idBarbero + "'>" + r.nombre + "</div>")
-          $('#idCorte').append("<div id='" + r.idCorte + "'>" + r.nombre + "</div>")
+          $('#idBarberia').append("<div id='" + r.idBarberia + "'>" + r.barberia.nombre + "</div>")
+          $('#idBarbero').append("<div id='" + r.idBarbero + "'>" + r.barbero.nombre + "</div>")
+          $('#idCorte').append("<div id='" + r.idCorte + "'>" + r.corte.nombre + "</div>")
           $('#fecha').append("<div id='" + r.fecha + "'>" + r.fecha + "</div>")
           $('#estado').append("<div id='" + r.estado + "'>" + r.estado + "</div>")
 
@@ -39,6 +39,44 @@
       $("#accordion-item-header").html();
 
     });
+
+</script>
+
+<script>
+
+var url = "http://api.kikosbarbershop.online/public/cliente_cita/" + localStorage.getItem("id");
+
+$.ajax({
+  type: "GET",
+  url: url,
+  data: {},
+  dataType: "json",
+  headers: {
+    token: localStorage.getItem("token")
+  }
+})
+  .done(function (data, textStatus, jqXHR) { // lo que regresamos desde la API esta en data
+
+    var rows = " ";
+    console.log("info div box")
+    console.log(data)
+
+    if (!data) {
+      rows = "<h2 style='color:red; text-align:center;'>No hay registros</h2>";
+    } else {
+      data.citas.forEach(r => {
+
+
+        $('#idBarbero_box').append("<div id='" + r.idBarbero + "'>" + r.barbero.nombre + "</div>")
+        $('#idCorte_box').append("<div id='" + r.idCorte + "'>" + r.corte.visualización + "</div>")
+        $('#fecha_box').append("<div id='" + r.fecha + "'>" + r.fecha + "</div>")
+        $('#hora_box').append("<div id='" + r.hora + "'>" + r.hora + "</div>")
+        $('#status-label').append("<label id='" + r.estado + "'>" + r.estado + "</label>")
+
+      });
+    }
+
+  });
 
 </script>
 
@@ -136,29 +174,26 @@
         <div class="accordion-item-body-content">
           <div class="accordion-barbero-box">
             <label>Tu barbero:</label>
-            <div class="accordion-cita-datos-body-barbero">* FOTO BARBERO *</div>
+            <div class="accordion-cita-datos-body-barbero" id="idBarbero_box">* FOTO BARBERO *</div>
           </div>
           <div class="accordion-corte-box">
             <label>Corte:</label>
-            <div class="accordion-cita-datos-body-corte">* FOTO CORTE *</div>
+            <div class="accordion-cita-datos-body-corte" id="idCorte_box">* FOTO CORTE *</div>
           </div>
           <div class="accordion-cita-datos-body-datos__minimos">
             <div class="accordion-fecha-box">
               <label>Fecha de la cita:</label>
-              <div class="accordion-cita-datos-body-fecha">22 de Noviembre de 2010</div>
+              <div class="accordion-cita-datos-body-fecha" id="fecha_box"></div>
             </div>
             <div class="accordion-hora-box">
-              <label>Hora:</label>
-              <div class="accordion-cita-datos-body-hora">3:00 PM</div>
+              <label>Hora de la cita:</label>
+              <div class="accordion-cita-datos-body-hora" id="hora_box"></div>
             </div>
-            <div class="accordion-costo-box">
-              <label>Costo total:</label>
-              <div class="accordion-cita-datos-body-coste">$150.00</div>
-            </div>
+            
 
             <div class="accordion-estado-box">
               <label>Estado de la cita:</label>
-              <label id="status-label" class="accordion-cita-datos-body-estado"> ACTIVA </label>
+              <label id="status-label" class="accordion-cita-datos-body-estado"> </label>
             </div>
 
           </div>
