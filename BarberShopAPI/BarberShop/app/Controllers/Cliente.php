@@ -3,7 +3,6 @@ namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\ClienteModel;
-
 class Cliente extends Auth{
     protected $modelName = 'App\Models\ClienteModel';
     protected $format = 'json';
@@ -33,7 +32,7 @@ class Cliente extends Auth{
                 "apellidos"  => $this->request->getPost("apellidos"),
                 "correo"  => $this->request->getPost("correo"),
                 "telefono"  => $this->request->getPost("telefono"),
-                "password"  => $this->request->getPost("password")
+                "pasword"  => $this->request->getPost("password")
         ];
 
         $id = $this->model->insert($data);
@@ -59,7 +58,7 @@ class Cliente extends Auth{
         if(!empty($this->request->getPost("telefono")))
             $data["telefono"] = $this->request->getPost("telefono");
         if(!empty($this->request->getPost("password")))
-            $data["password"] = $this->request->getPost("password");
+            $data["pasword"] = $this->request->getPost("password");
         
         $result = $this->model->update($id, $data);
 

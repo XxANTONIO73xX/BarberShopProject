@@ -8,7 +8,6 @@ use CodeIgniter\Config\Services;
 use CodeIgniter\RESTful\ResourceController;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
-
 class Auth extends ResourceController{
     protected $format = 'json';
     protected $token;
@@ -35,7 +34,7 @@ class Auth extends ResourceController{
                 $key = Services::getSecretKey();
                 $userId = $this->cliente["id"];
                 $payload = [
-                    'aud' => "http://kikosBarberShop.com",
+                    'aud' => "https://kikosbarbershop.online/public/",
                     'iat' => $time,
                     'nbf' => $time,
                     'exp' => $time+(60*60*24*7),
@@ -59,7 +58,7 @@ class Auth extends ResourceController{
                 $key = Services::getSecretKey();
                 $userId = $this->barbero["id"];
                 $payload = [
-                    'aud' => "http://kikosBarberShop.com",
+                    'aud' => "https://kikosbarbershop.online/public/",
                     'iat' => $time,
                     'nbf' => $time,
                     'exp' => $time+(60*60*24*7),
@@ -83,7 +82,7 @@ class Auth extends ResourceController{
                 $key = Services::getSecretKey();
                 $userId = $this->administrador["id"];
                 $payload = [
-                    'aud' => "http://kikosBarberShop.com",
+                    'aud' => "https://kikosbarbershop.online/public/",
                     'iat' => $time,
                     'nbf' => $time,
                     'exp' => $time+(7*24*60*60),

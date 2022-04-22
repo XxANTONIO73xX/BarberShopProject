@@ -3,14 +3,12 @@ namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\CorteModel;
-
 class Corte extends Auth{
     protected $modelName = 'App\Models\CorteModel';
     protected $format = 'json';
 
     public function index(){
         if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
-        if($this->tipoUsuario != "administrador"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $data=[
             "cortes" => $this->model->findAll()
         ];

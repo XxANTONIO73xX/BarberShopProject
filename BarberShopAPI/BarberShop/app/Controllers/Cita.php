@@ -1,29 +1,80 @@
 <?php 
 namespace App\Controllers;
 
+use App\Models\BarberiaModel;
 use App\Models\BarberoModel;
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\CitaModel;
+use App\Models\ClienteModel;
+use App\Models\CorteModel;
 
 class Cita extends Auth{
     protected $modelName = 'App\Models\CitaModel';
     protected $format = 'json';
-
+    protected $cliente;
+    protected $cita;
+    protected $corte;
+    protected $barberia;
+    protected $barbero;
+    
     public function index(){
         if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
         if($this->tipoUsuario != "administrador"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
-        $data=[
-            "citas" => $this->model->findAll()
-        ];
+        
+        $clienteModel = new ClienteModel();
+        $corteModel = new CorteModel();
+        $barberoModel = new BarberoModel();
+        $barberiaModel = new BarberiaModel();
+
+        $this->cita = $this->model->findAll();
+        
+        $data["citas"]=[];
+
+        foreach ($this->cita as $idCita => $cita){
+            $data["citas"][] = [
+                "id" => $cita["id"],
+                "fecha" => $cita["fecha"],
+                "hora" => $cita["hora"],
+                "estado" => $cita["estado"],
+                "cliente" => $clienteModel->find($cita["idCliente"]),
+                "corte" => $corteModel->find($cita["idCorte"]),
+                "barbero" => $barberoModel->find($cita["idBarbero"]),
+                "barberia" =>$barberiaModel->find($cita["idBarberia"])
+            ];
+        }
+
         return $this->respond($data);
     }
 
     public function cliente_cita($id){
         if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
         if($this->tipoUsuario != "cliente"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
-        $data=[
-            "citas" => $this->model->obtenerPorCliente($id)
-        ];
+        
+        $clienteModel = new ClienteModel();
+        $corteModel = new CorteModel();
+        $barberoModel = new BarberoModel();
+        $barberiaModel = new BarberiaModel();
+
+        $this->cliente = $clienteModel->find($id);  
+        $this->cita = $this->model->obtenerPorCliente($id);
+
+        $data["citas"]=[];
+        $data["cliente"]= $this->cliente;
+
+        foreach ($this->cita as $idCita => $cita) {   
+
+            $data["citas"][] = [
+                "id" => $cita["id"],
+                "fecha" => $cita["fecha"],
+                "hora" => $cita["hora"],
+                "estado" => $cita["estado"], 
+                "corte" => $corteModel->find($cita["idCorte"]),
+                "barbero" => $barberoModel->find($cita["idBarbero"]),
+                "barberia" =>$barberiaModel->find($cita["idBarberia"])
+            ];
+
+        }
+
         return $this->respond($data);
     }
 
@@ -39,9 +90,25 @@ class Cita extends Auth{
     }
 
     public function show($id = NULL){
-        if(!$this->verifyToken()){return $this->respond(["error" =>"Token raro"]);}
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        
+        $clienteModel = new ClienteModel();
+        $corteModel = new CorteModel();
+        $barberoModel = new BarberoModel();
+        $barberiaModel = new BarberiaModel();
+        
+        $this->cita = $this->model->find($id);
         $data=[
-            "cita" => $this->model->find($id)
+            "cita" => [
+                "id" => $this->cita["id"],
+                "fecha" => $this->cita["fecha"],
+                "hora" => $this->cita["hora"],
+                "estado" => $this->cita["estado"],
+                "cliente" => $clienteModel->find($this->cita["idCliente"]),
+                "corte" => $corteModel->find($this->cita["idCorte"]),
+                "barbero" => $barberoModel->find($this->cita["idBarbero"]),
+                "barberia" => $barberiaModel->find($this->cita["idBarberia"])
+            ]
         ];
         return $this->respond($data);
     }

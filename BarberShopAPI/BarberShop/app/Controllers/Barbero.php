@@ -1,27 +1,68 @@
 <?php 
 namespace App\Controllers;
 
+use App\Models\BarberiaModel;
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\BarberoModel;
-
 class Barbero extends Auth{
     protected $modelName = 'App\Models\BarberoModel';
     protected $format = 'json';
 
     public function index(){
         if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
-        if($this->tipoUsuario != "administrador"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
-        $data=[
-            "barberos" => $this->model->findAll()
-        ];
+        //if($this->tipoUsuario != "administrador" || $this->tipoUsuario != "cliente"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta", "tipoUsuario" => $this->tipoUsuario]);}
+        $barberiaModel = new BarberiaModel();
+        $barberos = $this->model->findAll();
+        $data["barberos"]=[];
+        foreach($barberos as $idBarbero => $barbero){
+            $data["barberos"][] = [
+                "id" => $barbero["id"],
+                "nombre"  => $barbero["nombre"],
+                "apodo"  => $barbero["apodo"],
+                "apellidos"  => $barbero["apellidos"],
+                "correo"  => $barbero["correo"],
+                "telefono"  => $barbero["telefono"],
+                "barberia"  => $barberiaModel->find($barbero["idBarberia"])
+            ];
+        }
+        return $this->respond($data);
+    }
+
+    public function barbero_barberia($id){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
+        $barberiaModel = new BarberiaModel();
+        $barberos = $this->model->obtenerPorBarberia($id);
+        $data["barberos"]=[];
+        $data["barberia"] = $barberiaModel->find($id);
+        foreach($barberos as $idBarbero => $barbero){
+            $data["barberos"][]=[
+                "id" => $barbero["id"],
+                "nombre"  => $barbero["nombre"],
+                "apodo"  => $barbero["apodo"],
+                "apellidos"  => $barbero["apellidos"],
+                "correo"  => $barbero["correo"],
+                "telefono"  => $barbero["telefono"]
+            ];
+        }
         return $this->respond($data);
     }
 
     public function show($id = NULL){
         if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
         if($this->tipoUsuario == "cliente" || $this->barbero["id"] != $id){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
+        
+        $barbero = $this->model->find($id);
+        $barberiaModel = new BarberiaModel();
         $data=[
-            "barbero" => $this->model->find($id)
+            "barbero" => [
+                "id" => $barbero["id"],
+                "nombre"  => $barbero["nombre"],
+                "apodo"  => $barbero["apodo"],
+                "apellidos"  => $barbero["apellidos"],
+                "correo"  => $barbero["correo"],
+                "telefono"  => $barbero["telefono"],
+                "barberia"  => $barberiaModel->find($barbero["idBarberia"])
+            ]
         ];
         return $this->respond($data);
     }

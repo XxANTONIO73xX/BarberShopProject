@@ -17,6 +17,11 @@ class BarberoModel extends Model{
         "idBarberia"
     ];
     
+    public function obtenerPorBarberia($id){
+        $result = $this->asArray()->where(["idBarberia" => $id])->findAll();
+        return $result;
+    }
+
     public function login($usuario, $password){
         $result = $this->asArray()->where([
             "telefono" => $usuario,

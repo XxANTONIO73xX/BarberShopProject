@@ -3,7 +3,6 @@ namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\AdministradorModel;
-
 class Administrador extends Auth{
     protected $modelName = 'App\Models\AdministradorModel';
     protected $format = 'json';
@@ -35,7 +34,7 @@ class Administrador extends Auth{
                 "apellidos"  => $this->request->getPost("apellidos"),
                 "correo"  => $this->request->getPost("correo"),
                 "telefono"  => $this->request->getPost("telefono"),
-                "password"  => $this->request->getPost("password")
+                "pasword"  => $this->request->getPost("password")
         ];
 
         $id = $this->model->insert($data);
@@ -61,7 +60,7 @@ class Administrador extends Auth{
         if(!empty($this->request->getPost("telefono")))
             $data["telefono"] = $this->request->getPost("telefono");
         if(!empty($this->request->getPost("password")))
-            $data["password"] = $this->request->getPost("password");
+            $data["pasword"] = $this->request->getPost("password");
         
         $result = $this->model->update($id, $data);
 

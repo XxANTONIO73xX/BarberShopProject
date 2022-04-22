@@ -31,16 +31,17 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
-$routes->resource('cliente');
-$routes->resource('administrador');
-$routes->resource('barbero');
-$routes->resource('barberia');
-$routes->resource('corte');
-$routes->resource('cita');
-$routes->resource("auth");
-$routes->get("barbero_cita/(:segment)", 'Cita::barbero_cita/$1');
-$routes->get("cliente_cita/(:segment)", "Cita::cliente_cita/$1");
+$routes->get('/', 'Home::index', ['filter' => 'cors']);
+$routes->resource('cliente', ['filter' => 'cors']);
+$routes->resource('administrador', ['filter' => 'cors']);
+$routes->resource('barbero', ['filter' => 'cors']);
+$routes->resource('barberia', ['filter' => 'cors']);
+$routes->resource('corte', ['filter' => 'cors']);
+$routes->resource('cita', ['filter' => 'cors']);
+$routes->resource("auth", ['filter' => 'cors']);
+$routes->get("barbero_cita/(:segment)", 'Cita::barbero_cita/$1', ['filter' => 'cors']);
+$routes->get("cliente_cita/(:segment)", "Cita::cliente_cita/$1", ['filter' => 'cors']);
+$routes->get("barberia_barberos/(:segment)", "Barbero::barbero_barberia/$1", );
 /*
  * --------------------------------------------------------------------
  * Additional Routing

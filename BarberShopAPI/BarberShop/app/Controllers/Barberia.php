@@ -3,23 +3,24 @@ namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\BarberiaModel;
-
 class Barberia extends Auth{
     protected $modelName = 'App\Models\BarberiaModel';
     protected $format = 'json';
 
     public function index(){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
         $data=[
             "barberias" => $this->model->findAll()
         ];
-        return $this->respond($data);
+        return $this->respond($data, 200);
     }
     
     public function show($id = NULL){
+        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
         $data=[
             "barberia" => $this->model->find($id)
         ];
-        return $this->respond($data);
+        return $this->respond($data, 200);
     }
 
     public function create(){
@@ -75,9 +76,9 @@ class Barberia extends Auth{
         if($this->tipoUsuario != "administrador"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $result = $this->model->delete($id);
         if($result){
-            return $this->respond(["result"=> "El registro se elimino correctamente"]);
+            return $this->respond(["result"=> "El registro se elimino correctamente"], 200);
         }else{
-            return $this->respond((["error" => "hubo un error al eliminar"]));
+            return $this->respond(["error" => "hubo un error al eliminar"], 200);
         }
     }
 }
