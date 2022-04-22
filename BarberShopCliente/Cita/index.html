@@ -19,26 +19,24 @@
     .done(function (data, textStatus, jqXHR) { // lo que regresamos desde la API esta en data
 
       var rows = " ";
-      console.log("info tabla")
+      console.log("info div header")
       console.log(data)
 
       if (!data) {
         rows = "<h2 style='color:red; text-align:center;'>No hay registros</h2>";
       } else {
         data.citas.forEach(r => {
-          rows += `
-               <tr>
-                    <td>${r.idBarberia}</td>
-                    <td>${r.idBarbero} </td>
-                    <td>${r.idCorte}</td>
-                    <td>${r.fecha}</td>
-                    <td>${r.estado}</td>
-                </tr>
-        `;
+
+
+          $('#idBarberia').append("<div id='" + r.idBarberia + "'>" + r.nombre + "</div>")
+          $('#idBarbero').append("<div id='" + r.idBarbero + "'>" + r.nombre + "</div>")
+          $('#idCorte').append("<div id='" + r.idCorte + "'>" + r.nombre + "</div>")
+          $('#fecha').append("<div id='" + r.fecha + "'>" + r.fecha + "</div>")
+          $('#estado').append("<div id='" + r.estado + "'>" + r.estado + "</div>")
+
         });
       }
-
-      $("#tabla-citas tbody").html(rows);
+      $("#accordion-item-header").html();
 
     });
 
@@ -51,7 +49,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link href="styles/estilos.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@700&family=Roboto+Condensed:wght@300&family=Roboto:wght@900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Akshar:wght@700&family=Roboto+Condensed:wght@300&family=Roboto:wght@900&display=swap"
+    rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Citas</title>
 </head>
@@ -113,24 +113,30 @@
   </div>
   -->
 
- <div class="accordion">
+  <div class="accordion">
 
     <!-- ITEM 1 -->
 
     <div class="accordion-item">
       <div class="accordion-item-header">
         <div class="accordion-cita-datos">
-          <div class="accordion-cita-datos-header-barbero" id="accordion-datos">Barbero: Pedro</div>
-          <div class="accordion-cita-datos-header-corte" id="accordion-datos">Corte: Corte del CR7</div>
-          <div class="accordion-cita-datos-header-fecha" id="accordion-datos">Fecha: 22/11/2010 a las 3:00 PM</div>
-          <div class="accordion-cita-datos-header-coste" id="accordion-datos">Coste: $150</div>
+          <div class="accordion-cita-datos-header-barberia" id="idBarberia">Barberia:
+          </div>
+          <div class="accordion-cita-datos-header-barbero" id="idBarbero">Barbero:
+          </div>
+          <div class="accordion-cita-datos-header-corte" id="idCorte">Corte:
+          </div>
+          <div class="accordion-cita-datos-header-fecha" id="fecha">Fecha:
+          </div>
+          <div class="accordion-cita-datos-header-estado" id="estado">Estado:
+          </div>
         </div>
       </div>
       <div class="accordion-item-body">
         <div class="accordion-item-body-content">
           <div class="accordion-barbero-box">
-          <label>Tu barbero:</label>
-          <div class="accordion-cita-datos-body-barbero">* FOTO BARBERO *</div>
+            <label>Tu barbero:</label>
+            <div class="accordion-cita-datos-body-barbero">* FOTO BARBERO *</div>
           </div>
           <div class="accordion-corte-box">
             <label>Corte:</label>
@@ -170,7 +176,7 @@
       </ul>
     </div>
 
-    <script src="js/cita.js"></script>
+    <script src=" js/cita.js"></script>
 </body>
 
 </html>
