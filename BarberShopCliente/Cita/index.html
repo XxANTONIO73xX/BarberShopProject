@@ -4,7 +4,6 @@
 
 <script>
 
-
   var url = "http://api.kikosbarbershop.online/public/cliente_cita/" + localStorage.getItem("id");
 
   $.ajax({
@@ -26,7 +25,6 @@
         rows = "<h2 style='color:red; text-align:center;'>No hay registros</h2>";
       } else {
         data.citas.forEach(r => {
-
 
           $('#idBarberia').append("<div id='" + r.idBarberia + "'>" + r.barberia.nombre + "</div>")
           $('#idBarbero').append("<div id='" + r.idBarbero + "'>" + r.barbero.nombre + "</div>")
@@ -150,6 +148,10 @@ $.ajax({
   </div>
   -->
 
+  <div class="add-cita">
+    <button class="button-agendar-cita" id="abrirModal">Agendar cita</button>
+  </div>
+
   <div class="accordion">
 
     <!-- ITEM 1 -->
@@ -209,6 +211,66 @@ $.ajax({
       <li><a href="../InformacionBarberia/index.html"">Más Información</a></li>
       </ul>
     </div>
+
+  <div class="modal-bg">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&hyphen;</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">Agregar nueva cita</h4>
+          </div>
+          <form method="post" id="form_cita">
+              <div class="modal-body">
+                  <div class="form-group-barberia">
+                      <img src="img/BarberiaSelect.png" width="30px" height="30px">
+                      <select placeholder="Barberia" name="barberia" id="idBarberia"
+                          class="form-control" onclick="getBarberia()">
+                          <option class="placeholder-select"value= "" disabled selected hidden>Selecciona una barbería</option>
+                          <option value="idBarbería">Selecciona una barbería</option>
+                      </select>
+                  </div>
+  
+                  <div class="form-group-barbero">
+                      <img src="img/BarberoSelect.png" width="30px" height="30px">
+                      <select placeholder="Barbero"name="barbero" id="idBarbero" class="form-control"
+                          onclick="getBarbero()">
+                          <option class="placeholder-select"value= "" hidden>Selecciona un barbero</option>
+                          <option value="idBarbero">Selecciona un barbero</option>
+                      </select>
+                  </div>
+  
+                  <div class="form-group-corte">
+                      <img src="img/CorteSelect.png" width="30px" height="30px">
+                      <select placeholder="Corte" name="Corte" id="idCorte" class="form-control"
+                          onclick="getCorte()">
+                          <option class="placeholder-select"value= "" disabled selected hidden>Selecciona una corte</option>
+                          <option value="idCorte">Selecciona un corte</option>
+                      </select>
+                  </div>
+  
+                  <div class="form-group-fecha">
+                      <label>Fechas disponibles:</label><br>
+                      <input type="date" name="fecha" id="idFecha">
+                  </div>
+  
+                  <div class="form-group-hora">
+                      <label>Hora</label><br>
+                      <input type="time" name="fecha" id="idFecha">
+                  </div>
+              </div>
+  
+              <div class="modal-footer">
+                  <button type="button" class="button-close modal-close" data-dismiss="modal">Cerrar</button>
+                  <button type="submit" id="guardar" class="button-accept">Agendar cita</button>
+              </div>
+  
+              <div id="respuesta"></div>
+          </form>
+      </div>
+  </div>
+</div>
 
     <script src=" js/cita.js"></script>
 </body>

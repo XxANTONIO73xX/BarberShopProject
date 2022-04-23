@@ -45,3 +45,15 @@ function statusCita() {
         buttonStatusCita.innerHTML = "Cancelar cita";
     }
 }
+
+var btnModal = document.querySelector('.button-agendar-cita');
+var modalBg = document.querySelector('.modal-bg');
+var modalClose = document.querySelector('.modal-close');
+
+btnModal.addEventListener('click', function(){
+    modalBg.classList.add('bg-active');
+});
+
+modalClose.addEventListener('click', function(){
+    modalBg.classList.remove('bg-active');
+});
