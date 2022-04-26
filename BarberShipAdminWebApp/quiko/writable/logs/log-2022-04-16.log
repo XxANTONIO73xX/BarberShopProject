@@ -1,0 +1,331 @@
+CRITICAL - 2022-04-16 16:18:19 --> There is no data to update.
+#0 C:\laragon\www\quiko\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\laragon\www\quiko\system\Model.php(651): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\laragon\www\quiko\app\Controllers\Cliente.php(58): CodeIgniter\Model->update('8', Array)
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->eliminar('8')
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-16 16:25:32 --> There is no data to update.
+#0 C:\laragon\www\quiko\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\laragon\www\quiko\system\Model.php(651): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\laragon\www\quiko\app\Controllers\Cliente.php(58): CodeIgniter\Model->update('8', Array)
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->eliminar('8')
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-16 16:27:34 --> There is no data to update.
+#0 C:\laragon\www\quiko\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\laragon\www\quiko\system\Model.php(651): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\laragon\www\quiko\app\Controllers\Cliente.php(58): CodeIgniter\Model->update('8', Array)
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->eliminar('8')
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-16 16:28:18 --> There is no data to update.
+#0 C:\laragon\www\quiko\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\laragon\www\quiko\system\Model.php(651): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\laragon\www\quiko\app\Controllers\Cliente.php(58): CodeIgniter\Model->update('8', Array)
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->eliminar('8')
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-16 16:38:37 --> There is no data to update.
+#0 C:\laragon\www\quiko\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\laragon\www\quiko\system\Model.php(651): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\laragon\www\quiko\app\Controllers\Cliente.php(58): CodeIgniter\Model->update('9', Array)
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->eliminar('9')
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-16 16:42:36 --> There is no data to update.
+#0 C:\laragon\www\quiko\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\laragon\www\quiko\system\Model.php(651): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\laragon\www\quiko\app\Controllers\Cliente.php(58): CodeIgniter\Model->update('9', Array)
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->eliminar('9')
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-16 16:46:02 --> There is no data to update.
+#0 C:\laragon\www\quiko\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\laragon\www\quiko\system\Model.php(651): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\laragon\www\quiko\app\Controllers\Cliente.php(59): CodeIgniter\Model->update('9', Array)
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->eliminar('9')
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-16 16:49:02 --> Undefined variable: id
+#0 C:\laragon\www\quiko\app\Views\clientes\clientes.php(46): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\laragon\\www\\...', 46, Array)
+#1 C:\laragon\www\quiko\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\quiko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\laragon\www\quiko\system\Common.php(1089): CodeIgniter\View\View->render('clientes/client...', Array, true)
+#4 C:\laragon\www\quiko\app\Controllers\Cliente.php(22): view('clientes/client...', Array)
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->index()
+#6 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#7 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-16 16:49:08 --> Undefined variable: id
+#0 C:\laragon\www\quiko\app\Views\clientes\clientes.php(46): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\laragon\\www\\...', 46, Array)
+#1 C:\laragon\www\quiko\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\quiko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\laragon\www\quiko\system\Common.php(1089): CodeIgniter\View\View->render('clientes/client...', Array, true)
+#4 C:\laragon\www\quiko\app\Controllers\Cliente.php(22): view('clientes/client...', Array)
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->index()
+#6 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#7 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-16 16:51:40 --> There is no data to update.
+#0 C:\laragon\www\quiko\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\laragon\www\quiko\system\Model.php(651): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\laragon\www\quiko\app\Controllers\Cliente.php(59): CodeIgniter\Model->update('9', Array)
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->eliminar('9')
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-16 17:06:27 --> There is no data to update.
+#0 C:\laragon\www\quiko\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\laragon\www\quiko\system\Model.php(651): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\laragon\www\quiko\app\Controllers\Cliente.php(59): CodeIgniter\Model->update('9', Array)
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->eliminar('9')
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-16 17:14:49 --> There is no data to update.
+#0 C:\laragon\www\quiko\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\laragon\www\quiko\system\Model.php(651): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\laragon\www\quiko\app\Controllers\Cliente.php(59): CodeIgniter\Model->update('9', Array)
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->eliminar('9')
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-16 17:15:40 --> syntax error, unexpected ')', expecting variable (T_VARIABLE)
+#0 C:\laragon\www\quiko\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('cliente')
+#1 C:\laragon\www\quiko\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('cliente')
+#2 C:\laragon\www\quiko\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-16 17:16:09 --> syntax error, unexpected ')', expecting variable (T_VARIABLE)
+#0 C:\laragon\www\quiko\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('cliente')
+#1 C:\laragon\www\quiko\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('cliente')
+#2 C:\laragon\www\quiko\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-16 17:16:11 --> syntax error, unexpected ')', expecting variable (T_VARIABLE)
+#0 C:\laragon\www\quiko\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('cliente')
+#1 C:\laragon\www\quiko\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('cliente')
+#2 C:\laragon\www\quiko\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-16 17:16:28 --> syntax error, unexpected ')', expecting variable (T_VARIABLE)
+#0 C:\laragon\www\quiko\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('cliente')
+#1 C:\laragon\www\quiko\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('cliente')
+#2 C:\laragon\www\quiko\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-16 17:16:45 --> syntax error, unexpected ')', expecting variable (T_VARIABLE)
+#0 C:\laragon\www\quiko\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('cliente')
+#1 C:\laragon\www\quiko\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('cliente')
+#2 C:\laragon\www\quiko\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-16 17:16:48 --> syntax error, unexpected ')', expecting variable (T_VARIABLE)
+#0 C:\laragon\www\quiko\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('cliente')
+#1 C:\laragon\www\quiko\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('cliente')
+#2 C:\laragon\www\quiko\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-16 17:16:50 --> syntax error, unexpected ')', expecting variable (T_VARIABLE)
+#0 C:\laragon\www\quiko\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('cliente/editar/...')
+#1 C:\laragon\www\quiko\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('cliente/editar/...')
+#2 C:\laragon\www\quiko\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-16 17:16:59 --> syntax error, unexpected ')', expecting variable (T_VARIABLE)
+#0 C:\laragon\www\quiko\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('cliente')
+#1 C:\laragon\www\quiko\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('cliente')
+#2 C:\laragon\www\quiko\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-16 17:17:26 --> There is no data to update.
+#0 C:\laragon\www\quiko\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\laragon\www\quiko\system\Model.php(651): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\laragon\www\quiko\app\Controllers\Cliente.php(60): CodeIgniter\Model->update('9', Array)
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->eliminar('9')
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-16 17:24:28 --> There is no data to update.
+#0 C:\laragon\www\quiko\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\laragon\www\quiko\system\Model.php(651): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\laragon\www\quiko\app\Controllers\Cliente.php(60): CodeIgniter\Model->update('9', Array)
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->eliminar('9')
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-16 17:52:35 --> There is no data to update.
+#0 C:\laragon\www\quiko\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\laragon\www\quiko\system\Model.php(651): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\laragon\www\quiko\app\Controllers\Cliente.php(61): CodeIgniter\Model->update('9', Array)
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->eliminar('9')
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-16 17:58:31 --> Undefined variable: id
+#0 C:\laragon\www\quiko\app\Controllers\Cliente.php(61): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\laragon\\www\\...', 61, Array)
+#1 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->eliminar('9')
+#2 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-16 17:58:52 --> There is no data to update.
+#0 C:\laragon\www\quiko\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\laragon\www\quiko\system\Model.php(651): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\laragon\www\quiko\app\Controllers\Cliente.php(61): CodeIgniter\Model->update('9', Array)
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->eliminar('9')
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-16 18:00:18 --> There is no data to update.
+#0 C:\laragon\www\quiko\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\laragon\www\quiko\system\Model.php(651): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\laragon\www\quiko\app\Controllers\Cliente.php(61): CodeIgniter\Model->update('9', Array)
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->eliminar('9')
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-16 18:00:43 --> There is no data to update.
+#0 C:\laragon\www\quiko\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\laragon\www\quiko\system\Model.php(651): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\laragon\www\quiko\app\Controllers\Cliente.php(61): CodeIgniter\Model->update('9', Array)
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->eliminar('9')
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-16 18:01:23 --> There is no data to update.
+#0 C:\laragon\www\quiko\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\laragon\www\quiko\system\Model.php(651): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\laragon\www\quiko\app\Controllers\Cliente.php(61): CodeIgniter\Model->update('9', Array)
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->eliminar('9')
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-16 18:12:28 --> There is no data to update.
+#0 C:\laragon\www\quiko\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\laragon\www\quiko\system\Model.php(651): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\laragon\www\quiko\app\Controllers\Cliente.php(61): CodeIgniter\Model->update('9', Array)
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->eliminar('9')
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-16 18:23:33 --> There is no data to update.
+#0 C:\laragon\www\quiko\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\laragon\www\quiko\system\Model.php(651): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\laragon\www\quiko\app\Controllers\Cliente.php(61): CodeIgniter\Model->update('9', Array)
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->eliminar('9')
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-16 18:35:19 --> Argument 2 passed to CodeIgniter\BaseModel::delete() must be of the type bool, array given, called in C:\laragon\www\quiko\app\Controllers\Cliente.php on line 61
+#0 C:\laragon\www\quiko\app\Controllers\Cliente.php(61): CodeIgniter\BaseModel->delete('9', Array)
+#1 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->eliminar('9')
+#2 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-04-16 18:43:23 --> Error connecting to the database: Access denied for user '****'@'localhost' (using password: YES)
+CRITICAL - 2022-04-16 18:43:23 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+#0 C:\laragon\www\quiko\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\laragon\www\quiko\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\laragon\www\quiko\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\laragon\www\quiko\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#4 C:\laragon\www\quiko\app\Controllers\Cliente.php(18): CodeIgniter\BaseModel->findAll()
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->index()
+#6 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#7 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-16 18:45:54 --> Argument 2 passed to CodeIgniter\BaseModel::delete() must be of the type bool, array given, called in C:\laragon\www\quiko\app\Controllers\Cliente.php on line 61
+#0 C:\laragon\www\quiko\app\Controllers\Cliente.php(61): CodeIgniter\BaseModel->delete('6', Array)
+#1 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->eliminar('6')
+#2 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-16 18:46:57 --> There is no data to update.
+#0 C:\laragon\www\quiko\system\BaseModel.php(846): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\laragon\www\quiko\system\Model.php(651): CodeIgniter\BaseModel->update(Array, Array)
+#2 C:\laragon\www\quiko\app\Controllers\Cliente.php(59): CodeIgniter\Model->update('2', Array)
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->eliminar('2')
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-16 18:49:14 --> There is no data to update.
+#0 C:\laragon\www\quiko\system\BaseModel.php(1574): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\laragon\www\quiko\system\BaseModel.php(832): CodeIgniter\BaseModel->transformDataToArray(NULL, 'update')
+#2 C:\laragon\www\quiko\system\Model.php(651): CodeIgniter\BaseModel->update(Array, NULL)
+#3 C:\laragon\www\quiko\app\Controllers\Cliente.php(59): CodeIgniter\Model->update('6')
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->eliminar('6')
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#6 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-04-16 18:49:28 --> There is no data to update.
+#0 C:\laragon\www\quiko\system\BaseModel.php(1574): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\laragon\www\quiko\system\BaseModel.php(832): CodeIgniter\BaseModel->transformDataToArray(NULL, 'update')
+#2 C:\laragon\www\quiko\system\Model.php(651): CodeIgniter\BaseModel->update(Array, NULL)
+#3 C:\laragon\www\quiko\app\Controllers\Cliente.php(59): CodeIgniter\Model->update('6')
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->eliminar('6')
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#6 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-04-16 18:51:16 --> There is no data to update.
+#0 C:\laragon\www\quiko\system\BaseModel.php(1574): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\laragon\www\quiko\system\BaseModel.php(832): CodeIgniter\BaseModel->transformDataToArray(NULL, 'update')
+#2 C:\laragon\www\quiko\system\Model.php(651): CodeIgniter\BaseModel->update(Array, NULL)
+#3 C:\laragon\www\quiko\app\Controllers\Cliente.php(59): CodeIgniter\Model->update('6')
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->eliminar('6')
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#6 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-04-16 21:26:04 --> Invalid file: tablesBarbero.php
+#0 C:\laragon\www\quiko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('tablesBarbero.p...')
+#1 C:\laragon\www\quiko\system\Common.php(1089): CodeIgniter\View\View->render('tablesBarbero', Array, true)
+#2 C:\laragon\www\quiko\app\Controllers\Barbero.php(10): view('tablesBarbero')
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Barbero->index()
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barbero))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}

@@ -1,0 +1,64 @@
+ERROR - 2022-04-14 00:09:57 --> Unknown column 'fecha_alta' in 'field list'
+CRITICAL - 2022-04-14 00:09:57 --> Unknown column 'fecha_alta' in 'field list'
+#0 C:\laragon\www\quiko\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `cl...', 0)
+#1 C:\laragon\www\quiko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cl...')
+#2 C:\laragon\www\quiko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cl...')
+#3 C:\laragon\www\quiko\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cl...', Array, false)
+#4 C:\laragon\www\quiko\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\quiko\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\quiko\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\laragon\www\quiko\system\BaseModel.php(658): CodeIgniter\Model->insert(Array, false)
+#8 C:\laragon\www\quiko\app\Controllers\Cliente.php(37): CodeIgniter\BaseModel->save(Array)
+#9 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->insertar()
+#10 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#11 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2022-04-14 00:11:11 --> Unknown column 'created_at' in 'field list'
+CRITICAL - 2022-04-14 00:11:11 --> Unknown column 'created_at' in 'field list'
+#0 C:\laragon\www\quiko\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `cl...', 0)
+#1 C:\laragon\www\quiko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cl...')
+#2 C:\laragon\www\quiko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cl...')
+#3 C:\laragon\www\quiko\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cl...', Array, false)
+#4 C:\laragon\www\quiko\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\quiko\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\quiko\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\laragon\www\quiko\system\BaseModel.php(658): CodeIgniter\Model->insert(Array, false)
+#8 C:\laragon\www\quiko\app\Controllers\Cliente.php(37): CodeIgniter\BaseModel->save(Array)
+#9 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->insertar()
+#10 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#11 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2022-04-14 00:12:08 --> Unknown column 'created_at' in 'field list'
+CRITICAL - 2022-04-14 00:12:08 --> Unknown column 'created_at' in 'field list'
+#0 C:\laragon\www\quiko\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `cl...', 0)
+#1 C:\laragon\www\quiko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cl...')
+#2 C:\laragon\www\quiko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cl...')
+#3 C:\laragon\www\quiko\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cl...', Array, false)
+#4 C:\laragon\www\quiko\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\quiko\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\quiko\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\laragon\www\quiko\system\BaseModel.php(658): CodeIgniter\Model->insert(Array, false)
+#8 C:\laragon\www\quiko\app\Controllers\Cliente.php(37): CodeIgniter\BaseModel->save(Array)
+#9 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->insertar()
+#10 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#11 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}
+ERROR - 2022-04-14 00:13:08 --> Column 'telefono' cannot be null
+CRITICAL - 2022-04-14 00:13:08 --> Column 'telefono' cannot be null
+#0 C:\laragon\www\quiko\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `cl...', 0)
+#1 C:\laragon\www\quiko\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cl...')
+#2 C:\laragon\www\quiko\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cl...')
+#3 C:\laragon\www\quiko\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cl...', Array, false)
+#4 C:\laragon\www\quiko\system\Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\quiko\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\quiko\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, false)
+#7 C:\laragon\www\quiko\system\BaseModel.php(658): CodeIgniter\Model->insert(Array, false)
+#8 C:\laragon\www\quiko\app\Controllers\Cliente.php(37): CodeIgniter\BaseModel->save(Array)
+#9 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->insertar()
+#10 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#11 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 {main}

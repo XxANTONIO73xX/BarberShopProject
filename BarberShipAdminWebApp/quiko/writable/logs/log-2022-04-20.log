@@ -1,0 +1,38 @@
+CRITICAL - 2022-04-20 21:45:20 --> Undefined index: visualizacion
+#0 C:\laragon\www\quiko\app\Views\cortes\cortes.php(37): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\laragon\\www\\...', 37, Array)
+#1 C:\laragon\www\quiko\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\quiko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\laragon\www\quiko\system\Common.php(1089): CodeIgniter\View\View->render('cortes/cortes', Array, true)
+#4 C:\laragon\www\quiko\app\Controllers\Corte.php(22): view('cortes/cortes', Array)
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Corte->index()
+#6 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Corte))
+#7 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-20 21:47:26 --> visualizacion is not a valid rule.
+#0 C:\laragon\www\quiko\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('visualizacion')
+#1 C:\laragon\www\quiko\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('visualizacion', 'visualizacion', 'sdfsdf', Array, Array)
+#2 C:\laragon\www\quiko\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#3 C:\laragon\www\quiko\app\Controllers\Corte.php(39): CodeIgniter\Controller->validate(Array)
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Corte->insertar()
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Corte))
+#6 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-04-20 21:52:05 --> visualización is not a valid rule.
+#0 C:\laragon\www\quiko\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('visualizaci\xC3\xB3n')
+#1 C:\laragon\www\quiko\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('visualizaci\xC3\xB3n', 'visualizaci\xC3\xB3n', 'sdfsdf', Array, Array)
+#2 C:\laragon\www\quiko\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#3 C:\laragon\www\quiko\app\Controllers\Corte.php(39): CodeIgniter\Controller->validate(Array)
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Corte->insertar()
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Corte))
+#6 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-04-20 21:53:33 --> Undefined property: App\Controllers\Corte::$clientes
+#0 C:\laragon\www\quiko\app\Controllers\Corte.php(40): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\laragon\\www\\...', 40, Array)
+#1 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Corte->insertar()
+#2 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Corte))
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

@@ -1,0 +1,18 @@
+CRITICAL - 2022-04-15 02:00:20 --> Invalid file: cliente/editar.php
+#0 C:\laragon\www\quiko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('cliente/editar....')
+#1 C:\laragon\www\quiko\system\Common.php(1089): CodeIgniter\View\View->render('cliente/editar', Array, true)
+#2 C:\laragon\www\quiko\app\Controllers\Cliente.php(47): view('cliente/editar', Array)
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->editar('1')
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-15 02:00:59 --> Invalid file: cliente/editar.php
+#0 C:\laragon\www\quiko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('cliente/editar....')
+#1 C:\laragon\www\quiko\system\Common.php(1089): CodeIgniter\View\View->render('cliente/editar', Array, true)
+#2 C:\laragon\www\quiko\app\Controllers\Cliente.php(47): view('cliente/editar', Array)
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->editar('1')
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}

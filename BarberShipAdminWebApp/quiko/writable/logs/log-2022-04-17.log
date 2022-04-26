@@ -1,0 +1,269 @@
+ERROR - 2022-04-17 16:44:07 --> Error connecting to the database: Access denied for user '****'@'localhost' (using password: YES)
+CRITICAL - 2022-04-17 16:44:07 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+#0 C:\laragon\www\quiko\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\laragon\www\quiko\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\laragon\www\quiko\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\laragon\www\quiko\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#4 C:\laragon\www\quiko\app\Controllers\Cliente.php(18): CodeIgniter\BaseModel->findAll()
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cliente->index()
+#6 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cliente))
+#7 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-17 16:56:18 --> Invalid file: tablesBarbero.php
+#0 C:\laragon\www\quiko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('tablesBarbero.p...')
+#1 C:\laragon\www\quiko\system\Common.php(1089): CodeIgniter\View\View->render('tablesBarbero', Array, true)
+#2 C:\laragon\www\quiko\app\Controllers\Barbero.php(10): view('tablesBarbero')
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Barbero->index()
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barbero))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-17 16:56:38 --> Invalid file: tablesCita.php
+#0 C:\laragon\www\quiko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('tablesCita.php')
+#1 C:\laragon\www\quiko\system\Common.php(1089): CodeIgniter\View\View->render('tablesCita', Array, true)
+#2 C:\laragon\www\quiko\app\Controllers\Cita.php(10): view('tablesCita')
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cita->index()
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cita))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-17 16:56:49 --> Invalid file: tablesCita.php
+#0 C:\laragon\www\quiko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('tablesCita.php')
+#1 C:\laragon\www\quiko\system\Common.php(1089): CodeIgniter\View\View->render('tablesCita', Array, true)
+#2 C:\laragon\www\quiko\app\Controllers\Cita.php(10): view('tablesCita')
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cita->index()
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cita))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-17 16:59:03 --> Invalid file: tablesBarbero.php
+#0 C:\laragon\www\quiko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('tablesBarbero.p...')
+#1 C:\laragon\www\quiko\system\Common.php(1089): CodeIgniter\View\View->render('tablesBarbero', Array, true)
+#2 C:\laragon\www\quiko\app\Controllers\Barbero.php(10): view('tablesBarbero')
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Barbero->index()
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barbero))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-17 17:58:52 --> Invalid file: tablesCita.php
+#0 C:\laragon\www\quiko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('tablesCita.php')
+#1 C:\laragon\www\quiko\system\Common.php(1089): CodeIgniter\View\View->render('tablesCita', Array, true)
+#2 C:\laragon\www\quiko\app\Controllers\Cita.php(10): view('tablesCita')
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cita->index()
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cita))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-17 18:25:36 --> Invalid file: tablesCita.php
+#0 C:\laragon\www\quiko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('tablesCita.php')
+#1 C:\laragon\www\quiko\system\Common.php(1089): CodeIgniter\View\View->render('tablesCita', Array, true)
+#2 C:\laragon\www\quiko\app\Controllers\Cita.php(10): view('tablesCita')
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cita->index()
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cita))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-17 18:25:39 --> Invalid file: tablesCita.php
+#0 C:\laragon\www\quiko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('tablesCita.php')
+#1 C:\laragon\www\quiko\system\Common.php(1089): CodeIgniter\View\View->render('tablesCita', Array, true)
+#2 C:\laragon\www\quiko\app\Controllers\Cita.php(10): view('tablesCita')
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cita->index()
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cita))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-17 18:25:49 --> Invalid file: tablesCita.php
+#0 C:\laragon\www\quiko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('tablesCita.php')
+#1 C:\laragon\www\quiko\system\Common.php(1089): CodeIgniter\View\View->render('tablesCita', Array, true)
+#2 C:\laragon\www\quiko\app\Controllers\Cita.php(10): view('tablesCita')
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cita->index()
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cita))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-17 18:27:13 --> Invalid file: tablesCita.php
+#0 C:\laragon\www\quiko\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('tablesCita.php')
+#1 C:\laragon\www\quiko\system\Common.php(1089): CodeIgniter\View\View->render('tablesCita', Array, true)
+#2 C:\laragon\www\quiko\app\Controllers\Cita.php(10): view('tablesCita')
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Cita->index()
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cita))
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-04-17 20:00:22 --> visualización is not a valid rule.
+#0 C:\laragon\www\quiko\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('visualizaci\xC3\xB3n')
+#1 C:\laragon\www\quiko\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('visualizaci\xC3\xB3n', 'visualizaci\xC3\xB3n', 'cortillo', Array, Array)
+#2 C:\laragon\www\quiko\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#3 C:\laragon\www\quiko\app\Controllers\Corte.php(39): CodeIgniter\Controller->validate(Array)
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Corte->insertar()
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Corte))
+#6 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-04-17 20:04:59 --> visualización is not a valid rule.
+#0 C:\laragon\www\quiko\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('visualizaci\xC3\xB3n')
+#1 C:\laragon\www\quiko\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('visualizaci\xC3\xB3n', 'visualizaci\xC3\xB3n', 'Pelon', Array, Array)
+#2 C:\laragon\www\quiko\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#3 C:\laragon\www\quiko\app\Controllers\Corte.php(39): CodeIgniter\Controller->validate(Array)
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Corte->insertar()
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Corte))
+#6 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-04-17 20:06:27 --> visualización is not a valid rule.
+#0 C:\laragon\www\quiko\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('visualizaci\xC3\xB3n')
+#1 C:\laragon\www\quiko\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('visualizaci\xC3\xB3n', 'visualizaci\xC3\xB3n', 'cortito', Array, Array)
+#2 C:\laragon\www\quiko\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#3 C:\laragon\www\quiko\app\Controllers\Corte.php(39): CodeIgniter\Controller->validate(Array)
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Corte->insertar()
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Corte))
+#6 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-04-17 20:08:52 --> visualizacion is not a valid rule.
+#0 C:\laragon\www\quiko\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('visualizacion')
+#1 C:\laragon\www\quiko\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('visualizacion', 'visualizacion', NULL, Array, Array)
+#2 C:\laragon\www\quiko\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#3 C:\laragon\www\quiko\app\Controllers\Corte.php(39): CodeIgniter\Controller->validate(Array)
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Corte->insertar()
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Corte))
+#6 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-04-17 20:09:29 --> Undefined index: visualizacion
+#0 C:\laragon\www\quiko\app\Views\cortes\cortes.php(37): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\laragon\\www\\...', 37, Array)
+#1 C:\laragon\www\quiko\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\quiko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\laragon\www\quiko\system\Common.php(1089): CodeIgniter\View\View->render('cortes/cortes', Array, true)
+#4 C:\laragon\www\quiko\app\Controllers\Corte.php(22): view('cortes/cortes', Array)
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Corte->index()
+#6 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Corte))
+#7 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-17 20:09:38 --> Undefined index: visualizacion
+#0 C:\laragon\www\quiko\app\Views\cortes\cortes.php(37): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\laragon\\www\\...', 37, Array)
+#1 C:\laragon\www\quiko\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\quiko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\laragon\www\quiko\system\Common.php(1089): CodeIgniter\View\View->render('cortes/cortes', Array, true)
+#4 C:\laragon\www\quiko\app\Controllers\Corte.php(22): view('cortes/cortes', Array)
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Corte->index()
+#6 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Corte))
+#7 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-17 20:09:41 --> Undefined index: visualizacion
+#0 C:\laragon\www\quiko\app\Views\cortes\cortes.php(37): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\laragon\\www\\...', 37, Array)
+#1 C:\laragon\www\quiko\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\quiko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\laragon\www\quiko\system\Common.php(1089): CodeIgniter\View\View->render('cortes/cortes', Array, true)
+#4 C:\laragon\www\quiko\app\Controllers\Corte.php(22): view('cortes/cortes', Array)
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Corte->index()
+#6 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Corte))
+#7 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-17 20:09:52 --> Undefined index: visualizacion
+#0 C:\laragon\www\quiko\app\Views\cortes\cortes.php(37): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\laragon\\www\\...', 37, Array)
+#1 C:\laragon\www\quiko\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\quiko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\laragon\www\quiko\system\Common.php(1089): CodeIgniter\View\View->render('cortes/cortes', Array, true)
+#4 C:\laragon\www\quiko\app\Controllers\Corte.php(22): view('cortes/cortes', Array)
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Corte->index()
+#6 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Corte))
+#7 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-17 20:12:24 --> visualización is not a valid rule.
+#0 C:\laragon\www\quiko\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('visualizaci\xC3\xB3n')
+#1 C:\laragon\www\quiko\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('visualizaci\xC3\xB3n', 'visualizaci\xC3\xB3n', 'pruebita', Array, Array)
+#2 C:\laragon\www\quiko\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#3 C:\laragon\www\quiko\app\Controllers\Corte.php(39): CodeIgniter\Controller->validate(Array)
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Corte->insertar()
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Corte))
+#6 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-04-17 20:14:55 --> visualizacion is not a valid rule.
+#0 C:\laragon\www\quiko\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('visualizacion')
+#1 C:\laragon\www\quiko\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('visualizacion', 'visualizacion', 'pruebita', Array, Array)
+#2 C:\laragon\www\quiko\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#3 C:\laragon\www\quiko\app\Controllers\Corte.php(39): CodeIgniter\Controller->validate(Array)
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Corte->insertar()
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Corte))
+#6 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-04-17 20:15:17 --> visualizacion is not a valid rule.
+#0 C:\laragon\www\quiko\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('visualizacion')
+#1 C:\laragon\www\quiko\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('visualizacion', 'visualizacion', 'prueba', Array, Array)
+#2 C:\laragon\www\quiko\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#3 C:\laragon\www\quiko\app\Controllers\Corte.php(39): CodeIgniter\Controller->validate(Array)
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Corte->insertar()
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Corte))
+#6 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-04-17 20:36:48 --> Undefined variable: cliente
+#0 C:\laragon\www\quiko\app\Controllers\Corte.php(55): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\laragon\\www\\...', 55, Array)
+#1 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Corte->editar('1')
+#2 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Corte))
+#3 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-17 20:37:47 --> visualizacion is not a valid rule.
+#0 C:\laragon\www\quiko\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('visualizacion')
+#1 C:\laragon\www\quiko\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('visualizacion', 'visualizacion', 'prubita', Array, Array)
+#2 C:\laragon\www\quiko\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#3 C:\laragon\www\quiko\app\Controllers\Corte.php(39): CodeIgniter\Controller->validate(Array)
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Corte->insertar()
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Corte))
+#6 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-04-17 20:41:21 --> visualizacion is not a valid rule.
+#0 C:\laragon\www\quiko\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('visualizacion')
+#1 C:\laragon\www\quiko\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('visualizacion', 'visualizacion', 'tres', Array, Array)
+#2 C:\laragon\www\quiko\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#3 C:\laragon\www\quiko\app\Controllers\Corte.php(39): CodeIgniter\Controller->validate(Array)
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Corte->insertar()
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Corte))
+#6 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-04-17 20:43:48 --> visualizacion is not a valid rule.
+#0 C:\laragon\www\quiko\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('visualizacion')
+#1 C:\laragon\www\quiko\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('visualizacion', 'visualizacion', 'peloncito', Array, Array)
+#2 C:\laragon\www\quiko\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#3 C:\laragon\www\quiko\app\Controllers\Corte.php(39): CodeIgniter\Controller->validate(Array)
+#4 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Corte->insertar()
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Corte))
+#6 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-04-17 21:46:36 --> Class 'App\Controllers\ClientesModel' not found
+#0 C:\laragon\www\quiko\system\CodeIgniter.php(809): App\Controllers\Administrador->__construct()
+#1 C:\laragon\www\quiko\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-04-17 21:46:54 --> Class 'App\Controllers\ClientesModel' not found
+#0 C:\laragon\www\quiko\system\CodeIgniter.php(809): App\Controllers\Administrador->__construct()
+#1 C:\laragon\www\quiko\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-04-17 21:47:11 --> Class 'App\Controllers\AdministradoresModel' not found
+#0 C:\laragon\www\quiko\system\CodeIgniter.php(809): App\Controllers\Administrador->__construct()
+#1 C:\laragon\www\quiko\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-04-17 21:47:50 --> Class 'App\Models\AdministradorModel' not found
+#0 C:\laragon\www\quiko\system\CodeIgniter.php(809): App\Controllers\Administrador->__construct()
+#1 C:\laragon\www\quiko\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
