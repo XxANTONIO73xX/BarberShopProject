@@ -32,176 +32,142 @@ body {
   text-align: center;
 }
 
-  .navigation_bar .logo_menu {
-      position: absolute;
-      top: 8px;
-      left: 0px;
-      color: white;
-  }
-
-      .navigation_bar .logo_menu:hover {
-          -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-      }
-
-  .navigation_bar .nv_list {
-      position: relative;
-      top: 22px;
-      list-style: none;
-  }
-
-      .navigation_bar .nv_list li {
-        display: inline;
-        margin: 0 -2px 0 -2px;
-      }
-
-          .navigation_bar .nv_list li a {
-            font-size: 17px;
-            padding: 30px 30px 32.5px 30px;
-            text-decoration: none;
-            color: rgb(255, 255, 255);
-            background-image: linear-gradient(currentColor, currentColor);
-            background-position: 0% 100%;
-            background-repeat: no-repeat;
-            background-size: 0% 1px;
-            transition: background-size .3s;
-          }
-
-          .navigation_bar .nv_list li a:hover, .navigation_bar .nv_list li a:focus {
-            border-bottom: #ffffff solid 1px;
-            background-size: 100% 3px;
-            color: rgb(255, 255, 255);
-          }
-
-   /*------------------------------NAVIGATION BAR AL MINIMIZAR--------------------------------*/
-
-   @media (max-width: 750px) {
-    .navigation_bar .nv_list li {
-      display: none;
-    }
-
-    .bars__menu{
-        position: relative;
-        display: block;
-        width: 30px;
-        height: 30px;
-        position: absolute;
-        right: 20px;
-        bottom: 10px;
-        transform: translate(-50%, -50%) scale(1.5);
-        z-index: 99999;
-        align-items: center;
-        cursor: pointer;
-        transition: .2s;
-    }
-    
-    .bars__menu span {
-        display: block;
-        width: 100%;
-        height: 3px;
-        background: #ffffff;
-        margin-top: 6px;
-        transform-origin: 0px 100%;
-        transition: all 300ms;
-    }
-    
-    .activeline1__bars-menu{
-        transform: rotate(45deg) translate(-2px, 1px); 
-    }
-    
-    .activeline2__bars-menu{
-        opacity: 0;
-        margin-right: 30px; 
-    }
-    
-    .activeline3__bars-menu{
-        transform: rotate(-45deg) translate(-2px, 2px);
-    }
-
-    .container__menu {
-        display: block;
-        z-index: 8000;
-        position: fixed;
-        top: 75px;
-        left: -300px;
-        opacity: 0;
-        background-color: rgba(0, 0, 0, 0.796);
-        width: 300px;
-        height: 100vh;
-        transition: 0.5s;
-    }
-
-    .menu__active {
-        z-index: 8000;
-        position: fixed;
-        top: 75px;
-        left: 0px;
-        opacity: 100;
-        background-color: rgba(0, 0, 0, 0.796);
-        width: 300px;
-        height: 100vh;
-        transition: 0.5s;
-    }
-
-    .nv_list_mobile {
-        width: 100%;
-        position: relative;
-        height: 450px;
-        list-style: none;
-        
-    }
-
-        .nv_list_mobile li {
-            border-bottom: 2px solid rgba(128, 128, 128, 0.388);
-            line-height: 50px;
-        }
-
-            .nv_list_mobile li:hover{
-                background-color: rgba(128, 128, 128, 0.388);
-            }
-
-        .nv_list_mobile li a{
-            text-decoration: none;
-            color: white;
-            font-size: 25px;
-            position: relative;
-            left: 15px;
-        }
-}
-
-/*------------------------ BOTON AGENDAR CITA ------------------------ */
-
-.add-cita {
+.navigation_bar .logo_menu {
   position: absolute;
-  left: 113px;
-  width: 200px;
-  height: 30px;
-  top: 90px;
-  z-index: 1000;
+  top: 8px;
+  left: 0px;
+  color: white;
 }
 
-  .add-cita .button-agendar-cita {
-    background: linear-gradient(to top, green, 50%,  rgba(0, 128, 0, 0.626));
-    width: 100%;
+.navigation_bar .logo_menu:hover {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.navigation_bar .nv_list {
+  position: relative;
+  top: 22px;
+  list-style: none;
+}
+
+.navigation_bar .nv_list li {
+  display: inline;
+  margin: 0 -2px 0 -2px;
+}
+
+.navigation_bar .nv_list li a {
+  font-size: 17px;
+  padding: 30px 30px 32.5px 30px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size .3s;
+}
+
+.navigation_bar .nv_list li a:hover, .navigation_bar .nv_list li a:focus {
+  border-bottom: #ffffff solid 1px;
+  background-size: 100% 3px;
+  color: rgb(255, 255, 255);
+}
+
+/*------------------------------NAVIGATION BAR AL MINIMIZAR--------------------------------*/
+
+@media (max-width: 750px) {
+  .navigation_bar .nv_list li {
+    display: none;
+  }
+
+  .bars__menu {
+    position: relative;
+    display: block;
+    width: 30px;
     height: 30px;
-    font-size: 18px;
-    border-radius: 5px;
-    border: none;
-    color: white;
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    transform: translate(-50%, -50%) scale(1.5);
+    z-index: 99999;
+    align-items: center;
+    cursor: pointer;
+    transition: .2s;
+  }
+
+  .bars__menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #ffffff;
+    margin-top: 6px;
+    transform-origin: 0px 100%;
+    transition: all 300ms;
+  }
+
+  .activeline1__bars-menu {
+    transform: rotate(45deg) translate(-2px, 1px);
+  }
+
+  .activeline2__bars-menu {
+    opacity: 0;
+    margin-right: 30px;
+  }
+
+  .activeline3__bars-menu {
+    transform: rotate(-45deg) translate(-2px, 2px);
+  }
+
+  .container__menu {
+    display: block;
+    z-index: 8000;
+    position: fixed;
+    top: 75px;
+    left: -300px;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.796);
+    width: 300px;
+    height: 100vh;
     transition: 0.5s;
   }
 
-    .add-cita .button-agendar-cita::after {
-      position: relative;
-      content: "\002B";
-      left: 10px;
-    }
+  .menu__active {
+    z-index: 8000;
+    position: fixed;
+    top: 75px;
+    left: 0px;
+    opacity: 100;
+    background-color: rgba(0, 0, 0, 0.796);
+    width: 300px;
+    height: 100vh;
+    transition: 0.5s;
+  }
 
-    .add-cita .button-agendar-cita:hover  {
-      background-color: rgb(1, 203, 1);
-      transition: 0.5s;
-      cursor: pointer;
-    }
+  .nv_list_mobile {
+    width: 100%;
+    position: relative;
+    height: 450px;
+    list-style: none;
+
+  }
+
+  .nv_list_mobile li {
+    border-bottom: 2px solid rgba(128, 128, 128, 0.388);
+    line-height: 50px;
+  }
+
+  .nv_list_mobile li:hover {
+    background-color: rgba(128, 128, 128, 0.388);
+  }
+
+  .nv_list_mobile li a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    position: relative;
+    left: 15px;
+  }
+}
 
 /*-------------------------------TABLAS-------------------------------*/
 
@@ -227,7 +193,7 @@ table {
 }
 
   .tbl-header tr th {
-    background: linear-gradient(to top, rgb(24, 24, 24),  rgb(82, 82, 82));
+    background: linear-gradient(to top, rgb(24, 24, 24), rgb(82, 82, 82));
     text-align: center;
     margin-left: 2px;
     border-radius: 3px;
@@ -239,30 +205,56 @@ table {
   color: white;
 }
 
-  .tbl-content tr {
-    margin-top: 20px;
-    line-height: 10px;
-    height: 100px;
+.tbl-content tr {
+  margin-top: 20px;
+  line-height: 10px;
+  height: 100px;
+}
+
+  .tbl-content tr:hover {
+    position: relative;
+    background-color: rgb(119, 119, 119);
+    transition: 0.25s;
+    right: 2px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px black;
   }
 
-    .tbl-content tr:hover {
+  .tbl-content tr td {
+    position: relative;
+    text-align: center;
+    height: 80px;
+    padding-top: 10px;
+    background-color: rgba(153, 153, 153, 0.31);
+  }
+
+/*------------------------ BOTON AGENDAR CITA ------------------------ */
+
+  .button-agendar-cita {
+    background: linear-gradient(to top, green, 50%, rgba(0, 128, 0, 0.626));
+    width: 100%;
+    height: 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    transition: 0.5s;
+  }
+
+    .button-agendar-cita::after {
       position: relative;
-      background-color: rgb(119, 119, 119);
-      transition: 0.25s;
-      right: 2px;
-      border-radius: 5px;
-      box-shadow: 5px 5px 10px black;
+      content: "\002B";
+      left: 10px;
     }
 
-    .tbl-content tr td {
-      position: relative;
-      text-align: center;
-      height: 80px;
-      padding-top: 10px;
-      background-color: rgba(153, 153, 153, 0.31);
+    .button-agendar-cita:hover {
+      background-color: rgb(1, 203, 1);
+      transition: 0.5s;
+      cursor: pointer;
     }
-    
-  /*-------------------------------- ACORDEÓN DE CITAS -------------------------------
+
+
+/*-------------------------------- ACORDEÓN DE CITAS -------------------------------
 
   .accordion {
     top: 120px;
@@ -443,108 +435,117 @@ table {
 
   /*------------------------------------ FONDO LINEAS DIAGONALES ------------------------------------*/
 
-  :root {
-    --stripe-size: 100px;
-    --color1: rgb(0, 0, 0);
-    --color2: #1d1d1d81;
-    --duration: 2s;
+:root {
+  --stripe-size: 100px;
+  --color1: rgb(0, 0, 0);
+  --color2: #1d1d1d81;
+  --duration: 2s;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+}
+
+.stripe {
+  opacity: 100;
+  position: fixed;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.stripe_inner {
+  position: fixed;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 8rem;
+  text-align: center;
+  font-family: 'Anton', sans-serif;
+  color: rgba(255, 255, 255, 0);
+  background: repeating-linear-gradient(45deg, var(--color1) 25%, var(--color1) 50%, var(--color2) 50%, var(--color2) 75%);
+  background-size: var(--stripe-size) var(--stripe-size);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-animation: stripeBackgroundPosition var(--duration) linear infinite;
+  animation: stripeBackgroundPosition var(--duration) linear infinite;
+}
+
+.stripe::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% + var(--stripe-size));
+  height: 100%;
+  background: repeating-linear-gradient(45deg, var(--color2) 25%, var(--color2) 50%, var(--color1) 50%, var(--color1) 75%);
+  background-size: var(--stripe-size) var(--stripe-size);
+  -webkit-animation: stripeTransform var(--duration) linear infinite;
+  animation: stripeTransform var(--duration) linear infinite;
+}
+
+.stripe::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(27, 39, 53, 0) 0%, #090a0f 100%);
+}
+
+@-webkit-keyframes stripeTransform {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
   }
-  
-  body {
-    display: flex;
-    height: 100vh;
+
+  100% {
+    -webkit-transform: translateX(calc(var(--stripe-size) * -1));
+    transform: translateX(calc(var(--stripe-size) * -1));
   }
-  
-  .stripe {
-    opacity: 100;
-    position: fixed;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-            align-items: center;
-    width: 100%;
-    height: 100%;
+}
+
+@keyframes stripeTransform {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
   }
-  .stripe_inner {
-    position: fixed;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-            align-items: center;
-    width: 100%;
-    height: 100%;
-    font-size: 8rem;
-    text-align: center;
-    font-family: 'Anton', sans-serif;
-    color: rgba(255, 255, 255, 0);
-    background: repeating-linear-gradient(45deg, var(--color1) 25%, var(--color1) 50%, var(--color2) 50%, var(--color2) 75%);
-    background-size: var(--stripe-size) var(--stripe-size);
-    -webkit-background-clip: text;
-            background-clip: text;
-    -webkit-animation: stripeBackgroundPosition var(--duration) linear infinite;
-            animation: stripeBackgroundPosition var(--duration) linear infinite;
+
+  100% {
+    -webkit-transform: translateX(calc(var(--stripe-size) * -1));
+    transform: translateX(calc(var(--stripe-size) * -1));
   }
-  .stripe::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: calc(100% + var(--stripe-size));
-    height: 100%;
-    background: repeating-linear-gradient(45deg, var(--color2) 25%, var(--color2) 50%, var(--color1) 50%, var(--color1) 75%);
-    background-size: var(--stripe-size) var(--stripe-size);
-    -webkit-animation: stripeTransform var(--duration) linear infinite;
-            animation: stripeTransform var(--duration) linear infinite;
+}
+
+@-webkit-keyframes stripeBackgroundPosition {
+  0% {
+    background-position: 0 0;
   }
-  .stripe::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(ellipse at center, rgba(27, 39, 53, 0) 0%, #090a0f 100%);
+
+  100% {
+    background-position: calc(var(--stripe-size) * -1) 0;
   }
-  
-  @-webkit-keyframes stripeTransform {
-    0% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-    }
-    100% {
-      -webkit-transform: translateX(calc(var(--stripe-size) * -1));
-              transform: translateX(calc(var(--stripe-size) * -1));
-    }
+}
+
+@keyframes stripeBackgroundPosition {
+  0% {
+    background-position: 0 0;
   }
-  
-  @keyframes stripeTransform {
-    0% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-    }
-    100% {
-      -webkit-transform: translateX(calc(var(--stripe-size) * -1));
-              transform: translateX(calc(var(--stripe-size) * -1));
-    }
+
+  100% {
+    background-position: calc(var(--stripe-size) * -1) 0;
   }
-  @-webkit-keyframes stripeBackgroundPosition {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: calc(var(--stripe-size) * -1) 0;
-    }
-  }
-  @keyframes stripeBackgroundPosition {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: calc(var(--stripe-size) * -1) 0;
-    }
-  }
+}
 
 /*------------------------------------ MODAL ------------------------------------*/
 
@@ -554,7 +555,7 @@ table {
   height: 100vh;
   top: 0;
   left: 0;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 39000;
   display: flex;
   justify-content: center;
@@ -571,7 +572,7 @@ table {
 
 .modal-dialog {
   position: absolute;
-  background: linear-gradient(to top, rgb(11, 10, 10),40%, rgb(68, 68, 68));
+  background: linear-gradient(to top, rgb(11, 10, 10), 40%, rgb(68, 68, 68));
   width: 500px;
   height: 500px;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.408);
@@ -583,42 +584,42 @@ table {
   height: 70px;
 }
 
-  .modal-header h4{
-      position: relative;
-      margin-right: 0;
-      text-align: center;
-      width: 100%;
-      font-size: 25px;
-      font-family: 'Roboto Condensed', sans-serif;
-      color: white;
-      letter-spacing: 2px;
-  }
-  
-  .modal-header button {
-      background-color: rgb(0, 0, 0);
-      width: 25px;
-      height: 25px;
-      margin-left: 5px;
-      margin-top: 5px;
-      border-radius:8px;
-      border: none;
-      color: white;
-      text-align: center;
-      opacity: 0.5;
-      transition: 0.25s;
-      font-size: 30px;
-  }
+.modal-header h4 {
+  position: relative;
+  margin-right: 0;
+  text-align: center;
+  width: 100%;
+  font-size: 25px;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: white;
+  letter-spacing: 2px;
+}
 
-      .modal-header button span {
-          position: relative;
-          bottom: 6px;
-      }
+.modal-header button {
+  background-color: rgb(0, 0, 0);
+  width: 25px;
+  height: 25px;
+  margin-left: 5px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  text-align: center;
+  opacity: 0.5;
+  transition: 0.25s;
+  font-size: 30px;
+}
 
-      .modal-header button:hover {
-          opacity: 1;
-          cursor: pointer;
-          transition: 0.25s;
-      }
+.modal-header button span {
+  position: relative;
+  bottom: 6px;
+}
+
+.modal-header button:hover {
+  opacity: 1;
+  cursor: pointer;
+  transition: 0.25s;
+}
 
 form {
   text-align: center;
@@ -626,89 +627,90 @@ form {
   height: 50%;
 }
 
-  .form-group-barberia {
-      position: relative;
-      top: 5px;
-  }
-      .form-group-barberia img {
-          position: relative;
-          top: 10px;
-          right: 5px;
-          opacity: 0.7;
-      }
+.form-group-barberia {
+  position: relative;
+  top: 5px;
+}
 
-  .form-group-barbero {
-      position: relative;
-      top: 5px;
-  }
+.form-group-barberia img {
+  position: relative;
+  top: 10px;
+  right: 5px;
+  opacity: 0.7;
+}
 
-      .form-group-barbero img {
-          position: relative;
-          top: 10px;
-          right: 5px;
-          opacity: 0.7;
-      }
+.form-group-barbero {
+  position: relative;
+  top: 5px;
+}
 
-  .form-group-corte {
-      position: relative;
-      top: 5px;
-  }
+.form-group-barbero img {
+  position: relative;
+  top: 10px;
+  right: 5px;
+  opacity: 0.7;
+}
 
-      .form-group-corte img {
-          position: relative;
-          top: 10px;
-          right: 5px;
-          opacity: 0.7;
-      }
+.form-group-corte {
+  position: relative;
+  top: 5px;
+}
 
-  .form-group-fecha {
-      position: relative;
-      top: 10px;
-  }
+.form-group-corte img {
+  position: relative;
+  top: 10px;
+  right: 5px;
+  opacity: 0.7;
+}
 
-      .form-group-fecha label {
-          position: relative;
-          top: 10px;
-          right: 120px;
-          color: white;
-      }
+.form-group-fecha {
+  position: relative;
+  top: 10px;
+}
 
-  form select {
-      background: rgba(0, 0, 0, 0.325);
-      margin-top: 10px;
-      width: 80%;
-      height: 50px;
-      border-radius: 50px;
-      border: none;
-      transition: 0.35s;
-      font-size: 17px;
-      color: whitesmoke;
-      text-align:center
-  }
+.form-group-fecha label {
+  position: relative;
+  top: 10px;
+  right: 120px;
+  color: white;
+}
 
-      form select:hover {
-          background-color: rgb(0, 0, 0);
-          transition: 0.35s;
-          cursor: pointer;
-          box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.408);
-      }
-  
-  form input {
-      position: relative;
-      top: 20px;
-      width: 90%;
-      height: 50px;
-      border-radius: 50px;
-      border: none;
-      transition: 0.25s;
-      text-align: center;
-  }
+form select {
+  background: rgba(0, 0, 0, 0.325);
+  margin-top: 10px;
+  width: 80%;
+  height: 50px;
+  border-radius: 50px;
+  border: none;
+  transition: 0.35s;
+  font-size: 17px;
+  color: whitesmoke;
+  text-align: center
+}
 
-      form input:hover {
-          transition: 00.25s;
-          opacity: 0.7;
-          cursor: pointer;
-      }   
+form select:hover {
+  background-color: rgb(0, 0, 0);
+  transition: 0.35s;
+  cursor: pointer;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.408);
+}
+
+form input {
+  position: relative;
+  top: 20px;
+  width: 90%;
+  height: 50px;
+  border-radius: 50px;
+  border: none;
+  transition: 0.25s;
+  text-align: center;
+}
+
+form input:hover {
+  transition: 00.25s;
+  opacity: 0.7;
+  cursor: pointer;
+}
 
 .modal-footer {
   position: relative;
@@ -718,28 +720,28 @@ form {
   text-align: end;
 }
 
-  .modal-footer button {
-      background: linear-gradient(to top, rgb(63, 63, 63), rgba(255, 255, 255, 0.100));
-      position: relative;
-      margin-right: 0;
-      border-radius: 100px;
-      width: 100px;
-      height: 30px;
-      border: none;
-      color: white;
-      right: 20px;
-      transition: 0.25s;
-      font-size: 15px;
-  }
+.modal-footer button {
+  background: linear-gradient(to top, rgb(63, 63, 63), rgba(255, 255, 255, 0.100));
+  position: relative;
+  margin-right: 0;
+  border-radius: 100px;
+  width: 100px;
+  height: 30px;
+  border: none;
+  color: white;
+  right: 20px;
+  transition: 0.25s;
+  font-size: 15px;
+}
 
-      .modal-footer .button-close:hover {
-          background-color: rgb(226, 0, 0);
-          transition: 0.45s;
-          cursor: pointer;
-      }
+.modal-footer .button-close:hover {
+  background-color: rgb(226, 0, 0);
+  transition: 0.45s;
+  cursor: pointer;
+}
 
-      .modal-footer .button-accept:hover {
-          background-color: rgb(171, 158, 17);
-          transition: 0.45s;
-          cursor: pointer;
-      }
+.modal-footer .button-accept:hover {
+  background-color: rgb(171, 158, 17);
+  transition: 0.45s;
+  cursor: pointer;
+}
