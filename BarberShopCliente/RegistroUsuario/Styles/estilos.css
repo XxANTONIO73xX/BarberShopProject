@@ -37,7 +37,7 @@
     text-align: center;
     color: white;
     height: 100px;
-    bottom: 20px;
+    bottom: 30px;
     z-index: 100;
   }
 
@@ -49,95 +49,78 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    gap: 5px;
   }
-
-    .login-form .login-form-names{
-        width: 90%;
-    }
 
     .login-form #nombre {
         background: linear-gradient(to top, rgb(63, 63, 63), rgba(255, 255, 255, 0.100));
-        width: 49%;
-        height: 60px;
+        width: 90%;
+        height: 40px;
         border-radius: 40px;
         border: none;
         text-align: center;
         font-size: 18px;
         color: white;
-        float: left;
       }
 
     .login-form #apellidos {
         background: linear-gradient(to top, rgb(63, 63, 63), rgba(255, 255, 255, 0.100));
-        width: 49%;
-        height: 60px;
+        width: 90%;
+        height: 40px;
         border-radius: 40px;
         border: none;
         text-align: center;
         font-size: 18px;
         color: white;
-        float: left;
-        margin-left: 9px;
     }  
-    
-    .login-form .login-form-contact{
-        width: 90%;
-    }
 
     .login-form #correo {
       background: linear-gradient(to top, rgb(63, 63, 63), rgba(255, 255, 255, 0.100));
-      width: 49%;
-      height: 60px;
+      width: 90%;
+      height: 40px;
       justify-content:  center;
       border-radius: 40px;
       border: none;
       text-align: center;
       font-size: 18px;
       color: white;
-      top: 20px;
       float: left;
     }
 
     .login-form #telefono {
         background: linear-gradient(to top, rgb(63, 63, 63), rgba(255, 255, 255, 0.100));
-        width: 49%;
-        height: 60px;
+        width: 90%;
+        height: 40px;
         justify-content:  center;
         border-radius: 40px;
         border: none;
         text-align: center;
         font-size: 18px;
         color: white;
-        margin-left: 9px;
-        top: 20px;
-        float: left;
       }
 
     .login-form #check_password {
       background: linear-gradient(to top, rgb(63, 63, 63), rgba(255, 255, 255, 0.100));
       width: 90%;
-      height: 60px;
+      height: 40px;
       justify-content:  center;
       border-radius: 40px;
       border: none;
       text-align: center;
       font-size: 18px;
       color: white;
-      top: 10px;
     }
   
     .login-form #password {
       background: linear-gradient(to top, rgb(63, 63, 63), rgba(255, 255, 255, 0.100));
-      margin-top: 10px;
       width: 90%;
-      height: 60px;
+      height: 40px;
       text-align: center;
       justify-content:  center;
       border-radius: 100px;
       border: none;
       font-size: 18px;
       color: white;
-      top: 20px;
     }
 
     .login-form #password:focus,
@@ -146,7 +129,7 @@
     .login-form #apellidos:focus,
     .login-form #nombre:focus,
     .login-form #correo:focus   {
-      border-radius: 1px;
+      width: 95%;
       transition: 0.5s;
     }
 
@@ -160,12 +143,13 @@
         position: relative;
         font-size: 20px;
         outline: none;
+        transition: 0.5s;
       }
   
     .login-form button {
         position: relative;
         background-color: rgba(88, 88, 88, 0.378);
-        margin-top: 10px;
+        top: 5px;
         width: 90%;
         height: 60px;
         justify-content:  center;
@@ -174,7 +158,6 @@
         font-size: 20px;
         border: none;
         color: rgb(255, 255, 255);
-        top: 20px;
     }
   
       .login-form button:hover {
@@ -183,18 +166,21 @@
         box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.562);
         color: rgb(208, 208, 208);
       }
-  
-  
-  .taponxd {
-    background-color: #444444;
-    position: absolute;
-    width: 100%;
-    height: 100px;
-    bottom: -150px;
-    z-index: 180;
-  }
-  
-  /*------------------------------------ OLAS ------------------------------------*/
+
+    #error_pssd::before {
+      content: '\26A0';
+      margin-right: 5px;
+    }
+
+    #error_pssd {
+      color: rgba(255, 255, 0, 0.799);
+      text-align: center;
+      width: 90%;
+      height: 20px;
+      border-radius: 10px;
+    }
+
+  /*------------------------------------ OLAS ------------------------------------
   
   .container {
     height: 500px;

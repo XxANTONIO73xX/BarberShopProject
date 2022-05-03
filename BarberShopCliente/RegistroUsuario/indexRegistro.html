@@ -32,14 +32,10 @@
             </h1>
 
             <form class="login-form">
-                <div class="login-form-names">
-                    <input id="nombre" placeholder="Nombre" type="text" required>
-                    <input id="apellidos" placeholder="Apellidos" type="text" required>
-                </div>
-                <div class="login-form-contact">
-                    <input id="correo" placeholder="Correo" type="text" required>
-                    <input id="telefono" placeholder="Teléfono" type="text" required>
-                </div>
+                <input id="nombre" placeholder="Nombre" type="text" required>
+                <input id="apellidos" placeholder="Apellidos" type="text" required>
+                <input id="correo" placeholder="Correo" type="text" required>
+                <input id="telefono" placeholder="Teléfono" type="text" required>
                 <input id="password" placeholder="Contraseña" type="password" required>
                 <input id="check_password" placeholder="Confirmar contraseña" type="password" required>
                 <span id="error_pssd"></span>
@@ -49,12 +45,6 @@
             </form>
 
         </div>
-    </div>
-
-    <div class="waves">
-        <div class="wave circulo a"></div>
-        <div class="wave circulo b"></div>
-        <div class="wave circulo c"></div>
     </div>
 
     <!--
@@ -67,13 +57,13 @@
             var check_password = $('#check_password').val();
 
             if (password == check_password) {
-                $('#error_pssd').text("Contraseñas coinciden!").css("color", "green");
+                $('#error_pssd').text("Contraseñas coinciden!");
             } else {
-                $('#error_pssd').text("Contraseñas no coinciden!").css("color", "red");
+                $('#error_pssd').text("Contraseñas no coinciden!");
             }
 
             if (check_password == "") {
-                $('#error_pssd').text("No se puede dejar en blanco!").css("color", "red");
+                $('#error_pssd').text("No se puede dejar en blanco!");
             }
         })
     </script>
