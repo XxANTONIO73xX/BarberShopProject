@@ -101,7 +101,12 @@
     <li><a href="../MainCliente/Main.html">Inicio</a></li>
     <li><a href="../Corte/index.html">Cortes</a></li>
     <li><a href="../InformacionBarberia/index.html">Más Información</a></li>
-    <li><a href="../PerfilUsuario/index.html">⚙</a></li>
+    <li><a href="../PerfilUsuario/index.html">⚙</a>
+        <ul>
+          <li id="nav-desplegable"><a href="">Editar usuario</a></li>
+          <li id="nav-desplegable"><a href="">Cerrar sesión</a></li>
+        </ul>
+    </li>
         </ul>
 
         <div class=" bars__menu">
@@ -121,7 +126,7 @@
 
   <h1> Tus citas </h1>
 
-  <div class="table-position"> 
+  <div class="table-position">
     <button class="button-agendar-cita" id="abrirModal">Agendar cita</button>
     <table cellspacing="0" border="0" id="tabla-citas"> 
       <thead class="tbl-header"> 
@@ -132,12 +137,10 @@
           <th> Corte </th>
           <th> Fecha</th>
           <th> Estado </th>
-          <th> Acciones </th>
         </tr>
       </thead>
       <tbody class="tbl-content">
         <tr>
-          <td></td>
           <td></td>
           <td></td>
           <td></td>
