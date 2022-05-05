@@ -7,16 +7,9 @@ use App\Models\BarberosModel;
 
 class Barbero extends BaseController
 {
-    protected $barberos;
-    //protected $cliente;
-
-    public function __construct(){
-        $this->barberos = new BarberosModel();
-    }
 
     public function index(){
-        $barberos = $this->barberos->findAll();
-        $data = ['titulo' => 'Barberos', 'datos' => $barberos];
+        $data = ['titulo' => 'Barberos'];
 
         echo view('header');
         echo view('barberos/barberos', $data);

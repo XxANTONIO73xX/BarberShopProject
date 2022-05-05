@@ -21,7 +21,7 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Iniciar sesion</h3></div>
                                     <div class="card-body">
-                                            <div class="form-floating mb-3">
+                                        <div class="form-floating mb-3">
                                                 <input class="form-control" id="user" type="email" placeholder="Ingresa tu correo electronico" />
                                                 <label for="Administrador">Correo Electronico</label>
                                             </div>
@@ -34,7 +34,6 @@
                                                 <button class="btn btn-primary" onclick="login()">Login</button>
                                             </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
