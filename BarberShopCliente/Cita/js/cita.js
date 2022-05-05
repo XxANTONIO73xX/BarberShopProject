@@ -3,6 +3,18 @@ window.addEventListener('scroll', function(){
     header.classList.toggle('active', window.scrollY >0);
 })
 
+var btnModalVerCita = document.querySelector('.btn-ver-cita');
+var modalBgCita = document.querySelector('.modal-cita-bg');
+
+btnModalVerCita.addEventListener('click', function(){
+    console.log('estoy jalando');
+    modalBgCita.classList.add('bg-cita-active');
+});
+
+btnModalVerCita.addEventListener('click', function(){
+    modalBgCita.classList.remove('bg-cita-active');
+});
+
 document.querySelector(".bars__menu").addEventListener("click", animateBars);
 
 var line1__bars = document.querySelector(".line1__bars-menu");
@@ -32,19 +44,6 @@ accordionDatos.forEach(accordionDatos => {
         accordionDatos.classList.toggle("active");
     });    
 });
-
-function statusCita() {
-    var statusCita = document.getElementById("status-label");
-    var buttonStatusCita = document.getElementById("button-cancelar");
-
-    if (statusCita.innerHTML === "ACTIVA") {
-        statusCita.innerHTML = "PENDIENTE";
-        buttonStatusCita.innerHTML = "Activar cita";
-    } else {
-        statusCita.innerHTML = "ACTIVA";
-        buttonStatusCita.innerHTML = "Cancelar cita";
-    }
-}
 
 var btnModal = document.querySelector('.button-agendar-cita');
 var modalBg = document.querySelector('.modal-bg');

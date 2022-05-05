@@ -304,14 +304,37 @@ table {
         transition: 0.2s;
         cursor: pointer;
       }
-  /*-------------------------------- ACORDEÓN DE CITAS -------------------------------
+
+  /*----------------------------------MODAL VER CITA -----------------------------------*/
+
+  .bg-cita-active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .modal-cita-bg {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 39000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  /*-------------------------------- ACORDEÓN DE CITAS -------------------------------*/
 
   .accordion {
     top: 120px;
     position: relative;
     width: 90%;
     margin-right: 100px;
-    z-index: 1000;
   }
 
     .accordion-item {
