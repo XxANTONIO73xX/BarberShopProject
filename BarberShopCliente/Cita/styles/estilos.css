@@ -280,6 +280,13 @@ table {
       padding-top: 10px;
       background-color: rgba(153, 153, 153, 0.31);
     }
+
+    button .btn-eliminar{
+      position: relative;
+      width: 30px;
+      height: 30px;
+      background-color: red;
+    }
     
   /*-------------------------------- ACORDEÓN DE CITAS -------------------------------
 
