@@ -276,18 +276,34 @@ table {
     .tbl-content tr td {
       position: relative;
       text-align: center;
+      width: 200px;
       height: 80px;
       padding-top: 10px;
       background-color: rgba(153, 153, 153, 0.31);
     }
 
-    button .btn-eliminar{
-      position: relative;
-      width: 30px;
-      height: 30px;
-      background-color: red;
+    .btn-ver-cita {
+      background-color: rgb(14, 163, 14);
     }
-    
+
+    .btn-cancelar {
+      background-color: rgb(255, 35, 35);
+    }
+
+    .btn-cancelar, .btn-ver-cita {
+      width: 80px;
+      height: 50px;
+      border: none;
+      border-radius: 10px;
+      gap: 50px;
+      transition: 0.5s;
+    }
+
+      .btn-cancelar:hover, .btn-ver-cita:hover {
+        box-shadow: 1px 1px 10px rgb(39, 39, 39);
+        transition: 0.2s;
+        cursor: pointer;
+      }
   /*-------------------------------- ACORDEÓN DE CITAS -------------------------------
 
   .accordion {
