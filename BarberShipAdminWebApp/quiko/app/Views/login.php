@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <title>BarberShop</title>
         <link href="<?php echo base_url(); ?>/css/styles.css" rel="stylesheet" />
         <script src="<?php echo base_url(); ?>/js/all.js"></script>
@@ -20,9 +21,8 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Iniciar sesion</h3></div>
                                     <div class="card-body">
-                                        <form method="POST" action="<?php echo base_url(); ?>/Administrador/valida">
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="Administrador" type="email" placeholder="Ingresa tu correo electronico" />
+                                                <input class="form-control" id="user" type="email" placeholder="Ingresa tu correo electronico" />
                                                 <label for="Administrador">Correo Electronico</label>
                                             </div>
                                             <div class="form-floating mb-3">
@@ -31,21 +31,8 @@
                                             </div>
                                             
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <button class="btn btn-primary" type="submit">Login</button>
+                                                <button class="btn btn-primary" onclick="login()">Login</button>
                                             </div>
-
-                                            <?php if (isset($validation)) { ?>
-                                                <div class="alert alert-danger">
-                                                    <?php echo $validation->listErrors (); ?>
-                                                </div>
-                                            <?php } ?>
-                                            
-                                            <?php if (isset($error)) { ?>
-                                                <div class="alert alert-danger">
-                                                    <?php echo $error; ?>
-                                                </div>
-                                            <?php } ?>
-                                        </form>
                                     </div>
 
                                 </div>
@@ -69,14 +56,8 @@
                 </footer>
             </div>
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="<?php echo base_url(); ?>/js/scripts.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-        <script src="<?php echo base_url(); ?>/js/datatables-simple-demo.js"></script>
-        <script src="<?php echo base_url(); ?>/js/jquery-3.5.1.min.js"></script>
-        <script src="<?php echo base_url(); ?>/js/bootstrap.bundle.min.js"></script>
-        <script src="<?php echo base_url(); ?>/assets/demo/datatables-demo.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+        <script src="<?php base_url() ?>javascript/login.js"></script>
     </body>
 </html>
