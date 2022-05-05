@@ -18,3 +18,10 @@ function animateBars(){
     container__menu.classList.toggle("menu__active")
 
 }
+
+$('.corte-card').hover(function(){
+    $('.corte-card img').css({
+      "width": "100px", //O lo que desees
+      "height": "100px" //O lo que desees
+    });
+  });

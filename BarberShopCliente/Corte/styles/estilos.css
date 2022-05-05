@@ -13,18 +13,6 @@
     display: none;
   }
   
-  /*
-  .pattern_background {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: url("img/fondoKikos.png");
-    width: 1500px;
-    height: 1080px;
-    z-index: -3;
-  }
-  */
-  
   .navigation_bar {
     background-color: rgba(0, 0, 0, 0.079);
     position: fixed;
@@ -182,149 +170,52 @@
 
   /*-----------------------------------------CAJAS DE CORTES------------------------------------*/
 
-    :root {
-        --size: 400px;
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    z-index: 4000;
+  }
+
+    .container .corte-card {
+      background: linear-gradient(to top, rgb(77, 77, 77), 50%, rgb(120, 120, 120));
+      width: 330px;
+      height: 430px;
+      border-radius: 8px;
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.02);
+      overflow: hidden;
+      margin: 20px;
+      text-align: center;
+      transition: all 0.25s;
     }
 
-    .cortes-position {
-        position: relative;
-        top: 80px;
-        width: 80%;
-        height: 1000px;
-        margin: 0 auto;
-    }
+      .container .corte-card:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 12px 16px rgba(0, 0, 0, 0.02);
+      }
 
-    .corte-box {
-        position: relative;
-        width: 33%;
-        height: 550px;
-        float: left;
-    }
-
-    .corte-descripcion {
-        padding: 20px;
+      .container .corte-card img { 
+        width: 330px;
+        height: 220px;
+      }
+    
+      .container .corte-card h4 {
+        line-height: 50px;
+        height: 50px;
         color: white;
-    }
+        font-size: 20px;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.41);
+      }
 
-    .container {
-        width: var(--size);
-        height: var(--size);
-        display: grid;
-        grid-template-columns: repeat(2, 50%);
-        grid-template-rows: repeat(2, 50%);
-        justify-items: center;
-        align-items: center;
-        filter: drop-shadow(0px 0px 7px rgba(1, 1, 1, .7));
-        background-color: transparent;
-        float: left;
-
-    }
-    .productImage {
-        grid-column: 1/span 2;
-        grid-row: 1 /span 2;
-        width: var(--size);
-        height: var(--size);
-        background-size: cover;
-        clip-path: polygon(
-        20% 20%,
-        50% 20%,
-        50% 20%,
-        80% 20%,
-        80% 50%,
-        80% 50%,
-        80% 80%,
-        50% 80%,
-        50% 80%,
-        20% 80%,
-        20% 50%,
-        20% 50%
-        );
-        transition: all 0.7s cubic-bezier(0.895, 0.03, 0.685, 0.22);
-    }
-  .corteImg {
-    background-image: url(/Corte/img/bicho2.png);
-    background-color: #148bff;
-  }
-  .corteImg2 {
-    background-image: url(/Corte/img/nazario1.png);
-    background-color: #148bff;
-  }
-  .corteImg3 {
-    background-image: url(/Corte/img/anuel1.jpg);
-    background-color: #148bff;
-  }
-  .corteImg4 {
-    background-image: url(/Corte/img/faragod.jpg);
-    background-color: #148bff;
-  }
-  .corteImg5 {
-    background-image: url(/Corte/img/bigote1.jpg);
-    background-color: #148bff;
-  }
-  .corteImg6 {
-    background-image: url(/Corte/img/argentino1.jpg);
-    background-color: #148bff;
-  }
-
-  h4,
-  ul,
-  span {
-    padding: 0;
-    margin: 0;
-  }
-  .price {
-    grid-column: 2;
-    grid-row: 1;
-    justify-self: center;
-    z-index: 1;
-    opacity: 0;
-    transition: all 0.6s cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  }
-  .price h4 {
-    margin-bottom: 8px;
-    color: white;
-  }
-  .price span {
-    width: 20px;
-    height: 20px;
-    padding: 5px;
-    background-color: rgba(255, 255, 255, 0.729);
-  }
-  .productName {
-    grid-column: 1;
-    grid-row: 2;
-    align-self: center;
-    justify-self: center;
-    z-index: 1;
-    transition: all 0.7s cubic-bezier(0.895, 0.03, 0.685, 0.22);
-    color: white;
-  }
-  
-  .productImage:hover {
-    clip-path: polygon(
-      20% 0%,
-      50% 0%,
-      50% 20%,
-      100% 20%,
-      100% 50%,
-      80% 50%,
-      80% 100%,
-      50% 100%,
-      50% 80%,
-      0% 80%,
-      0% 50%,
-      20% 50%
-    );
-    transform: rotate(-15deg);
-    transition: all 0.4s cubic-bezier(0.86, 0, 0.07, 1);
-    cursor: pointer;
-  }
-  .productImage:hover ~ * {
-    opacity: 1;
-    transform: rotate(-15deg);
-    transition: all 0.4s cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
+      .container .corte-card p {
+        text-align: justify;
+        color: white;
+        padding: 20px;
+      }
   /*------------------------------------ FONDO LINEAS DIAGONALES ------------------------------------*/
 
 :root {
