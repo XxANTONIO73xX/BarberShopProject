@@ -34,24 +34,6 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                       <?php foreach($datos as $dato) { ?>
-                                        <tr>    
-                                             <td><?php echo $dato['id']; ?></td>
-                                             <td><?php echo $dato['nombre']; ?></td>
-                                             <td><?php echo $dato['apodo']; ?></td>
-                                             <td><?php echo $dato['apellidos']; ?></td>
-                                             <td><?php echo $dato['correo']; ?></td>
-                                             <td><?php echo $dato['telefono']; ?></td>
-                                             <td><?php echo $dato['idBarberia']; ?></td>
-
-                                             <td><a href= "<?php echo base_url(). '/barbero/editar/'. $dato['id']; ?>" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a></td>
-
-                                             <td><a href= "<?php echo base_url(). '/barbero/eliminar/'. $dato['id']; ?>" data-toggle="modal" data-target="#confirma" data-placement="top" title="Eliminar registro" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a></td>
-                                            <!-- Se elimino lo siguiente de la linea 45 para que funcione el eliminar sin modal, ya que no jala el visualizar modal
-                                        #" data-href="
-                                        -->
-                                       </tr>
-                                      <?php } ?>
                                         
                                     </tbody>
                                 </table>
@@ -59,6 +41,8 @@
                         </div>
                     </div>
                 </main>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                <script src="<?php base_url() ?>javascript/barbero/barbero.js" ></script>
 <!-- Modal
 <div class="modal fade" id="confirma" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
