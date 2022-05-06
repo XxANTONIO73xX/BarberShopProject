@@ -46,11 +46,12 @@
 
 <body>
 
-    <div class="container">
-        <div class="corte-card" id="cardCortes">
+    <div class="container" id="cardCortes">
+        <div class="corte-card" >
             <img src="">
             <h4></h4>
         </div>
+        
 
     </div>
 
@@ -79,9 +80,13 @@
                 data.cortes.forEach(r => {
 
                     div_cortes += `
-                    <div > <img src="${r.visualizacion}" >
-                        <h4 >${r.nombre}</h4>
-                   </div>
+
+                    <div class="corte-card" id="cardCortes">
+                        <img src="${r.visualizacion}">
+                        <h4>${r.nombre}</h4>
+                    </div>
+                    
+
                     `;
 
                 });
