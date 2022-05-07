@@ -113,12 +113,17 @@
     </form>
 
     <script>
-    function getOut(){
-      localStorage.removeItem("token");
-      localStorage.removeItem("tipo");
-      localStorage.removeItem("user");
-      location.href = "<?php base_url() ?>/Log-In";
+    //hay session ?
+    if(!localStorage.getItem("user")){
+      location.href="<?php base_url() ?>/Log-In";
     }
+
+    function getOut(){
+        localStorage.removeItem("token");
+        localStorage.removeItem("tipo");
+        localStorage.removeItem("user");
+        location.href = "<?php base_url() ?>/Log-In";
+      }
   </script>
 
 
