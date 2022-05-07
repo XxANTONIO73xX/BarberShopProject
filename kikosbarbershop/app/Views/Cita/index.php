@@ -20,7 +20,7 @@
     <li><a href="../PerfilUsuario/index.html">⚙</a>
       <ul>
         <li id="nav-desplegable"><a href="">Editar usuario</a></li>
-        <li id="nav-desplegable"><a href="">Cerrar sesión</a></li>
+        <li id="nav-desplegable"><a href="#" onclick="getOut()">Cerrar sesión</a></li>
       </ul>
     </li>
   </ul>
@@ -235,6 +235,14 @@
                         <td>${r.corte.nombre}</td>
                         <td>${r.fecha}</td>
                         <td>${r.estado}</td>
+                        <td class="control-btns">
+                          <button class="btn-ver-cita">
+                            <img src="<?php base_url() ?>Cita/img/ojo.png" width="30px" height="30px">
+                          </button>
+                          <button class="btn-cancelar">
+                            <img src="<?php base_url() ?>Cita/img/eliminar.png" width="30px" height="30px">
+                          </button>
+                        </td>
                   </tr>
             `;
           });
@@ -354,6 +362,14 @@
           console.log("Error", "Ocurrio un problema al guardar la cita")
         })
     });
+  </script>
+  <script>
+    function getOut(){
+      localStorage.removeItem("token");
+      localStorage.removeItem("tipo");
+      localStorage.removeItem("user");
+      location.href = "<?php base_url() ?>/Log-In";
+    }
   </script>
 
   <script src="<?php base_url() ?>Cita/js/cita.js"></script>
