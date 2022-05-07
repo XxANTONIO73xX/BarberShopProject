@@ -13,19 +13,25 @@
 </head>
 <!--<img src="img/fondoKikos.png" class="pattern_background">-->
 <nav class="navigation_bar">
-    <img src="<?php base_url() ?>Corte/img/logoKikoNav.svg" class="logo_menu" width="150px" height="60px">
-    <ul class="nv_list">
-        <li><a href="../MainCliente/Main.html">Inicio</a></li>
-        <li><a href="../Cita/index.html">Citas</a></li>
-        <li><a href="../InformacionBarberia/index.html"">Más Información</a></li>
-            <li><a href=" ../PerfilUsuario/index.html">⚙</a></li>
-    </ul>
+  <img src="<?php base_url() ?>Cita/img/logoKikoNav.svg" class="logo_menu" width="150px" height="60px">
+  <ul class="nv_list">
+    <li><a href="<?php base_url() ?>Inicio">Inicio</a></li>
+    <li><a href="<?php base_url() ?>Citas">Citas</a></li>
+    <li><a href="<?php base_url() ?>Cortes">Cortes</a></li>
+    <li><a href="">Más Información</a></li>
+    <li><a>⚙</a>
+      <ul>
+        <li id="nav-desplegable"><a href="<?php base_url() ?>Cliente">Editar usuario</a></li>
+        <li id="nav-desplegable"><a href="#" onclick="getOut()">Cerrar sesión</a></li>
+      </ul>
+    </li>
+  </ul>
 
-    <div class="bars__menu">
-        <span class="line1__bars-menu"></span>
-        <span class="line2__bars-menu"></span>
-        <span class="line3__bars-menu"></span>
-    </div>
+  <div class="bars__menu">
+    <span class="line1__bars-menu"></span>
+    <span class="line2__bars-menu"></span>
+    <span class="line3__bars-menu"></span>
+  </div>
 </nav>
 
 <div class="container__menu">
@@ -95,6 +101,15 @@
             });
 
     </script>
+
+<script>
+    function getOut(){
+      localStorage.removeItem("token");
+      localStorage.removeItem("tipo");
+      localStorage.removeItem("user");
+      location.href = "<?php base_url() ?>/Log-In";
+    }
+  </script>
 
 <script src="<?php base_url() ?>Corte/js/cortes.js"></script>
 </body>
