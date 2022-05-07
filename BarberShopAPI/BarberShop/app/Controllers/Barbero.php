@@ -49,7 +49,7 @@ class Barbero extends Auth{
 
     public function show($id = NULL){
         if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
-        if($this->tipoUsuario == "cliente" || $this->barbero["id"] != $id){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
+        //if($this->tipoUsuario == "cliente" || $this->barbero["id"] != $id){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         
         $barbero = $this->model->find($id);
         $barberiaModel = new BarberiaModel();

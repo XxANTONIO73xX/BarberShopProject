@@ -26,5 +26,13 @@ class CitaModel extends Model{
         $result = $this->asArray()->where(["idBarbero" => $id])->findAll();
         return $result;
     }
+
+    public function isDateTimeValidate($fecha, $hora){
+        $result = $this->asArray()->where(["fecha"=>$fecha, "hora"=>$hora])->findAll();
+        if(empty($result)){
+            return true;
+        }
+        return false;
+    }
 }
 ?>

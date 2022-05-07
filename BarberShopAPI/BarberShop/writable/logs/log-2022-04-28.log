@@ -1,0 +1,9 @@
+CRITICAL - 2022-04-28 09:54:38 --> Invalid file: Image.php
+#0 C:\laragon\www\BarberShop\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Image.php')
+#1 C:\laragon\www\BarberShop\system\Common.php(1089): CodeIgniter\View\View->render('Image', Array, true)
+#2 C:\laragon\www\BarberShop\app\Controllers\Home.php(9): view('Image')
+#3 C:\laragon\www\BarberShop\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#4 C:\laragon\www\BarberShop\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\laragon\www\BarberShop\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\laragon\www\BarberShop\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}

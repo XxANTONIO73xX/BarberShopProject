@@ -41,7 +41,8 @@ $routes->resource('cita', ['filter' => 'cors']);
 $routes->resource("auth", ['filter' => 'cors']);
 $routes->get("barbero_cita/(:segment)", 'Cita::barbero_cita/$1', ['filter' => 'cors']);
 $routes->get("cliente_cita/(:segment)", "Cita::cliente_cita/$1", ['filter' => 'cors']);
-$routes->get("barberia_barberos/(:segment)", "Barbero::barbero_barberia/$1", );
+$routes->get("barberia_barberos/(:segment)", "Barbero::barbero_barberia/$1", ['filter' => 'cors']);
+$routes->post("upload_corte", "Corte::uploadFile", ['filter' => 'cors']);
 /*
  * --------------------------------------------------------------------
  * Additional Routing

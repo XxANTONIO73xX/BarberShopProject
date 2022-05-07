@@ -48,7 +48,7 @@ class Cita extends Auth{
 
     public function cliente_cita($id){
         if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
-        if($this->tipoUsuario != "cliente"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
+        //if($this->tipoUsuario != "cliente" || $this->tipoUsuario != "administrador"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         
         $clienteModel = new ClienteModel();
         $corteModel = new CorteModel();
@@ -115,7 +115,7 @@ class Cita extends Auth{
 
     public function create(){
         if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
-        if($this->tipoUsuario != "administrador" || $this->tipoUsuario != "cliente"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
+        //if($this->tipoUsuario != "administrador" || $this->tipoUsuario != "cliente"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $data=[
                 "idCliente"  => $this->request->getPost("idCliente"),
                 "idBarbero"  => $this->request->getPost("idBarbero"),
@@ -129,7 +129,24 @@ class Cita extends Auth{
         $id = $this->model->insert($data);
 
         if($id){
-            return $this->respond($this->model->find($id));
+            $clienteModel = new ClienteModel();
+            $corteModel = new CorteModel();
+            $barberoModel = new BarberoModel();
+            $barberiaModel = new BarberiaModel();
+            $this->cita = $this->model->find($id);
+            $data=[
+                "cita" => [
+                    "id" => $this->cita["id"],
+                    "fecha" => $this->cita["fecha"],
+                    "hora" => $this->cita["hora"],
+                    "estado" => $this->cita["estado"],
+                    "cliente" => $clienteModel->find($this->cita["idCliente"]),
+                    "corte" => $corteModel->find($this->cita["idCorte"]),
+                    "barbero" => $barberoModel->find($this->cita["idBarbero"]),
+                    "barberia" => $barberiaModel->find($this->cita["idBarberia"])
+                ]
+            ];
+            return $this->respond($data);
         }else{
             return $this->respond(["error" => "hubo un error al insertar"]);
         }

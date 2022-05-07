@@ -50,6 +50,15 @@ class Corte extends Auth{
 
     }
 
+    public function uploadFile(){
+        helper(['form']);
+            $file = $this->request->getFile('featured_image');
+            if(! $file->isValid())
+                return $this->fail($file->getErrorString());
+            $file->move('./uploads/Cortes');
+            return $this->respond(["img" => "http://api.kikosbarbershop.online/public/uploads/Cortes/".$file->getName()]);
+    }
+
     public function update($id = null){
         if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
         if($this->tipoUsuario != "administrador" || $this->tipoUsuario != "barbero" ){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
@@ -82,5 +91,3 @@ class Corte extends Auth{
     }
 
 }
-
-?>
