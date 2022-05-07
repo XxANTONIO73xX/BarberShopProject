@@ -1,0 +1,11 @@
+CRITICAL - 2022-05-07 16:25:01 --> Undefined variable: dato
+#0 C:\laragon\www\quiko\app\Views\barberos\barberos.php(45): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\laragon\\www\\...', 45, Array)
+#1 C:\laragon\www\quiko\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\quiko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\laragon\www\quiko\system\Common.php(1089): CodeIgniter\View\View->render('barberos/barber...', Array, true)
+#4 C:\laragon\www\quiko\app\Controllers\Barbero.php(15): view('barberos/barber...', Array)
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Barbero->index()
+#6 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barbero))
+#7 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

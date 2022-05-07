@@ -1,0 +1,208 @@
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(0, 0, 0, 0.1); 
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(69, 162, 158, 0.2); 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(69, 162, 158, 0.6); 
+    cursor: pointer; 
+}
+body {
+    background-color: #e6e6e6;
+}
+.page .sidebar{
+    background: linear-gradient(35deg, #66fcf1, #45a29e);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+}
+
+
+.page .content{
+    margin-left: 250px;
+    transition: all 0.3s ease;
+}
+
+.navigationBar {
+    background-color: white;
+    height: 50px;
+    display: flex;
+    padding: 38px 0px;
+    align-items: center;
+    box-shadow: 0 4px 2px -2px #c5c6c7;
+}
+
+.sidebarToggle {
+    font-size: 16px;
+    color: rgb(0, 0, 0, 0.8);
+    margin-left: -20px;
+    z-index: 999;
+    border-radius: 50px;
+    background-color: #e6e6e6;
+    transition: all 0.3s ease;
+    outline: none!important;
+    box-shadow: none!important;
+}
+
+.sidebarToggle.active {
+    margin-left: 10px;
+}
+
+.sidebarToggle:hover{
+    color: white;
+}
+
+.page .content .container{
+    margin: 30px;
+    background: #fff;
+    padding: 50px;
+    line-height: 28px;
+}
+
+body.active .page .sidebar{
+    left: -250px;
+}
+
+body.active .page .content{
+    margin-left: 0;
+    width: 100%;
+}
+.sidebar-header {
+    padding: 10px 25px 10px 15px;
+}
+.sidebar-logo-container {
+    background-color: rgb(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding-left: 3px;
+    display: flex;
+}
+
+.logo-container {
+    max-width: 40px;
+    background-color: rgb(255, 255, 255, 0.1);
+    border-radius: 5px;
+    margin: 8px;
+    padding: 6px 8px;
+}
+
+.brand-name-container {
+    margin: 10px 55px 0px 2px;
+    padding: 0px;
+}
+
+.logo-sidebar {
+    width: 100%;
+    height: auto;
+}
+
+.brand-name {
+    color: white;
+    margin: 0px;
+    line-height: 1.1rem; 
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-family: 'Roboto', sans-serif;
+}
+.brand-subname {
+    font-weight: 300;
+    font-size: 14px;
+}
+.navigation-list {
+    list-style-type:none;
+    padding: 0px 18px;
+    margin-top: 30px;
+}
+.navigation-list-item {
+    padding: 12px 18px 12px 25px;
+    margin: 15px 0px;
+    border-radius: 8px;
+    
+}
+.navigation-list-item:hover {
+    background: rgb(0, 0, 0, 0.05);
+    box-shadow: 0 0 0.4em rgb(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+.navigation-list-item-sing-out{
+    padding: 12px 18px 12px 25px;
+    margin: 0 auto;
+    margin-right:10px;
+    border-radius: 8px;
+}
+.navigation-list-item-sing-out:hover {
+    background: rgba(255, 0, 0, 0.781);
+    box-shadow: 0 0 0.4em rgb(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+.navigation-list-item-sing-out:hover .navigation-link {
+    color: rgb(255, 255, 255, 0.7);
+}
+.navigation-list-item.active-sing-out .navigation-link {
+    color: rgb(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+
+.navigation-list-item.active {
+    background: rgb(0, 0, 0, 0.1);
+    box-shadow: 0 0 0.4em rgb(255, 255, 255, 0.1);
+}
+.navigation-link {
+    color: rgb(31, 40, 51, 0.8);
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+.navigation-link i {
+    font-size: 18px;
+}
+.navigation-list-item:hover .navigation-link {
+    color: rgb(255, 255, 255, 0.7);
+}
+.navigation-list-item.active .navigation-link {
+    color: rgb(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+.teams-title-container {
+    padding-left: 30px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.teams-title {
+    letter-spacing: 0.5px;
+    font-size: 17px;
+    color: rgb(31, 40, 51, 0.8);
+    font-family: 'Roboto', sans-serif;
+}
+.teams-list {
+    padding-left: 32px;
+    list-style-type:none;
+}
+.teams-item {
+    letter-spacing: 0.5px;
+    font-size: 16px;
+    color: rgb(31, 40, 51, 0.8);
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 30px;
+}
+.teams-item i {
+    font-size: 12px;
+}

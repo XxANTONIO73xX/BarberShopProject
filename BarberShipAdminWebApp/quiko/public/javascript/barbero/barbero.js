@@ -29,14 +29,14 @@ $.ajax({   //iniciar ajax para crar token
                 <td>${r.telefono}</td>
                 <td>${r.barberia["nombre"]}</td>
 
-                <td><a href= "<?php echo base_url(). '/barbero/editar/'. $dato['id']; ?>" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a></td>
+                <td><a href= "" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a></td>
 
-                <td><a href= "<?php echo base_url(). '/barbero/eliminar/'. $dato['id']; ?>" data-toggle="modal" data-target="#confirma" data-placement="top" title="Eliminar registro" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a></td>
+                <td><a href= "" data-toggle="modal" data-target="#confirma" data-placement="top" title="Eliminar registro" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a></td>
                 </tr>
         `;
             });
         }
 
-        $("#datatablesSimple tbody").html(rows);
+        $("#table tbody").html(rows);
 
     });  //fin de llenar tabla clientes

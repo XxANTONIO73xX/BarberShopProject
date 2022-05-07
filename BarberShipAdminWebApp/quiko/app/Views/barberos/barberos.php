@@ -1,4 +1,3 @@
-<div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
                         <h3 class="mt-4"><?php echo $titulo; ?></h3>
@@ -18,31 +17,46 @@
                                 Tabla de Barberos
                             </div>
                             <div class="card-body">
-                                <table id="datatablesSimple">
+                                <table id="table" class="table table-striped" style="width: 100%">
                                     <thead>
                                         <tr>
                                             <th>Id</th>
                                             <th>Nombre</th>
-                                            <th>Apodo</th>
                                             <th>Apellidos</th>
-                                            <th>Correo</th>
-                                            <th>Telefono</th>
-                                            <th>Id Barberia</th>
-                                            <th></th>
-                                            <th></th>
-
+                                            <th>Apodo</th>
+                                            <th>Barberia</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
                 </main>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                <script src="<?php base_url() ?>javascript/barbero/barbero.js" ></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+          <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+          <script>
+                $(document).ready(function() {
+                    $('#table').DataTable({
+                    "ajax": {
+                        "url": 'http://api.kikosbarbershop.online/public/barbero',
+                        "dataSrc": "barberos",
+                        "type": 'GET',
+                        "beforeSend": function(xhr) {
+                        xhr.setRequestHeader('token', localStorage.getItem("token"));
+                        }
+                    },
+                    "columns":[
+                        {"data": 'id'},
+                        {"data": 'nombre'},
+                        {"data": 'apellidos'},
+                        {"data":'apodo'},
+                        {"data": 'barberia.nombre'}
+                    ]
+                    });
+                })
+          </script>
 <!-- Modal
 <div class="modal fade" id="confirma" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
