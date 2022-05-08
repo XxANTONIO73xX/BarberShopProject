@@ -64,10 +64,10 @@
           <td></td>
           <td></td>
           <td class="control-btns">
-            <button class="btn-ver-cita">
+            <button class="btn-ver-cita"> Ver Informacion
               <img src="<?php base_url() ?>Cita/img/ojo.png" width="30px" height="30px">
             </button>
-            <button class="btn-cancelar">
+            <button class="btn-cancelar" onclick="cancelar()" > Cancelar cita
               <img src="<?php base_url() ?>Cita/img/eliminar.png" width="30px" height="30px">
             </button>
           </td>
@@ -77,59 +77,6 @@
     </table>
   </div>
 
-  <!--
-  <div class="accordion">
-
-    
-
-    <div class="accordion-item">
-      <div class="accordion-item-header">
-        <div class="accordion-cita-datos">
-          <div class="accordion-cita-datos-header" id="idBarberia">Barberia:
-          </div>
-          <div class="accordion-cita-datos-header" id="idBarbero">Barbero:
-          </div>
-          <div class="accordion-cita-datos-header" id="idCorte">Corte:
-          </div>
-          <div class="accordion-cita-datos-header" id="fecha">Fecha:
-          </div>
-          <div class="accordion-cita-datos-header" id="estado">Estado:
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item-body">
-        <div class="accordion-item-body-content">
-          <div class="accordion-barbero-box">
-            <label>Tu barbero:</label>
-            <div class="accordion-cita-datos-body-barbero" id="idBarbero_box">* FOTO BARBERO *</div>
-          </div>
-          <div class="accordion-corte-box">
-            <label>Corte:</label>
-            <div class="accordion-cita-datos-body-corte" id="idCorte_box">* FOTO CORTE *</div>
-          </div>
-          <div class="accordion-cita-datos-body-datos__minimos">
-            <div class="accordion-fecha-box">
-              <label>Fecha de la cita:</label>
-              <div class="accordion-cita-datos-body-fecha" id="fecha_box"></div>
-            </div>
-            <div class="accordion-hora-box">
-              <label>Hora de la cita:</label>
-              <div class="accordion-cita-datos-body-hora" id="hora_box"></div>
-            </div>
-
-
-            <div class="accordion-estado-box">
-              <label>Estado de la cita:</label>
-              <label id="status-label" class="accordion-cita-datos-body-estado"> </label>
-            </div>
-
-          </div>
-          <button id="button-cancelar" class="button-cancelar" onclick="statusCita()">Cancelar cita</button>
-        </div>
-      </div>
-    </div>
-  </div>
--->
 
   <div class="container__menu">
     <ul class="nv_list_mobile">
@@ -144,7 +91,7 @@
   </div>
 
 
-
+<!-- Modal para agregar citas-->
   <div class="modal-bg">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -198,6 +145,65 @@
             <button id="guardar" class="button-accept">Agendar cita</button>
           </div>
 
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para modificar corte de la cita-->
+  <div class="modal-bg">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&hyphen;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">Editar Corte-Cita</h4>
+        </div>
+        <div id="form_cita">
+          <div class="modal-body">
+            <div class="form-group-barberia">
+              <img src="<?php base_url() ?>Cita/img/BarberiaSelect.png" width="30px" height="30px">
+              <select placeholder="Barberia" name="barberia" id="idBarberia" class="form-control" disabled>
+                <option class="placeholder-select" value="" disabled selected hidden>Selecciona una barbería
+                </option>
+                <option value="idBarbería">Selecciona una barbería</option>
+              </select>
+            </div>
+
+            <div class="form-group-barbero">
+              <img src="<?php base_url() ?>Cita/img/BarberoSelect.png" width="30px" height="30px">
+              <select placeholder="Barbero" name="barbero" id="idBarbero" class="form-control" disabled>
+                <option class="placeholder-select" value="" hidden>Selecciona
+                  un barbero</option>
+                <option value="idBarbero">Selecciona un barbero</option>
+              </select>
+            </div>
+
+            <div class="form-group-corte">
+              <img src="<?php base_url() ?>Cita/img/CorteSelect.png" width="30px" height="30px">
+              <select placeholder="Corte" name="corte" id="idCorte" class="form-control" disabled>
+                <option class="placeholder-select" value="" disabled selected hidden>Selecciona una corte</option>
+                <option value="idCorte">Selecciona un corte</option>
+              </select>
+            </div>
+
+            <div class="form-group-fecha">
+              <label>Fechas disponibles:</label><br>
+              <input type="date" name="fecha" id="fecha" disabled>
+            </div>
+
+            <div class="form-group-hora">
+              <label>Hora</label><br>
+              <input type="time" name="hora" id="hora" disabled>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="button-close modal-close" data-dismiss="modal">Cerrar</button>
+            <button id="guardar" class="button-accept">Guardar</button>
+          </div>
+
           <div id="respuesta"></div>
         </div>
       </div>
@@ -207,6 +213,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+  <!--Su funcion es obtener todas las citas del cliente-->
   <script>
     var url = "http://api.kikosbarbershop.online/public/cliente_cita/" + localStorage.getItem("id");
 
@@ -240,7 +247,7 @@
                           <button class="btn-ver-cita">
                             <img src="<?php base_url() ?>Cita/img/ojo.png" width="30px" height="30px">
                           </button>
-                          <button class="btn-cancelar">
+                          <button class="btn-cancelar" onclick="cancelar(${r.id})">
                             <img src="<?php base_url() ?>Cita/img/eliminar.png" width="30px" height="30px">
                           </button>
                         </td>
@@ -254,6 +261,7 @@
       });
   </script>
 
+  <!-- Su funcion es obtener todas las barberías-->
   <script>
     var url = 'http://api.kikosbarbershop.online/public/barberia'
     $.ajax({
@@ -278,7 +286,7 @@
       });
   </script>
 
-
+  <!-- Su funcion es obtener todos los barberos-->
   <script>
     var url = 'http://api.kikosbarbershop.online/public/barbero'
     $.ajax({
@@ -303,6 +311,7 @@
       });
   </script>
 
+  <!-- Su funcion es obtener todos los cortes-->
   <script>
     var url = 'http://api.kikosbarbershop.online/public/corte'
     $.ajax({
@@ -325,6 +334,37 @@
         });
 
       });
+  </script>
+
+<!-- Su funcion es obtener los datos de una cita y mostrarlos en un modal-->
+<script>
+    var url = 'http://api.kikosbarbershop.online/public/cliente_cita' + localStorage.getItem("id")
+    function obtenerDatos() {
+        $.ajax({
+                url: url,
+                data: {},
+                type: "GET",
+                dataType: "json",
+                headers: {
+                    token: localStorage.getItem("token")
+                }
+            })
+            .done(function(data, textStatus, jqXHR) {
+                var cita = data.cita;
+
+                console.log(data.cita);
+
+                $("select[name='barberia']").val(cita.barberia.nombre);
+                $("select[name='barbero']").val(cita.barbero.nombre);
+                $("select[name='corte']").val(cita.corte.nombre);
+                $("select[name='fecha']").val(cita.fecha);
+                $("select[name='hora']").val(cita.hora);
+
+            });
+
+    }
+
+    llenarForm();
   </script>
 
   <!-- Este script sirve para evniar los datos del formulario y guardarlos
@@ -353,17 +393,47 @@
         .done(function(data, res) {
           console.log("La cita ha sido guardada con exito");
           console.log(data);
-          /**
-           * !Esto para regresar al index de citas y se recargue, en el dato caso
-           * !de que marque error el metodo se quita la linea de abajo
-           **/
-          //location.href = "/Cita/";
+
         })
         .fail(function() {
           console.log("Error", "Ocurrio un problema al guardar la cita")
         })
     });
   </script>
+
+  <!-- Su funcion es cambiar el estado de la cita, cancelar la cita-->
+  <script>
+    var url = 'http://api.kikosbarbershop.online/public/cita/update/';
+    
+    function cancelar(id) {
+      
+      $.ajax({
+          url: url + id,
+          type: 'POST',
+          data: {
+            "estado": "Cancelada"
+          },
+          dataType: "json",
+          headers: {
+            token: localStorage.getItem("token")
+          }
+        })
+        .done(function(data, res) {
+          console.log("La cita ha sido cancelada con exito");
+          console.log(data);
+          location.href="<?php base_url() ?>Citas";
+
+        })
+        .fail(function() {
+          console.log("Error", "Ocurrio un problema al cancelar la cita")
+        })
+
+    }
+
+  </script>
+
+
+  <!-- Su funcion es cerrar la sesion del usuario-->
   <script>
     //hay session ?
     if(!localStorage.getItem("user")){
