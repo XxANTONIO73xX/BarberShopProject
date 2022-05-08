@@ -226,30 +226,32 @@
           <div class="left-column">
             <div class="body-barberia">
               <label>Barbería</label>
-              <input class="barberia-name" name="barberia-mostrar"></input>
+              <div class="barberia-div" name="barberia-mostrar" id="barberia-div">
+                <img src="">
+              </div>
             </div>
             <div class="body-barbero">
               <label>Barbero</label>
-              <input class="barbero-name" name="barbero-mostrar"></input>
+              <div class="barbero-div" name="barbero-mostrar" id="barbero-div"> <img src=""></div>
             </div>
           </div>
           <div class="body-corte">
             <label>Corte</label>
             <!--inserte imagen del corte aquí xd-->
-            <input class="corte-name" name="corte-mostrar"></input>
+            <div class="corte-div" name="corte-mostrar" id="corte-div"></div>
           </div>
           <div class="right-column">
             <div class="body-fecha">
               <label>Fecha</label>
-              <input class="fecha-label" name="fecha-mostrar"></input>
+              <div class="fecha-div" img src="" name="fecha-mostrar" id="fecha-div"></div>
             </div>
             <div class="body-hora">
               <label>Hora</label>
-              <input class="fecha-label" name="hora-mostrar"></input>
+              <div class="fecha-div" name="hora-mostrar" id="hora-div"></div>
             </div>
             <div class="body-estado">
               <label>Estado</label>
-              <input class="estado-label" name="estado-mostrar"></input>
+              <div class="estado-div" name="estado-mostrar" id="estado-div"></div>
             </div>
           </div>
           <div class="modal-close">
@@ -391,37 +393,9 @@
       });
   </script>
 
-<!-- Su funcion es obtener los datos de una cita y mostrarlos en un modal-->
-<script>
-    var url = 'http://api.kikosbarbershop.online/public/cliente_cita' + localStorage.getItem("id")
-    function obtenerDatos() {
-        $.ajax({
-                url: url,
-                data: {},
-                type: "GET",
-                dataType: "json",
-                headers: {
-                    token: localStorage.getItem("token")
-                }
-            })
-            .done(function(data, textStatus, jqXHR) {
-                var cita = data.cita;
-
-                console.log(data.cita);
-
-                $("select[name='barberia']").val(cita.barberia.nombre);
-                $("select[name='barbero']").val(cita.barbero.nombre);
-                $("select[name='corte']").val(cita.corte.nombre);
-                $("select[name='fecha']").val(cita.fecha);
-                $("select[name='hora']").val(cita.hora);
-            });
-    }
-
-    llenarForm();
-  </script>
 
   <!-- Su funcion es obtener los datos de una cita y mostrarlos en un modal-->
-<script>
+  <script>
 
     var url = 'http://api.kikosbarbershop.online/public/cita/';
     function llenarModal(id) {
@@ -439,13 +413,15 @@
 
                 console.log(data.cita);
 
+                $('#idBarberia').html("<option value='" + r.id + "'>" + r.nombre + "</option>")
+              /* 
                 $("input[name='barberia-mostrar']").val(cita.barberia.nombre);
                 $("input[name='barbero-mostrar']").val(cita.barbero.nombre);
                 $("input[name='corte-mostrar']").val(cita.corte.nombre);
                 $("input[name='fecha-mostrar']").val(cita.fecha);
                 $("input[name='hora-mostrar']").val(cita.hora);
                 $("input[name='estado-mostrar']").val(cita.estado);
-
+              */
             });
 
     }
@@ -556,12 +532,12 @@
 
                 console.log(data.cita);
 
-                $("label[name='barberia']").val(cita.barberia.nombre);
-                $("label[name='barbero']").val(cita.barbero.nombre);
-                $("label[name='corte']").val(cita.corte.nombre);
-                $("label[name='fecha']").val(cita.fecha);
-                $("label[name='hora']").val(cita.hora);
-                $("label[name='estado']").val(cita.estado);
+                $('#barberia-div').html("<div id='" + cita.idBarberia + "'>" + cita.barberia.nombre + "</div>");
+                $('#barbero-div').html("<div id='" + cita.idBarbero + "'>" + cita.barbero.nombre + "</div>");
+                $('#corte-div').html("<div id='" + cita.idCorte + "'>" + "<img src='" +  cita.corte.visualizacion +"'>" + "</div>");
+                $('#fecha-div').html("<div id='" + cita.fecha + "'>" + cita.fecha + "</div>");
+                $('#hora-div').html("<div id='" + cita.hora + "'>" + cita.hora + "</div>");
+                $('#estado-div').html("<div id='" + cita.estado + "'>" + cita.estado + "</div>");
             });
     }
 
