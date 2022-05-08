@@ -25,6 +25,7 @@
                                             <th>Apodo</th>
                                             <th>Barberia</th>
                                             <th>telefono</th>
+                                            <th>URL</th>
                                             <th>Acciones</th>
 
                                         </tr>
@@ -56,7 +57,8 @@
                         {"data":'apodo'},
                         {"data": 'barberia.nombre'},
                         {"data":'telefono'},
-                        {"targets": -1, "data": null, "defaultContent":'<button class="btn btn-warning" name="editar">  <i class="fas fa-pen"></i>  </button> <button class="btn btn-danger" name="cancelar">  <i class="fas fa-trash"></i>  </button>'}
+                        {"data": "visualizacion"},
+                        {"targets": -1, "data": null, "defaultContent":'<button class="btn btn-warning" name="editar">  <i class="fas fa-pen"></i>  </button> <button class="btn btn-danger" name="cancelar">  <i class="fas fa-trash"></i>  </button> </button> <button class="btn btn-success" name="imagen">  <i class="fas fa-image"></i>  </button>'}
                     ]
                     });
 
@@ -68,6 +70,11 @@
                   $('#table tbody').on( 'click', "button[name='editar']", function () {
                     var data = table.row( $(this).parents('tr') ).data();
                     alert("estas editando el: " + data.id +" => " + data.nombre);
+                  });
+
+                  $('#table tbody').on( 'click', "button[name='imagen']", function () {
+                    var data = table.row( $(this).parents('tr') ).data();
+                    window.open(data.visualizacion);
                   });
                 });
           </script>
