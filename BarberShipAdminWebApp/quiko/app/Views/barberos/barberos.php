@@ -10,7 +10,6 @@
                                 <a href= "<?php echo base_url(); ?>/barbero/nuevo" class="btn btn-info">Agregar</a>
                             </p>
                         </div>
-
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
@@ -41,7 +40,7 @@
           <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
           <script>
                 $(document).ready(function() {
-                    $('#table').DataTable({
+                  var table =$('#table').DataTable({
                     "ajax": {
                         "url": 'http://api.kikosbarbershop.online/public/barbero',
                         "dataSrc": "barberos",
@@ -56,10 +55,23 @@
                         {"data": 'apellidos'},
                         {"data":'apodo'},
                         {"data": 'barberia.nombre'},
-                        {"data":'telefono'}
+                        {"data":'telefono'},
+                        {"targets": -1, "data": null, "defaultContent":'<button class="btn btn-warning" name="editar">  <i class="fas fa-pen"></i>  </button> <button class="btn btn-danger" name="cancelar">  <i class="fas fa-trash"></i>  </button>'}
                     ]
                     });
-                })
+
+                  $('#table tbody').on( 'click', "button[name='cancelar']", function () {
+                    var data = table.row( $(this).parents('tr') ).data();
+                    alert("estas eliminando el: " + data.id +" => " + data.nombre);
+                  });
+
+                  $('#table tbody').on( 'click', "button[name='editar']", function () {
+                    var data = table.row( $(this).parents('tr') ).data();
+                    alert("estas editando el: " + data.id +" => " + data.nombre);
+                  });
+                });
+          </script>
+          <script>
           </script>
 <!-- Modal
 <div class="modal fade" id="confirma" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
