@@ -192,8 +192,7 @@
                             }
                         })
                         .done(function(data, textStatus, jqXHR) {
-                            $("#corte").html('<label class="nombre">'+ data.nombre +'</label>');
-                            $("#corte").html('<img class="visualizacion" src="'+data.visualizacion+'"/>');
+                            $("#corte").html('<label class="nombre">'+ data.nombre +'</label> <img class="visualizacion" src="'+data.visualizacion+'"/>');
                         });
 
                         $.ajax({ //iniciar ajax para crar token   
@@ -206,8 +205,7 @@
                             }
                         })
                         .done(function(data, textStatus, jqXHR) {
-                            $("#barberia").html('<label class="nombre">'+ data.nombre +'</label>');
-                            $("#barberia").html('<img class="visualizacion" src="'+data.visualizacion+'"/>');
+                            $("#barberia").html('<label class="nombre">'+ data.nombre +'</label> <img class="visualizacion" src="'+data.visualizacion+'"/>');
                         });
 
                         $.ajax({ //iniciar ajax para crar token   
@@ -220,7 +218,6 @@
                             }
                         })
                         .done(function(data, textStatus, jqXHR) {
-                            $("#barbero").html('<label class="nombre">'+ data.nombre +'</label>');
-                            $("#barbero").html('<img class="visualizacion" src="'+data.visualizacion+'"/>');
+                            $("#barbero").html('<label class="nombre">'+ data.nombre +'</label> <img class="visualizacion" src="'+data.visualizacion+'"/>');
                         });
                 </script>
