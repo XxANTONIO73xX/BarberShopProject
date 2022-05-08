@@ -290,221 +290,23 @@ table {
       background-color: rgb(255, 35, 35);
     }
 
-    .btn-cancelar, .btn-ver-cita {
+    .btn-editar-corte {
+      background-color: rgb(244, 244, 0);
+    }
+
+    .btn-cancelar, .btn-ver-cita, .btn-editar-corte {
       width: 80px;
       height: 50px;
       border: none;
       border-radius: 10px;
-      gap: 50px;
       transition: 0.5s;
     }
 
-      .btn-cancelar:hover, .btn-ver-cita:hover {
+      .btn-cancelar:hover, .btn-ver-cita:hover, .btn-editar-corte:hover {
         box-shadow: 1px 1px 10px rgb(39, 39, 39);
         transition: 0.2s;
         cursor: pointer;
       }
-
-  /*----------------------------------MODAL VER CITA -----------------------------------*/
-
-  .bg-cita-active {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  .modal-cita-bg {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 39000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    visibility: hidden;
-    opacity: 0;
-    transition: 0.5s;
-  }
-
-  /*-------------------------------- ACORDEÓN DE CITAS -------------------------------*/
-
-  .accordion {
-    top: 120px;
-    position: relative;
-    width: 90%;
-    margin-right: 100px;
-  }
-
-    .accordion-item {
-      background-color: rgb(42, 42, 43);
-      color: white;
-      margin: 10px 0; 
-      border-radius: 1.5rem;
-      box-shadow: 0 2px 5px 0 rgba(0,0,0,0.5) ;
-    }
-
-      .accordion-item-header {
-        padding: 0.5rem 3rem 0.5rem 1rem;
-        line-height: 1;
-        font-weight: bold;
-        display: flex;
-        height: 40px;
-        align-items: center;
-        position: relative;
-        cursor: pointer;
-      }
-      
-        .accordion-item-header::after {
-          content: "\25BE";
-          font-size: 1.5rem;
-          position: absolute;
-          right: 1rem;
-          color: #090a0f;
-          transition: transform 0.2s;
-        }
-
-        .accordion-item-header.active::after {
-          transform: rotate(-180deg);
-        }
-
-        .accordion-cita-datos {
-          width: 100%;
-          height: 30px;
-          display: flex;
-          transition: .3s;
-          line-height: 2;
-          justify-content: center;
-        }
-
-          .accordion-cita-datos.active {
-            opacity: 0;
-            transition: .2s;
-          }
-
-        #accordion-datos {
-          margin-right: 70px;
-          border-right: 2px solid rgba(13, 12, 12, 0.552);
-          padding-right: 70px;
-        }
-        
-        .accordion-item-body {
-          max-height: 0;
-          overflow: hidden;
-          transition: max-height 0.2s ease-out;
-        }
-
-        .accordion-item-body-content {
-          padding: 20px;
-          line-height: 1.5rem;
-          border-top: 3px solid rgb(0, 124, 169);
-          border-image: linear-gradient(to right, transparent, black, transparent) 1;
-          transition: 1s;
-        }
-
-          .accordion-item-header.active + .accordion-item-body {
-            max-height: 700px;
-            transition: 1s;
-          }
-        
-          .accordion-barbero-box {
-            float: left;
-            margin-bottom: 20px;
-          }
-
-            .accordion-cita-datos-header {
-              margin-left: 20px;
-              border-right: 2px solid rgb(27, 25, 25);
-              padding-right: 130px;
-            }
-
-            .accordion-cita-datos-body-barbero {
-              margin-top: 10px;
-              background-color: rgb(22, 17, 17);
-              border-radius: 10px;
-              width: 200px;
-              height: 280px;
-            }
-
-          .accordion-corte-box {
-            float: left;
-            margin-left: 20px;
-            margin-bottom: 20px;
-          }
-
-            .accordion-cita-datos-body-corte {
-              margin-top: 10px;
-              background-color: rgb(22, 17, 17);
-              border-radius: 10px;
-              width: 280px;
-              height: 280px;
-            }
-
-          .accordion-cita-datos-body-datos__minimos {
-            position: relative;
-            float: left;
-            margin-bottom: 20px;
-            margin-left: 20px;
-          }
-
-            .accordion-cita-datos-body-fecha {
-              margin-top: 10px;
-              background-color: rgb(22, 17, 17);
-              border-radius: 10px;
-              width: 700px;
-              height: 30px;
-            }
-
-            .accordion-hora-box {
-              margin-top: 10px;
-            }
-
-            .accordion-cita-datos-body-hora {
-              margin-top: 10px;
-              background-color: rgb(22, 17, 17);
-              border-radius: 10px;
-              width: 700px;
-              height: 30px;
-            }
-
-            .accordion-costo-box {
-              margin-top: 10px;
-            }
-
-            .accordion-cita-datos-body-coste {
-              margin-top: 10px;
-              background-color: rgb(22, 17, 17);
-              border-radius: 10px;
-              width: 700px;
-              height: 30px;
-            }
-
-            .accordion-estado-box {
-              margin-top: 10px;
-            }
-          
-          .button-cancelar {
-            position: relative;
-            border-radius: 100px;
-            border: none;
-            top: 10px;
-            left: 620px;
-            width: 100px;
-            height: 30px;
-            background: linear-gradient(to top, rgb(19, 19, 19), rgba(255, 255, 255, 0.100));
-            transition: 0.25s;
-            font-size: 15px;
-            color: white;
-          }
-
-            .button-cancelar:hover {
-              background-color: rgba(0, 98, 226, 0.449);
-              transition: 0.45s;
-              cursor: pointer;
-            }
-
-        
 
   /*------------------------------------ FONDO LINEAS DIAGONALES ------------------------------------*/
 
@@ -611,7 +413,143 @@ table {
     }
   }
 
-/*------------------------------------ MODAL ------------------------------------*/
+/*----------------------------------MODAL VER CITA -----------------------------------*/
+
+.modal-bg_cita {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 42000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.modal-bg_cita_active {
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.modal-dialog_cita {
+  position: absolute;
+  background: linear-gradient(to top, rgb(11, 10, 10),40%, rgb(68, 68, 68));
+  width: 800px;
+  height: 500px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.408);
+  border-radius: 10px;
+  z-index: 43000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content_cita {
+  width: 95%;
+  height: 95%;
+}
+
+.modal-title_cita {
+  width: 100%;
+  height: 80px;
+}
+
+  .modal-title_cita button {
+    background-color: rgb(0, 0, 0);
+    width: 25px;
+    height: 25px;
+    margin-left: 5px;
+    margin-top: 5px;
+    border-radius:8px;
+    border: none;
+    color: white;
+    text-align: center;
+    opacity: 0.5;
+    transition: 0.25s;
+    font-size: 30px;
+  }
+
+    .modal-title_cita button span {
+        position: relative;
+        bottom: 6px;
+    }
+
+    .modal-title_cita button:hover {
+        opacity: 1;
+        cursor: pointer;
+        transition: 0.25s;
+    }
+
+  .modal-body_cita {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(8, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: 100px;
+    grid-template-areas:
+      "a a b b b b c c"
+      "a a b b b b c c"
+      "a a b b b b c c"
+      "a a b b b b d d";
+    align-items: start;
+  }
+
+  .left-column {
+    background-color: red;
+    grid-area: a;
+  }
+
+    .body-barberia {
+      height: 200px;
+    }
+
+    .body-barbero {
+      height: 200px;
+    }
+
+  .body-corte {
+    background-color: yellow;
+    grid-area: b;
+    height: 400px;
+  }
+
+  .right-column {
+    background-color: blue;
+    grid-area: c;
+    gap: 20px;
+  }
+
+    .body-fecha {
+      height: 100px;
+    }
+
+    .body-hora {
+      height: 100px;
+    }
+
+    .body-estado {
+      height: 100px;
+    }
+
+  .modal-close {
+    background-color: pink;
+    grid-area: d;
+    height: 50px;
+  }
+
+  .modal-body_cita button {
+    position: relative;
+
+  }
+
+
+/*------------------------------------ MODAL AGENDAR CITA ------------------------------------*/
 
 .modal-bg {
   position: fixed;

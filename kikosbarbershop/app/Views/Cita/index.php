@@ -57,18 +57,24 @@
         </tr>
       </thead>
       <tbody class="tbl-content">
-        <tr>
+        <tr class="btn-ver-cita">
           <td></td>
           <td></td>
           <td></td>
           <td></td>
           <td></td>
           <td class="control-btns">
-            <button class="btn-ver-cita"> Ver Informacion
-              <img src="<?php base_url() ?>Cita/img/ojo.png" width="30px" height="30px">
+            <button class="btn-ver-cita" onclick="mostrarModal()">
+              <img src="<?php base_url() ?>Cita/img/ojo.png" width="30px" height=25px">
+              <p> Ver cita </p>
             </button>
-            <button class="btn-cancelar" onclick="cancelar()" > Cancelar cita
-              <img src="<?php base_url() ?>Cita/img/eliminar.png" width="30px" height="30px">
+            <button class="btn-editar-corte" onclick="mostrarModal()">
+              <img src="<?php base_url() ?>Cita/img/CorteEditar.png" width="30px" height=25px">
+              <p> Editar corte </p>
+            </button>
+            <button class="btn-cancelar" onclick="cancelar(${r.id})">
+              <img src="<?php base_url() ?>Cita/img/eliminar.png" width="30px" height="25px">
+              <p> Cancelar cita </p>
             </button>
           </td>
         </tr>
@@ -85,11 +91,6 @@
       <li><a href="../InformacionBarberia/index.html"">Más Información</a></li>
       </ul>
     </div>
-
-    <div class=" modal-cita-bg">
-
-  </div>
-
 
 <!-- Modal para agregar citas-->
   <div class="modal-bg">
@@ -150,7 +151,7 @@
     </div>
   </div>
 
-  <!-- Modal para modificar corte de la cita-->
+  <!-- Modal para modificar corte de la cita
   <div class="modal-bg">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -209,7 +210,55 @@
       </div>
     </div>
   </div>
+  -->
 
+<!--Modal para ver cita-->
+  <div class="modal-bg_cita">
+    <div class="modal-dialog_cita">
+      <div class="modal-content_cita">
+        <div class="modal-title_cita">
+          <button type="button" class="modal-close_cita" onclick="cerrarModal()" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&hyphen;</span>
+          </button>
+          <h1>Hola, soy un modal</h1>
+        </div>
+        <div class="modal-body_cita">
+          <div class="left-column">
+            <div class="body-barberia">
+              <label>Barbería</label>
+              <label class="barberia-name">La del centro xd</label>
+            </div>
+            <div class="body-barbero">
+              <label>Barbero</label>
+              <label class="barbero-name">Eduardo Carapinga</label>
+            </div>
+          </div>
+          <div class="body-corte">
+            <label>Corte</label>
+            <!--inserte imagen del corte aquí xd-->
+            <label class="corte-name">sdsdsds</label>
+          </div>
+          <div class="right-column">
+            <div class="body-fecha">
+              <label>Fecha</label>
+              <label class="fecha-label">un dia</label>
+            </div>
+            <div class="body-hora">
+              <label>Hora</label>
+              <label class="fecha-label">una hora</label>
+            </div>
+            <div class="body-estado">
+              <label>Estado</label>
+              <label class="estado-label">Pendinetexd</label>
+            </div>
+          </div>
+          <div class="modal-close">
+            <button class="modal-close_cita" onclick="cerrarModal()">Cerrar modal</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
@@ -244,11 +293,17 @@
                         <td>${r.fecha}</td>
                         <td>${r.estado}</td>
                         <td class="control-btns">
-                          <button class="btn-ver-cita">
-                            <img src="<?php base_url() ?>Cita/img/ojo.png" width="30px" height="30px">
+                          <button class="btn-ver-cita" onclick="mostrarModal()">
+                            <img src="<?php base_url() ?>Cita/img/ojo.png" width="30px" height=25px">
+                            <p> Ver cita </p>
+                          </button>
+                          <button class="btn-editar-corte" onclick="mostrarModal()">
+                            <img src="<?php base_url() ?>Cita/img/CorteEditar.png" width="30px" height=25px">
+                            <p> Editar corte </p>
                           </button>
                           <button class="btn-cancelar" onclick="cancelar(${r.id})">
-                            <img src="<?php base_url() ?>Cita/img/eliminar.png" width="30px" height="30px">
+                            <img src="<?php base_url() ?>Cita/img/eliminar.png" width="30px" height="25px">
+                            <p> Cancelar cita </p>
                           </button>
                         </td>
                   </tr>
@@ -446,6 +501,21 @@
         localStorage.removeItem("user");
         location.href = "<?php base_url() ?>/Log-In";
       }
+  </script>
+
+  <!-- Su funcion es abrir y cerrar el modal de ver cita -->
+  <script>
+    function mostrarModal(){
+    var btnModalCita = document.querySelectorAll('.btn-ver-cita');
+    var modalBgCita = document.querySelector('.modal-bg_cita');
+    modalBgCita.classList.add('modal-bg_cita_active');
+    }
+
+    function cerrarModal() {
+      var modalBgCita = document.querySelector('.modal-bg_cita');
+      var modalCloseCita = document.querySelector('.modal-close_cita');
+      modalBgCita.classList.remove('modal-bg_cita_active');
+    }
   </script>
 
   <script src="<?php base_url() ?>Cita/js/cita.js"></script>

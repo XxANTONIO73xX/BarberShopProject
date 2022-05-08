@@ -30,8 +30,7 @@
                     <span class="line1__bars-menu"></span>
                     <span class="line2__bars-menu"></span>
                     <span class="line3__bars-menu"></span>
-                    <span class="line4__bars-menu"></span>
-                    </div>
+        </div>
     </nav>
 
     <div class="stripe">
@@ -40,19 +39,18 @@
     </div>
 
 
-    <form action="" onload="getInfoUsuario()">
+    <div action="">
         <div id="fitem_id_nombre" class="form-group row  fitem   ">
             <div class="col-md-3">
                 <span class="float-sm-right text-nowrap">
 
                 </span>
-                <label class="col-form-label d-inline " id="nombre">
+                <label>
                     Nombre
                 </label>
             </div>
             <div class="col-md-9 form-inline felement" data-fieldtype="text">
-                <input type="text" class="form-control " name="nombre" readonly=""  id="id_nombre"
-                    value="Nombre-usuario" id="nombre" size="30" maxlength="100" autocomplete="given-name">
+                <input type="text" class="form-control " name="nombre" id="nombre">
             </div>
         </div>
 
@@ -64,13 +62,12 @@
 
                 </span>
                 <label class="col-form-label d-inline " for="id_apellidos">
-                    Nombre
+                    Apellidos
                 </label>
             </div>
             <div class="col-md-9 form-inline felement" data-fieldtype="text">
-                <input type="text" class="form-control " name="apellidos" readonly=""  id="id_apellidos"
-                    value="Apellidos-Usuario" size="30" maxlength="100" autocomplete="given-name">
-
+                <input type="text" class="form-control " name="apellidos" id="apellidos"
+                 size="30" maxlength="100" autocomplete="given-name">
             </div>
         </div>
 
@@ -83,11 +80,8 @@
                 </label>
             </div>
             <div class="col-md-9 form-inline felement" data-fieldtype="text">
-                <input type="text" class="form-control " name="email" id="id_email"
+                <input type="text" class="form-control " name="email" id="correo"
                     value="jose.campa216584@potros.itson.edu.mx" size="30" maxlength="100" autocomplete="email">
-                <div class="form-control-feedback invalid-feedback" id="id_error_email">
-
-                </div>
             </div>
         </div>
 
@@ -100,17 +94,16 @@
                 </label>
             </div>
             <div class="col-md-9 form-inline felement" data-fieldtype="text">
-                <input type="text" class="form-control " name="email" id="id_email" value="6221785566" size="30"
+                <input type="text" class="form-control " name="telefono" id="telefono" value="6221785566" size="30"
                     maxlength="100" autocomplete="email">
-                <div class="form-control-feedback invalid-feedback" id="id_error_email">
-
-                </div>
             </div>
         </div>
         
+        <button id="guardar">guardar</button>
 
+</div>
 
-    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
     //hay session ?
@@ -124,6 +117,63 @@
         localStorage.removeItem("user");
         location.href = "<?php base_url() ?>/Log-In";
       }
+  </script>
+
+  <script>
+
+    var url = "http://api.kikosbarbershop.online/public/cliente/";
+
+        function llenarForm() { 
+        $.ajax({ 
+            url: url + localStorage.getItem("id"),
+            data: {},
+            type: "GET",
+            dataType: "json",
+            headers:{
+            token: localStorage.getItem("token")
+            }
+            })
+            .done(function( data, textStatus, jqXHR ) {  
+            var cliente = data.cliente; 
+
+            console.log(data.cliente);
+
+            $("input[name='nombre']").val(cliente.nombre);
+            $("input[name='telefono']").val(cliente.telefono);
+            $("input[name='email']").val(cliente.correo);
+            $("input[name='apellidos']").val(cliente.apellidos);
+            }); 
+            }
+
+            llenarForm();
+
+        $('#guardar').click(function() {
+
+        console.log($("#nombre").val());
+
+        $.ajax({
+            url: "http://api.kikosbarbershop.online/public/cliente/update/" + localStorage.getItem("id"),
+            type: 'POST',
+            data: {
+            "nombre": $("#nombre").val(),
+            "apellidos": $("#apellidos").val(),
+            "correo": $("#correo").val(),
+            "telefono": $("#telefono").val()
+            },
+            dataType: "json",
+            headers: {
+            token: localStorage.getItem("token")
+            }
+        })
+        .done(function(data, res) {
+            console.log("La cita ha sido guardada con exito");
+            console.log(data);
+        })
+        .fail(function() {
+            console.log("Error", "Ocurrio un problema al editar usuario")
+        })
+        });
+
   </script>
 
 
