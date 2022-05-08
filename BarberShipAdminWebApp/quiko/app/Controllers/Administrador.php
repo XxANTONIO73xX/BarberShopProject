@@ -47,7 +47,7 @@ class Administrador extends BaseController
 
     public function editar($id){
         $administradores = $this->clientes->where('id',$id)->first();
-        $data = ['titulo' => 'Editar unidad', 'datos'=>$cliente];
+        $data = ['titulo' => 'Editar unidad', 'datos'=>$administradores];
 
         echo view('header');
         echo view('administradores/editar', $data);

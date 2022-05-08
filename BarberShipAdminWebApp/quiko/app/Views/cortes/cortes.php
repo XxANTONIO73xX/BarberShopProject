@@ -38,7 +38,7 @@
           <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
           <script>
                 $(document).ready(function() {
-                    $('#table').DataTable({
+                  var table = $('#table').DataTable({
                     "ajax": {
                         "url": 'http://api.kikosbarbershop.online/public/corte',
                         "dataSrc": "cortes",
@@ -50,8 +50,18 @@
                     "columns":[
                         {"data": 'id'},
                         {"data": 'nombre'},
-                        {"data":'visualizacion'}
+                        {"data":'visualizacion'},
+                        {"targets": -1, "data": null, "defaultContent":'<button class="btn btn-warning" name="editar">  <i class="fas fa-pen"></i>  </button> <button class="btn btn-danger" name="cancelar">  <i class="fas fa-trash"></i>  </button>'}
                     ]
+                    });
+                    $('#table tbody').on( 'click', "button[name='cancelar']", function () {
+                    var data = table.row( $(this).parents('tr') ).data();
+                    alert("estas eliminando el: " + data.id +" => " + data.nombre);
+                    });
+
+                    $('#table tbody').on( 'click', "button[name='editar']", function () {
+                    var data = table.row( $(this).parents('tr') ).data();
+                    alert("estas editando el: " + data.id +" => " + data.nombre);
                     });
                 })
           </script>
