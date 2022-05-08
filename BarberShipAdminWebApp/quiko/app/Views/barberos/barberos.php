@@ -25,6 +25,9 @@
                                             <th>Apellidos</th>
                                             <th>Apodo</th>
                                             <th>Barberia</th>
+                                            <th>telefono</th>
+                                            <th>Acciones</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -52,7 +55,8 @@
                         {"data": 'nombre'},
                         {"data": 'apellidos'},
                         {"data":'apodo'},
-                        {"data": 'barberia.nombre'}
+                        {"data": 'barberia.nombre'},
+                        {"data":'telefono'}
                     ]
                     });
                 })

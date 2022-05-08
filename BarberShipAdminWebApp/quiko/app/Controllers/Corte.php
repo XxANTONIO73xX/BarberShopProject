@@ -7,16 +7,11 @@ use App\Models\CortesModel;
 
 class Corte extends BaseController
 {
-    protected $cortes;
-    //protected $cliente;
 
-    public function __construct(){
-        $this->cortes = new CortesModel();
-    }
 
     public function index(){
-        $cortes = $this->cortes->findAll();
-        $data = ['titulo' => 'Cortes', 'datos' => $cortes];
+
+        $data = ['titulo' => 'Cortes'];
 
         echo view('header');
         echo view('cortes/cortes', $data);

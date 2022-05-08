@@ -7,34 +7,11 @@ use App\Models\AdministradoresModel;
 
 class Administrador extends BaseController
 {
-    protected $administradores;
-    protected $reglasLogin;
-    //protected $cliente;
 
-    public function __construct(){
-        $this->administradores = new AdministradoresModel();
-
-        helper(['form']);
-
-        $this->reglasLogin = [
-            'correo' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'El campo (field} es obligatorio.'
-                ]
-            ],
-            'password' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'El campo (field} es obligatorio.'
-                ]
-            ]
-        ];
-    }
 
     public function index(){
-        $administradores = $this->administradores->findAll();
-        $data = ['titulo' => 'Administradores', 'datos' => $administradores];
+
+        $data = ['titulo' => 'Administradores'];
 
         echo view('header');
         echo view('administradores/administradores', $data);

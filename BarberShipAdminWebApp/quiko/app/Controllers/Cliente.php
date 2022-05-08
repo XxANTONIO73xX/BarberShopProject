@@ -7,16 +7,10 @@ use App\Models\ClientesModel;
 
 class Cliente extends BaseController
 {
-    protected $clientes;
-    //protected $cliente;
-
-    public function __construct(){
-        $this->clientes = new ClientesModel();
-    }
 
     public function index(){
-        $clientes = $this->clientes->findAll();
-        $data = ['titulo' => 'Clientes', 'datos' => $clientes];
+
+        $data = ['titulo' => 'Clientes'];
 
         echo view('header');
         echo view('clientes/clientes', $data);

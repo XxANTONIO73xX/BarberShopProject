@@ -7,16 +7,11 @@ use App\Models\CitasModel;
 
 class Cita extends BaseController
 {
-    protected $citas;
-    //protected $cliente;
 
-    public function __construct(){
-        $this->citas = new CitasModel();
-    }
 
     public function index(){
-        $citas = $this->citas->findAll();
-        $data = ['titulo' => 'Citas', 'datos' => $citas];
+
+        $data = ['titulo' => 'Citas'];
 
         echo view('header');
         echo view('citas/citas', $data);

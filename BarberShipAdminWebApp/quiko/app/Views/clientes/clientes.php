@@ -1,5 +1,4 @@
-<div id="layoutSidenav_content">
-                <main>
+<main>
                     <div class="container-fluid px-4">
                         <h3 class="mt-4"><?php echo $titulo; ?></h3>
                         <ol class="breadcrumb mb-4">
@@ -15,10 +14,10 @@
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                Tabla de clientes
+                                Tabla de Clientes
                             </div>
                             <div class="card-body">
-                                <table id="datatablesSimple">
+                                <table id="table" class="table table-striped" style="width: 100%">
                                     <thead>
                                         <tr>
                                             <th>Id</th>
@@ -26,50 +25,56 @@
                                             <th>Apellidos</th>
                                             <th>Correo</th>
                                             <th>Telefono</th>
-                                            <th></th>
-                                            <th></th>
-
+                                            <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                       <?php foreach($datos as $dato) { ?>
-                                        <tr>    
-                                             <td><?php echo $dato['id']; ?></td>
-                                             <td><?php echo $dato['nombre']; ?></td>
-                                             <td><?php echo $dato['apellidos']; ?></td>
-                                             <td><?php echo $dato['correo']; ?></td>
-                                             <td><?php echo $dato['telefono']; ?></td>
-
-                                             <td><a href= "<?php echo base_url(). '/cliente/editar/'. $dato['id']; ?>" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a></td>
-
-                                             <td><a href= "#" data-href="<?php echo base_url(). '/cliente/eliminar/'. $dato['id']; ?>" data-bs-toggle="modal" data-bs-target="#confirma" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a></td>
-                                            <!-- Se elimino lo siguiente de la linea 45 para que funcione el eliminar sin modal, ya que no jala el visualizar modal
-                                        #" data-href="
-                                        -->
-                                       </tr>
-                                      <?php } ?>
-                                        
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
                 </main>
-<!-- Modal -->
-<div class="modal fade" id="confirma" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+          <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+          <script>
+                $(document).ready(function() {
+                    $('#table').DataTable({
+                    "ajax": {
+                        "url": 'http://api.kikosbarbershop.online/public/cliente',
+                        "dataSrc": "clientes",
+                        "type": 'GET',
+                        "beforeSend": function(xhr) {
+                        xhr.setRequestHeader('token', localStorage.getItem("token"));
+                        }
+                    },
+                    "columns":[
+                        {"data": 'id'},
+                        {"data": 'nombre'},
+                        {"data": 'apellidos'},
+                        {"data":'correo'},
+                        {"data": 'telefono'}
+                    ]
+                    });
+                })
+          </script>
+<!-- Modal
+<div class="modal fade" id="confirma" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
       <div class="modal-body">
-      ¿Esta seguro de eliminar este registro?
+        Desea eliminar este registro
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <a class="btn btn-primary btn-ok">Aceptar</a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancalar</button>
+        <button type="button" class="btn btn-primary">Aceptar</button>
       </div>
     </div>
   </div>
-</div>
+</div> -->

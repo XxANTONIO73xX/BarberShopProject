@@ -1,5 +1,4 @@
-<div id="layoutSidenav_content">
-                <main>
+<main>
                     <div class="container-fluid px-4">
                         <h3 class="mt-4"><?php echo $titulo; ?></h3>
                         <ol class="breadcrumb mb-4">
@@ -15,53 +14,53 @@
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                Tabla de citas
+                                Tabla de Citas
                             </div>
                             <div class="card-body">
-                                <table id="datatablesSimple">
+                                <table id="table" class="table table-striped" style="width: 100%">
                                     <thead>
                                         <tr>
                                             <th>Id</th>
                                             <th>Fecha</th>
                                             <th>Hora</th>
                                             <th>Estado</th>
-                                            <th>idCliente</th>
-                                            <th>idCorte</th>
-                                            <th>idBarbero</th>
-                                            <th>idBarberia</th>
-                                            <th></th>
-                                            <th></th>
+                                            <th>Acciones</th>
+
 
                                         </tr>
                                     </thead>
                                     <tbody>
-                                       <?php foreach($datos as $dato) { ?>
-                                        <tr>    
-                                             <td><?php echo $dato['id']; ?></td>
-                                             <td><?php echo $dato['fecha']; ?></td>
-                                             <td><?php echo $dato['hora']; ?></td>
-                                             <td><?php echo $dato['estado']; ?></td>
-                                             <td><?php echo $dato['idCliente']; ?></td>
-                                             <td><?php echo $dato['idCorte']; ?></td>
-                                             <td><?php echo $dato['idBarbero']; ?></td>
-                                             <td><?php echo $dato['idBarberia']; ?></td>
-
-                                             <td><a href= "<?php echo base_url(). '/cita/editar/'. $dato['id']; ?>" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a></td>
-
-                                             <td><a href= "<?php echo base_url(). '/cita/eliminar/'. $dato['id']; ?>" data-toggle="modal" data-target="#confirma" data-placement="top" title="Eliminar registro" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a></td>
-                                            <!-- Se elimino lo siguiente de la linea 45 para que funcione el eliminar sin modal, ya que no jala el visualizar modal
-                                        #" data-href="
-                                        -->
-                                       </tr>
-                                      <?php } ?>
-                                        
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
                 </main>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+          <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+          <script>
+                $(document).ready(function() {
+                    $('#table').DataTable({
+                    "ajax": {
+                        "url": 'http://api.kikosbarbershop.online/public/cita',
+                        "dataSrc": "citas",
+                        "type": 'GET',
+                        "beforeSend": function(xhr) {
+                        xhr.setRequestHeader('token', localStorage.getItem("token"));
+                        }
+                    },
+                    "columns":[
+                        {"data": 'id'},
+                        {"data": 'fecha'},
+                        {"data": 'hora'},
+                        {"data":'estado'}
+  
 
+                    ]
+                    });
+                })
+          </script>
+<!-- Modal
 <div class="modal fade" id="confirma" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -80,4 +79,4 @@
       </div>
     </div>
   </div>
-</div> 
+</div> -->

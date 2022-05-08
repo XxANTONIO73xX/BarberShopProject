@@ -7,14 +7,14 @@
 
                         <div>
                             <p> 
-                                <a href= "<?php echo base_url(); ?>/administrador/nuevo" class="btn btn-info">Agregar</a>
+                                <a href= "<?php echo base_url(); ?>/barberia/nuevo" class="btn btn-info">Agregar</a>
                             </p>
                         </div>
 
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                Tabla de Administradores
+                                Tabla de Barberias
                             </div>
                             <div class="card-body">
                                 <table id="table" class="table table-striped" style="width: 100%">
@@ -22,9 +22,11 @@
                                         <tr>
                                             <th>Id</th>
                                             <th>Nombre</th>
-                                            <th>Apellidos</th>
-                                            <th>Correo</th>
+                                            <th>Direccion</th>
                                             <th>Telefono</th>
+                                            <th>Correo</th>
+                                            <th>Horario</th>
+                                            <th>Estado</th>
                                             <th>Acciones</th>
 
                                         </tr>
@@ -42,8 +44,8 @@
                 $(document).ready(function() {
                     $('#table').DataTable({
                     "ajax": {
-                        "url": 'http://api.kikosbarbershop.online/public/barbero',
-                        "dataSrc": "barberos",
+                        "url": 'http://api.kikosbarbershop.online/public/barberia',
+                        "dataSrc": "barberias",
                         "type": 'GET',
                         "beforeSend": function(xhr) {
                         xhr.setRequestHeader('token', localStorage.getItem("token"));
@@ -52,9 +54,12 @@
                     "columns":[
                         {"data": 'id'},
                         {"data": 'nombre'},
-                        {"data": 'apellidos'},
-                        {"data":'correo'},
-                        {"data":'telefono'}
+                        {"data": 'direccion'},
+                        {"data":'telefono'},
+                        {"data": 'correo'},
+                        {"data":'horario'},
+                        {"data":'estado'},
+                        
                     ]
                     });
                 })

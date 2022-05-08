@@ -25,7 +25,7 @@
             <div class="sidebar-header">
                 <div class="sidebar-logo-container">
                     <div class="logo-container">
-                        <a href=""><img class="logo-sidebar" src="<?php base_url() ?>template/img/logoKikoNav.svg" /></a>
+                        <a href="http://localhost/quiko/public/home"><img class="logo-sidebar" src="<?php base_url() ?>template/img/logoKikoNav.svg" /></a>
                     </div>
                     <div class="brand-name-container">
                         <p class="brand-name">
@@ -40,7 +40,7 @@
             <div class="sidebar-body">
                 <ul class="navigation-list">
                     <li class="navigation-list-item">
-                        <a class="navigation-link" href="/">
+                        <a class="navigation-link" href="http://localhost/quiko/public/Administrador">
                             <div class="row">
                                 <div class="col-2">
                                     <i class="fas fa-tachometer-alt"></i>
@@ -52,7 +52,7 @@
                         </a>
                     </li>
                     <li class="navigation-list-item">
-                        <a class="navigation-link" href="/">
+                        <a class="navigation-link" href="http://localhost/quiko/public/Barbero">
                             <div class="row">
                                 <div class="col-2">
                                     <i class="fas fa-users"></i>
@@ -64,7 +64,7 @@
                         </a>
                     </li>
                     <li class="navigation-list-item">
-                        <a class="navigation-link" href="/">
+                        <a class="navigation-link" href="http://localhost/quiko/public/Barberia">
                             <div class="row">
                                 <div class="col-2">
                                     <i class="fas fa-store-alt"></i>
@@ -76,7 +76,7 @@
                         </a>
                     </li>
                     <li class="navigation-list-item">
-                        <a class="navigation-link" href="/">
+                        <a class="navigation-link" href="http://localhost/quiko/public/Cita">
                             <div class="row">
                                 <div class="col-2">
                                     <i class="fas fa-calendar-alt"></i>
@@ -88,7 +88,7 @@
                         </a>
                     </li>
                     <li class="navigation-list-item">
-                        <a class="navigation-link" href="/">
+                        <a class="navigation-link" href="http://localhost/quiko/public/Corte">
                             <div class="row">
                                 <div class="col-2">
                                     <i class="fas fa-cut"></i>
@@ -100,7 +100,7 @@
                         </a>
                     </li>
                     <li class="navigation-list-item">
-                        <a class="navigation-link" href="/">
+                        <a class="navigation-link" href="http://localhost/quiko/public/Cliente">
                             <div class="row">
                                 <div class="col-2">
                                     <i class="fas fa-address-book"></i>
