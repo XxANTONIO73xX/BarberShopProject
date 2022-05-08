@@ -151,66 +151,6 @@
     </div>
   </div>
 
-  <!-- Modal para modificar corte de la cita
-  <div class="modal-bg">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&hyphen;</span>
-          </button>
-          <h4 class="modal-title" id="myModalLabel">Editar Corte-Cita</h4>
-        </div>
-        <div id="form_cita">
-          <div class="modal-body">
-            <div class="form-group-barberia">
-              <img src="<?php base_url() ?>Cita/img/BarberiaSelect.png" width="30px" height="30px">
-              <select placeholder="Barberia" name="barberia" id="idBarberia" class="form-control" disabled>
-                <option class="placeholder-select" value="" disabled selected hidden>Selecciona una barbería
-                </option>
-                <option value="idBarbería">Selecciona una barbería</option>
-              </select>
-            </div>
-
-            <div class="form-group-barbero">
-              <img src="<?php base_url() ?>Cita/img/BarberoSelect.png" width="30px" height="30px">
-              <select placeholder="Barbero" name="barbero" id="idBarbero" class="form-control" disabled>
-                <option class="placeholder-select" value="" hidden>Selecciona
-                  un barbero</option>
-                <option value="idBarbero">Selecciona un barbero</option>
-              </select>
-            </div>
-
-            <div class="form-group-corte">
-              <img src="<?php base_url() ?>Cita/img/CorteSelect.png" width="30px" height="30px">
-              <select placeholder="Corte" name="corte" id="idCorte" class="form-control" disabled>
-                <option class="placeholder-select" value="" disabled selected hidden>Selecciona una corte</option>
-                <option value="idCorte">Selecciona un corte</option>
-              </select>
-            </div>
-
-            <div class="form-group-fecha">
-              <label>Fechas disponibles:</label><br>
-              <input type="date" name="fecha" id="fecha" disabled>
-            </div>
-
-            <div class="form-group-hora">
-              <label>Hora</label><br>
-              <input type="time" name="hora" id="hora" disabled>
-            </div>
-          </div>
-
-          <div class="modal-footer">
-            <button type="button" class="button-close modal-close" data-dismiss="modal">Cerrar</button>
-            <button id="guardar" class="button-accept">Guardar</button>
-          </div>
-
-          <div id="respuesta"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  -->
 
 <!--Modal para ver cita-->
   <div class="modal-bg_cita">
@@ -226,30 +166,30 @@
           <div class="left-column">
             <div class="body-barberia">
               <label>Barbería</label>
-              <label class="barberia-name">La del centro xd</label>
+              <div class="barberia-name" name="barberia-div">La del centro xd</div>
             </div>
             <div class="body-barbero">
               <label>Barbero</label>
-              <label class="barbero-name">Eduardo Carapinga</label>
+              <label class="barbero-name" name="barbero-label">Eduardo Carapinga</label>
             </div>
           </div>
           <div class="body-corte">
             <label>Corte</label>
             <!--inserte imagen del corte aquí xd-->
-            <label class="corte-name">sdsdsds</label>
+            <label class="corte-name" name="corte-label">sdsdsds</label>
           </div>
           <div class="right-column">
             <div class="body-fecha">
               <label>Fecha</label>
-              <label class="fecha-label">un dia</label>
+              <label class="fecha-label" name="fecha-label">un dia</label>
             </div>
             <div class="body-hora">
               <label>Hora</label>
-              <label class="fecha-label">una hora</label>
+              <label class="fecha-label" name="hora-label">una hora</label>
             </div>
             <div class="body-estado">
               <label>Estado</label>
-              <label class="estado-label">Pendinetexd</label>
+              <label class="estado-label" name="estado-label">Pendinetexd</label>
             </div>
           </div>
           <div class="modal-close">
@@ -393,33 +333,28 @@
 
 <!-- Su funcion es obtener los datos de una cita y mostrarlos en un modal-->
 <script>
-    var url = 'http://api.kikosbarbershop.online/public/cliente_cita' + localStorage.getItem("id")
-    function obtenerDatos() {
-        $.ajax({
-                url: url,
-                data: {},
-                type: "GET",
-                dataType: "json",
-                headers: {
-                    token: localStorage.getItem("token")
-                }
-            })
-            .done(function(data, textStatus, jqXHR) {
-                var cita = data.cita;
+    var url = "http://api.kikosbarbershop.online/public/cliente_cita/" ;
 
-                console.log(data.cita);
+    function llenarModal() { 
 
-                $("select[name='barberia']").val(cita.barberia.nombre);
-                $("select[name='barbero']").val(cita.barbero.nombre);
-                $("select[name='corte']").val(cita.corte.nombre);
-                $("select[name='fecha']").val(cita.fecha);
-                $("select[name='hora']").val(cita.hora);
+    $.ajax({ 
+        url: url + localStorage.getItem("id"),
+        data: {},
+        type: "GET",
+        dataType: "json",
+        headers:{
+        token: localStorage.getItem("token")
+        }
+        })
+        .done(function( data, textStatus, jqXHR ) {  
+        var cita = data.cliente_cita; 
 
-            });
+        console.log(data.cliente_cita);
 
-    }
+        }); 
+        }
 
-    llenarForm();
+        llenarModal();
   </script>
 
   <!-- Este script sirve para evniar los datos del formulario y guardarlos
