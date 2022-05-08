@@ -457,15 +457,16 @@ table {
 
 .modal-title_cita {
   width: 100%;
-  height: 80px;
+  height: 25px;
 }
 
   .modal-title_cita button {
+    position: relative;
     background-color: rgb(0, 0, 0);
+    bottom: 7px;
+    right: 15px;
     width: 25px;
     height: 25px;
-    margin-left: 5px;
-    margin-top: 5px;
     border-radius:8px;
     border: none;
     color: white;
@@ -500,27 +501,36 @@ table {
     align-items: start;
   }
 
+    .modal-body_cita label {
+      color: white;
+      font-size: 25px;
+    }
+
   .left-column {
-    background-color: red;
     grid-area: a;
   }
 
     .body-barberia {
-      height: 200px;
+      height: 220px;
     }
 
     .body-barbero {
-      height: 200px;
+      height: 220px;
     }
 
   .body-corte {
-    background-color: yellow;
     grid-area: b;
-    height: 400px;
+    height: 440px;
   }
 
+    .corte-div img {
+      position: relative;
+      top: 40px;
+      width: 95%;
+      height: 340px;
+    }
+
   .right-column {
-    background-color: blue;
     grid-area: c;
     gap: 20px;
   }
@@ -537,17 +547,50 @@ table {
       height: 100px;
     }
 
+  .barbero-div div,
+  .barberia-div div,
+  .corte-div div,
+  .fecha-div div,
+  .estado-div div {
+    position: relative;
+    background-color: black;
+    border-radius: 10px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    top: 5px;
+    color: white;
+  }
+
+  .corte-div div {
+    width: 90%;
+    margin: 0 auto;
+  }
+
   .modal-close {
-    background-color: pink;
     grid-area: d;
-    height: 50px;
+    height: 110px;
   }
 
   .modal-body_cita button {
+    background: linear-gradient(to top, rgb(63, 63, 63), rgba(255, 255, 255, 0.100));
     position: relative;
-
+    top: 75px;
+    left: 90px;
+    border-radius: 100px;
+    width: 100px;
+    height: 30px;
+    border: none;
+    color: white;
+    transition: 0.25s;
+    font-size: 15px;
   }
 
+    .modal-body_cita button:hover {
+      background-color: rgb(226, 0, 0);
+      transition: 0.45s;
+      cursor: pointer;
+    }
 
 /*------------------------------------ MODAL AGENDAR CITA ------------------------------------*/
 
