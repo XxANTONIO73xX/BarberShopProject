@@ -21,13 +21,19 @@
                     </div>
 
                     <div class="indices-charts">
-                        <div id="chart_barbero">
+                        <div class="barbero-chart_container">
+                            <div id="chart_barbero">
+                            </div>
                         </div>
 
-                        <div id="chart_Corte">
+                        <div class="corte-chart_container">
+                            <div id="chart_Corte">
+                            </div>
                         </div>
 
-                        <div id="chart_barberia">
+                        <div class="barberia-chart_container">
+                            <div id="chart_barberia">
+                            </div>
                         </div>
                     </div>
 

@@ -128,9 +128,6 @@
         
         <div class="content">
             <nav class="navigationBar">
-                <button id="sidebarToggle" class="btn sidebarToggle">
-                    <i class="fas fa-bars"></i>
-                </button>
                 <h3>$variable titulo alv</h3>
                 <div class="navigation-list-item-sing-out">
                     <a class="navigation-link" href="/">
