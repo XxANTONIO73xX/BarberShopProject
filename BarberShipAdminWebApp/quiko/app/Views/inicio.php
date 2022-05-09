@@ -67,6 +67,7 @@
                                     ]);
                                 });
                                 var options = {
+                                    colors: ['#4cc7c2'],
                                     title: 'Barberos solicitado en la Cita',
                                     hAxis: {
                                         title: 'Barberos',
@@ -76,8 +77,9 @@
                                         }
                                     },
                                     vAxis: {
-                                        title: 'Total de veces solicitado'
+                                        title: 'Total de veces solicitado',
                                     }
+                                    
                                 };
                                 var chart = new google.visualization.ColumnChart(
                                     document.getElementById('chart_barbero'));
@@ -118,6 +120,7 @@
                                     ]);
                                 });
                                 var options = {
+                                    colors: ['#4cc7c2'],
                                     title: 'Barberias solicitado en la Cita',
                                     hAxis: {
                                         title: 'Barberias',
@@ -168,6 +171,7 @@
                                     ]);
                                 });
                                 var options = {
+                                    colors: ['#4cc7c2'],
                                     title: 'Cortes solicitado en la Cita',
                                     hAxis: {
                                         title: 'Cortes',
