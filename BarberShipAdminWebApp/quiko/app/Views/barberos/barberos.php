@@ -4,11 +4,52 @@
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Tables</li>
                         </ol>
-
+                          <div class="modal fade" id="modalAgregar" tabindex="-1" role="dialog" aria-labelledby="modalAgregarLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                              <h4 class="modal-title w-100 font-weight-bold">Añadir un Barbero</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <form>
+                                  <div class="form-group">
+                                    <label for="nombre" class="col-form-label">Nombre:</label>
+                                    <input type="text" class="form-control" id="nombre">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="apellido" class="col-form-label">Apellido:</label>
+                                    <input type="text" class="form-control" id="apellido">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="apodo" class="col-form-label">Apodo:</label>
+                                    <input type="text" class="form-control" id="apodo">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="barberia" class="col-form-label">Barberia:</label>
+                                    <input type="text" class="form-control" id="barberia">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="telefono" class="col-form-label">Telefono:</label>
+                                    <input type="text" class="form-control" id="telefono">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="imagen" class="col-form-label">Foto:</label>
+                                    <input type="file" class="form-control" id="imagen">
+                                  </div>
+                                </form>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-primary">Agregar</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                         <div>
-                            <p> 
-                                <a href= "<?php echo base_url(); ?>/barbero/nuevo" class="btn btn-info">Agregar</a>
-                            </p>
+                          <a class="btn btn-info" data-toggle="modal" data-target="#modalAgregar">Agregar
+                          </a>
                         </div>
                         <div class="card mb-4">
                             <div class="card-header">
@@ -37,6 +78,7 @@
                         </div>
                     </div>
                 </main>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
           <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
           <script>
@@ -79,11 +121,11 @@
                 });
           </script>
 <!-- Modal
-<div class="modal fade" id="confirma" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="confirma" tabindex="-1" role="dialog" aria-labelledby="modalAgregarLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+        <h5 class="modal-title" id="modalAgregarLabel">Eliminar</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
