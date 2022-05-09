@@ -5,6 +5,7 @@
                     <div class="indices-container">
                         <div class="corteMasPedido">
                             <div class="conteinerCorte" id="corte">
+                                
                             </div>
                         </div>
 
@@ -203,7 +204,7 @@
                             }
                         })
                         .done(function(data, textStatus, jqXHR) {
-                            $("#corte").html('<label class="nombre">'+ data.nombre +'</label> <img class="visualizacion" src="'+data.visualizacion+'"/>');
+                            $("#corte").html('<h3 style="color: white;">Corte más pedido</h3> <label class="nombre">'+ data.nombre +'</label> <img class="visualizacion" src="'+data.visualizacion+'"/>');
                         });
 
                         $.ajax({ //iniciar ajax para crar token   
@@ -216,7 +217,7 @@
                             }
                         })
                         .done(function(data, textStatus, jqXHR) {
-                            $("#barberia").html('<label class="nombre">'+ data.nombre +'</label> <img class="visualizacion" src="'+data.visualizacion+'"/>');
+                            $("#barberia").html('<h3 style="color: white;">Barberia con más citas</h3> <label class="nombre">'+ data.nombre +'</label> <img class="visualizacion" src="'+data.visualizacion+'"/>');
                         });
 
                         $.ajax({ //iniciar ajax para crar token   
@@ -229,7 +230,7 @@
                             }
                         })
                         .done(function(data, textStatus, jqXHR) {
-                            $("#barbero").html('<label class="nombre">'+ data.nombre +'</label> <img class="visualizacion" src="'+data.visualizacion+'"/>');
+                            $("#barbero").html('<h3 style="color: white;">Barbero más solicitado</h3> <label class="nombre">'+ data.nombre +'</label> <img class="visualizacion" src="'+data.visualizacion+'"/>');
                         });
 
                         $('#chart_barbero').dataTable( {

@@ -16,7 +16,6 @@
     <link href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
     </head>
 
-
     <body>
         
     <div class="page">
@@ -128,7 +127,7 @@
         </div>
         
         <div class="content">
-            <div class="navigationBar">
+            <nav class="navigationBar">
                 <button id="sidebarToggle" class="btn sidebarToggle">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -145,4 +144,4 @@
                         </div>
                     </a>
                 </div>
-            </div>
+            </nav>

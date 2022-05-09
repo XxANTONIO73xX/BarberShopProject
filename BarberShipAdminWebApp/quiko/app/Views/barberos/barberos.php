@@ -57,7 +57,7 @@
                         {"data":'apodo'},
                         {"data": 'barberia.nombre'},
                         {"data":'telefono'},
-                        {"data": "visualizacion"},
+                        {"data": "visualizacion", "visible": false},
                         {"targets": -1, "data": null, "defaultContent":'<button class="btn btn-warning" name="editar">  <i class="fas fa-pen"></i>  </button> <button class="btn btn-danger" name="cancelar">  <i class="fas fa-trash"></i>  </button> </button> <button class="btn btn-success" name="imagen">  <i class="fas fa-image"></i>  </button>'}
                     ]
                     });

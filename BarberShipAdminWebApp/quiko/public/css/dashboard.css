@@ -24,6 +24,7 @@
     border-radius: 10px;
     width: 400px;
     height: 400px;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0,  0.8);
     overflow: hidden;
     text-align: center;
     transition: 0.5s;
@@ -54,6 +55,7 @@
     overflow: hidden;
     text-align: center;
     transition: all 0.25s;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0,  0.8);
 }
 
 .BarberiaMasPedido .conteinerBarberia {
@@ -81,6 +83,7 @@
     overflow: hidden;
     text-align: center;
     transition: all 0.25s;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0,  0.8);
 }
 
 .BarberoMasPedido .conteinerBarbero {
