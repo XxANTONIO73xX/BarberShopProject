@@ -1,0 +1,127 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--bs-font-sans-serif);
+}
+
+.indices-container {
+    width: 100%;
+    max-width: 1600px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: auto;
+    z-index: 4000;;
+    transition: 0.5s;
+    margin-bottom: 20px;
+}
+
+.corteMasPedido {
+    background: linear-gradient(35deg, #66fcf1, #45a29e);
+    border-radius: 10px;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.corteMasPedido .conteinerCorte {
+    text-align: center;
+}
+
+.corteMasPedido .conteinerCorte label {
+    display: block;
+}
+
+.corteMasPedido .conteinerCorte img {
+    display: block;
+    top: 20px;
+    position: relative;
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+}
+
+.BarberiaMasPedido {
+    background: linear-gradient(35deg, #66fcf1, #45a29e);
+    border-radius: 10px;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    text-align: center;
+    transition: all 0.25s;
+}
+
+.BarberiaMasPedido .conteinerBarberia {
+    text-align: center;
+}
+
+.BarberiaMasPedido .conteinerBarberia label {
+    display: block;
+}
+
+.BarberiaMasPedido .conteinerBarberia img {
+    display: block;
+    top: 20px;
+    position: relative;
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+}
+
+.BarberoMasPedido {
+    background: linear-gradient(35deg, #66fcf1, #45a29e);
+    border-radius: 10px;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    text-align: center;
+    transition: all 0.25s;
+}
+
+.BarberoMasPedido .conteinerBarbero {
+    text-align: center;
+
+}
+
+.BarberoMasPedido .conteinerBarbero label {
+    display: block;
+}
+
+.BarberoMasPedido .conteinerBarbero img {
+    display: block;
+    top: 20px;
+    position: relative;
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+}
+
+.indices-charts {
+    width: 100%;
+}
+
+#chart_barbero,
+#chart_Corte,
+#chart_barberia {
+    width: 100%;
+    height: 500px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

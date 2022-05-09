@@ -1,29 +1,35 @@
+                <link href="<?php base_url() ?>css/dashboard.css" rel="stylesheet">
                 <main>
-
                     <h1>Dashboard</h1>
-                    <div class="corteMasPedido">
-                        <div class="conteinerCorte" id="corte">
 
+                    <div class="indices-container">
+                        <div class="corteMasPedido">
+                            <div class="conteinerCorte" id="corte">
+                            </div>
+                        </div>
+
+                        <div class="BarberiaMasPedido">
+                            <div class="conteinerBarberia" id="barberia">
+                            </div>
+                        </div>
+
+                        <div class="BarberoMasPedido">
+                            <div class="conteinerBarbero" id="barbero">
+                            </div>
                         </div>
                     </div>
-                    <div class="BarberiaMasPedido">
-                        <div class="conteinerBarberia" id="barberia">
+
+                    <div class="indices-charts">
+                        <div id="chart_barbero">
+                        </div>
+
+                        <div id="chart_Corte">
+                        </div>
+
+                        <div id="chart_barberia">
                         </div>
                     </div>
-                    <div class="BarberoMasPedido">
-                        <div class="conteinerBarbero" id="barbero">
 
-                        </div>
-                    </div>
-                    <div id="chart_barbero">
-
-                    </div>
-                    <div id="chart_Corte">
-
-                    </div>
-                    <div id="chart_barberia">
-
-                    </div>
                 </main>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
                 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -48,6 +54,7 @@
                             google.charts.setOnLoadCallback(drawBasic);
 
                             function drawBasic() {
+
                                 var grafic = new google.visualization.DataTable();
                                 grafic.addColumn('string', 'nombre');
                                 grafic.addColumn('number', 'total');
@@ -219,5 +226,11 @@
                         })
                         .done(function(data, textStatus, jqXHR) {
                             $("#barbero").html('<label class="nombre">'+ data.nombre +'</label> <img class="visualizacion" src="'+data.visualizacion+'"/>');
+                        });
+
+                        $('#chart_barbero').dataTable( {
+                            "drawCallback": function( settings ) {
+                                $('ul.pagination').addClass("pagination-sm");
+                            }
                         });
                 </script>
