@@ -30,8 +30,8 @@
             <form class="login-form">
                 <input id="nombre" placeholder="Nombre" type="text" required>
                 <input id="apellidos" placeholder="Apellidos" type="text" required>
-                <input id="correo" placeholder="Correo" type="text" required>
-                <input id="telefono" placeholder="Teléfono" type="text" required>
+                <input id="correo" placeholder="Correo" type="email" required>
+                <input id="telefono" placeholder="Teléfono" type="tel" required>
                 <input id="password" placeholder="Contraseña" type="password" required>
                 <input id="check_password" placeholder="Confirmar contraseña" type="password" required>
                 <span id="error_pssd"></span>

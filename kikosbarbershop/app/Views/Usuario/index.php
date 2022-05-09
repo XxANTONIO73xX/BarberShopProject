@@ -1,3 +1,12 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+//hay session ?
+if(!localStorage.getItem("user")){
+    location.href="<?php base_url() ?>/Log-In";
+}
+</script>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,7 +76,7 @@
             </div>
             <div class="col-md-9 form-inline felement" data-fieldtype="text">
                 <input type="text" class="form-control " name="apellidos" id="apellidos"
-                 size="30" maxlength="100" autocomplete="given-name">
+                size="30" maxlength="100" autocomplete="given-name">
             </div>
         </div>
 
@@ -103,53 +112,47 @@
 
 </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
     <script>
-    //hay session ?
-    if(!localStorage.getItem("user")){
-      location.href="<?php base_url() ?>/Log-In";
-    }
 
-    function getOut(){
-        localStorage.removeItem("token");
-        localStorage.removeItem("tipo");
-        localStorage.removeItem("user");
-        location.href = "<?php base_url() ?>/Log-In";
-      }
-  </script>
+        function getOut(){
+            localStorage.removeItem("token");
+            localStorage.removeItem("tipo");
+            localStorage.removeItem("user");
+            location.href = "<?php base_url() ?>/Log-In";
+        }
+    </script>
 
-  <script>
-
-    var url = "http://api.kikosbarbershop.online/public/cliente/";
+    <script>     
 
         function llenarForm() { 
-        $.ajax({ 
-            url: url + localStorage.getItem("id"),
-            data: {},
-            type: "GET",
-            dataType: "json",
-            headers:{
-            token: localStorage.getItem("token")
-            }
-            })
-            .done(function( data, textStatus, jqXHR ) {  
-            var cliente = data.cliente; 
+            var url = "http://api.kikosbarbershop.online/public/cliente/";
 
-            console.log(data.cliente);
+            $.ajax({ 
+                url: url + localStorage.getItem("id"),
+                data: {},
+                type: "GET",
+                dataType: "json",
+                headers:{
+                token: localStorage.getItem("token")
+                }
+                })
+                .done(function( data, textStatus, jqXHR ) {  
+                var cliente = data.cliente; 
 
-            $("input[name='nombre']").val(cliente.nombre);
-            $("input[name='telefono']").val(cliente.telefono);
-            $("input[name='email']").val(cliente.correo);
-            $("input[name='apellidos']").val(cliente.apellidos);
-            }); 
-            }
+                /*console.log(data.cliente);*/
 
-            llenarForm();
+                $("input[name='nombre']").val(cliente.nombre);
+                $("input[name='telefono']").val(cliente.telefono);
+                $("input[name='email']").val(cliente.correo);
+                $("input[name='apellidos']").val(cliente.apellidos);
+                }); 
+        }
+
+        llenarForm();
 
         $('#guardar').click(function() {
 
-        console.log($("#nombre").val());
+        /*console.log($("#nombre").val());*/
 
         $.ajax({
             url: "http://api.kikosbarbershop.online/public/cliente/update/" + localStorage.getItem("id"),
@@ -167,14 +170,14 @@
         })
         .done(function(data, res) {
             console.log("La cita ha sido guardada con exito");
-            console.log(data);
+            /*console.log(data);*/
         })
         .fail(function() {
             console.log("Error", "Ocurrio un problema al editar usuario")
         })
         });
 
-  </script>
+    </script>
 
 
 </body>

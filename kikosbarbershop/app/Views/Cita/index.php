@@ -1,3 +1,12 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+//hay session ?
+if(!localStorage.getItem("user")){
+  location.href="<?php base_url() ?>/Log-In";
+}
+</script>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -151,66 +160,7 @@
     </div>
   </div>
 
-  <!-- Modal para modificar corte de la cita
-  <div class="modal-bg">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&hyphen;</span>
-          </button>
-          <h4 class="modal-title" id="myModalLabel">Editar Corte-Cita</h4>
-        </div>
-        <div id="form_cita">
-          <div class="modal-body">
-            <div class="form-group-barberia">
-              <img src="<?php base_url() ?>Cita/img/BarberiaSelect.png" width="30px" height="30px">
-              <select placeholder="Barberia" name="barberia" id="idBarberia" class="form-control" disabled>
-                <option class="placeholder-select" value="" disabled selected hidden>Selecciona una barbería
-                </option>
-                <option value="idBarbería">Selecciona una barbería</option>
-              </select>
-            </div>
 
-            <div class="form-group-barbero">
-              <img src="<?php base_url() ?>Cita/img/BarberoSelect.png" width="30px" height="30px">
-              <select placeholder="Barbero" name="barbero" id="idBarbero" class="form-control" disabled>
-                <option class="placeholder-select" value="" hidden>Selecciona
-                  un barbero</option>
-                <option value="idBarbero">Selecciona un barbero</option>
-              </select>
-            </div>
-
-            <div class="form-group-corte">
-              <img src="<?php base_url() ?>Cita/img/CorteSelect.png" width="30px" height="30px">
-              <select placeholder="Corte" name="corte" id="idCorte" class="form-control" disabled>
-                <option class="placeholder-select" value="" disabled selected hidden>Selecciona una corte</option>
-                <option value="idCorte">Selecciona un corte</option>
-              </select>
-            </div>
-
-            <div class="form-group-fecha">
-              <label>Fechas disponibles:</label><br>
-              <input type="date" name="fecha" id="fecha" disabled>
-            </div>
-
-            <div class="form-group-hora">
-              <label>Hora</label><br>
-              <input type="time" name="hora" id="hora" disabled>
-            </div>
-          </div>
-
-          <div class="modal-footer">
-            <button type="button" class="button-close modal-close" data-dismiss="modal">Cerrar</button>
-            <button id="guardar" class="button-accept">Guardar</button>
-          </div>
-
-          <div id="respuesta"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  -->
 
 <!--Modal para ver cita-->
   <div class="modal-bg_cita">
@@ -262,7 +212,6 @@
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!--Su funcion es obtener todas las citas del cliente-->
   <script>
@@ -280,8 +229,8 @@
       .done(function(data, textStatus, jqXHR) {
 
         var rows = " ";
-        console.log("info citas tabla")
-        console.log(data)
+        /*console.log("info citas tabla")
+        console.log(data)*/
 
         if (!data) {
           rows = "<h2 style='color:red; text-align:center;'>No hay registros</h2>";
@@ -320,10 +269,9 @@
 
   <!-- Su funcion es obtener todas las barberías-->
   <script>
-    var url = 'http://api.kikosbarbershop.online/public/barberia'
     $.ajax({
         type: "GET",
-        url: url,
+        url: 'http://api.kikosbarbershop.online/public/barberia',
         data: {},
         dataType: "json",
         headers: {
@@ -333,8 +281,8 @@
       .done(function(data, textStatus, jqXHR) { // lo que regresamos desde la API esta en data
 
         var rows = " ";
-        console.log("info select barberia")
-        console.log(data)
+        /*console.log("info select barberia")
+        console.log(data)*/
 
         data.barberias.forEach(r => {
           $('#idBarberia').append("<option value='" + r.id + "'>" + r.nombre + "</option>")
@@ -345,10 +293,10 @@
 
   <!-- Su funcion es obtener todos los barberos-->
   <script>
-    var url = 'http://api.kikosbarbershop.online/public/barbero'
+    
     $.ajax({
         type: "GET",
-        url: url,
+        url: 'http://api.kikosbarbershop.online/public/barbero',
         data: {},
         dataType: "json",
         headers: {
@@ -358,8 +306,8 @@
       .done(function(data, textStatus, jqXHR) { // lo que regresamos desde la API esta en data
 
         var rows = " ";
-        console.log("info select barbero")
-        console.log(data)
+        /*console.log("info select barbero")
+        console.log(data)*/
 
         data.barberos.forEach(r => {
           $('#idBarbero').append("<option value='" + r.id + "'>" + r.nombre + "</option>")
@@ -370,10 +318,9 @@
 
   <!-- Su funcion es obtener todos los cortes-->
   <script>
-    var url = 'http://api.kikosbarbershop.online/public/corte'
     $.ajax({
         type: "GET",
-        url: url,
+        url: 'http://api.kikosbarbershop.online/public/corte',
         data: {},
         dataType: "json",
         headers: {
@@ -383,8 +330,8 @@
       .done(function(data, textStatus, jqXHR) { // lo que regresamos desde la API esta en data
 
         var rows = " ";
-        console.log("info select corte")
-        console.log(data)
+        /*console.log("info select corte")
+        console.log(data)*/
 
         data.cortes.forEach(r => {
           $('#idCorte').append("<option value='" + r.id + "'>" + r.nombre + "</option>")
@@ -393,47 +340,13 @@
       });
   </script>
 
-
-  <!-- Su funcion es obtener los datos de una cita y mostrarlos en un modal-->
-  <script>
-
-    var url = 'http://api.kikosbarbershop.online/public/cita/';
-    function llenarModal(id) {
-        $.ajax({
-                url: url + id,
-                data: {},
-                type: "GET",
-                dataType: "json",
-                headers: {
-                    token: localStorage.getItem("token")
-                }
-            })
-            .done(function(data, textStatus, jqXHR) {
-                var cita = data.cita;
-
-                console.log(data.cita);
-
-                $('#idBarberia').html("<option value='" + r.id + "'>" + r.nombre + "</option>")
-              /* 
-                $("input[name='barberia-mostrar']").val(cita.barberia.nombre);
-                $("input[name='barbero-mostrar']").val(cita.barbero.nombre);
-                $("input[name='corte-mostrar']").val(cita.corte.nombre);
-                $("input[name='fecha-mostrar']").val(cita.fecha);
-                $("input[name='hora-mostrar']").val(cita.hora);
-                $("input[name='estado-mostrar']").val(cita.estado);
-              */
-            });
-
-    }
-
-  </script>
-
   <!-- Este script sirve para evniar los datos del formulario y guardarlos
       en la base de datos del servidor-->
   <script>
-    var url = 'http://api.kikosbarbershop.online/public/cita';
+    
     $('#guardar').click(function() {
 
+      var url = 'http://api.kikosbarbershop.online/public/cita';
       $.ajax({
           url: url,
           type: 'POST',
@@ -453,7 +366,7 @@
         })
         .done(function(data, res) {
           console.log("La cita ha sido guardada con exito");
-          console.log(data);
+          /*console.log(data);*/
 
         })
         .fail(function() {
@@ -464,9 +377,9 @@
 
   <!-- Su funcion es cambiar el estado de la cita, cancelar la cita-->
   <script>
-    var url = 'http://api.kikosbarbershop.online/public/cita/update/';
     
     function cancelar(id) {
+      var url = 'http://api.kikosbarbershop.online/public/cita/update/';
       
       $.ajax({
           url: url + id,
@@ -481,7 +394,7 @@
         })
         .done(function(data, res) {
           console.log("La cita ha sido cancelada con exito");
-          console.log(data);
+          /*console.log(data);*/
           location.href="<?php base_url() ?>Citas";
 
         })
@@ -496,11 +409,6 @@
 
   <!-- Su funcion es cerrar la sesion del usuario-->
   <script>
-    //hay session ?
-    if(!localStorage.getItem("user")){
-      location.href="<?php base_url() ?>/Log-In";
-    }
-
     function getOut(){
         localStorage.removeItem("token");
         localStorage.removeItem("tipo");
@@ -530,7 +438,7 @@
             .done(function(data, textStatus, jqXHR) {
                 var cita = data.cita;
 
-                console.log(data.cita);
+                /*console.log(data.cita);*/
 
                 $('#barberia-div').html("<div id='" + cita.idBarberia + "'>" + cita.barberia.nombre + "</div>");
                 $('#barbero-div').html("<div id='" + cita.idBarbero + "'>" + cita.barbero.nombre + "</div>");

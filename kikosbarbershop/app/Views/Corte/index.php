@@ -1,3 +1,12 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+//hay session ?
+if(!localStorage.getItem("user")){
+    location.href="<?php base_url() ?>/Log-In";
+}
+</script>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,10 +69,7 @@
 
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    <!-- Su funcion es obtener todos los cortes y mostrarlos-->
     <script>
 
         var url = 'http://api.kikosbarbershop.online/public/corte'
@@ -78,8 +84,8 @@
         })
             .done(function (data, textStatus, jqXHR) { // lo que regresamos desde la API esta en data
 
-                console.log("info cortes")
-                console.log(data)
+                /*console.log("info cortes")
+                console.log(data)*/
                 var div_cortes = "";
 
                 data.cortes.forEach(r => {
@@ -102,19 +108,14 @@
 
     </script>
 
-<script>
-    //hay session ?
-    if(!localStorage.getItem("user")){
-      location.href="<?php base_url() ?>/Log-In";
-    }
-
-    function getOut(){
-        localStorage.removeItem("token");
-        localStorage.removeItem("tipo");
-        localStorage.removeItem("user");
-        location.href = "<?php base_url() ?>/Log-In";
-      }
-  </script>
+    <script>
+        function getOut(){
+            localStorage.removeItem("token");
+            localStorage.removeItem("tipo");
+            localStorage.removeItem("user");
+            location.href = "<?php base_url() ?>/Log-In";
+        }
+    </script>
 
 <script src="<?php base_url() ?>Corte/js/cortes.js"></script>
 </body>
