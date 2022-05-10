@@ -15,41 +15,44 @@
                                 </button>
                               </div>
                               <div class="modal-body">
+                                <form id="formulario" method="POST" enctype="multipart/form-data">
                                   <div class="form-group">
                                     <input type="hidden" id="idBarbero" value="0">
                                     <label for="nombre" class="col-form-label">Nombre:</label>
-                                    <input type="text" class="form-control" id="nombre">
+                                    <input type="text" name="nombre" class="form-control" id="nombre">
                                   </div>
                                   <div class="form-group">
                                     <label for="apellido" class="col-form-label">Apellido:</label>
-                                    <input type="text" class="form-control" id="apellido">
+                                    <input type="text" name="apellidos" class="form-control" id="apellido">
                                   </div>
                                   <div class="form-group">
                                     <label for="apodo" class="col-form-label">Apodo:</label>
-                                    <input type="text" class="form-control" id="apodo">
+                                    <input type="text" name= "apodo" class="form-control" id="apodo">
                                   </div>
                                   <div class="form-group">
                                     <label for="barberia" class="col-form-label">Barberia:</label>
-                                    <select name="barberia_select" id="barberia" class="form-control">
+                                    <select name="idBarberia" id="barberia" class="form-control">
                                       <option value="0">Seleccionar Barberia</option>
                                     </select>
                                   </div>
                                   <div class="form-group">
                                     <label for="telefono" class="col-form-label">Telefono:</label>
-                                    <input type="number" class="form-control" id="telefono">
+                                    <input type="number" name="telefono" class="form-control" id="telefono">
                                   </div>
                                   <div class="form-group">
                                     <div class="drop-area">
                                         <label>Arrastra y suelta una imagen</label>
                                         <span>O</span>
                                         <button type="button">Selecciona tu imagen</button>
-                                        <input type="file" id="input-file" hidden/>
+                                        <input type="file" name="featured_image" id="input-file" hidden/>
                                     </div>
                                     <div class="preview">
                                       <label>Visualización</label>
                                       <img src="<?php base_url() ?>assets/img/ImageNotFound.png" alt="visualización">
                                     </div>
                                   </div>
+                                  
+                                  </form>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -206,20 +209,28 @@
                 url += "barbero";
                 console.log(url)
               }else{
-                url += "barbero/" + id;
+                url += "barbero/update/" + id;
                 console.log(url)
               }
-              console.log(formData)
+              console.log("si estas acá")
+              // new FormData(document.getElementById("formulario") 
+              // console.log( $( "#formulario" ).serialize())
+              dataFormulario =  new FormData(document.getElementById("formulario"));
+              console.log(dataFormulario);
               $.ajax({   //iniciar ajax para editar registro   
-              url: url,
-              data:formData,
+              url:  url,
+              data: dataFormulario,
               type: "POST",
-              dataType: "formData",
+              cache: false,
+              contentType: false,
+              processData: false,
+              dataType: "json",
               headers:{
                 token: localStorage.getItem("token")
               }
             })
           .done(function( data, textStatus, jqXHR ) {   
+            console.log(data);
             console.log("si jalo");
           });
           return false;

@@ -43,8 +43,8 @@
   $(document).ready(function() {
     var table = $('#table').DataTable({
       "ajax": {
-        "url": 'http://api.kikosbarbershop.online/public/barbero',
-        "dataSrc": "barberos",
+        "url": 'http://api.kikosbarbershop.online/public/administrador',
+        "dataSrc": "administradores",
         "type": 'GET',
         "beforeSend": function(xhr) {
           xhr.setRequestHeader('token', localStorage.getItem("token"));
