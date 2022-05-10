@@ -14,6 +14,8 @@ if(!localStorage.getItem("user")){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="<?php base_url() ?>Usuario/EditarUsuario/styles/estilosUsuario.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@700&family=Roboto+Condensed:wght@300&family=Roboto:wght@900&display=swap" rel="stylesheet">
     <title>Kikos : Perfil Usuario </title>
 </head>
 
@@ -21,7 +23,7 @@ if(!localStorage.getItem("user")){
 
     <!--<img src="img/fondoKikos.png" class="pattern_background">-->
     <nav class="navigation_bar">
-        <img src="<?php base_url() ?>Usuario/Perfil/img/logoKikoNav.svg" class="logo_menu" width="150px" height="60px">
+        <img src="<?php base_url() ?>Usuario/EditarUsuario/img/logoKikoNav.svg" class="logo_menu" width="150px" height="60px">
         <ul class="nv_list">
             <li><a href="<?php base_url() ?>Inicio">Inicio</a></li>
             <li><a href="<?php base_url() ?>Citas">Citas</a></li>
@@ -47,69 +49,47 @@ if(!localStorage.getItem("user")){
         </div>
     </div>
 
-
-    <div action="">
-        <div id="fitem_id_nombre" class="form-group row  fitem   ">
-            <div class="col-md-3">
-                <span class="float-sm-right text-nowrap">
-
-                </span>
-                <label>
-                    Nombre
-                </label>
+    <div class="editar-perfil_container">
+        <div class="editar-perfil_content">
+            <div id="fitem_id_nombre" class="group-editar_nombre">
+                <div class="col-md-3">
+                    <label>Nombre:</label>
+                </div>
+                <div class="col-md-9 form-inline felement" data-fieldtype="text">
+                    <input type="text" class="form-control " name="nombre" id="nombre">
+                </div>
             </div>
-            <div class="col-md-9 form-inline felement" data-fieldtype="text">
-                <input type="text" class="form-control " name="nombre" id="nombre">
-            </div>
-        </div>
 
-        <br>
+            <div id="fitem_id_apellidos" class="group-editar_apellidos">
+                <div class="col-md-3">
+                    <label class="col-form-label d-inline " for="id_apellidos">Apellidos:</label>
+                </div>
+                <div class="col-md-9 form-inline felement" data-fieldtype="text">
+                    <input type="text" class="form-control " name="apellidos" id="apellidos" size="30" maxlength="100" autocomplete="given-name">
+                </div>
+            </div>
 
-        <div id="fitem_id_apellidos" class="form-group row  fitem   ">
-            <div class="col-md-3">
-                <span class="float-sm-right text-nowrap">
-
-                </span>
-                <label class="col-form-label d-inline " for="id_apellidos">
-                    Apellidos
-                </label>
+            <div id="fitem_id_email" class="group-editar_correo">
+                <div class="col-md-3">
+                    <label class="col-form-label d-inline " for="id_email">Correo:</label>
+                </div>
+                <div class="col-md-9 form-inline felement" data-fieldtype="text">
+                    <input type="text" class="form-control " name="email" id="correo"
+                        value="jose.campa216584@potros.itson.edu.mx" size="30" maxlength="100" autocomplete="email">
+                </div>
             </div>
-            <div class="col-md-9 form-inline felement" data-fieldtype="text">
-                <input type="text" class="form-control " name="apellidos" id="apellidos"
-                size="30" maxlength="100" autocomplete="given-name">
+            
+            <div id="fitem_id_telefono" class="group-editar_telefono">
+                <div class="col-md-3">
+                    <label class="col-form-label d-inline " for="id_email">Teléfono:</label>
+                </div>
+                <div class="col-md-9 form-inline felement" data-fieldtype="text">
+                    <input type="text" class="form-control " name="telefono" id="telefono" value="6221785566" size="30" maxlength="100" autocomplete="email">
+                </div>
             </div>
-        </div>
-
-        <br>
-
-        <div id="fitem_id_email" class="form-group row  fitem   ">
-            <div class="col-md-3">
-                <label class="col-form-label d-inline " for="id_email">
-                    Correo Electronico
-                </label>
-            </div>
-            <div class="col-md-9 form-inline felement" data-fieldtype="text">
-                <input type="text" class="form-control " name="email" id="correo"
-                    value="jose.campa216584@potros.itson.edu.mx" size="30" maxlength="100" autocomplete="email">
-            </div>
-        </div>
-
-        <br>
-        
-        <div id="fitem_id_telefono" class="form-group row  fitem   ">
-            <div class="col-md-3">
-                <label class="col-form-label d-inline " for="id_email">
-                    Telefono
-                </label>
-            </div>
-            <div class="col-md-9 form-inline felement" data-fieldtype="text">
-                <input type="text" class="form-control " name="telefono" id="telefono" value="6221785566" size="30"
-                    maxlength="100" autocomplete="email">
-            </div>
-        </div>
         
         <button id="guardar">guardar</button>
-
+        </div>
 </div>
 
     <script>
