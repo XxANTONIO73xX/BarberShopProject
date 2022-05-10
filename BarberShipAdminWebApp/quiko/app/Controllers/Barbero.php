@@ -11,8 +11,8 @@ class Barbero extends BaseController
     public function index(){
         $data = ['titulo' => 'Barberos'];
 
-        echo view('header');
-        echo view('barberos/barberos', $data);
+        echo view('header', $data);
+        echo view('barberos/barberos');
         echo view('footer');
 
     }

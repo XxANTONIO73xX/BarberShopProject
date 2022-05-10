@@ -1,6 +1,6 @@
 <main>
                     <div class="container-fluid px-4">
-                        <h3 class="mt-4"><?php echo $titulo; ?></h3>
+                        <h3 class="mt-4">Tabla de datos</h3>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Tables</li>
                         </ol>

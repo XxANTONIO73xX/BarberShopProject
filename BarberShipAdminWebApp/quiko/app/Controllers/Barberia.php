@@ -11,8 +11,8 @@ class Barberia extends BaseController
     public function index(){
         $data = ['titulo' => 'Barberias'];
 
-        echo view('header');
-        echo view('barberias/barberias', $data);
+        echo view('header', $data);
+        echo view('barberias/barberias');
         echo view('footer');
 
     }

@@ -1,7 +1,5 @@
                 <link href="<?php base_url() ?>css/dashboard.css" rel="stylesheet">
                 <main>
-                    <h1>Dashboard</h1>
-
                     <div class="indices-container">
                         <div class="corteMasPedido">
                             <div class="conteinerCorte" id="corte">

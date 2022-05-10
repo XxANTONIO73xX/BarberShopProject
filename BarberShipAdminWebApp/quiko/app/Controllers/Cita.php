@@ -13,8 +13,8 @@ class Cita extends BaseController
 
         $data = ['titulo' => 'Citas'];
 
-        echo view('header');
-        echo view('citas/citas', $data);
+        echo view('header', $data);
+        echo view('citas/citas');
         echo view('footer');
 
     }

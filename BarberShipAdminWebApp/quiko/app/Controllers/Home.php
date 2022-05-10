@@ -6,7 +6,8 @@ class Home extends BaseController
 {
     public function index()
     {
-        echo view('header');
+        $data = ['titulo' => 'Dashboard'];
+        echo view('header', $data);
         echo view('inicio');
         echo view('footer');
     }

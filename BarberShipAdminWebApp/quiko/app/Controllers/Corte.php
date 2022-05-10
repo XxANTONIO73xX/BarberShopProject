@@ -13,8 +13,8 @@ class Corte extends BaseController
 
         $data = ['titulo' => 'Cortes'];
 
-        echo view('header');
-        echo view('cortes/cortes', $data);
+        echo view('header', $data);
+        echo view('cortes/cortes');
         echo view('footer');
 
     }

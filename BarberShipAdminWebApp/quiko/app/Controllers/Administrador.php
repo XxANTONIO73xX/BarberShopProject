@@ -13,8 +13,8 @@ class Administrador extends BaseController
 
         $data = ['titulo' => 'Administradores'];
 
-        echo view('header');
-        echo view('administradores/administradores', $data);
+        echo view('header', $data);
+        echo view('administradores/administradores');
         echo view('footer');
 
     }

@@ -12,8 +12,8 @@ class Cliente extends BaseController
 
         $data = ['titulo' => 'Clientes'];
 
-        echo view('header');
-        echo view('clientes/clientes', $data);
+        echo view('header', $data);
+        echo view('clientes/clientes');
         echo view('footer');
 
     }
