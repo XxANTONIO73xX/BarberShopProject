@@ -77,7 +77,7 @@ if(!localStorage.getItem("user")){
               <img src="<?php base_url() ?>Cita/img/ojo.png" width="30px" height=25px">
               <p> Ver cita </p>
             </button>
-            <button class="btn-editar-corte" onclick="mostrarModal()">
+            <button class="btn-editar-corte" onclick="editarCorte(${r.id})">
               <img src="<?php base_url() ?>Cita/img/CorteEditar.png" width="30px" height=25px">
               <p> Editar corte </p>
             </button>
@@ -170,7 +170,6 @@ if(!localStorage.getItem("user")){
           <button type="button" class="modal-close_cita" onclick="cerrarModal()" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&hyphen;</span>
           </button>
-          <h1>Hola, soy un modal</h1>
         </div>
         <div class="modal-body_cita">
           <div class="left-column">
@@ -212,6 +211,28 @@ if(!localStorage.getItem("user")){
     </div>
   </div>
 
+  <!-- Modal Editar Corte -->
+  <div class="modal-bg_corte">
+    <div class="modal-dialog_corte">
+      <div class="modal-content_corte">
+        <div class="modal-title_corte">
+          <button type="button" class="modal-close_corte" onclick="cerrarEditarCorte()" data-dismiss="modal" aria-label="Close">
+            <span onclick="cerrarEditarCorte()" aria-hidden="true">&hyphen;</span>
+          </button>
+        </div>
+        <div class="modal-body_corte">
+          <div class="modal-imagen_corte">
+            Aquí va la imagen equis de
+          </div>
+          <div class="modal-control_corte">
+            <label>Nuevo corte: </label>
+            <select name="" id="">Elegir corte</select>
+            <button>Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!--Su funcion es obtener todas las citas del cliente-->
   <script>
@@ -248,7 +269,7 @@ if(!localStorage.getItem("user")){
                             <img src="<?php base_url() ?>Cita/img/ojo.png" width="30px" height=25px">
                             <p> Ver cita </p>
                           </button>
-                          <button class="btn-editar-corte" onclick="mostrarModal(${r.id})">
+                          <button class="btn-editar-corte" onclick="editarCorte()">
                             <img src="<?php base_url() ?>Cita/img/CorteEditar.png" width="30px" height=25px">
                             <p> Editar corte </p>
                           </button>
@@ -454,6 +475,23 @@ if(!localStorage.getItem("user")){
       var modalCloseCita = document.querySelector('.modal-close_cita');
       modalBgCita.classList.remove('modal-bg_cita_active');
     }
+  </script>
+
+    <!-- Su funcion es abrir y cerrar el modal de ver cita -->
+    <script>
+    function editarCorte(id){
+      var btnModalCorte = document.querySelectorAll('.btn-editar-corte');
+      var modalBgCorte = document.querySelector('.modal-bg_corte');
+      modalBgCorte.classList.add('modal-bg_corte_active');
+    }
+    <!-- Aquí va el ajax para editar el corte -->
+
+    function cerrarEditarCorte() {
+      var modalBgCorte = document.querySelector('.modal-bg_corte');
+      var modalCloseCorte = document.querySelector('.modal-close_corte');
+      modalBgCorte.classList.remove('modal-bg_corte_active');
+    }
+
   </script>
 
   <script src="<?php base_url() ?>Cita/js/cita.js"></script>
