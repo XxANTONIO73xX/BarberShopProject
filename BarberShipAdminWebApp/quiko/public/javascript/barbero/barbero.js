@@ -1,49 +1,25 @@
-const dropArea = document.querySelector(".drop-area");
-const dragText = dropArea.querySelector('label');
-const button = dropArea.querySelector('button');
-const input = dropArea.querySelector("#input-file");
+const input = document.querySelector("#inputGroupFile02");
 let files;
 var fileCurrent;
 
-button.addEventListener('click', (e) =>{
-    input.click();
-});
-
 input.addEventListener('change', (e) => {
+    e.preventDefault();
     files = e.target.files;
-    dropArea.classList.add('active');
-    showFiles(files);
-    dropArea.classList.remove('active');
-});
-
-dropArea.addEventListener('dragover', (e) =>{
-    e.preventDefault();
-    dropArea.classList.add("active");
-    dragText.textContent = "Suelta para subir la imagen";
-});
-
-dropArea.addEventListener('dragleave', (e) =>{
-    e.preventDefault();
-    dropArea.classList.remove('active');
-    dragText.textContent = "Arrastra y suelta una imagen";
-});
-
-dropArea.addEventListener('drop', (e) =>{
-    e.preventDefault();
-    files = e.dataTransfer.files;
-    fileCurrent = showFiles(files);
-    dropArea.classList.remove('active');
-    dragText.textContent = "Arrastra y suelta una imagen";
+    res = showFiles(files);
+    if(res == false){
+    input.value = null;
+    }
 });
 
 function showFiles(files){
     if(files.length === 1){
         console.log(files);
         console.log("Si es una imagen");
-        var file = processFile(files[0]);
-        return file;
+        res = processFile(files[0]);
+        return res;
     }else{
         alert("No puedes enviar mas de una imagen");
+        return false;
     }
 }
 
@@ -62,9 +38,10 @@ function processFile(file){
         });
 
         fileReader.readAsDataURL(file);
-        return file;
+        return true;
     }else{
         alert("No es una imagen/archivo valido. Formatos permitidos: .jpg .jpeg .png");
+        return false;
     }
 }
 

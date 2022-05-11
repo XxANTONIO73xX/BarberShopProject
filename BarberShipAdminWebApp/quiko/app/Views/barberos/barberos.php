@@ -40,12 +40,7 @@
                                     <input type="number" name="telefono" class="form-control" id="telefono">
                                   </div>
                                   <div class="form-group">
-                                    <div class="drop-area">
-                                        <label>Arrastra y suelta una imagen</label>
-                                        <span>O</span>
-                                        <button type="button">Selecciona tu imagen</button>
-                                        <input type="file" name="featured_image" id="input-file" hidden/>
-                                    </div>
+                                      <input type="file" name="featured_image" class="form-control" id="inputGroupFile02">
                                     <div class="preview">
                                       <label>Visualización</label>
                                       <img src="<?php base_url() ?>assets/img/ImageNotFound.png" alt="visualización">
@@ -118,7 +113,7 @@
 
                   $('#table tbody').on( 'click', "button[name='cancelar']", function () {
                     var data = table.row( $(this).parents('tr') ).data();
-                    alert("estas eliminando el: " + data.id +" => " + data.nombre);
+                    eliminar(data.id);
                   });
 
                   $('#table tbody').on( 'click', "button[name='editar']", function () {
@@ -221,6 +216,21 @@
             alert("Sucedio un error, verifique si lleno todos los campos solicitados");
           });
           return false;
+            }
+
+            function eliminar(id){
+              $.ajax({
+                url:"http://api.kikosbarbershop.online/public/barbero/"  + id,
+                data:{},
+                type: "DELETE",
+                dataType: "json",
+                headers:{
+                  token: localStorage.getItem("token")
+                }
+              }).done(function(data, textStatus, jqXHR){
+                alert(data.result);
+                window.location.reload()
+              });
             }
           </script>
 <!-- Modal
