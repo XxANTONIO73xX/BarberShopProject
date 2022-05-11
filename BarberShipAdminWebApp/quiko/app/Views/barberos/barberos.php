@@ -126,7 +126,6 @@
                     $("#idBarbero").val(data.id)
                     var id = $("#idBarbero").val();
                     obtenerData(id);
-                    llenarCbxBarberias();
                   });
 
                   $('#table tbody').on( 'click', "button[name='imagen']", function () {
@@ -136,7 +135,6 @@
                 });
           </script>
           <script>
-            function llenarCbxBarberias(){
               $.ajax({
                 url:"http://api.kikosbarbershop.online/public/barberia",
                 data:{},
@@ -154,17 +152,16 @@
 
                 $("#barberia").html(optionsSelect);
               });
-            }
             function reset(){
               $("#idBarbero").val(0);
               $("#nombre").val("");
               $("#apellido").val("");
               $("#apodo").val("");
               $("#telefono").val("");
+              $('select[name="idBarberia"] option[selected="selected"]').removeAttr("selected");
               const preview = document.querySelector(".preview");
               const img = preview.querySelector('img');
               img.src = "<?php base_url() ?>assets/img/ImageNotFound.png";
-              llenarCbxBarberias();
             }
 
             function obtenerData(id){
@@ -188,35 +185,23 @@
                     const img = preview.querySelector('img');
                     img.src = data.barbero.visualizacion;
                     console.log(data.barbero.barberia.id);
-                    $("select[name='barberia_select'] option[value='"+data.barbero.barberia.id+"']").attr("selected","selected" );
+                    $("select[name='idBarberia'] option[value='"+data.barbero.barberia.id+"']").attr("selected","selected" );
     });
             }
           </script> 
           <script src="<?php base_url() ?>javascript/barbero/barbero.js"></script>
           <script>
             function guardar(){
-              console.log(fileCurrent);
-              var formData = new FormData();
-              formData.append("featured_image", fileCurrent);
-              formData.append("nombre", $("#nombre").val());
-              formData.append("apodo", $("#apodo").val());
-              formData.append("apellidos", $("#apellido").val());
-              formData.append("telefono", $("#telefono").val());
-              formData.append("idBarberia", $("#barberia").val());
               var id = $("#idBarbero").val();
               var url = "http://api.kikosbarbershop.online/public/";
               if(id == 0){
                 url += "barbero";
-                console.log(url)
               }else{
                 url += "barbero/update/" + id;
-                console.log(url)
               }
-              console.log("si estas acá")
               // new FormData(document.getElementById("formulario") 
               // console.log( $( "#formulario" ).serialize())
               dataFormulario =  new FormData(document.getElementById("formulario"));
-              console.log(dataFormulario);
               $.ajax({   //iniciar ajax para editar registro   
               url:  url,
               data: dataFormulario,
@@ -230,8 +215,10 @@
               }
             })
           .done(function( data, textStatus, jqXHR ) {   
-            console.log(data);
-            console.log("si jalo");
+            window.location.reload()
+          })
+          .fail(function(){
+            alert("Sucedio un error, verifique si lleno todos los campos solicitados");
           });
           return false;
             }
