@@ -128,12 +128,12 @@
                 </ul>
             </div>
         </div>
-        
+         
         <div class="content">
             <nav class="navigationBar">
                 <h3 ><?php echo $titulo ?></h3>
                 <div class="navigation-list-item-sing-out">
-                    <a class="navigation-link" onclick="logout()">
+                    <a class="navigation-link" data-bs-toggle="modal" data-bs-target="#confirma" >
                         <div class="row">
                             <div class="col-2">
                                 <i class="fas fa-sign-out-alt"></i>
@@ -144,4 +144,23 @@
                         </div>
                     </a>
                 </div>
-            </nav>
+            </nav>-->
+
+        <div class="modal" id="confirma" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cerrar sesion</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+            </div>
+            <div class="modal-body">
+            ¿Estas seguro de cerrar sesion?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <a class="btn btn-primary btn-ok" onclick="logout()" >Aceptar</a>
+            </div>
+            </div>
+        </div>
+        </div>
+        
