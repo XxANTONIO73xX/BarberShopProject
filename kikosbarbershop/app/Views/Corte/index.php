@@ -27,7 +27,7 @@ if(!localStorage.getItem("user")){
     <li><a href="<?php base_url() ?>Inicio">Inicio</a></li>
     <li><a href="<?php base_url() ?>Citas">Citas</a></li>
     <li><a href="<?php base_url() ?>Cortes">Cortes</a></li>
-    <li><a href="">Más Información</a></li>
+    <!--<li><a href="">Más Información</a></li>-->
     <li><a>⚙</a>
       <ul>
         <li id="nav-desplegable"><a href="<?php base_url() ?>Cliente">Editar usuario</a></li>
