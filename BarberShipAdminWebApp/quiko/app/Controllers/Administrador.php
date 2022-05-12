@@ -18,4 +18,8 @@ class Administrador extends BaseController
         echo view('footer');
 
     }
+    
+    public function login(){
+        echo view('login');
+    }
 }
