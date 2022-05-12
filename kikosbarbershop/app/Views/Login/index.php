@@ -6,21 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="<?php base_url() ?>Login/styles/estilos.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@700&family=Roboto+Condensed:wght@300&family=Roboto:wght@900&display=swap" rel="stylesheet">
     <title>Iniciar Sesion</title>
 </head>
 
+<div class="stripe">
+    <div class="stripe_inner"></div>
+</div>
+
 <body>
-    <form>
-        <h1>Log In</h1>
-        <input id="user" placeholder="Username" type="text" />
-        <input id="password" placeholder="Password" type="password" />
-        <button type="button" class="btn bg-gradient-primary w-100 my-4 mb-2" onclick="login()">Iniciar Sesion</button>
-        <h6>Oh, no te has registrado?</h6>
-        <footer>
-            <h5>Da click para registrarte:</h5>
-            <h6><a target="_blank" href="../RegistroUsuario/indexRegistro.html">Registrate aquí</a></h6>
-        </footer>
-    </form>
+    <div class="login-position">
+        <div class="login-content">
+            <img src="<?php base_url() ?>Cita/img/logoKikoNav.svg" class="logo_menu" width="390px" height="190px">
+            <div class="login-content-body">
+                <input id="user" placeholder="Username" type="text" />
+                <input id="password" placeholder="Password" type="password" />
+                <button type="button" class="btn bg-gradient-primary w-100 my-4 mb-2" onclick="login()">Iniciar sesión</button>
+            </div>
+            <footer>
+                <h6>Oh, ¿no te has registrado?</h6>
+                <h5>Da click para registrarte: <a target="_blank" href="../RegistroUsuario/indexRegistro.html">registrate aquí</a></h5>
+            </footer>
+        </div>
+    </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
