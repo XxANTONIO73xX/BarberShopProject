@@ -1,14 +1,55 @@
+<link href="<?php base_url() ?>css/dragndrop.css" rel="stylesheet">
 <main>
                     <div class="container-fluid px-4">
                         <h3 class="mt-4">Tabla de datos</h3>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Tables</li>
                         </ol>
+                        <div class="modal fade" id="modalAgregar" tabindex="-1" role="dialog" aria-labelledby="modalAgregarLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                              <h4 class="modal-title w-100 font-weight-bold">Añadir un cliente</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <form id="formulario" method="POST" enctype="multipart/form-data">
+                                  <div class="form-group">
+                                    <input type="hidden" id="idAdministrador" value="0">
+                                    <label for="nombre" class="col-form-label">Nombre:</label>
+                                    <input type="text" name="nombre" class="form-control" id="nombre">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="apellido" class="col-form-label">Apellido:</label>
+                                    <input type="text" name="apellidos" class="form-control" id="apellido">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="apellido" class="col-form-label">Correo:</label>
+                                    <input type="text" name="correo" class="form-control" id="correo">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="telefono" class="col-form-label">Telefono:</label>
+                                    <input type="number" name="telefono" class="form-control" id="telefono">
+                                  </div>
 
+                                  <div class="form-group">
+                                    <label for="pasword" class="col-form-label">Contraseña:</label>
+                                    <input type="password" name="password" class="form-control" id="password">
+                                  </div>
+                                  
+                                  </form>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary" onclick="guardar()">Guardar</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                         <div>
-                            <p> 
-                                <a href= "<?php echo base_url(); ?>/cliente/nuevo" class="btn btn-info">Agregar</a>
-                            </p>
+                          <a class="btn btn-info" data-toggle="modal" data-target="#modalAgregar" onclick="reset()">Agregar</a>
                         </div>
 
                         <div class="card mb-4">
@@ -35,6 +76,7 @@
                         </div>
                     </div>
                 </main>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
           <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
           <script>
@@ -54,19 +96,105 @@
                         {"data": 'apellidos'},
                         {"data":'correo'},
                         {"data": 'telefono'},
-                        {"targets": -1, "data": null, "defaultContent":'<button class="btn btn-warning" name="editar">  <i class="fas fa-pen"></i>  </button> <button class="btn btn-danger" name="cancelar">  <i class="fas fa-trash"></i>  </button>'}
+                        {"targets": -1, "data": null, "defaultContent":'<button class="btn btn-warning" name="editar" data-toggle="modal" data-target="#modalAgregar">  <i class="fas fa-pen"></i>  </button> <button class="btn btn-danger" name="cancelar">  <i class="fas fa-trash"></i>  </button>'}
                     ]
                     });
                     $('#table tbody').on( 'click', "button[name='cancelar']", function () {
                     var data = table.row( $(this).parents('tr') ).data();
-                    alert("estas eliminando el: " + data.id +" => " + data.nombre);
+                    eliminar(data.id);
                     });
 
                     $('#table tbody').on( 'click', "button[name='editar']", function () {
                     var data = table.row( $(this).parents('tr') ).data();
-                    alert("estas editando el: " + data.id +" => " + data.nombre);
+                    $("#idAdministrador").val(data.id)
+      var id = $("#idAdministrador").val();
+      obtenerData(id);
                     });
                 })
+          </script>
+          <script>
+
+function reset(){
+              $("#idAdministrador").val(0);
+              $("#nombre").val("");
+              $("#apellido").val("");
+              $("#correo").val("");
+              $("#telefono").val("");
+              $("#password").val("");
+            }
+
+function obtenerData(id){
+              $.ajax({   //iniciar ajax para crar token   
+                url: 'http://api.kikosbarbershop.online/public/cliente/' + id,
+                data: {},
+                type: "GET",
+                dataType: "json",
+                headers: {
+                    token: localStorage.getItem("token")
+                }
+            })
+                .done(function (data, textStatus, jqXHR) { // lo que regresamos desde la API esta en data
+                    console.log("info tabla")
+                    console.log(data.cliente)
+                    $("#nombre").val(data.cliente.nombre);
+                    $("#apellido").val(data.cliente.apellidos);
+                    $("#correo").val(data.cliente.correo);
+                    $("#telefono").val(data.cliente.telefono);
+                    $("#password").val(data.cliente.pasword);
+
+    });
+            }
+</script>
+<script src="<?php base_url() ?>javascript/cliente/cliente.js"></script>
+          <script>
+            function guardar(){
+              var id = $("#idAdministrador").val();
+              var url = "http://api.kikosbarbershop.online/public/";
+              if(id == 0){
+                url += "cliente";
+              }else{
+                url += "cliente/update/" + id;
+              }
+              // new FormData(document.getElementById("formulario") 
+              // console.log( $( "#formulario" ).serialize())
+              dataFormulario =  new FormData(document.getElementById("formulario"));
+              console.log(JSON.stringify(dataFormulario));
+              $.ajax({   //iniciar ajax para editar registro   
+              url:  url,
+              data: dataFormulario,
+              type: "POST",
+              cache: false,
+              contentType: false,
+              processData: false,
+              dataType: "json",
+              headers:{
+                token: localStorage.getItem("token")
+              }
+            })
+          .done(function( data, textStatus, jqXHR ) {   
+            window.location.reload()
+          })
+          .fail(function(){
+            alert("Sucedio un error, verifique si lleno todos los campos solicitados");
+          });
+          return false;
+            }
+
+            
+            function eliminar(id){
+              $.ajax({
+                url:"http://api.kikosbarbershop.online/public/cliente/"  + id,
+                data:{},
+                type: "DELETE",
+                dataType: "json",
+                headers:{
+                  token: localStorage.getItem("token")
+                }
+              }).done(function(data, textStatus, jqXHR){
+                alert(data.result);
+                window.location.reload()
+              });
+            }
           </script>
 <!-- Modal
 <div class="modal fade" id="confirma" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

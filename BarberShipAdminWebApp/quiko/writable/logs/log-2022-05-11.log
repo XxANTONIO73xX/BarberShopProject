@@ -1,0 +1,33 @@
+CRITICAL - 2022-05-11 19:52:04 --> Undefined variable: titulo
+#0 C:\laragon\www\quiko\app\Views\header.php(9): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\laragon\\www\\...', 9, Array)
+#1 C:\laragon\www\quiko\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\quiko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\laragon\www\quiko\system\Common.php(1089): CodeIgniter\View\View->render('header', Array, true)
+#4 C:\laragon\www\quiko\app\Controllers\Corte.php(26): view('header')
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Corte->nuevo()
+#6 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Corte))
+#7 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-11 20:35:04 --> Undefined variable: titulo
+#0 C:\laragon\www\quiko\app\Views\header.php(9): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\laragon\\www\\...', 9, Array)
+#1 C:\laragon\www\quiko\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\quiko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\laragon\www\quiko\system\Common.php(1089): CodeIgniter\View\View->render('header', Array, true)
+#4 C:\laragon\www\quiko\app\Controllers\Barberia.php(24): view('header')
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Barberia->nuevo()
+#6 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barberia))
+#7 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-11 20:37:22 --> Undefined variable: titulo
+#0 C:\laragon\www\quiko\app\Views\header.php(9): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\laragon\\www\\...', 9, Array)
+#1 C:\laragon\www\quiko\system\View\View.php(210): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\quiko\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\laragon\www\quiko\system\Common.php(1089): CodeIgniter\View\View->render('header', Array, true)
+#4 C:\laragon\www\quiko\app\Controllers\Barberia.php(24): view('header')
+#5 C:\laragon\www\quiko\system\CodeIgniter.php(832): App\Controllers\Barberia->nuevo()
+#6 C:\laragon\www\quiko\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Barberia))
+#7 C:\laragon\www\quiko\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\quiko\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
