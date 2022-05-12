@@ -85,6 +85,8 @@ body {
 }
 
 #nav-desplegable {
+  position: relative;
+  right: 50px;
   display: flex;
   width: 200px;
   text-align: center;
