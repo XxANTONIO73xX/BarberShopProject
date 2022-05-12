@@ -1,16 +1,46 @@
+<link href="<?php base_url() ?>css/dragndrop.css" rel="stylesheet">
 <main>
                     <div class="container-fluid px-4">
                         <h3 class="mt-4">Tabla de datos</h3>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Tables</li>
                         </ol>
-
-                        <div>
-                            <p> 
-                                <a href= "<?php echo base_url(); ?>/corte/nuevo" class="btn btn-info">Agregar</a>
-                            </p>
+                        <div class="modal fade" id="modalAgregar" tabindex="-1" role="dialog" aria-labelledby="modalAgregarLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                              <h4 class="modal-title w-100 font-weight-bold">Añadir un nuevo corte</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <form id="formulario" method="POST" enctype="multipart/form-data">
+                                  <div class="form-group">
+                                    <input type="hidden" id="idBarbero" value="0">
+                                    <label for="nombre" class="col-form-label">Nombre:</label>
+                                    <input type="text" name="nombre" class="form-control" id="nombre">
+                                  </div>
+                                  <div class="form-group">
+                                      <input type="file" name="featured_image" class="form-control" id="inputGroupFile02">
+                                    <div class="preview">
+                                      <label>Visualización</label>
+                                      <img src="<?php base_url() ?>assets/img/ImageNotFound.png" alt="visualización">
+                                    </div>
+                                  </div>
+                                  
+                                  </form>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary" onclick="guardar()">Guardar</button>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-
+                        <div>
+                        <a class="btn btn-info" data-toggle="modal" data-target="#modalAgregar" onclick="reset()">Agregar</a>
+                        </div>
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
@@ -22,7 +52,7 @@
                                         <tr>
                                             <th>Id</th>
                                             <th>Nombre</th>
-                                            <th>visualización</th>
+                                            <th>URL</th>
                                             <th>Acciones</th>
 
                                         </tr>
@@ -34,6 +64,7 @@
                         </div>
                     </div>
                 </main>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
           <script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
           <script>
@@ -51,17 +82,19 @@
                         {"data": 'id'},
                         {"data": 'nombre'},
                         {"data":'visualizacion', "visible":false},
-                        {"targets": -1, "data": null, "defaultContent":'<button class="btn btn-warning" name="editar">  <i class="fas fa-pen"></i>  </button> <button class="btn btn-danger" name="cancelar">  <i class="fas fa-trash"></i>  </button> <button class="btn btn-success" name="imagen">  <i class="fas fa-image"></i>  </button> '}
+                        {"targets": -1, "data": null, "defaultContent":'<button class="btn btn-warning" name="editar" data-toggle="modal" data-target="#modalAgregar">  <i class="fas fa-pen"></i>  </button> <button class="btn btn-danger" name="cancelar">  <i class="fas fa-trash"></i>  </button> </button> <button class="btn btn-success" name="imagen">  <i class="fas fa-image"></i>  </button>'}
                     ]
                     });
                     $('#table tbody').on( 'click', "button[name='cancelar']", function () {
                     var data = table.row( $(this).parents('tr') ).data();
-                    alert("estas eliminando el: " + data.id +" => " + data.nombre);
+                    eliminar(data.id);
                     });
 
                     $('#table tbody').on( 'click', "button[name='editar']", function () {
                     var data = table.row( $(this).parents('tr') ).data();
-                    alert("estas editando el: " + data.id +" => " + data.nombre);
+                    $("#idBarbero").val(data.id)
+                    var id = $("#idBarbero").val();
+                    obtenerData(id);
                     });
 
                     $('#table tbody').on( 'click', "button[name='imagen']", function () {
@@ -70,23 +103,73 @@
                   });
                 })
           </script>
-<!-- Modal
-<div class="modal fade" id="confirma" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Desea eliminar este registro
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancalar</button>
-        <button type="button" class="btn btn-primary">Aceptar</button>
-      </div>
-    </div>
-  </div>
-</div> -->
+          <script>
+            function obtenerData(id){
+              $.ajax({   //iniciar ajax para crar token   
+                url: 'http://api.kikosbarbershop.online/public/corte/' + id,
+                data: {},
+                type: "GET",
+                dataType: "json",
+                headers: {
+                    token: localStorage.getItem("token")
+                }
+            })
+                .done(function (data, textStatus, jqXHR) { // lo que regresamos desde la API esta en data
+                    console.log("info tabla")
+                    console.log(data.corte)
+                    $("#nombre").val(data.corte.nombre);
+                    const preview = document.querySelector(".preview");
+                    const img = preview.querySelector('img');
+                    img.src = data.barbero.visualizacion;
+    });
+            }
+          </script> 
+          <script src="<?php base_url() ?>javascript/viewImage.js"></script>
+          <script>
+            function guardar(){
+              var id = $("#idBarbero").val();
+              var url = "http://api.kikosbarbershop.online/public/";
+              if(id == 0){
+                url += "corte";
+              }else{
+                url += "corte/update/" + id;
+              }
+              // new FormData(document.getElementById("formulario") 
+              // console.log( $( "#formulario" ).serialize())
+              dataFormulario =  new FormData(document.getElementById("formulario"));
+              $.ajax({   //iniciar ajax para editar registro   
+              url:  url,
+              data: dataFormulario,
+              type: "POST",
+              cache: false,
+              contentType: false,
+              processData: false,
+              dataType: "json",
+              headers:{
+                token: localStorage.getItem("token")
+              }
+            })
+          .done(function( data, textStatus, jqXHR ) {   
+            window.location.reload()
+          })
+          .fail(function(){
+            alert("Sucedio un error, verifique si lleno todos los campos solicitados");
+          });
+          return false;
+            }
+
+            function eliminar(id){
+              $.ajax({
+                url:"http://api.kikosbarbershop.online/public/corte/"  + id,
+                data:{},
+                type: "DELETE",
+                dataType: "json",
+                headers:{
+                  token: localStorage.getItem("token")
+                }
+              }).done(function(data, textStatus, jqXHR){
+                alert(data.result);
+                window.location.reload()
+              });
+            }
+          </script>

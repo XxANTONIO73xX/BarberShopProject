@@ -31,8 +31,8 @@
                                     <input type="number" name="telefono" class="form-control" id="telefono">
                                   </div>
                                   <div class="form-group">
-                                    <label for="Correo" class="col-form-label">Correo:</label>
-                                    <input type="text" name="Correo" class="form-control" id="Correo">
+                                    <label for="correo" class="col-form-label">Correo:</label>
+                                    <input type="text" name="correo" class="form-control" id="correo">
                                   </div>
                                   <div class="form-group">
                                     <label for="horario" class="col-form-label">Horario:</label>
@@ -41,6 +41,13 @@
                                   <div class="form-group">
                                     <label for="estado" class="col-form-label">Estado:</label>
                                     <input type="text" name="estado" class="form-control" id="estado">
+                                  </div>
+                                  <div class="form-group">
+                                      <input type="file" name="featured_image" class="form-control" id="inputGroupFile02">
+                                    <div class="preview">
+                                      <label>Visualización</label>
+                                      <img src="<?php base_url() ?>assets/img/ImageNotFound.png" alt="visualización">
+                                    </div>
                                   </div>
                                   
                                   </form>
@@ -72,6 +79,7 @@
                                             <th>Correo</th>
                                             <th>Horario</th>
                                             <th>Estado</th>
+                                            <th>URL</th>
                                             <th>Acciones</th>
 
                                         </tr>
@@ -105,7 +113,8 @@
                         {"data": 'correo'},
                         {"data":'horario'},
                         {"data":'estado'},
-                        {"targets": -1, "data": null, "defaultContent":'<button class="btn btn-warning" name="editar">  <i class="fas fa-pen"></i>  </button> <button class="btn btn-danger" name="cancelar">  <i class="fas fa-trash"></i>  </button>'}       
+                        {"data": "visualizacion", "visible": false},
+                        {"targets": -1, "data": null, "defaultContent":'<button class="btn btn-warning" name="editar" data-toggle="modal" data-target="#modalAgregar">  <i class="fas fa-pen"></i>  </button> <button class="btn btn-danger" name="cancelar">  <i class="fas fa-trash"></i>  </button> </button> <button class="btn btn-success" name="imagen">  <i class="fas fa-image"></i>  </button>'}      
                     ]
                     });
 
@@ -121,9 +130,27 @@
                     obtenerData(id);
                     });
 
+                    $('#table tbody').on( 'click', "button[name='imagen']", function () {
+                    var data = table.row( $(this).parents('tr') ).data();
+                    window.open(data.visualizacion);
+                  });
+
                 });
           </script>
           <script>
+              function reset(){
+              $("#idBarberia").val(0);
+              $("#nombre").val("");
+              $("#direccion").val("");
+              $("#telefono").val("");
+              $("#correo").val("");
+              $("#horario").val("");
+              $("#estado").val("");
+              const preview = document.querySelector(".preview");
+              const img = preview.querySelector('img');
+              img.src = "<?php base_url() ?>assets/img/ImageNotFound.png";
+              }
+
               function obtenerData(id){
               $.ajax({   //iniciar ajax para crar token   
                 url: 'http://api.kikosbarbershop.online/public/barberia/' + id,
@@ -143,11 +170,14 @@
                     $("#correo").val(data.barberia.correo);
                     $("#horario").val(data.barberia.horario);
                     $("#estado").val(data.barberia.estado);
+                    const preview = document.querySelector(".preview");
+                    const img = preview.querySelector('img');
+                    img.src = data.barberia.visualizacion;
                     
     });
             }
 </script>
-<script src="<?php base_url() ?>javascript/barberia/barberia.js"></script>
+<script src="<?php base_url() ?>javascript/viewImage.js"></script>
           <script>
             function guardar(){
               var id = $("#idBarberia").val();
