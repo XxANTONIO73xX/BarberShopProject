@@ -15,9 +15,9 @@
                                 </button>
                               </div>
                               <div class="modal-body">
-                                <form id="formulario" method="POST" enctype="multipart/form-data">
+                                <form id="formulario" method="POST">
                                   <div class="form-group">
-                                    <input type="hidden" id="idAdministrador" value="0">
+                                    <input type="hidden" id="idCliente" value="0">
                                     <label for="nombre" class="col-form-label">Nombre:</label>
                                     <input type="text" name="nombre" class="form-control" id="nombre">
                                   </div>
@@ -26,7 +26,7 @@
                                     <input type="text" name="apellidos" class="form-control" id="apellido">
                                   </div>
                                   <div class="form-group">
-                                    <label for="apellido" class="col-form-label">Correo:</label>
+                                    <label for="correo" class="col-form-label">Correo:</label>
                                     <input type="text" name="correo" class="form-control" id="correo">
                                   </div>
                                   <div class="form-group">
@@ -106,8 +106,8 @@
 
                     $('#table tbody').on( 'click', "button[name='editar']", function () {
                     var data = table.row( $(this).parents('tr') ).data();
-                    $("#idAdministrador").val(data.id)
-      var id = $("#idAdministrador").val();
+                    $("#idCliente").val(data.id)
+      var id = $("#idCliente").val();
       obtenerData(id);
                     });
                 })
@@ -115,7 +115,7 @@
           <script>
 
 function reset(){
-              $("#idAdministrador").val(0);
+              $("#idCliente").val(0);
               $("#nombre").val("");
               $("#apellido").val("");
               $("#correo").val("");
@@ -145,10 +145,9 @@ function obtenerData(id){
     });
             }
 </script>
-<script src="<?php base_url() ?>javascript/cliente/cliente.js"></script>
           <script>
             function guardar(){
-              var id = $("#idAdministrador").val();
+              var id = $("#idCliente").val();
               var url = "http://api.kikosbarbershop.online/public/";
               if(id == 0){
                 url += "cliente";
@@ -158,7 +157,6 @@ function obtenerData(id){
               // new FormData(document.getElementById("formulario") 
               // console.log( $( "#formulario" ).serialize())
               dataFormulario =  new FormData(document.getElementById("formulario"));
-              console.log(JSON.stringify(dataFormulario));
               $.ajax({   //iniciar ajax para editar registro   
               url:  url,
               data: dataFormulario,
