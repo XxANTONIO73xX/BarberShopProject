@@ -25,7 +25,7 @@
             </div>
             <footer>
                 <h6>Oh, ¿no te has registrado?</h6>
-                <h5>Da click para registrarte: <a target="_blank" href="../RegistroUsuario/indexRegistro.html">registrate aquí</a></h5>
+                <h5>Da click para registrarte: <a target="_blank" href="<?php base_url() ?>Registro">registrate aquí</a></h5>
             </footer>
         </div>
     </div>

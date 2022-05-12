@@ -146,7 +146,7 @@ if(!localStorage.getItem("user")){
 
             <div class="form-group-hora">
               <label>Hora</label><br>
-              <input type="time" name="hora" id="hora">
+              <input type="time" name="hora" id="hora" min="08:00" max="20:00" step="1800">
             </div>
           </div>
 
@@ -159,8 +159,6 @@ if(!localStorage.getItem("user")){
       </div>
     </div>
   </div>
-
-
 
 <!--Modal para ver cita-->
   <div class="modal-bg_cita">
@@ -221,13 +219,16 @@ if(!localStorage.getItem("user")){
           </button>
         </div>
         <div class="modal-body_corte">
-          <div class="modal-imagen_corte">
-            Aquí va la imagen equis de
+          <div class="modal-imagen_corte" id="imagen-div">
+          <img src="">
           </div>
           <div class="modal-control_corte">
             <label>Nuevo corte: </label>
-            <select name="" id="">Elegir corte</select>
-            <button>Aceptar</button>
+            <select placeholder="Corte" name="corte" id="idCorteEdit" class="form-control">
+              <option class="placeholder-select" value="" disabled selected hidden>Selecciona una corte</option>
+              <option value="idCorteEdit">Selecciona un corte</option>
+            </select>
+            <button id="actualizarCorte">Actualizar</button>
           </div>
         </div>
       </div>
@@ -269,7 +270,7 @@ if(!localStorage.getItem("user")){
                             <img src="<?php base_url() ?>Cita/img/ojo.png" width="30px" height=25px">
                             <p> Ver cita </p>
                           </button>
-                          <button class="btn-editar-corte" onclick="editarCorte()">
+                          <button class="btn-editar-corte" onclick="editarCorte(${r.id})">
                             <img src="<?php base_url() ?>Cita/img/CorteEditar.png" width="30px" height=25px">
                             <p> Editar corte </p>
                           </button>
@@ -356,20 +357,23 @@ if(!localStorage.getItem("user")){
 
         data.cortes.forEach(r => {
           $('#idCorte').append("<option value='" + r.id + "'>" + r.nombre + "</option>")
+          $('#idCorteEdit').append("<option value='" + r.id + "'>" + r.nombre + "</option>")
+
         });
 
       });
   </script>
 
-  <!-- Este script sirve para evniar los datos del formulario y guardarlos
+
+  <!-- Este script sirve para enviar los datos del formulario y guardarlos
       en la base de datos del servidor-->
   <script>
     
     $('#guardar').click(function() {
 
-      var url = 'http://api.kikosbarbershop.online/public/cita';
+      /*var url = 'http://api.kikosbarbershop.online/public/cita';*/
       $.ajax({
-          url: url,
+          url: 'http://api.kikosbarbershop.online/public/cita',
           type: 'POST',
           data: {
             "idCliente": localStorage.getItem("id"),
@@ -388,6 +392,7 @@ if(!localStorage.getItem("user")){
         .done(function(data, res) {
           console.log("La cita ha sido guardada con exito");
           /*console.log(data);*/
+          location.href="<?php base_url() ?>Citas";
 
         })
         .fail(function() {
@@ -400,10 +405,10 @@ if(!localStorage.getItem("user")){
   <script>
     
     function cancelar(id) {
-      var url = 'http://api.kikosbarbershop.online/public/cita/update/';
+      /*var url = 'http://api.kikosbarbershop.online/public/cita/update/';*/
       
       $.ajax({
-          url: url + id,
+          url: 'http://api.kikosbarbershop.online/public/cita/update/' + id,
           type: 'POST',
           data: {
             "estado": "Cancelada"
@@ -427,7 +432,6 @@ if(!localStorage.getItem("user")){
 
   </script>
 
-
   <!-- Su funcion es cerrar la sesion del usuario-->
   <script>
     function getOut(){
@@ -445,10 +449,10 @@ if(!localStorage.getItem("user")){
     var modalBgCita = document.querySelector('.modal-bg_cita');
     modalBgCita.classList.add('modal-bg_cita_active');
 
-    var url = 'http://api.kikosbarbershop.online/public/cita/';
+    /*var url = 'http://api.kikosbarbershop.online/public/cita/';*/
 
     $.ajax({
-                url: url + id,
+                url: 'http://api.kikosbarbershop.online/public/cita/' + id,
                 data: {},
                 type: "GET",
                 dataType: "json",
@@ -474,18 +478,66 @@ if(!localStorage.getItem("user")){
       var modalBgCita = document.querySelector('.modal-bg_cita');
       var modalCloseCita = document.querySelector('.modal-close_cita');
       modalBgCita.classList.remove('modal-bg_cita_active');
+
+
     }
+
   </script>
 
-    <!-- Su funcion es abrir y cerrar el modal de ver cita -->
-    <script>
+  <!-- Su funcion es abrir y cerrar el modal de editar corte -->
+  <script>
     function editarCorte(id){
       var btnModalCorte = document.querySelectorAll('.btn-editar-corte');
       var modalBgCorte = document.querySelector('.modal-bg_corte');
       modalBgCorte.classList.add('modal-bg_corte_active');
-    }
-    <!-- Aquí va el ajax para editar el corte -->
+      
+      $.ajax({
+                url: 'http://api.kikosbarbershop.online/public/cita/' + id,
+                data: {},
+                type: "GET",
+                dataType: "json",
+                headers: {
+                    token: localStorage.getItem("token")
+                }
+            })
+            .done(function(data, textStatus, jqXHR) {
+                var cita = data.cita;
 
+                /*console.log(data.cita);*/
+
+                $('#imagen-div').html("<div id='" + cita.idCorte + "'>" + "<img src='" +  cita.corte.visualizacion +"'>" + "</div>");
+                
+                /*$('#idCorteEdit').html("<option id='" + cita.idCorte + "'>" + cita.corte.nombre + "</option>");*/
+                
+            });
+
+
+            $('#actualizarCorte').click(function() {
+
+              $.ajax({
+                url: 'http://api.kikosbarbershop.online/public/cita/update/' + id,
+                type: 'POST',
+                data: {
+                  "idCorte": $("#idCorteEdit").val(),
+                },
+                dataType: "json",
+                headers: {
+                  token: localStorage.getItem("token")
+                }
+              })
+              .done(function(data, res) {
+                console.log("El corte ha sido actualizado con exito");
+                console.log(data.result);
+                location.href="<?php base_url() ?>Citas";
+
+              })
+              .fail(function() {
+                console.log("Error", "Ocurrio un problema al actualizar el corte")
+              })
+              });
+      
+    }
+      
     function cerrarEditarCorte() {
       var modalBgCorte = document.querySelector('.modal-bg_corte');
       var modalCloseCorte = document.querySelector('.modal-close_corte');
@@ -493,6 +545,7 @@ if(!localStorage.getItem("user")){
     }
 
   </script>
+
 
   <script src="<?php base_url() ?>Cita/js/cita.js"></script>
 </body>

@@ -92,13 +92,10 @@
             })
                 .done(function (data) {
                     $('#respuesta').html(data);
-                    console.log("El usuarios se ha registrado con exito");
-                    console.log(data);
-                    /**
-                     * !Esto para regresar al index de iniciar sesion, en el dato caso
-                     * !de que marque error el metodo se quita la linea de abajo
-                    **/
-                    location.href = "<?php base_url()?>";
+                    /*console.log("El usuarios se ha registrado con exito");
+                    console.log(data);*/
+                    
+                    location.href = "<?php base_url()?>Log-In";
                 })
                 .fail(function () {
                     console.log("Error", "Ocurrio un problema al registrar el usuario")
