@@ -75,7 +75,7 @@ if(!localStorage.getItem("user")){
                 </div>
                 <div class="col-md-9 form-inline felement" data-fieldtype="text">
                     <input type="text" class="form-control " name="email" id="correo"
-                        value="jose.campa216584@potros.itson.edu.mx" size="30" maxlength="100" autocomplete="email">
+                        value="" size="30" maxlength="100" autocomplete="email">
                 </div>
             </div>
             
@@ -84,7 +84,7 @@ if(!localStorage.getItem("user")){
                     <label class="col-form-label d-inline " for="id_email">Teléfono:</label>
                 </div>
                 <div class="col-md-9 form-inline felement" data-fieldtype="text">
-                    <input type="text" class="form-control " name="telefono" id="telefono" value="6221785566" size="30" maxlength="100" autocomplete="email">
+                    <input type="text" class="form-control " name="telefono" id="telefono" value="" size="30" maxlength="100" autocomplete="email">
                 </div>
             </div>
         
@@ -151,6 +151,7 @@ if(!localStorage.getItem("user")){
         .done(function(data, res) {
             console.log("La cita ha sido guardada con exito");
             /*console.log(data);*/
+            location.href = "<?php base_url() ?>Cliente";
         })
         .fail(function() {
             console.log("Error", "Ocurrio un problema al editar usuario")
