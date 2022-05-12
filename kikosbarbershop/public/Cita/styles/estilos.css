@@ -886,9 +886,13 @@ body {
 }
 
 .modal-imagen_corte {
-  background-color: blue;
   position: relative;
   margin: 0 auto;
+  width: 300px;
+  height: 300px;
+}
+
+.modal-imagen_corte img {
   width: 300px;
   height: 300px;
 }
