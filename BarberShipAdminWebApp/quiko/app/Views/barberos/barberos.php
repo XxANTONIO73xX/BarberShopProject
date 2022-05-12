@@ -184,7 +184,7 @@
     });
             }
           </script> 
-          <script src="<?php base_url() ?>javascript/barbero/barbero.js"></script>
+          <script src="<?php base_url() ?>javascript/viewImage.js"></script>
           <script>
             function guardar(){
               var id = $("#idBarbero").val();
