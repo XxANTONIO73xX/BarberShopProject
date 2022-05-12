@@ -18,7 +18,6 @@ class Cliente extends Auth{
 
     public function show($id = NULL){
         if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
-        if($this->tipoUsuario == "barbero" || $this->cliente["id"] != $id){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $data=[
             "cliente" => $this->model->find($id)
         ];
@@ -63,7 +62,7 @@ class Cliente extends Auth{
         $result = $this->model->update($id, $data);
 
         if($result){
-            return $this->respond(["result" => "El registro se edito correctamente"]);
+            return $this->respond(["result" => "El registro se edito correctamente", "cliente" => $this->model->find($id)]);
         }else{
             return $this->respond(["error" => "hubo un error al editar"]);
         }

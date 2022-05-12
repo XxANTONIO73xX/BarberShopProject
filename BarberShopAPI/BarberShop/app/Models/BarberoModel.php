@@ -11,10 +11,9 @@ class BarberoModel extends Model{
         "nombre",
         "apodo",
         "apellidos",
-        "correo",
         "telefono",
-        "password",
-        "idBarberia"
+        "idBarberia",
+        "visualizacion"
     ];
     
     public function obtenerPorBarberia($id){

@@ -3,6 +3,8 @@ namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\BarberiaModel;
+use App\Models\CitaModel;
+
 class Barberia extends Auth{
     protected $modelName = 'App\Models\BarberiaModel';
     protected $format = 'json';
@@ -26,13 +28,19 @@ class Barberia extends Auth{
     public function create(){
         if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
         if($this->tipoUsuario != "administrador"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
+        helper(['form']);
+        $file = $this->request->getFile('featured_image');
+        if(! $file->isValid())
+            return $this->fail($file->getErrorString());
+        $file->move('./uploads/Barberias');
         $data=[
                 "nombre"  => $this->request->getPost("nombre"),
                 "direccion"  => $this->request->getPost("direccion"),
                 "telefono"  => $this->request->getPost("telefono"),
                 "correo"  => $this->request->getPost("correo"),
                 "horario"  => $this->request->getPost("horario"),
-                "estado"  => $this->request->getPost("estado")
+                "estado"  => $this->request->getPost("estado"),
+                "visualizacion"  => "http://api.kikosbarbershop.online/public/uploads/Barberias/".$file->getName()
         ];
 
         $id = $this->model->insert($data);
@@ -48,6 +56,7 @@ class Barberia extends Auth{
     public function update($id = null){
         if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
         if($this->tipoUsuario != "administrador"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
+        helper(['form', 'array']);
         $data = [];
         if(!empty($this->request->getPost("nombre")))
             $data["nombre"] = $this->request->getPost("nombre");
@@ -61,7 +70,14 @@ class Barberia extends Auth{
             $data["horario"] = $this->request->getPost("horario");
         if(!empty($this->request->getPost("estado")))
             $data["estado"] = $this->request->getPost("estado");
-        
+        if(!empty($this->request->getFile('featured_image'))){
+                $fileName = dot_array_search('featured_image.name', $_FILES);
+                $file = $this->request->getFile('featured_image');
+                if(! $file->isValid())
+                return $this->fail($file->getErrorString());
+                $file->move('./uploads/Barberias');
+                $data["visualizacion"] = "http://api.kikosbarbershop.online/public/uploads/Barberias/".$file->getName();
+            }
         $result = $this->model->update($id, $data);
 
         if($result){
@@ -80,6 +96,26 @@ class Barberia extends Auth{
         }else{
             return $this->respond(["error" => "hubo un error al eliminar"], 200);
         }
+    }
+
+    public function BarberiaMasPedido(){
+        $citaModel = new CitaModel();
+        $data = $citaModel->BarberiaMasPedido();
+        $id = $data->idBarberia;
+        return $this->respond($this->model->find($id));
+    }
+
+    public function ConteoBarberias(){
+        $citaModel = new CitaModel();
+        $list = $citaModel->ConteoBarberias();
+        $data=[];
+        foreach ($list as $idBarberia => $barberia){
+            $data["barberias"][] = [
+                "total" => $barberia["total"],
+                "barberia" => $this->model->find($barberia["idBarberia"])
+            ];
+        }
+        return $this->respond($data);
     }
 }
 

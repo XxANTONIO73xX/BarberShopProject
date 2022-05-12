@@ -155,7 +155,7 @@ class Cita extends Auth{
 
     public function update($id = null){
         if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
-        if($this->tipoUsuario != "administrador"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
+        //if($this->tipoUsuario != "administrador"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
         $data = [];
         if(!empty($this->request->getPost("idCliente")))
             $data["idCliente"] = $this->request->getPost("idCliente");

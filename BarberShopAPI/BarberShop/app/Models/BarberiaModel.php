@@ -13,7 +13,8 @@ class BarberiaModel extends Model{
         "telefono",
         "correo",
         "horario",
-        "estado"
+        "estado",
+        "visualizacion"
     ];
 }
 ?>

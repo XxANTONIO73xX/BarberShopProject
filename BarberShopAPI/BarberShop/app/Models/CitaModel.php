@@ -34,5 +34,35 @@ class CitaModel extends Model{
         }
         return false;
     }
+
+    public function CorteMasPedido(){
+        $list = $this->db->query("SELECT idCorte, COUNT(idCorte) AS total FROM citas GROUP BY idCorte ORDER BY total DESC");
+        return $list->getRow();
+    }
+
+    public function ConteoCortes(){
+        $list = $this->db->query("SELECT idCorte, COUNT(idCorte) AS total FROM citas GROUP BY idCorte ORDER BY total DESC")->getResultArray();
+        return $list;
+    }
+
+    public function BarberiaMasPedido(){
+        $list = $this->db->query("SELECT idBarberia, COUNT(idBarberia) AS total FROM citas GROUP BY idBarberia ORDER BY total DESC");
+        return $list->getRow();
+    }
+
+    public function ConteoBarberias(){
+        $list = $this->db->query("SELECT idBarberia, COUNT(idBarberia) AS total FROM citas GROUP BY idBarberia ORDER BY total DESC")->getResultArray();
+        return $list;
+    }
+
+    public function BarberoMasPedido(){
+        $list = $this->db->query("SELECT idBarbero, COUNT(idBarbero) AS total FROM citas GROUP BY idBarbero ORDER BY total DESC");
+        return $list->getRow();
+    }
+
+    public function ConteoBarberos(){
+        $list = $this->db->query("SELECT idBarbero, COUNT(idBarbero) AS total FROM citas GROUP BY idBarbero ORDER BY total DESC")->getResultArray();
+        return $list;
+    }
 }
 ?>

@@ -43,6 +43,14 @@ $routes->get("barbero_cita/(:segment)", 'Cita::barbero_cita/$1', ['filter' => 'c
 $routes->get("cliente_cita/(:segment)", "Cita::cliente_cita/$1", ['filter' => 'cors']);
 $routes->get("barberia_barberos/(:segment)", "Barbero::barbero_barberia/$1", ['filter' => 'cors']);
 $routes->post("upload_corte", "Corte::uploadFile", ['filter' => 'cors']);
+$routes->get('corte_mas_pedido', 'Corte::CorteMasPedido', ['filter' => 'cors']);
+$routes->get('conteo_cortes', 'Corte::ConteoCortes', ['filter' => 'cors']);
+
+$routes->get('barberia_mas_pedido', 'Barberia::BarberiaMasPedido', ['filter' => 'cors']);
+$routes->get('conteo_barberias', 'Barberia::ConteoBarberias', ['filter' => 'cors']);
+
+$routes->get('barbero_mas_pedido', 'Barbero::BarberoMasPedido', ['filter' => 'cors']);
+$routes->get('conteo_barberos', 'Barbero::ConteoBarberos', ['filter' => 'cors']);
 /*
  * --------------------------------------------------------------------
  * Additional Routing

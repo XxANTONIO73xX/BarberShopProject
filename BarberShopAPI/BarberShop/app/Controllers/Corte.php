@@ -1,6 +1,7 @@
 <?php 
 namespace App\Controllers;
 
+use App\Models\CitaModel;
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\CorteModel;
 class Corte extends Auth{
@@ -15,14 +16,6 @@ class Corte extends Auth{
         return $this->respond($data);
     }
 
-    public function barbero_corte($id){
-        if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
-        $data=[
-            "cortes" => $this->model->obtenerPorBarbero($id)
-        ];
-        return $this->respond($data);
-    }
-
     public function show($id = NULL){
         if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
         $data=[
@@ -33,11 +26,15 @@ class Corte extends Auth{
 
     public function create(){
         if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
-        if($this->tipoUsuario != "administrador" || $this->tipoUsuario != "barbero" ){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
+        if($this->tipoUsuario != "administrador"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
+        helper(['form']);
+        $file = $this->request->getFile('featured_image');
+        if(! $file->isValid())
+            return $this->fail($file->getErrorString());
+        $file->move('./uploads/Cortes');
         $data=[
                 "nombre"  => $this->request->getPost("nombre"),
-                "visualizacion"  => $this->request->getPost("visualizacion"),
-                "idBarbero"  => $this->request->getPost("idBarbero")
+                "visualizacion"  => "http://api.kikosbarbershop.online/public/uploads/Cortes/".$file->getName()
         ];
 
         $id = $this->model->insert($data);
@@ -50,30 +47,54 @@ class Corte extends Auth{
 
     }
 
+    public function CorteMasPedido(){
+        $citaModel = new CitaModel();
+        $data = $citaModel->CorteMasPedido();
+        $id = $data->idCorte;
+        return $this->respond($this->model->find($id));
+    }
+
+    public function ConteoCortes(){
+        $citaModel = new CitaModel();
+        $list = $citaModel->ConteoCortes();
+        $data=[];
+        foreach ($list as $idCorte => $corte){
+            $data["cortes"][] = [
+                "total" => $corte["total"],
+                "corte" => $this->model->find($corte["idCorte"])
+            ];
+        }
+        return $this->respond($data);
+    }
+
     public function uploadFile(){
         helper(['form']);
-            $file = $this->request->getFile('featured_image');
-            if(! $file->isValid())
-                return $this->fail($file->getErrorString());
-            $file->move('./uploads/Cortes');
-            return $this->respond(["img" => "http://api.kikosbarbershop.online/public/uploads/Cortes/".$file->getName()]);
+        $file = $this->request->getFile('featured_image');
+        if(! $file->isValid())
+            return $this->fail($file->getErrorString());
+        $file->move('./uploads/Cortes');
+        return $this->respond(["img" => "http://api.kikosbarbershop.online/public/uploads/Cortes/".$file->getName()]);
     }
 
     public function update($id = null){
         if(!$this->verifyToken()){return $this->respond(["error" =>"Token expirado"]);}
-        if($this->tipoUsuario != "administrador" || $this->tipoUsuario != "barbero" ){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
+        if($this->tipoUsuario != "administrador"){return $this->respond(["error" => "No tienes permisos para acceder a esta ruta"]);}
+        helper(['form', 'array']);
         $data = [];
-        if(!empty($this->request->getPost("nombre")))
+        if(!empty($this->request->getPost("nombre"))){
             $data["nombre"] = $this->request->getPost("nombre");
-        if(!empty($this->request->getPost("visualizacion")))
-            $data["visualizacion"] = $this->request->getPost("visualizacion");
-        if(!empty($this->request->getPost("idBarbero")))
-            $data["idBarbero"] = $this->request->getPost("idBarbero");
-        
+        }
+        if(!empty($this->request->getFile('featured_image'))){
+            $fileName = dot_array_search('featured_image.name', $_FILES);
+            $file = $this->request->getFile('featured_image');
+            if(! $file->isValid())
+            return $this->fail($file->getErrorString());
+            $file->move('./uploads/Cortes');
+            $data["visualizacion"] = "http://api.kikosbarbershop.online/public/uploads/Cortes/".$file->getName();
+        }
         $result = $this->model->update($id, $data);
-
         if($result){
-            return $this->respond(["result" => "El registro se edito correctamente"]);
+            return $this->respond(["result" => "El registro se edito correctamente", "Corte" => $this->model->find($id)]);
         }else{
             return $this->respond(["error" => "hubo un error al editar"]);
         }
