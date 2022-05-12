@@ -91,6 +91,8 @@ body {
     display: flex;
     width: 200px;
     text-align: center;
+    position: relative;
+    right: 130px;
 }
 
 #nav-desplegable a {

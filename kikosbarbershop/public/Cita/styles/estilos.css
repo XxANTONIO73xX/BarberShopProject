@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: rgb(20, 20, 20);
+  background-color: rgb(194, 103, 103);
 }
 
 .container__menu {
@@ -88,7 +88,7 @@ body {
 
 #nav-desplegable {
   position: relative;
-  right: 50px;
+  right: 130px;
   display: flex;
   width: 200px;
   text-align: center;
