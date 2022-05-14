@@ -23,7 +23,7 @@ function login() { //inicio login al dar clic al boton
                 localStorage.setItem("user", user);
                 localStorage.setItem("id", user["id"]);
                 console.log("Encontro el usuario");
-                location.href = "http://localhost/quiko/public/home"
+                location.href = "http://admin.kikosbarbershop.online/public/home"
             } else {
                 alert(data.error);
             }

@@ -142,7 +142,7 @@
                 var optionsSelect = '<option value="0">Seleccionar Cliente</option>';
 
                 data.clientes.forEach(r => {
-                  optionsSelect+=`<option value="${r.id}">${r.nombre}</option> `;
+                  optionsSelect+=`<option value="${r.id}">${r.correo}</option> `;
                 });
 
                 $("#cliente").html(optionsSelect);

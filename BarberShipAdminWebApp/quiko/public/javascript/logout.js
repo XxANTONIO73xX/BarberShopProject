@@ -6,10 +6,10 @@ function logout(){ // cerrar session
     localStorage.removeItem("user");
     localStorage.removeItem("id")
     //localStorage.clear();
-    location.href="http://localhost/quiko/public/";
+    location.href="http://admin.kikosbarbershop.online/public/";
 
     }
 
     if(!localStorage.getItem("user")){
-    location.href="http://localhost/quiko/public/";
+    location.href="http://admin.kikosbarbershop.online/public/";
     }
