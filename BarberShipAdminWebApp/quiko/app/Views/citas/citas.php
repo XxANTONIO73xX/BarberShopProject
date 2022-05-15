@@ -82,9 +82,11 @@
                                             <th>Fecha</th>
                                             <th>Hora</th>
                                             <th>Estado</th>
+                                            <th>Cliente</th>
+                                            <th>Barbero</th>
+                                            <th>Corte</th>
                                             <th>Acciones</th>
-
-
+                                            <th>Estados de cita</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -113,10 +115,14 @@
                         {"data": 'fecha'},
                         {"data": 'hora'},
                         {"data":'estado'},
-                        {"targets": -1, "data": null, "defaultContent":'<button class="btn btn-warning" name="editar" data-toggle="modal" data-target="#modalAgregar">  <i class="fas fa-pen"></i>  </button> <button class="btn btn-danger" name="cancelar">  <i class="fas fa-trash"></i>  </button>'}
+                        {"data": 'cliente.correo'},
+                        {"data": 'barbero.nombre'},
+                        {"data": 'corte.nombre'},
+                        {"targets": -1, "data": null, "defaultContent":'<button title="Editar" class="btn btn-warning" name="editar" data-toggle="modal" data-target="#modalAgregar">  <i class="fas fa-pen"></i>  </button> <button title="Eliminar" class="btn btn-danger" name="eliminar">  <i class="fas fa-trash"></i>  </button>'},
+                        {"targets": -1, "data":null, "defaultContent": '<button title="Atendida" class="btn btn-success" name="atendida"><i class="fas fa-check"></i></button> <button title="No atendida" class="btn btn-secondary" name="noatendida"><i class="fas fa-times"></i></button> <button title="Cancelar" class="btn btn-danger" name="cancelar"><i class="fas fa-ban"></i></button> '}
                     ]
-                    });
-                    $('#table tbody').on( 'click', "button[name='cancelar']", function () {
+                  });
+                    $('#table tbody').on( 'click', "button[name='eliminar']", function () {
                     var data = table.row( $(this).parents('tr') ).data();
                     eliminar(data.id);
                     });
@@ -126,6 +132,21 @@
                     $("#idCita").val(data.id)
                     var id = $("#idCita").val();
                     obtenerData(id);
+                    });
+
+                    $('#table tbody').on( 'click', "button[name='atendida']", function () {
+                    var data = table.row( $(this).parents('tr') ).data();
+                    cambiarEstado(data.id, "Asistida");
+                    });
+
+                    $('#table tbody').on( 'click', "button[name='noatendida']", function () {
+                    var data = table.row( $(this).parents('tr') ).data();
+                    cambiarEstado(data.id, "No Asistida");
+                    });
+
+                    $('#table tbody').on( 'click', "button[name='cancelar']", function () {
+                    var data = table.row( $(this).parents('tr') ).data();
+                    cambiarEstado(data.id, "Cancelada");
                     });
                 })
           </script>
@@ -282,6 +303,23 @@
               }).done(function(data, textStatus, jqXHR){
                 alert(data.result);
                 window.location.reload()
+              });
+            }
+
+            function cambiarEstado(id, estado){
+              $.ajax({
+                url:"http://api.kikosbarbershop.online/public/cita/update/" + id,
+                data:{
+                  "estado": estado
+                },
+                type: "POST",
+                dataType: "json",
+                headers:{
+                  token: localStorage.getItem("token")
+                }
+              }).done(function(data, textStatus, jqXHR){
+                  alert("el estado de la cita cambio a: " + estado);
+                  window.location.reload()
               });
             }
           </script>
