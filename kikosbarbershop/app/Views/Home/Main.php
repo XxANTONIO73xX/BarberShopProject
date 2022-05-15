@@ -1,56 +1,15 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<script>
-//hay session ?
-if(!localStorage.getItem("user")){
-    location.href="<?php base_url() ?>/Log-In";
-}
-</script>
-
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=, initial-scale=1.0">
         <link href="<?php base_url() ?>Home/styles/estilos.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@700&family=Roboto+Condensed:wght@300&family=Roboto:wght@900&display=swap" rel="stylesheet">  
-        <title>Kiko's Barber Shop</title>
-    </head>
 
-    <div class="stripe">
-        <div class="stripe_inner">
-        </div>
-    </div>
-
-    <body>
         <!--<img src="img/fondoKikos.png" class="pattern_background">-->
-        <nav class="navigation_bar">
-        <img src="<?php base_url() ?>Cita/img/logoKikoNav.svg" class="logo_menu" width="150px" height="60px">
-        <ul class="nv_list">
-            <li><a href="<?php base_url() ?>Inicio">Inicio</a></li>
-            <li><a href="<?php base_url() ?>Citas">Citas</a></li>
-            <li><a href="<?php base_url() ?>Cortes">Cortes</a></li>
-            <!--<li><a href="">Más Información</a></li>-->
-            <li><a>⚙</a>
-            <ul>
-                <li id="nav-desplegable"><a href="<?php base_url() ?>Cliente">Editar usuario</a></li>
-                <li id="nav-desplegable"><a href="#" onclick="getOut()">Cerrar sesión</a></li>
-            </ul>
-            </li>
-        </ul>
-
-        <div class="bars__menu">
-            <span class="line1__bars-menu"></span>
-            <span class="line2__bars-menu"></span>
-            <span class="line3__bars-menu"></span>
-        </div>
-        </nav>
 
         <div class="front_face">
             <img src="<?php base_url() ?>Home/img/logoKikoNav.svg" id="imagen_frente" height="250px" width="500px">
             <h1>Hola, ¡bienvenidos!</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora nam, nemo libero minus tenetur fugit optio ipsum dolorum at aut laboriosam numquam repellendus sed. Modi placeat repellendus exercitationem officiis quam!</p>
+            <p>En Kiko's rescatamos el arte de las antiguas barberías y la experiencia que en ellas se vivía.
+Conjuntamos tradiciones, servicios de altos estándares de calidad e higiene.
+
+Aquí encontrarás ese espacio que hemos perdido los hombres, donde cortarse el pelo y afeitarse se convierten en una terapia de amigos y relajación, más que en un hábito.</p>
         </div>
 
         <div class="position-slider">

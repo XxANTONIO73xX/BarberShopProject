@@ -9,115 +9,6 @@ body {
     background-color: rgb(20, 20, 20);
 }
 
-.container__menu {
-    display: none;
-}
-
-/*
-    .pattern_background {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        background: url("img/fondoKikos.png");
-        width: 1500px;
-        height: 1080px;
-        z-index: -3;
-    }
-    */
-
-.navigation_bar {
-    background-color: rgba(0, 0, 0, 0.079);
-    position: fixed;
-    width: 100%;
-    height: 75px;
-    z-index: 10000;
-    transition: 0.3s;
-    text-align: center;
-}
-
-.navigation_bar.active {
-    background-color: rgb(0, 0, 0);
-    position: fixed;
-    width: 100%;
-    height: 75px;
-    z-index: 10000;
-    text-align: center;
-}
-
-.navigation_bar .logo_menu {
-    position: absolute;
-    top: 8px;
-    left: 0px;
-    color: white;
-}
-
-.navigation_bar .logo_menu:hover {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-}
-
-.navigation_bar .nv_list {
-    position: relative;
-    top: 22px;
-    list-style: none;
-}
-
-.navigation_bar .nv_list li {
-    display: inline;
-    margin: 0 -2px 0 -2px;
-}
-
-.navigation_bar .nv_list li a {
-    font-size: 17px;
-    padding: 30px 30px 32.5px 30px;
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    background-image: linear-gradient(currentColor, currentColor);
-    background-position: 0% 100%;
-    background-repeat: no-repeat;
-    background-size: 0% 1px;
-    transition: background-size .3s;
-}
-
-.navigation_bar .nv_list li a:hover, .navigation_bar .nv_list li a:focus {
-    border-bottom: #ffffff solid 1px;
-    background-size: 100% 3px;
-    color: rgb(255, 255, 255);
-}
-
-.navigation_bar ul li ul {
-    position: absolute;
-    display: none;
-    left: 917px;
-    top: 56px;
-  }
-  
-  .navigation_bar ul li:hover>ul {
-    display: block;
-  }
-  
-  #nav-desplegable {
-    position: relative;
-    right: 130px;
-    display: flex;
-    width: 200px;
-    text-align: center;
-  }
-  
-  #nav-desplegable a {
-    color: white;
-    background-color: rgba(0, 0, 0, 0.675);
-    width: 100%;
-  }
-  
-  /*------------------------------NAVIGATION BAR AL MINIMIZAR--------------------------------*/
-
-@media (max-width: 750px) {
-    .navigation_bar .nv_list li {
-        display: none;
-    }
-}
-
 @media (min-width: 1601px) {
     .pattern_background {
         width: 1900px;
@@ -155,9 +46,9 @@ body {
     position: relative;
     bottom: 25px;
     color: white;
-    margin: 20px;
-    text-align: center;
-    font-size: 25px;
+    margin: 20px 50px;
+    text-align: justify;
+    font-size: 20px;
 }
 
 .front_face .separation {
@@ -172,6 +63,7 @@ body {
         top: 30px;
         width: 100%;
         transition: 1s;
+        float: left;
     }
 
     .front_face h1 {
@@ -199,9 +91,9 @@ body {
 /* Slider */
 
 .position-slider {
-    float: left;
     width: 50%;
     height: 600px;
+    float: left;
 }
 
 .slider1 {
@@ -213,6 +105,7 @@ body {
     overflow: hidden;
     z-index: 8000;
     left: 20px;
+    box-shadow: 10px 10px 30px black;
 
 }
 
@@ -332,6 +225,7 @@ body {
     .position-slider {
         position: relative;
         width: 100%;
+        background-color: red;
         height: 23rem;
         transition: 1s;
     }
@@ -612,8 +506,8 @@ body {
 
 :root {
     --stripe-size: 100px;
-    --color1: rgb(0, 0, 0);
-    --color2: #1d1d1d81;
+    --color1: #30302eb3;
+    --color2: #181818e7;
     --duration: 2s;
 }
 
@@ -721,3 +615,4 @@ body {
         background-position: calc(var(--stripe-size) * -1) 0;
     }
 }
+

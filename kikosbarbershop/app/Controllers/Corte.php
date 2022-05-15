@@ -6,6 +6,8 @@ class Corte extends BaseController
 {
     public function index()
     {
-        return view('Corte/index');
+        $data = ["titulo" => "Cortes"];
+        echo view('header', $data);
+        echo view('Corte/index');
     }
 }

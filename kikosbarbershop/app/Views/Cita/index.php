@@ -1,3 +1,6 @@
+  
+  <link href="<?php base_url() ?>Cita/styles/estilos.css" rel="stylesheet">
+  
   <div class="table-position">
     <button class="button-agendar-cita">Agendar cita</button>
     <table cellspacing="0" border="0" id="tabla-citas">
@@ -38,7 +41,6 @@
       </tbody>
     </table>
   </div>
-
 
   <div class="container__menu">
     <ul class="nv_list_mobile">
