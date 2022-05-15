@@ -6,6 +6,8 @@ class Cita extends BaseController
 {
     public function index()
     {
-        return view('Cita/index');
+        $data = ["titulo" => "Citas"];
+        echo view('header', $data);
+        echo view('Cita/index');
     }
 }
