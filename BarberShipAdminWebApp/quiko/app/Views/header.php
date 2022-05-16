@@ -114,7 +114,7 @@
                         </a>
                     </li>
                     <li class="navigation-list-item">
-                        <a class="navigation-link" href="/">
+                        <a class="navigation-link" href="<?php base_url()?>Perfil">
                             <div class="row">
                                 <div class="col-2">
                                     <i class="fas fa-address-card"></i>
@@ -144,7 +144,7 @@
                         </div>
                     </a>
                 </div>
-            </nav>-->
+            </nav>
 
         <div class="modal" id="confirma" tabindex="-1" role="dialog">
         <div class="modal-dialog">
