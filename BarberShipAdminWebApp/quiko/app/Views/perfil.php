@@ -87,7 +87,7 @@
                 $("input[name='apellidos']").val(administrador.apellidos);
                 $("input[name='correo']").val(administrador.correo);
                 $("input[name='telefono']").val(administrador.telefono);
-                
+                $("input[name='contrasena']").val(administrador.password);
                 }); 
         }
 
