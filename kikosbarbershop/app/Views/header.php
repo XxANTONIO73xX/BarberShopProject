@@ -39,7 +39,7 @@ if(!localStorage.getItem("user")){
       <li><a>⚙</a>
         <ul class="menu-desplegable_options">
           <li id="edit-button"><a href="<?php base_url() ?>Cliente">Editar usuario</a></li>
-          <li id="logout-button"><a href="#" onclick="getOut()">Cerrar sesión</a></li>
+          <li id="logout-button"><a href="#" onclick="out_confirmacion()">Cerrar sesión</a></li>
         </ul>
       </li>
     </ul>
@@ -51,4 +51,37 @@ if(!localStorage.getItem("user")){
   </div>
 </div>
 
+<!-- Instalar swalfire-->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- Cerrar sesion -->
+<script>
+
+    function out_confirmacion(){
+
+    Swal.fire({
+    title: '¿Desea cerrar sesion?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Cerrar Sesion'
+    }).then((result) => {
+    if (result.isConfirmed) {
+        getOut();   
+    }
+    });
+
+    }
+
+    function getOut(){
+    localStorage.removeItem("token");
+    localStorage.removeItem("tipo");
+    localStorage.removeItem("user");
+    location.href = "<?php base_url() ?>/Log-In";
+    }
+
+</script>
+
 <body>
+

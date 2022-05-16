@@ -31,7 +31,7 @@
               <img src="<?php base_url() ?>Cita/img/CorteEditar.png" width="30px" height=25px">
               <p> Editar corte </p>
             </button>
-            <button class="btn-cancelar" onclick="cancelar(${r.id})">
+            <button class="btn-cancelar" onclick="cancelar_confirmacion(${r.id})">
               <img src="<?php base_url() ?>Cita/img/eliminar.png" width="30px" height="25px">
               <p> Cancelar cita </p>
             </button>
@@ -41,6 +41,7 @@
       </tbody>
     </table>
   </div>
+
 
   <div class="container__menu">
     <ul class="nv_list_mobile">
@@ -184,6 +185,9 @@
     </div>
   </div>
 
+  <!-- Instalar swalfire-->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   <!--Su funcion es obtener todas las citas del cliente-->
   <script>
     var url = "http://api.kikosbarbershop.online/public/cliente_cita/" + localStorage.getItem("id");
@@ -223,7 +227,7 @@
                             <img src="<?php base_url() ?>Cita/img/CorteEditar.png" width="30px" height=25px">
                             <p> Editar corte </p>
                           </button>
-                          <button class="btn-cancelar" onclick="cancelar(${r.id})">
+                          <button class="btn-cancelar" onclick="cancelar_confirmacion(${r.id})">
                             <img src="<?php base_url() ?>Cita/img/eliminar.png" width="30px" height="25px">
                             <p> Cancelar cita </p>
                           </button>
@@ -352,6 +356,24 @@
 
   <!-- Su funcion es cambiar el estado de la cita, cancelar la cita-->
   <script>
+
+    function cancelar_confirmacion(id){
+
+    Swal.fire({
+      title: '¿Seguro que deseas cancelar la cita?',
+      html: `Al cancelar la cita no podrás volver a activarla`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, cancelar!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        cancelar(id);   
+      }
+    });
+
+    }
     
     function cancelar(id) {
       /*var url = 'http://api.kikosbarbershop.online/public/cita/update/';*/
@@ -369,8 +391,16 @@
         })
         .done(function(data, res) {
           console.log("La cita ha sido cancelada con exito");
+
+              Swal.fire(
+              'Cancelacion exitosa!',
+              'La cita ha sido cancelada con exito.',
+              'success'
+            ).then(function(){
+              location.href="<?php base_url() ?>Citas";
+            });
+          
           /*console.log(data);*/
-          location.href="<?php base_url() ?>Citas";
 
         })
         .fail(function() {
@@ -383,6 +413,23 @@
 
   <!-- Su funcion es cerrar la sesion del usuario-->
   <script>
+    function out_confirmacion(){
+
+      Swal.fire({
+        title: '¿Desea cerrar sesion?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Cerrar Sesion'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          getOut();   
+        }
+      });
+
+      }
+
     function getOut(){
         localStorage.removeItem("token");
         localStorage.removeItem("tipo");
@@ -475,9 +522,21 @@
                 }
               })
               .done(function(data, res) {
+              
                 console.log("El corte ha sido actualizado con exito");
                 console.log(data.result);
-                location.href="<?php base_url() ?>Citas";
+
+                cerrarEditarCorte();
+
+                Swal.fire(
+                  'Corte actualizado!',
+                  'El corte ha sido actualizado.',
+                  'success'
+                ).then(function(){
+                  location.href="<?php base_url() ?>Citas";
+                });
+                
+                
 
               })
               .fail(function() {
