@@ -361,7 +361,7 @@
 
     Swal.fire({
       title: '¿Seguro que deseas cancelar la cita?',
-      html: `Al cancelar la cita no podrás volver a activarla`,
+      html: `Al cancelar la cita no podrás volver a activarla de forma manual`,
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
@@ -393,8 +393,8 @@
           console.log("La cita ha sido cancelada con exito");
 
               Swal.fire(
-              'Cancelacion exitosa!',
-              'La cita ha sido cancelada con exito.',
+              'Lamentablemente tu cita fue cancelada 🙁',
+              'Si deseas volver a activar tu cita se te recomienda ponerte en contacto con un administrador.',
               'success'
             ).then(function(){
               location.href="<?php base_url() ?>Citas";
