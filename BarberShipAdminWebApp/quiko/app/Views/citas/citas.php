@@ -283,7 +283,17 @@
               }
             })
           .done(function( data, textStatus, jqXHR ) {   
-            window.location.reload()
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Los datos fueron guardados correctamente',
+              showConfirmButton: true,
+              timer: 6000
+            }).then((result) => {
+              if(result.isConfirmed){
+                window.location.reload()
+              }
+            })
           })
           .fail(function(){
             alert("Sucedio un error, verifique si lleno todos los campos solicitados");
@@ -301,8 +311,24 @@
                   token: localStorage.getItem("token")
                 }
               }).done(function(data, textStatus, jqXHR){
-                alert(data.result);
+                Swal.fire({
+                  title: '¿Estas seguro de eliminar este registro?',
+                  text: "No podras revertir estos cambios!",
+                  icon: 'warning',
+                  showCancelButton: true,
+                  confirmButtonColor: '#3085d6',
+                  cancelButtonColor: '#d33',
+                  confirmButtonText: 'Eliminar'
+            }).then((result) => {
+              if(result.isConfirmed){
+                Swal.fire(
+                'Eliminado',
+                'El registro ah sido eliminado correctamente.',
+                'success'
+                )
                 window.location.reload()
+              }
+            })
               });
             }
 

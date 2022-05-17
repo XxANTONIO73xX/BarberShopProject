@@ -181,7 +181,7 @@ function obtenerData(id){
             })
           .done(function( data, textStatus, jqXHR ) {
             Swal.fire({
-              position: 'top-end',
+              position: 'center',
               icon: 'success',
               title: 'Los datos fueron guardados correctamente',
               showConfirmButton: true,
@@ -209,8 +209,24 @@ function obtenerData(id){
                   token: localStorage.getItem("token")
                 }
               }).done(function(data, textStatus, jqXHR){
-                alert(data.result);
+                Swal.fire({
+                  title: '¿Estas seguro de eliminar este registro?',
+                  text: "No podras revertir estos cambios!",
+                  icon: 'warning',
+                  showCancelButton: true,
+                  confirmButtonColor: '#3085d6',
+                  cancelButtonColor: '#d33',
+                  confirmButtonText: 'Eliminar'
+            }).then((result) => {
+              if(result.isConfirmed){
+                Swal.fire(
+                'Eliminado',
+                'El registro ah sido eliminado correctamente.',
+                'success'
+                )
                 window.location.reload()
+              }
+            })
               });
             }
           </script>

@@ -1,12 +1,12 @@
 function logout(){ // cerrar session
     Swal.fire({
-        title: 'Are you sure?', //este se cambia
-        text: "You won't be able to revert this!", //este se cambia
+        title: '¿Estas seguro?', //este se cambia
+        text: "Estas a punto de cerrar sesion!", //este se cambia
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!' //este se cambia
+        confirmButtonText: 'Cerrar sesion!' //este se cambia
       }).then((result) => {
         if (result.isConfirmed) {
             console.log("cerrando..!!!");

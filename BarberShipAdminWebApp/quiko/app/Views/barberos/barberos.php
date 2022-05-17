@@ -210,7 +210,17 @@
               }
             })
           .done(function( data, textStatus, jqXHR ) {   
-            window.location.reload()
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Los datos fueron guardados correctamente',
+              showConfirmButton: true,
+              timer: 6000
+            }).then((result) => {
+              if(result.isConfirmed){
+                window.location.reload()
+              }
+            })
           })
           .fail(function(){
             alert("Sucedio un error, verifique si lleno todos los campos solicitados");
@@ -228,28 +238,24 @@
                   token: localStorage.getItem("token")
                 }
               }).done(function(data, textStatus, jqXHR){
-                alert(data.result);
+                Swal.fire({
+                  title: '¿Estas seguro de eliminar este registro?',
+                  text: "No podras revertir estos cambios!",
+                  icon: 'warning',
+                  showCancelButton: true,
+                  confirmButtonColor: '#3085d6',
+                  cancelButtonColor: '#d33',
+                  confirmButtonText: 'Eliminar'
+            }).then((result) => {
+              if(result.isConfirmed){
+                Swal.fire(
+                'Eliminado',
+                'El registro ah sido eliminado correctamente.',
+                'success'
+                )
                 window.location.reload()
+              }
+            })
               });
             }
           </script>
-<!-- Modal
-<div class="modal fade" id="confirma" tabindex="-1" role="dialog" aria-labelledby="modalAgregarLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalAgregarLabel">Eliminar</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Desea eliminar este registro
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancalar</button>
-        <button type="button" class="btn btn-primary">Aceptar</button>
-      </div>
-    </div>
-  </div>
-</div> -->
