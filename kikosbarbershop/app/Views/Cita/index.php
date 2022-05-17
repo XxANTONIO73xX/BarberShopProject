@@ -463,7 +463,7 @@
 
                 $('#barberia-div').html("<div id='" + cita.idBarberia + "'>" + cita.barberia.nombre + "</div>");
                 $('#barbero-div').html("<div id='" + cita.idBarbero + "'>" + cita.barbero.nombre + "</div>");
-                $('#corte-div').html("<div id='" + cita.idCorte + "'>" + "<img src='" +  cita.corte.visualizacion +"'>" + "</div>");
+                $('#corte-div').html("<div id='" + cita.idCorte + "'>" + cita.corte.nombre + "<img src='" +  cita.corte.visualizacion +"'>" + "</div>");
                 $('#fecha-div').html("<div id='" + cita.fecha + "'>" + cita.fecha + "</div>");
                 $('#hora-div').html("<div id='" + cita.hora + "'>" + cita.hora + "</div>");
                 $('#estado-div').html("<div id='" + cita.estado + "'>" + cita.estado + "</div>");
