@@ -111,9 +111,17 @@
         }
         })
         .done(function(data, res) {
-        console.log(data);
-        console.log("Los datos de cuenta han sido guardada con exito");
-        
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Los datos fueron guardados correctamente',
+              showConfirmButton: true,
+              timer: 6000
+            }).then((result) => {
+              if(result.isConfirmed){
+                window.location.reload()
+              }
+            })
         })
         .fail(function(data) {
             console.log(data);

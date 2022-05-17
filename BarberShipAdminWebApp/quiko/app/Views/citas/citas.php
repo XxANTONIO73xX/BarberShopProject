@@ -136,17 +136,47 @@
 
                     $('#table tbody').on( 'click', "button[name='atendida']", function () {
                     var data = table.row( $(this).parents('tr') ).data();
-                    cambiarEstado(data.id, "Asistida");
+                    if(data.estado != "Pendiente"){
+                      Swal.fire({
+                        position: 'center',
+                        icon: 'warning',
+                        title: "La cita ya fue " + data.estado,
+                        showConfirmButton: true,
+                        timer: 6000
+                      })
+                    }else{
+                      cambiarEstado(data.id, "Asistida");
+                    }
                     });
 
                     $('#table tbody').on( 'click', "button[name='noatendida']", function () {
                     var data = table.row( $(this).parents('tr') ).data();
+                    if(data.estado != "Pendiente"){
+                      Swal.fire({
+                        position: 'center',
+                        icon: 'warning',
+                        title: "La cita ya fue " + data.estado,
+                        showConfirmButton: true,
+                        timer: 6000
+                      })
+                    }else{
                     cambiarEstado(data.id, "No Asistida");
+                  }
                     });
 
                     $('#table tbody').on( 'click', "button[name='cancelar']", function () {
                     var data = table.row( $(this).parents('tr') ).data();
+                    if(data.estado != "Pendiente"){
+                      Swal.fire({
+                        position: 'center',
+                        icon: 'warning',
+                        title: "La cita ya fue " + data.estado,
+                        showConfirmButton: true,
+                        timer: 6000
+                      })
+                    }else{
                     cambiarEstado(data.id, "Cancelada");
+                  }
                     });
                 })
           </script>
@@ -344,8 +374,17 @@
                   token: localStorage.getItem("token")
                 }
               }).done(function(data, textStatus, jqXHR){
-                  alert("el estado de la cita cambio a: " + estado);
-                  window.location.reload()
+              Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: "el estado de la cita cambio a: " + estado,
+              showConfirmButton: true,
+              timer: 6000
+            }).then((result) => {
+              if(result.isConfirmed){
+                window.location.reload()
+              }
+            })
               });
             }
           </script>
