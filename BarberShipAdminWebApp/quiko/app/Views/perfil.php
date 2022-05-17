@@ -17,7 +17,7 @@
   <div class="col-lg-8 col-xlg-9">
                         <div class="card">
                             <div class="card-body">
-                                <form class="form-horizontal form-material mx-2">
+                                <form class="form-horizontal form-material mx-2" id="formulario">
                                     <div class="form-group">
                                         <label class="col-md-12">Nombre</label>
                                         <div class="col-md-12">
@@ -48,17 +48,16 @@
                                         <label class="col-md-12">Contraseña</label>
                                         <div class="col-md-12">
                                             <input type="password" placeholder="password"
-                                                class="form-control form-control-line" name="contrasena" id="pasword">
+                                                class="form-control form-control-line" name="password" id="pasword">
                                         </div>
                                     </div>
                                     </div>
-                                    
+                                    </form>
                                     <div class="form-group">
                                         <div class="col-sm-12">
                                             <button type="button" class="btn btn-success" name="actualizar" id="actualizar">Actualizar perfil</button>
                                         </div>
                                     </div>
-                                </form>
                             </div>
                         </div>
                     </div>
@@ -87,7 +86,7 @@
                 $("input[name='apellidos']").val(administrador.apellidos);
                 $("input[name='correo']").val(administrador.correo);
                 $("input[name='telefono']").val(administrador.telefono);
-                $("input[name='contrasena']").val(administrador.password);
+                $("input[name='password']").val(administrador.pasword);
                 }); 
         }
 
@@ -97,17 +96,15 @@
 
         console.log($("#nombre").val());
         console.log
-
+        dataFormulario =  new FormData(document.getElementById("formulario"));
+        console.log( $( "#formulario" ).serialize())
         $.ajax({
         url: "http://api.kikosbarbershop.online/public/administrador/update/" + localStorage.getItem("id"),
-        type: 'POST',
-        data: {
-        "nombre": $("#nombre").val(),
-        "apellidos": $("#apellidos").val(),
-        "correo": $("#correo").val(),
-        "telefono": $("#telefono").val(),
-        "password": $("#pasword").val()
-        },
+        data: dataFormulario,
+        type: "POST",
+        cache: false,
+        contentType: false,
+        processData: false,
         dataType: "json",
         headers: {
         token: localStorage.getItem("token")
