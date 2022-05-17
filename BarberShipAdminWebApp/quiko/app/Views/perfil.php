@@ -114,7 +114,7 @@
             Swal.fire({
               position: 'center',
               icon: 'success',
-              title: 'Los datos fueron guardados correctamente',
+              title: 'Los datos de la cuenta fueron guardados correctamente',
               showConfirmButton: true,
               timer: 6000
             }).then((result) => {
@@ -122,6 +122,11 @@
                 window.location.reload()
               }
             })
+          })
+          .fail(function(){
+            alert("Sucedio un error, verifique si lleno todos los campos solicitados");
+          });
+        
         })
         .fail(function(data) {
             console.log(data);
@@ -133,5 +138,5 @@
 
         console.log("Error", "Ocurrio un problema al editar usuario")
         })
-        });
+        
 </script>
