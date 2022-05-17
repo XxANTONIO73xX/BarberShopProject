@@ -3,23 +3,30 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto Condensed', sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
     background-color: rgb(20, 20, 20);
 }
 
-@media (min-width: 1601px) {
-    .pattern_background {
-        width: 1900px;
-        height: 1200px;
-    }
+.container-page {
+    width: 100%;
 }
+
+[class^=swal2] {
+    z-index: 100000000;
+  }
+
+/*---------------------------------------- DIVISION BIENVENIDA ----------------------------------*/
 
 .front_face {
     float: left;
+    position: relative;
+    top: 30px;
+    height: 650px;
     width: 50%;
-    height: 600px;
+    overflow: hidden;
 }
 
 .front_face #imagen_frente {
@@ -28,6 +35,7 @@ body {
     display: block;
     margin: auto;
     z-index: 2000;
+    filter: drop-shadow(5px 5px 30px black);
 }
 
 .front_face h1 {
@@ -39,6 +47,7 @@ body {
     line-height: 50px;
     font-size: 50px;
     text-decoration: underline;
+    text-shadow: 2px 2px #000000;
 }
 
 .front_face p {
@@ -46,8 +55,9 @@ body {
     position: relative;
     bottom: 25px;
     color: white;
-    margin: 20px 50px;
-    text-align: justify;
+    margin-left: 100px;
+    margin-right: 100px;
+    text-align: center;
     font-size: 20px;
 }
 
@@ -58,42 +68,16 @@ body {
     margin: 0 auto;
 }
 
-@media (max-width: 800px) {
-    .front_face {
-        top: 30px;
-        width: 100%;
-        transition: 1s;
-        float: left;
-    }
 
-    .front_face h1 {
-        top: 90px;
-        line-height: 100px;
-        font-size: 45px;
-        transition: 1s;
-    }
-
-    .front_face p {
-        margin: 10px 10px;
-        text-justify: center;
-        transition: 1s;
-    }
-
-    .slider1 {
-        width: 100%;
-    }
-
-    .slides1 {
-        width: 100%;
-    }
-}
-
-/* Slider */
+/*---------------------------------------- SLIDER ----------------------------------*/
 
 .position-slider {
-    width: 50%;
+    position: relative;
+    top: 50px;
     height: 600px;
+    width: 50%;
     float: left;
+    overflow: hidden;
 }
 
 .slider1 {
@@ -140,7 +124,7 @@ body {
     height: 500px;
 }
 
-/* manual */
+/*------------- FUNCIONAMIENTO MANUAL SLIDER --------------*/
 
 .navigation-manual {
     position: absolute;
@@ -221,286 +205,241 @@ body {
     background: white;
 }
 
-@media (max-width: 800px) {
-    .position-slider {
-        position: relative;
-        width: 100%;
-        background-color: red;
-        height: 23rem;
-        transition: 1s;
+/*------------------------------------- PARTE RESPONSIVE ----------------------------------*/
+
+@media (max-width: 1000px) {
+    .container-page {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas: "up"
+            "down";
     }
 
     .front_face {
-        position: relative;
+        width: 100%;
+        grid-area: down;
+        transition: 0.5s;
+        top: 0;
     }
 
     .front_face #imagen_frente {
-        top: 80px;
+        top: 0;
     }
 
     .front_face h1 {
-        top: 60px;
+        top: 10px;
+        height: 100px;
     }
 
-    .front_face p {
-        top: -50px;
-        font-size: 20px;
-        width: 90%;
-        margin: 0 auto;
-        text-align: center;
+    .position-slider {
+        top: 0;
+        width: 100%;
+        grid-area: up;
+        transition: 0.5s;
     }
 
     .slider1 {
-        width: 400px;
-        display: grid;
-        justify-content: center;
-        transition: 2s;
-        height: 50px;
+        position: relative;
+        left: 5%;
+    }
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .slide1 img {
+        width: 100%;
+        height: 100%;
     }
 }
 
-@media (max-width: 900px) {
-    .front_face #imagen_frente {
-        width: 350px;
-        height: 200px;
-        transition: 1s;
+@media (max-width: 700px) {
+
+    .swal2-popup {
+        position: relative;
+        bottom: 100px;
     }
+    
+    .front_face {
+        top: 0;
+        transition: 0.25s;
+    }
+
+    .front_face img {
+        width: 350px;
+        height: 350px;
+        transition: 0.5s;
+    }
+
+    .position-slider {
+        height: 490px;
+        transition: 0.5s;
+    }
+
+    .slider1 {
+        position: relative;
+        top: 120px;
+        width: 80%;
+        height: 330px;
+        margin: 0 auto;
+        left: 0;
+        transition: 0.25s;
+    }
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .slide1 img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .slides1 {
+        height: 330px;
+    }
+
+    .navigation-manual {
+        margin-top: -40px;
+    }
+
+    .navigation-auto {
+        margin-top: 290px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .front_face {
+        top: 0;
+        transition: 0.25s;
+    }
+
+    .front_face img {
+        width: 300px;
+        height: 300px;
+        transition: 0.25s;
+    }
+
+    .front_face p {
+        margin: 0 20px;
+    }
+
+    .position-slider {
+        height: 430px;
+        transition: 0.25s;
+    }
+
+    .slider1 {
+        position: relative;
+        top: 100px;
+        width: 90%;
+        height: 290px;
+        margin: 0 auto;
+        left: 0;
+    }
+
+    .navigation-manual {
+        margin-top: -80px;
+    }
+
+    .navigation-auto {
+        margin-top: 250px;
+    }
+
+}
+
+@media (max-width: 450px) {
 
     .front_face h1 {
         font-size: 40px;
-        transition: 1s;
     }
 
-    .front_face p {
-        font-size: 20px;
-        transition: 1s;
+    .position-slider {
+        height: 380px;
+        transition: 0.25s;
     }
-}
-
-@media (max-width: 1150px) {
-    .front_face {
-        top: 20px;
-    }
-
-    .front_face #imagen_frente {
-        width: 450px;
-        height: 225px;
-        transition: 1s;
-    }
-
-    .front_face h1 {
-        font-size: 42px;
-        transition: 1s;
-    }
-
-    .front_face p {
-        font-size: 22px;
-        transition: 1s;
-        text-align: justify;
-    }
-
-    .slide1 img {
-        width: 100%;
-        height: auto;
-        transition: 1s;
-    }
-
-    .slide img {
-        width: 100%;
-        height: auto;
-        transition: 1s;
-    }
-
     .slider1 {
-        height: 260px;
-        transition: 1s;
+        position: relative;
+        top: 100px;
+        width: 90%;
+        height: 250px;
+        margin: 0 auto;
+        left: 0;
+    }
+
+    .slides1 {
+        height: 250px;
     }
 
     .navigation-manual {
-        top: 300px;
-        transition: 1s;
+        margin-top: -40px;
     }
 
     .navigation-auto {
-        top: -200px;
-        transition: 1s;
+        margin-top: 210px;
     }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 400px) {
+
+    .front_face {
+        top: 0;
+        transition: 0.25s;
+    }
+
+    .front_face img {
+        width: 275px;
+        height: 275px;
+        transition: 0.25s;
+    }
+
+    .front_face p {
+        margin: 0 20px;
+    }
+
     .position-slider {
-        top: -120px;
-    }
-
-    .slide1 img {
-        width: 100%;
-        height: auto;
-    }
-
-    .slide img {
-        width: 100%;
-        height: auto;
+        height: 360px;
+        transition: 0.25s;
     }
 
     .slider1 {
+        position: relative;
+        top: 100px;
         width: 90%;
         height: 230px;
+        margin: 0 auto;
+        left: 0;
     }
 
+    .slide img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .slide1 img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .slides1 {
+        height: 230px;
+    }
+    
     .navigation-manual {
-        top: 280px;
-        transition: 1s;
+        margin-top: -40px;
     }
 
     .navigation-auto {
-        top: -220px;
-        transition: 1s;
-    }
-
-    .front_face #imagen_frente {
-        width: 300px;
-        height: 300px;
-        top: 10px;
-        transition: 1s;
-    }
-
-    .front_face h1 {
-        top: -80px;
-    }
-
-    .front_face p {
-        top: -190px;
+        margin-top: 190px;
     }
 }
 
-@media (max-width: 370px) {
-    .position-slider {
-        height: 20rem;
-        top: -90px
-    }
-
-    .slider1 {
-        width: 90%;
-        height: 210px;
-    }
-
-    .navigation-manual {
-        top: 260px;
-    }
-
-    .navigation-auto {
-        top: -240px;
-    }
-
-    .front_face #imagen_frente {
-        top: 10px;
-        width: 300px;
-        height: 300px;
-        transition: 1s;
-    }
-
-    .front_face h1 {
-        top: -40px;
-        line-height: 35px;
-    }
-
-    .front_face p {
-        top: -190px;
-    }
-}
-
-/*----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------*/
 
 
-@media (max-width: 750px) {
-    .bars__menu {
-        position: relative;
-        display: block;
-        width: 30px;
-        height: 30px;
-        position: absolute;
-        right: 20px;
-        bottom: 10px;
-        transform: translate(-50%, -50%) scale(1.5);
-        z-index: 99999;
-        align-items: center;
-        cursor: pointer;
-        transition: .2s;
-    }
-
-    .bars__menu span {
-        display: block;
-        width: 100%;
-        height: 3px;
-        background: #ffffff;
-        margin-top: 6px;
-        transform-origin: 0px 100%;
-        transition: all 300ms;
-    }
-
-    .activeline1__bars-menu {
-        transform: rotate(45deg) translate(-2px, 1px);
-    }
-
-    .activeline2__bars-menu {
-        opacity: 0;
-        margin-right: 30px;
-    }
-
-    .activeline3__bars-menu {
-        transform: rotate(-45deg) translate(-2px, 2px);
-    }
-
-    .container__menu {
-        display: block;
-        z-index: 8000;
-        position: fixed;
-        top: 75px;
-        left: -300px;
-        opacity: 0;
-        background-color: rgba(0, 0, 0, 0.796);
-        width: 300px;
-        height: 100vh;
-        transition: 0.5s;
-    }
-
-    .menu__active {
-        z-index: 8000;
-        position: fixed;
-        top: 75px;
-        left: 0px;
-        opacity: 100;
-        background-color: rgba(0, 0, 0, 0.796);
-        width: 300px;
-        height: 100vh;
-        transition: 0.5s;
-    }
-
-    .nv_list_mobile {
-        width: 100%;
-        position: relative;
-        height: 450px;
-        list-style: none;
-
-    }
-
-    .nv_list_mobile li {
-        border-bottom: 2px solid rgba(128, 128, 128, 0.388);
-        line-height: 50px;
-    }
-
-    .nv_list_mobile li:hover {
-        background-color: rgba(128, 128, 128, 0.388);
-    }
-
-    .nv_list_mobile li a {
-        text-decoration: none;
-        color: white;
-        font-size: 25px;
-        position: relative;
-        left: 15px;
-    }
-}
 
 /*------------------------------------ FONDO LINEAS DIAGONALES ------------------------------------*/
 
@@ -615,4 +554,3 @@ body {
         background-position: calc(var(--stripe-size) * -1) 0;
     }
 }
-

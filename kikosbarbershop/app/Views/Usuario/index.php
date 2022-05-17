@@ -58,7 +58,7 @@
             location.href = "<?php base_url() ?>/Log-In";
         }
     </script>
-
+<script src="<?php base_url() ?>Usuario/EditarUsuario/js/usuario.js"></script>
     <script>     
 
         function llenarForm() { 

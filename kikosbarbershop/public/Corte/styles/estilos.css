@@ -9,6 +9,10 @@ body {
   background-color: rgb(20, 20, 20);
 }
 
+[class^=swal2] {
+  z-index: 100000000;
+}
+
 /*-----------------------------------------CAJAS DE CORTES------------------------------------*/
 
 .container {
@@ -25,7 +29,7 @@ body {
 }
 
 .container .corte-card {
-  background: linear-gradient(to top, rgb(121, 121, 121), 50%, rgb(120, 120, 120));
+  background: linear-gradient(to top, rgb(23, 23, 23), 30%, rgb(120, 120, 120));
   width: 330px;
   height: 430px;
   border-radius: 8px;
@@ -49,10 +53,10 @@ body {
 .container .corte-card h4 {
   line-height: 100px;
   height: 50px;
-  color: white;
+  color: rgba(255, 255, 255, 0.93);
   font-size: 40px;
-  font-family: 'Bebas Neue', cursive;4
-  text-shadow: 2px 2px;
+  font-family: 'Bebas Neue', cursive;
+  text-shadow: 3px 3px 7px black;
 }
 
 .container .corte-card p {

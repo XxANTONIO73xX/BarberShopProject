@@ -1,15 +1,13 @@
 
         <link href="<?php base_url() ?>Home/styles/estilos.css" rel="stylesheet">
 
-        <!--<img src="img/fondoKikos.png" class="pattern_background">-->
+    <div class="background-filter"></div>
+    <div class="container-page">
 
         <div class="front_face">
-            <img src="<?php base_url() ?>Home/img/logoKikoNav.svg" id="imagen_frente" height="250px" width="500px">
+            <img src="<?php base_url() ?>Home/img/logoKikosInicio2.png" id="imagen_frente" height="400px" width="400px">
             <h1>Hola, ¡bienvenidos!</h1>
-            <p>En Kiko's rescatamos el arte de las antiguas barberías y la experiencia que en ellas se vivía.
-Conjuntamos tradiciones, servicios de altos estándares de calidad e higiene.
-
-Aquí encontrarás ese espacio que hemos perdido los hombres, donde cortarse el pelo y afeitarse se convierten en una terapia de amigos y relajación, más que en un hábito.</p>
+            <p>Agradecemos su confianza! Siempre listos, y con mucho gusto. Ofreciendo un servicio de calidad 💈💇🏻‍♂️✂️</p>
         </div>
 
         <div class="position-slider">
@@ -50,14 +48,7 @@ Aquí encontrarás ese espacio que hemos perdido los hombres, donde cortarse el 
                 </div>
             </div>
         </div>
-
-        <div class="container__menu">
-            <ul class="nv_list_mobile">
-                <li><a href="../Cita/index.html">Cita</a></li>
-                <li><a href="../Corte/index.html">Cortes</a></li>
-                <li><a href="../InformacionBarberia/index.html"">Más Información</a></li>
-            </ul>
-        </div>
+    </div>
 
         <script src="<?php base_url() ?>Home/js/main.js"></script>
 

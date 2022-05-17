@@ -21,7 +21,7 @@ if(!localStorage.getItem("user")){
 </head>
 <!--<img src="img/fondoKikos.png" class="pattern_background">-->
 <nav class="navigation_bar">
-  <img src="<?php base_url() ?>Cita/img/logoKikoNav.svg" class="logo_menu" width="150px" height="60px">
+  <img src="<?php base_url() ?>header/img/nuevoLogoKikoNav3.png" class="logo_menu" width="120px" height="60px">
   <ul class="nv_list">
     <li><a href="<?php base_url() ?>Inicio">Inicio</a></li>
     <li><a href="<?php base_url() ?>Citas">Tus Citas</a></li>
@@ -51,6 +51,16 @@ if(!localStorage.getItem("user")){
   </div>
 </div>
 
+<div class="container__menu">
+  <ul class="nv_list_mobile">
+    <li><a id="mobile-a" href="<?php base_url() ?>Inicio">Inicio</a></li>
+    <li><a id="mobile-a" href="<?php base_url() ?>Citas">Tus Citas</a></li>
+    <li><a id="mobile-a" href="<?php base_url() ?>Cortes">Cortes</a></li>
+    <li id="edit-button_mobile"><a href="<?php base_url() ?>Cliente">Editar usuario</a></li>
+    <li id="logout-button_mobile"><a href="#" onclick="out_confirmacion()">Cerrar sesión</a></li>
+  </ul>
+</div>
+
 <!-- Instalar swalfire-->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -60,12 +70,12 @@ if(!localStorage.getItem("user")){
     function out_confirmacion(){
 
     Swal.fire({
-    title: '¿Desea cerrar sesion?',
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#3085d6',
-    cancelButtonColor: '#d33',
-    confirmButtonText: 'Cerrar Sesion'
+      title: '¿Desea cerrar sesion?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Cerrar Sesion'
     }).then((result) => {
     if (result.isConfirmed) {
         getOut();   

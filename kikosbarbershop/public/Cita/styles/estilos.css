@@ -3,10 +3,22 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto Condensed', sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: rgb(20, 20, 20);
+}
+
+[class^=swal2] {
+  z-index: 100000000;
+}
+
+@media (max-width: 700px) {
+  .swal2-popup {
+    position: relative;
+    bottom: 100px;
+  }
 }
 
 /*------------------------ BOTON AGENDAR CITA ------------------------ */
@@ -30,7 +42,7 @@ body {
   content: url(../img/tijeras.png);
   width: 20px;
   height: 20px;
-  left:45px;
+  left: 45px;
   bottom: 13px;
   transform: scale(0.03);
   color: white;
@@ -96,22 +108,40 @@ table {
 .tbl-content tr td {
   position: relative;
   text-align: center;
-  width: 200px;
-  height: 80px;
+  width: 270px;
+  height: 100px;
   padding-top: 10px;
+  font-size: 20px;
+  line-height: 1;
   background-color: rgba(153, 153, 153, 0.31);
+}
+
+.control-btns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "a b c";
+  align-items: center;
 }
 
 .btn-ver-cita {
   background-color: rgb(14, 163, 14);
+  grid-area: a;
+  position: relative;
+  left: 5px;
 }
 
 .btn-cancelar {
   background-color: rgb(255, 35, 35);
+  grid-area: c;
+  position: relative;
+  left: 5px;
 }
 
 .btn-editar-corte {
   background-color: rgb(244, 244, 0);
+  grid-area: b;
+  position: relative;
+  left: 5px;
 }
 
 .btn-cancelar, .btn-ver-cita, .btn-editar-corte {

@@ -1,6 +1,9 @@
-
 .container__menu {
     display: none;
+}
+
+[class^=swal2] {
+    z-index: 100000000;
 }
 
 .navigation_bar {
@@ -25,13 +28,8 @@
 .navigation_bar .logo_menu {
     position: absolute;
     top: 8px;
-    left: 0px;
+    left: 20px;
     color: white;
-}
-
-.navigation_bar .logo_menu:hover {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
 }
 
 .navigation_bar .nv_list {
@@ -143,9 +141,9 @@
     bottom: 27px;
     transform: scale(0.05);
     color: white;
-  }
+}
 
-  #logout-button::after {
+#logout-button::after {
     position: absolute;
     content: url(../header/img/logout.png);
     width: 20px;
@@ -154,11 +152,30 @@
     bottom: 27px;
     transform: scale(0.05);
     color: white;
-  }
+}
 
 /*------------------------------NAVIGATION BAR AL MINIMIZAR--------------------------------*/
 
+@media (max-width: 1000px) {
+    .nav-desplegable {
+        left: 85%;
+        transition: 1s;
+    }
+}
+
+@media (max-width: 800px) {
+    .nav-desplegable {
+        left: 80%;
+    }
+}
+
 @media (max-width: 750px) {
+
+    .swal2-popup {
+        position: relative;
+        bottom: 100px;
+    }
+
     .navigation_bar .nv_list li {
         display: none;
     }
@@ -207,7 +224,7 @@
 
     .container__menu {
         display: block;
-        z-index: 8000;
+        z-index: 800000;
         position: fixed;
         top: 75px;
         left: -300px;
@@ -219,7 +236,7 @@
     }
 
     .menu__active {
-        z-index: 8000;
+        z-index: 800000;
         position: fixed;
         top: 75px;
         left: 0px;
@@ -244,14 +261,61 @@
     }
 
     .nv_list_mobile li:hover {
-        background-color: rgba(128, 128, 128, 0.388);
+        background-color: rgba(255, 0, 0, 0.911);
     }
 
-    .nv_list_mobile li a {
+    .nv_list_mobile li #mobile-a {
         text-decoration: none;
+        padding: 15px 0;
+        padding-right: 200px;
         color: white;
         font-size: 25px;
         position: relative;
         left: 15px;
+    }
+
+    #edit-button_mobile, #logout-button_mobile {
+        list-style: none;
+        position: relative;
+        text-decoration: none;
+        font-size: 25px;
+    }
+
+    #edit-button_mobile a, #logout-button_mobile a {
+        position: relative;
+        left: 15px;
+        text-decoration: none;
+        color: white;
+        padding: 10px 0;
+        padding-right: 130px;
+    }
+
+    #edit-button_mobile::after {
+        position: absolute;
+        content: url(../header/img/lapiz.png);
+        width: 20px;
+        height: 20px;
+        left: 250px;
+        transform: scale(0.05);
+        color: white;
+    }
+
+    #edit-button_mobile:hover {
+        background-color: #e2aa00;
+    }
+
+
+    #logout-button_mobile::after {
+        position: absolute;
+        content: url(../header/img/logout.png);
+        width: 20px;
+        height: 20px;
+        left: 245px;
+        transform: scale(0.05);
+        color: white;
+    }
+
+    #logout-button_mobile:hover {
+        background-color: red;
     }
 }
