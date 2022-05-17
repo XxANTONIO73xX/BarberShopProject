@@ -111,8 +111,21 @@
         }
         })
         .done(function(data, res) {
-        console.log(data);
-        console.log("Los datos de cuenta han sido guardada con exito");
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Los datos de la cuenta fueron guardados correctamente',
+              showConfirmButton: true,
+              timer: 6000
+            }).then((result) => {
+              if(result.isConfirmed){
+                window.location.reload()
+              }
+            })
+          })
+          .fail(function(){
+            alert("Sucedio un error, verifique si lleno todos los campos solicitados");
+          });
         
         })
         .fail(function(data) {
@@ -125,5 +138,5 @@
 
         console.log("Error", "Ocurrio un problema al editar usuario")
         })
-        });
+        
 </script>
