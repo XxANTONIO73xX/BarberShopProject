@@ -133,7 +133,7 @@
             <nav class="navigationBar">
                 <h3 ><?php echo $titulo ?></h3>
                 <div class="navigation-list-item-sing-out">
-                    <a class="navigation-link" data-bs-toggle="modal" data-bs-target="#confirma" >
+                    <a class="navigation-link" onclick="logout()" >
                         <div class="row">
                             <div class="col-2">
                                 <i class="fas fa-sign-out-alt"></i>
@@ -163,4 +163,4 @@
             </div>
         </div>
         </div>
-        
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

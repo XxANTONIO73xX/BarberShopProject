@@ -15,6 +15,4 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="<?php base_url()?>javascript/logout.js"></script> 
 </body>
-
-
 </html>

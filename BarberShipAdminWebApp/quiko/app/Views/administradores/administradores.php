@@ -179,8 +179,18 @@ function obtenerData(id){
                 token: localStorage.getItem("token")
               }
             })
-          .done(function( data, textStatus, jqXHR ) {   
-            window.location.reload()
+          .done(function( data, textStatus, jqXHR ) {
+            Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: 'Los datos fueron guardados correctamente',
+              showConfirmButton: true,
+              timer: 6000
+            }).then((result) => {
+              if(result.isConfirmed){
+                window.location.reload()
+              }
+            })
           })
           .fail(function(){
             alert("Sucedio un error, verifique si lleno todos los campos solicitados");
