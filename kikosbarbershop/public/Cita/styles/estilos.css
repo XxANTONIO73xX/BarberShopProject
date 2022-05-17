@@ -164,7 +164,7 @@ table {
   --stripe-size: 100px;
   --color1: #30302eb3;
   --color2: #181818e7;
-  --duration: 2s;
+  --duration: 4s;
 }
 
 body {
@@ -384,7 +384,7 @@ body {
 
 .corte-div img {
   position: relative;
-  top: 40px;
+  top: 20px;
   width: 95%;
   height: 340px;
 }
@@ -432,7 +432,7 @@ body {
 }
 
 .modal-body_cita button {
-  background: linear-gradient(to top, rgb(63, 63, 63), rgba(255, 255, 255, 0.100));
+  background: rgb(64, 64, 64);
   position: relative;
   top: 75px;
   left: 90px;
@@ -625,7 +625,7 @@ body {
 }
 
 .modal-footer button {
-  background: linear-gradient(to top, rgb(63, 63, 63), rgba(255, 255, 255, 0.100));
+  background: rgb(64, 64, 64);
   position: relative;
   margin-right: 0;
   border-radius: 100px;
@@ -645,12 +645,12 @@ body {
 }
 
 .modal-footer .button-accept:hover {
-  background-color: rgb(171, 158, 17);
+  background-color: rgb(190, 175, 12);
   transition: 0.45s;
   cursor: pointer;
 }
 
-/*----------------------------------MODAL EDITAR CORTE -----------------------------------*/
+/*---------------------------------- MODAL EDITAR CORTE -----------------------------------*/
 
 .modal-bg_corte {
   position: fixed;
@@ -787,8 +787,158 @@ body {
 }
 
 .modal-control_corte button:hover {
-  background-color: rgb(68, 68, 68);
+  background-color: rgb(127, 187, 6);
   transition: 0.35s;
   cursor: pointer;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.408);
+}
+
+/*------------------------------ PARTE RESPONSIVE ------------------------*/
+
+@media (max-width: 750px) {
+
+  table {
+    width: 90%;
+  }
+
+  .modal-dialog {
+    width: 90%;
+    transition: 0.5s;
+  }
+
+  .modal-header .modal-close {
+    display: block;
+  }
+
+  .form-group-fecha label {
+    right: 80px;
+  }
+
+  .modal-dialog_cita {
+    width: 700px;
+    height: 400px;
+    transition: 0.5s;
+  }
+
+  .corte-div img {
+    top: 10px;
+    width: 80%;
+    height: 270px;
+  }
+
+  .modal-body_cita button {
+    left: 50px;
+    top: -10px;
+  }
+}
+
+@media (max-width: 450px) {
+
+  .modal-dialog_corte {
+    position: relative;
+    width: 90%;
+  }
+
+  .modal-bg_cita {
+    height: 100%;
+  }
+
+  .modal-dialog_cita {
+    position: relative;
+    top: 0;
+    width: 90%;
+    height: 700px;
+    transition: 0.5s;
+  }
+
+  .corte-div img {
+    top: 10px;
+    width: 80%;
+    height: 270px;
+  }
+
+  .modal-body_cita button {
+    left: 50px;
+    top: -10px;
+  }
+
+  .modal-title_cita button {
+    bottom: 13px;
+    right: 5px;
+  }
+
+  .modal-body_cita {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(1, 3fr);
+    grid-gap: 10px;
+    grid-auto-rows: 100px;
+    grid-template-areas:
+      "a a a"
+      "b b b"
+      "c c c"
+      "d d d";
+    align-items: start;
+  }
+
+  .left-column {
+    grid-area: a;
+    position: relative;
+    bottom: 10px;
+  }
+
+  .body-barberia {
+    height: 70px;
+  }
+
+  .body-barbero {
+    height: 70px;
+  }
+
+  .body-corte {
+    grid-area: b;
+    height: 440px;
+    position: relative;
+    top: 30px;
+  }
+
+  .corte-div img {
+    position: relative;
+    margin: 0 auto;
+    top: 20px;
+    width: 95%;
+    height: 200px;
+  }
+
+  .right-column {
+    grid-area: c;
+    position: relative;
+    top: 220px;
+  }
+
+  .modal-close {
+    grid-area: d;
+    height: 110px;
+    display: none;
+  }
+
+  .body-fecha, .body-hora, .body-estado {
+    height: 70px;
+  }
+
+}
+
+@media (max-width: 350px) {
+
+  .modal-imagen_corte img {
+    width: 260px;
+    height: 260px;
+  }
+  .modal-dialog_cita {
+    position: relative;
+    top: 0;
+    width: 90%;
+    height: 700px;
+    transition: 0.5s;
+  }
 }

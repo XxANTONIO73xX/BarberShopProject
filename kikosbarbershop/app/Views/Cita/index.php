@@ -101,7 +101,6 @@
           </div>
 
           <div class="modal-footer">
-            <button type="button" class="button-close modal-close" data-dismiss="modal">Cerrar</button>
             <button id="guardar" class="button-accept">Agendar cita</button>
           </div>
 

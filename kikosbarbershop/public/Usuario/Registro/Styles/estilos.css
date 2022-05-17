@@ -1,344 +1,305 @@
-* { 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto Condensed', sans-serif;
-  }
-  
-  body {
-    margin: 0;
-    background-color: rgb(0, 0, 0);
-    overflow: hidden;
-  }
-  
-  .login-pos {
-    position: absolute;
-    z-index: 9000;
-    width: 40%;
-    height: 500px;
-    display: block;
-    align-items: center;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 7px;
-  }
-  
-  .login-box {
-    position: relative;
-    width: 90%;
-    height: 90%;
-    top: 20px;
-    margin: auto;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto Condensed', sans-serif;
+}
 
-  .login-box h1 {
-    position: relative;
-    text-align: center;
-    color: white;
-    height: 100px;
-    bottom: 30px;
-    z-index: 100;
-  }
+body {
+  margin: 0;
+  background-color: rgb(0, 0, 0);
+  overflow: hidden;
+}
 
-  .login-form {
-    height: 400px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    gap: 5px;
-  }
+.login-pos {
+  position: absolute;
+  z-index: 9000;
+  width: 40%;
+  height: 500px;
+  display: block;
+  align-items: center;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 7px;
+}
 
-    .login-form #nombre {
-        background: linear-gradient(to top, rgb(63, 63, 63), rgba(255, 255, 255, 0.100));
-        width: 90%;
-        height: 40px;
-        border-radius: 40px;
-        border: none;
-        text-align: center;
-        font-size: 18px;
-        color: white;
-      }
+.login-box {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  top: 20px;
+  margin: auto;
+}
 
-    .login-form #apellidos {
-        background: linear-gradient(to top, rgb(63, 63, 63), rgba(255, 255, 255, 0.100));
-        width: 90%;
-        height: 40px;
-        border-radius: 40px;
-        border: none;
-        text-align: center;
-        font-size: 18px;
-        color: white;
-    }  
+.login-box h1 {
+  position: relative;
+  text-align: center;
+  color: white;
+  height: 100px;
+  bottom: 30px;
+  z-index: 100;
+}
 
-    .login-form #correo {
-      background: linear-gradient(to top, rgb(63, 63, 63), rgba(255, 255, 255, 0.100));
-      width: 90%;
-      height: 40px;
-      justify-content:  center;
-      border-radius: 40px;
-      border: none;
-      text-align: center;
-      font-size: 18px;
-      color: white;
-      float: left;
-    }
+.login-form {
+  height: 400px;
+  position: relative;
+  top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 5px;
+}
 
-    .login-form #telefono {
-        background: linear-gradient(to top, rgb(63, 63, 63), rgba(255, 255, 255, 0.100));
-        width: 90%;
-        height: 40px;
-        justify-content:  center;
-        border-radius: 40px;
-        border: none;
-        text-align: center;
-        font-size: 18px;
-        color: white;
-      }
+.login-form #nombre {
+  background: linear-gradient(to top, rgb(63, 63, 63), rgba(255, 255, 255, 0.100));
+  width: 90%;
+  height: 40px;
+  border-radius: 40px;
+  border: none;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+}
 
-    .login-form #check_password {
-      background: linear-gradient(to top, rgb(63, 63, 63), rgba(255, 255, 255, 0.100));
-      width: 90%;
-      height: 40px;
-      justify-content:  center;
-      border-radius: 40px;
-      border: none;
-      text-align: center;
-      font-size: 18px;
-      color: white;
-    }
-  
-    .login-form #password {
-      background: linear-gradient(to top, rgb(63, 63, 63), rgba(255, 255, 255, 0.100));
-      width: 90%;
-      height: 40px;
-      text-align: center;
-      justify-content:  center;
-      border-radius: 100px;
-      border: none;
-      font-size: 18px;
-      color: white;
-    }
+.login-form #apellidos {
+  background: linear-gradient(to top, rgb(63, 63, 63), rgba(255, 255, 255, 0.100));
+  width: 90%;
+  height: 40px;
+  border-radius: 40px;
+  border: none;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+}
 
-    .login-form #password:focus,
-    .login-form #check_password:focus,
-    .login-form #telefono:focus,
-    .login-form #apellidos:focus,
-    .login-form #nombre:focus,
-    .login-form #correo:focus   {
-      width: 95%;
-      transition: 0.5s;
-    }
+.login-form #correo {
+  background: linear-gradient(to top, rgb(63, 63, 63), rgba(255, 255, 255, 0.100));
+  width: 90%;
+  height: 40px;
+  justify-content: center;
+  border-radius: 40px;
+  border: none;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  float: left;
+}
 
-      .login-form input::placeholder {
-        position: relative;
-        font-size: 18px;
-        color: rgba(255, 255, 255, 0.684);
-      }
-  
-      .login-form input {
-        position: relative;
-        font-size: 20px;
-        outline: none;
-        transition: 0.5s;
-      }
-  
-    .login-form button {
-        position: relative;
-        background-color: rgba(88, 88, 88, 0.378);
-        top: 5px;
-        width: 90%;
-        height: 60px;
-        justify-content:  center;
-        border-radius: 40px;
-        cursor: pointer;
-        font-size: 20px;
-        border: none;
-        color: rgb(255, 255, 255);
-    }
-  
-      .login-form button:hover {
-        background: rgb(14, 158, 50);
-        transition: .5s;
-        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.562);
-        color: rgb(208, 208, 208);
-      }
+.login-form #telefono {
+  background: linear-gradient(to top, rgb(63, 63, 63), rgba(255, 255, 255, 0.100));
+  width: 90%;
+  height: 40px;
+  justify-content: center;
+  border-radius: 40px;
+  border: none;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+}
 
-    #error_pssd::before {
-      content: '\26A0';
-      margin-right: 5px;
-    }
+.login-form #check_password {
+  background: linear-gradient(to top, rgb(63, 63, 63), rgba(255, 255, 255, 0.100));
+  width: 90%;
+  height: 40px;
+  justify-content: center;
+  border-radius: 40px;
+  border: none;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+}
 
-    #error_pssd {
-      color: rgba(255, 255, 0, 0.799);
-      text-align: center;
-      width: 90%;
-      height: 20px;
-      border-radius: 10px;
-    }
+.login-form #password {
+  background: linear-gradient(to top, rgb(63, 63, 63), rgba(255, 255, 255, 0.100));
+  width: 90%;
+  height: 40px;
+  text-align: center;
+  justify-content: center;
+  border-radius: 100px;
+  border: none;
+  font-size: 18px;
+  color: white;
+}
 
-  /*------------------------------------ OLAS ------------------------------------
-  
-  .container {
-    height: 500px;
-    background: #0f9bf6;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .content {
-    font-family: Arial;
-    text-align: center;
-    font-size: 2em;
-    color: rgba(255,255,255, .8);
-  }
-  
-  .waves {
-    position: absolute;
-    bottom: -135px;
-    height: 527px;
-    width: 100%;
-    overflow: hidden;
-  }
-  .wave {
-    position: absolute;
-    left: -180px;
-    bottom: 0;
-    width: 2402px;
-    height: 427px;
-    background: url(https://static.platzi.com/media/files/waves_c8551f5d-ecf6-4a81-ae1d-f3a0ad55ba10.png) center bottom no-repeat;
-    animation: 5s wave ease-in-out infinite alternate;
-  }
-  .wave.a {
-    background-position: 0 -854px;
-  }
-  .wave.b {
-    background-position: 0 -427px;
-    animation-delay: .6s;
-  }
-  .wave.c {
-    background-position: 0 0;
-    animation-delay: 1.2s;
-  }
-  
-  @keyframes wave {
-    0% {
-      transform: translate(0 , 0);
-    }
-    50% {
-      transform: translate(-80px, 30px);
-    }
-    100% {
-      transform: translate(160px, -60px);
-    }
-  }
+.login-form #password:focus,
+.login-form #check_password:focus,
+.login-form #telefono:focus,
+.login-form #apellidos:focus,
+.login-form #nombre:focus,
+.login-form #correo:focus {
+  width: 95%;
+  transition: 0.5s;
+}
 
-   /*------------------------------------ FONDO LINEAS DIAGONALES ------------------------------------*/
+.login-form input::placeholder {
+  position: relative;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.684);
+}
+
+.login-form input {
+  position: relative;
+  font-size: 20px;
+  outline: none;
+  transition: 0.5s;
+}
+
+.login-form button {
+  position: relative;
+  background-color: rgba(88, 88, 88, 0.378);
+  top: 5px;
+  width: 90%;
+  height: 60px;
+  justify-content: center;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 20px;
+  border: none;
+  color: rgb(255, 255, 255);
+}
+
+.login-form button:hover {
+  background: rgb(14, 158, 50);
+  transition: .5s;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.562);
+  color: rgb(208, 208, 208);
+}
+
+#error_pssd::before {
+  content: '\26A0';
+  margin-right: 5px;
+}
+
+#error_pssd {
+  color: rgba(255, 255, 0, 0.799);
+  text-align: center;
+  width: 90%;
+  height: 20px;
+  border-radius: 10px;
+}
+
+/*------------------------------------ FONDO LINEAS DIAGONALES ------------------------------------*/
 
 :root {
-    --stripe-size: 100px;
-    --color1: rgb(0, 0, 0);
-    --color2: #1d1d1d81;
-    --duration: 2s;
+  --stripe-size: 100px;
+  --color1: rgb(0, 0, 0);
+  --color2: #1d1d1d81;
+  --duration: 4s;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+}
+
+.stripe {
+  opacity: 100;
+  position: fixed;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.stripe_inner {
+  position: fixed;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 8rem;
+  text-align: center;
+  font-family: 'Anton', sans-serif;
+  color: rgba(255, 255, 255, 0);
+  background: repeating-linear-gradient(45deg, var(--color1) 25%, var(--color1) 50%, var(--color2) 50%, var(--color2) 75%);
+  background-size: var(--stripe-size) var(--stripe-size);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-animation: stripeBackgroundPosition var(--duration) linear infinite;
+  animation: stripeBackgroundPosition var(--duration) linear infinite;
+}
+
+.stripe::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% + var(--stripe-size));
+  height: 100%;
+  background: repeating-linear-gradient(45deg, var(--color2) 25%, var(--color2) 50%, var(--color1) 50%, var(--color1) 75%);
+  background-size: var(--stripe-size) var(--stripe-size);
+  -webkit-animation: stripeTransform var(--duration) linear infinite;
+  animation: stripeTransform var(--duration) linear infinite;
+}
+
+.stripe::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(27, 39, 53, 0) 0%, #090a0f 100%);
+}
+
+@-webkit-keyframes stripeTransform {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
   }
-  
-  body {
-    display: flex;
-    height: 100vh;
+
+  100% {
+    -webkit-transform: translateX(calc(var(--stripe-size) * -1));
+    transform: translateX(calc(var(--stripe-size) * -1));
   }
-  
-  .stripe {
-    opacity: 100;
-    position: fixed;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-            align-items: center;
-    width: 100%;
-    height: 100%;
+}
+
+@keyframes stripeTransform {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
   }
-  .stripe_inner {
-    position: fixed;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-            align-items: center;
-    width: 100%;
-    height: 100%;
-    font-size: 8rem;
-    text-align: center;
-    font-family: 'Anton', sans-serif;
-    color: rgba(255, 255, 255, 0);
-    background: repeating-linear-gradient(45deg, var(--color1) 25%, var(--color1) 50%, var(--color2) 50%, var(--color2) 75%);
-    background-size: var(--stripe-size) var(--stripe-size);
-    -webkit-background-clip: text;
-            background-clip: text;
-    -webkit-animation: stripeBackgroundPosition var(--duration) linear infinite;
-            animation: stripeBackgroundPosition var(--duration) linear infinite;
+
+  100% {
+    -webkit-transform: translateX(calc(var(--stripe-size) * -1));
+    transform: translateX(calc(var(--stripe-size) * -1));
   }
-  .stripe::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: calc(100% + var(--stripe-size));
-    height: 100%;
-    background: repeating-linear-gradient(45deg, var(--color2) 25%, var(--color2) 50%, var(--color1) 50%, var(--color1) 75%);
-    background-size: var(--stripe-size) var(--stripe-size);
-    -webkit-animation: stripeTransform var(--duration) linear infinite;
-            animation: stripeTransform var(--duration) linear infinite;
+}
+
+@-webkit-keyframes stripeBackgroundPosition {
+  0% {
+    background-position: 0 0;
   }
-  .stripe::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(ellipse at center, rgba(27, 39, 53, 0) 0%, #090a0f 100%);
+
+  100% {
+    background-position: calc(var(--stripe-size) * -1) 0;
   }
-  
-  @-webkit-keyframes stripeTransform {
-    0% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-    }
-    100% {
-      -webkit-transform: translateX(calc(var(--stripe-size) * -1));
-              transform: translateX(calc(var(--stripe-size) * -1));
-    }
+}
+
+@keyframes stripeBackgroundPosition {
+  0% {
+    background-position: 0 0;
   }
-  
-  @keyframes stripeTransform {
-    0% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-    }
-    100% {
-      -webkit-transform: translateX(calc(var(--stripe-size) * -1));
-              transform: translateX(calc(var(--stripe-size) * -1));
-    }
+
+  100% {
+    background-position: calc(var(--stripe-size) * -1) 0;
   }
-  @-webkit-keyframes stripeBackgroundPosition {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: calc(var(--stripe-size) * -1) 0;
-    }
+}
+
+/*----------------------------------- PARTE RESPONSIVE ---------------------------------*/
+
+@media (max-width: 1000px) {
+  .login-pos {
+    width: 80%;
+    transition: 0.5s;
   }
-  @keyframes stripeBackgroundPosition {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: calc(var(--stripe-size) * -1) 0;
-    }
-  }
+}

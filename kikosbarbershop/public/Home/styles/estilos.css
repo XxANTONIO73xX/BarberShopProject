@@ -23,7 +23,7 @@ body {
 .front_face {
     float: left;
     position: relative;
-    top: 30px;
+    top: 10px;
     height: 650px;
     width: 50%;
     overflow: hidden;
@@ -447,7 +447,7 @@ body {
     --stripe-size: 100px;
     --color1: #30302eb3;
     --color2: #181818e7;
-    --duration: 2s;
+    --duration: 4s;
 }
 
 body {

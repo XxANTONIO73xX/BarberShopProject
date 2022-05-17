@@ -17,7 +17,7 @@
 <body>
     <div class="login-position">
         <div class="login-content">
-            <img src="<?php base_url() ?>Cita/img/logoKikoNav.svg" class="logo_menu" width="390px" height="190px">
+            <img src="<?php base_url() ?>Cita/img/logoKikosInicio2.png" class="logo_menu" width="350px" height="300px">
             <div class="login-content-body">
                 <input id="user" placeholder="Username" type="text" />
                 <input id="password" placeholder="Password" type="password" />

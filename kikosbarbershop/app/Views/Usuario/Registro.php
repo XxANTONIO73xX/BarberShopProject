@@ -24,7 +24,7 @@
         <div class="login-box">
 
             <h1>
-                <img src="<?php base_url() ?>Usuario/Registro/img/logoKikoNav.svg" width="500px" height="150px">
+                <img src="<?php base_url() ?>Usuario/Registro/img/logoKikosInicio2.png" width="250px" height="200px">
             </h1>
 
             <form class="login-form">

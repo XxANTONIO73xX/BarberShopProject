@@ -7,7 +7,7 @@
 }
 
 .navigation_bar {
-    background-color: rgba(0, 0, 0, 0.384);
+    background-color: rgba(0, 0, 0, 0);
     position: fixed;
     width: 100%;
     height: 75px;
@@ -118,6 +118,7 @@
 
 .menu-desplegable_options li:hover {
     background-color: #e2aa00;
+    transition: 0.25s;
 }
 
 .menu-desplegable_options li a {
@@ -130,6 +131,7 @@
 
 #logout-button:hover {
     background-color: rgb(217, 0, 0);
+    transition: 0.25s;
 }
 
 #edit-button::after {
