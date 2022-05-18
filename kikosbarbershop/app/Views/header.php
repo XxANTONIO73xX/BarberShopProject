@@ -14,6 +14,7 @@ if(!localStorage.getItem("user")){
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link href="<?php base_url() ?>header/estilosHeader.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="<?php base_url() ?>header/img/logoKikosPestana.png">
   <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@700&family=Roboto+Condensed:wght@300&family=Roboto:wght@900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
